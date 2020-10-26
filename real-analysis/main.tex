@@ -1,0 +1,343 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{geometry}
+
+\newcommand\inv{^{-1}}   
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\R}{\mathbb R}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\C}{\mathbb C}
+\newcommand{\N}{\mathbb N}
+\newcommand{\quat}{\mathbb H}
+\newcommand{\gal}{\text{Gal }}
+
+\begin{document}
+
+\noindent{\bf Theorem 1.1.1}
+
+    There is no rational number whose square is 2.
+
+\medskip
+\noindent{\bf Theorem 1.2.6}
+
+    Two real numbers $a$ and $b$ are equal if and only if $|a-b| < \epsilon$ for every real number $\epsilon > 0$.
+
+\medskip
+\noindent{\bf Maximum / Minimum (Definition 1.3.4)}
+    
+    $m$ is the maximum of $A$ iff $m \in A$, $m \geq a, \forall a\in A$.
+    
+    Minimum is defined similarly.
+
+\medskip
+\noindent{\bf Bounded Above (Definition 1.3.1)}
+    
+    A set $A \subseteq \mathbb R$ is bounded above if there exists a real number $b$ such that $a \leq b$ for all $a \in A$. $b$ is called the upper bound for $A$.
+    
+    Lower bound is defined similarly.
+
+\medskip
+\noindent{\bf Least Upper Bound / Supremum (Definition 1.3.2)}
+
+    A real number $s$ is the least upper bound for a set $A \in \mathbb R$ if it meets the following two criteria:
+    \begin{enumerate}
+        \item $s$ is an upper bound for $A$.
+        \item if $b$ is any upper bound for $A$, then $s \leq b$.
+    \end{enumerate}
+    
+    The greatest lower bound, or infimum, is defined similarly.
+
+\medskip
+\noindent{\bf Axiom of Completeness}
+
+    Every nonempty subset of the real numbers that is bounded above has a least upper bound.
+    
+    The lower bound version of this follows from this axiom.
+
+\medskip
+\noindent{\bf Axioms of $\mathbb R$}
+
+    1. $a + b = b + a$.
+    
+    2. $a + (b + c) = (a + b) + c$.
+    
+    3. $a + 0 = a$.
+
+    4. $a + (-a) = 0$.
+
+    5. $a \cdot b = b \cdot a$.
+    
+    6. $a \cdot (b \cdot c) = (a \cdot b) \cdot c$.
+    
+    7. $a \cdot 1 = a$.
+    
+    8. If $a \neq 0$, then $a \cdot (\frac 1 a) = 1$.
+    
+    9. $a \cdot (b + c) = a \cdot b + a \cdot c$.
+    
+    10. $0 \neq 1$.
+    
+    11. The real numbers can be ordered by $>$.
+
+\medskip
+\noindent{\bf Is $\emptyset$ bounded above?}
+
+    Yes, but it has no least upper bound. This is why the axiom of completeness has to say ``nonempty."
+
+\medskip
+\noindent{\bf Lemma 1.3.8 (Alternate definition of supremum)}
+
+    Assume $s \in \mathbb R$ is an upper bound for a set $A \subseteq \mathbb R$. Then, $s =$ sup $A$ if and only if, for every choice of $\epsilon > 0$, there exists an element $a \in A$ satisfying $s - \epsilon < a$.
+    
+    In other words, if $A$ has an upper bound $s$, and any time we make $s$ any smaller it stops being an upper bound for $A$, then $s=$ sup $A$.
+
+\medskip
+\noindent{\bf Theorem 1.4.1 (Nested Interval Property)}
+
+    For each $n \in \mathbb N$, assume we are given a closed interval $I_n = [a_n, b_n]$. Assume that each $I_n$ contains $I_{n+1}$. Then, the resulting nested sequence of closed intervals $$I_1 \supseteq I_2 \supseteq I_3 \supseteq \hdots$$ has a nonempty intersection; that is $\bigcap\limits_{n=1}^\infty I_n \neq \emptyset$.
+    
+\medskip
+\noindent{\bf Theorem 1.4.2 (Archimedean Property)}
+
+    $i$. Given any real number $x \in \mathbb R$, there exists $n \in \mathbb N$ such that $n > x$.
+    
+    $ii$. Given any real number $y > 0$, there exists $n \in \mathbb N$ such that $\frac 1 n < y$.
+
+\medskip
+\noindent{\bf Theorem 1.4.3 (Density of $\mathbb Q$ in $\mathbb R$)}
+
+    For every two real numbers $a, b$ with $a < b$, there exists a rational number $r$ such that $a < r < b$.
+
+\medskip
+\noindent{\bf Corollary 1.4.4 (Density of $I$ in $\mathbb R$)}
+
+    Given any two real numbers $a < b$, there exists an irrational number $t$ satisfying $a < t < b$.
+
+\medskip
+\noindent {\bf Theorem 1.4.5 (The existence of $\sqrt2$)}
+
+    There exists a real number $\alpha \in \mathbb R$ such that $\alpha^2 = 2$.
+
+\medskip
+\noindent {\bf Density}
+
+A set $S \subseteq \mathbb R$ is dense in $\mathbb R$ if, for any nonempty open interval $(a,b)$ with $a < b$, there exists $x \in S$ such that $a < x < b$.
+
+In other words, a set is dense if every open interval contained in it has at least one element. $\mathbb Z$ is not dense in $\mathbb R$, $\mathbb Q$ is dense in $\mathbb R$.
+
+\medskip
+\noindent{\bf Triangle Inequality}
+
+    $|x + y| \leq |x| + |y|$ for all $x,y \in \mathbb R$.
+
+\medskip
+\noindent{\bf Theorem 1.5.6}
+
+    $\mathbb N \not\sim \mathbb R$.
+    
+\medskip
+\noindent{\bf Countable}
+
+    A set $A$ is countable iff $A \sim \mathbb N$. If it is infinite and uncountable, then it is uncountable.
+    
+\medskip
+\noindent{\bf Power Set}
+
+    The power set of a set $S$ is the set of all subsets of $S$.
+    $$|\mathcal P(S)| = 2^{|S|}$$
+    
+\medskip
+\noindent{\bf Cantor's Theorem}
+
+    There does not exist an onto function from a set $S$ to its power set.
+    
+\medskip
+\noindent{\bf The Alephs}
+
+    \begin{align*}
+        \aleph_0&: |\mathbb N| \\
+        \aleph_1&: |\mathbb R| \\
+        \aleph_2&: |\mathcal P(\mathbb R)| \\
+                &\vdots
+    \end{align*}
+
+\medskip
+\noindent{\bf Continuum Hypothesis}
+
+    Do any infinite sets have cardinality not equal to one of the alephs?
+
+    No, assuming we accept the axiom of choice. The axiom of choice is what allows for the Banach-Tarski paradox, so some people don't like it. It seems uncontroversial to me, though.
+    
+\medskip
+\noindent{\bf Limit}
+
+    Given a sequence $(a_n)$, we say that $$\lim_{n\to\infty}a_n = a$$ provided that, for every $\epsilon > 0$, there exists $N \in \mathbb N$ such that $|a_n - a| < \epsilon$ for all $n \geq N$.
+    
+    Note that this is also true if we only care that $|a_n - a| \leq \epsilon$.
+
+\medskip
+\noindent{\bf Convergence}
+
+    Given a sequence $(a_n) \subseteq \mathbb R$, we say that $(a_n)$ converges to a value $a \in \mathbb R$, i.e. $$\lim_{n \to \infty} a_n = a,$$ provided that, for every $\epsilon > 0$, there exists $N \in \mathbb N$ such that, for all $n \geq N$, $|a_n - a| <\epsilon$.
+    
+\medskip
+\noindent{\bf Bounded}
+
+    A sequence $(a_n) \subseteq \mathbb R$ is bounded if there exists a real number $M > 0$ such that $|a_n| \leq M$ for all $n \in \mathbb N$.
+
+\medskip
+\noindent{\bf Theorem 2.3.2}
+
+    If $(a_n)$ is convergent, then it must be bounded.
+    
+\medskip
+\noindent{\bf Theorem 2.3.3 (The Algebraic Limit Theorem)}
+
+    Suppose $(a_n)$ and $(b_n)$ are both convergent, with $a_n \to a$ and $b_n \to b$. Then,
+    
+    $i$. For any $c \in \mathbb R$, $\lim\limits_{n\to\infty}(c\cdot a_n) = c \cdot a$.
+    
+    $ii$. $\lim\limits_{n\to\infty} (a_n + b_n) = a + b$.
+    
+    $iii$. $\lim\limits_{n\to\infty}(a_n \cdot b_n) = a \cdot b$.
+    
+    $iv.$ $\lim\limits_{n\to\infty}\left(\frac{a_n}{b_n}\right) = \frac ab$ as long as $b \neq a$ and $b \neq 0$.
+    
+\medskip
+\noindent{\bf Theorem 2.3.4 (The Order Limit Theorem)}
+
+    Suppose $(a_n)$ and $(b_n)$ are both convergent, with $a_n \to a$ and $b_n \to b$. Then,
+    
+    $i$. If $a_n \geq 0$ for all $n \in \mathbb N$, then $a \geq 0$.
+    
+    $ii$. If $a_n \leq b_n$ for all $n \in \mathbb N$, then $a \leq b$.
+    
+    $iii$. If $c \in \mathbb R$ and $c \leq a_n$ for all $n \in \mathbb N$, then $c \leq a$. Also, if $c \geq a_n$ for all $n \in \mathbb N$, then $c \geq n$.
+    
+\medskip
+\noindent{\bf Monotone}
+
+    A sequence $(a_n)$ is monotone if it is either
+    
+    $i$. Increasing: $a_n \leq a_{n+1}$, for all $n \in \mathbb N$,
+    
+    $ii$. Decreasing: $a_n \geq a_{n+1}$ for all $n \in \mathbb N$.
+    
+\medskip
+\noindent{\bf Monotone Convergence Theorem}
+
+    If a sequence is monotone and bounded, then it must converge.
+    
+\newpage
+\noindent{\bf Convergent Series}
+    
+    A series $\sum\limits_{n=1}^\infty b_n$ converges to a value $B$ provided that $\lim\limits_{m\to\infty} s_m = B$, where $(s_m)$ is the sequence of partial sums $$s_m = b_1 + b_2 + \hdots + b_m.$$
+    
+\medskip
+\noindent{\bf A Fact: $\sum\limits_{n=1}^\infty \frac{1}{n^2}$ converges to $\frac{\pi^2}{6}$}.
+
+\medskip
+\noindent{\bf Subsequence}
+
+    Let $(a_n) \subseteq \mathbb R$ be a sequence and $n_1 < n_2 < n_3 < \hdots$ be an increasing list of natural numbers. Then, the sequence $(a_{n_1},a_{n_2}, \hdots) = (a_{n_k})$ is a subsequence of $(a_n)$.
+    
+    The original sequence is indexed by $n$. The subsequence is indexed by $k$.
+    
+\medskip
+\noindent{\bf Theorem 2.5.2}
+
+    If $(a_n)$ converges to $a$, then any subsequence $(a_{n_k})$ also converges to $a$.
+
+\medskip
+\noindent{\bf The Bolzano-Weierstrass Theorem}
+
+    Any bounded sequence contains a convergent subsequence.
+
+\medskip
+\noindent{\bf Cauchy Sequence}
+    
+    A sequence $(a_x)$ is a Cauchy sequence if and only if for all $\epsilon > 0$, there exists $N \in \mathbb N$ such that for all $m,n \geq N$,  $|a_n - a_m| < \epsilon$.
+
+\medskip
+\noindent{\bf Theorem 2.6.2}
+
+    If $(a_n)$ converges, then it is a Cauchy sequence.
+
+\medskip
+\noindent{\bf Lemma 2.6.3}
+
+    If $(a_n)$ is a Cauchy sequence, then it is bounded.
+    
+\medskip
+\noindent{\bf The Cauchy Criterion}
+
+    A sequence converges if and only if it is a Cauchy sequence.
+
+\medskip
+\noindent{\bf The Algebraic Limit Theorem for Series}
+
+    If both $\sum\limits_{n=1}^\infty a_n$ and $\sum\limits_{n=1}^\infty b_n$ converge, then
+    
+    $i$. $\sum\limits_{n=1}^\infty c \cdot a_n = c \cdot \sum\limits_{n=1}^\infty a_n$ for all $c \in \mathbb R$.
+    
+    $ii$. $\sum\limits_{n=1}^\infty (a_n + b_n) = \sum\limits_{n=1}^\infty a_n + \sum\limits_{n=1}^\infty b_n$.
+
+\medskip
+\noindent{\bf The Cauchy Criterion for Series}
+
+    A series $\sum\limits_{n=1}^\infty a_n$ converges if and only if for all $\epsilon > 0$, there exists $N \in \mathbb N$ such that for all $n,m \geq N$ with $n > m$, $$|a_{m+1}+a_{m+2} + \hdots + a_n| < \epsilon.$$
+
+\mewdskip
+\noindent{\bf Theorem 2.7.3}
+
+    If the series $\sum\limits_{k=1}^\infty a_k$ converges, then $(a_k) \to 0$.
+
+\medskip
+\noindent{\bf Comparison Test}
+
+    Let $(a_n)$ and $(b_n)$ be two sequences such that $0 \leq a_n \leq b_n$ for all $n \in \mathbb N$.
+    
+    $i$. If $\sum\limits_{n=1}^\infty b_n$ converges, then $\sum\limits_{n=1}^\infty a_n$ converges.
+    
+    $ii$. If $\sum\limits_{n=1}^\infty a_n$ diverges, then $\sum\limits_{n=1}^\infty b_n$ diverges.
+
+\medskip
+\noindent{\bf Geometric Series}
+
+    A series is called geometric if it is of the form $$\sum_{k=0}^\infty ar^k.$$ If $|r| < 1$, $$\sum_{k=0}^\infty ar^k = \frac a{1-r}.$$
+
+\medskip
+\noindent{\bf The Absolute Convergence Test}
+
+    If $\sum\limits_{n=1}^\infty |a_n|$ converges, then $\sum\limits_{n=1}^\infty a_n$ converges.
+
+\medskip
+\noindent{\bf Alternating Series Test}
+
+    If $(a_n)$ is a decreasing sequence such that $(a_n) \to 0$, then the alternating series $\sum\limits_{n=1}^\infty(-1)^{n+1}a_n$ converges.
+
+\medskip
+\noindent{\bf Absolute/Conditional Convergence}
+
+    If $\sum\limits_{n=1}^\infty|a_n|$ converges, then $\sum\limits_{n=1}^\infty a_n$ converges absolutely. Otherwise, $\sum\limits_{n=1}^\infty a_n$ converges conditionally.
+    
+\medskip
+\noindent{\bf Rearrangement of a Series}
+
+    A series $\sum\limits_{n=1}^\infty a_n$ is called a rearrangement of a series $\sum\limits_{n=1}^\infty$ if there exists a bijection $f:\mathbb N \to \mathbb N$ such that $b_{f(n)} = a_n$ for every $n \in \mathbb N$.
+    
+\medskip
+\noindent{\bf Theorem 2.7.10}
+
+    If a series converges absolutely, then any rearrangement of this series converges to the same limit.
+
+\medskip
+\noindent{\bf The Cantor Set}
+
+    Let $C_0 = [0,1]$. Define $$C_n = C_{n-1} \setminus \text{the open middle third of each separate piece of } C_{n-1}.$$ The intersection of all of these sets is known as the Cantor set. The Cantor set is not just the set of all the endpoints of these segments. It's actually uncountable.
+
+\end{document}

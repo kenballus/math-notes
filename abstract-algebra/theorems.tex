@@ -1,0 +1,894 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+
+\newcommand\inv{^{-1}}   
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\R}{\mathbb R}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\C}{\mathbb C}
+\newcommand{\N}{\mathbb N}
+\newcommand{\quat}{\mathbb H}
+\newcommand{\gal}{\text{Gal }}
+
+\begin{document}
+
+\section{Theorems}
+\noindent{\bf Theorem $1.4$}
+
+    Let $m, n \in \Z$, not both 0.
+    
+    Then, there exists a unique GCD of $m$ and $n$.
+    
+    Further, there exist integers $a$ and $b$ such that gcd$(m, n) = am + bn$.
+    
+\noindent{\bf Proposition $1.8$}
+
+    An integer $p > 1$ is prime if and only if for all nonzero $n \in \Z$, either gcd($p, n$) = 1 or $p|n$.
+
+\noindent{\bf Proposition $1.10$}
+
+    Let $m, n \in \Z$. Let $p$ be prime.
+    
+    If $p|mn$ then either $p|m$ or $p|n$.
+    
+\noindent{\bf Proposition $1.12$}
+
+    Suppose there exist $m_1, m_2, \hdots, m_k \in \Z$.
+    
+    Let $p$ be prime.
+    
+    If $p|m_1m_2\hdots m_k$, then there exists $i \in {1, \hdots k}$ such that $p|m$.
+    
+\noindent{\bf Proposition $1.17$ -- The Fundamental Theorem of Arithmetic}
+
+    Any integer greater than 1 can be written uniquely as a product of primes.
+    
+\noindent{\bf Proposition $1.18$}
+
+    If $p$ is prime and $n \in \Z > 1$, then $\sqrt[n]{p}$ is irrational.
+    
+\newpage
+    
+\noindent{\bf Proposition $3.\pi.1$}
+
+    For all $z \in \C$, $z \cdot \overline{z} = |z|^2$.
+    
+\noindent{\bf Proposition $3.\pi.2$}
+    
+    Let $z \in \C, r = |z|, \theta = \text{arg}(z)$.
+    
+\noindent{\bf Proposition $3.5$}
+
+    let $z,w \in \C$.
+    
+    Then, $|z\cdot w| = |z| \cdot |w|$,
+    
+    and $\text{arg}(z\cdot w) =\text{arg}(z)+\text{arg}(w)$.
+    
+\noindent{\bf Proposition $3.1$}
+
+    $\C$ has the following properties:
+    
+    Additive commutativity and associativity.
+    
+    Multiplicative Commutativity and associativity.
+    
+    Various distributivities % this probably needs to be more detailed.
+    
+    Additive closure
+    
+    Additive identity: 0+0i
+    
+    Additive inverses: Written as $-z$ for $z \in \C$.
+    
+\noindent{\bf Proposition $3.\pi.3$}
+
+    If $z=a+bi \neq 0$,
+    
+    then $z\inv = \frac{1}{a^2 + b^2} \cdot (a-bi) = \frac{1}{|z|^2} \cdot \overline{z}$.
+    
+\noindent{\bf Proposition $3.7$ -- De Moivre's Theorem}
+
+    For $n \in\Z^+, (\cos(\theta) + i\sin(\theta))^n = \cos(n\theta) + i\sin(n\theta)$.
+    
+\noindent{\bf Corollary $3.\pi.4$}
+
+    If $z = r(\cos\theta + i\sin\theta)$,
+    
+    then $z^n = r^n(\cos(n\theta)+i\sin(n\theta))$ for $n \in \Z^+$.
+    
+\noindent{\bf Corollary $3.\pi.5$}
+    
+    For all $k \in\Z^+$,
+    
+    $\zeta_n^n = 1$, which implies $\zeta_n^k$ is an $n^{\text{th}}$ root of 1, and
+    
+    $\zeta_n^kn = 1$.
+    
+\noindent{\bf Theorem $3.11$}
+
+    If $p(x)$ is a non-constant polynomial with coefficients in $\C$, then $p(x)$ has a root in $\C$.
+    
+\noindent{\bf Theorem $14.1$ -- The Fundamental Theorem of Algebra}
+
+    If $p(x)$ is a polynomial with coefficients in $\C$ of degree $n \geq 1$,
+    
+    then $p(x)$ has $n$ complex roots.
+    
+\noindent{\bf Proposition $3.12$}
+
+    If $p(x)$ has real coefficients, we have complex conjugate pairs of roots.
+    
+    If $p(x)$ is a polynomial with $z \in\C$ as a root, $\overline{z}$ is also a root of $p(x)$.
+
+\noindent {\bf Proposition $3.\pi.7$}
+
+    $\mathcal{U}_n = \{1, \zeta_n, \zeta_n^2, \hdots, \zeta_n^{n-1}\}$ is the complete set of $n^{\text{th}}$ roots of 1 in $\C$.
+
+\noindent {\bf Proposition $3.\pi.8$}
+
+    Let $\alpha \in \C$ be nonzero.
+    
+    Let $n \in \Z^+$.
+    
+    Let $r = |\alpha|$.
+    
+    Let $\theta = \text{arg}(\alpha)$.
+    
+    Then, $\sqrt[n]{r}(\cos{\frac{\theta}{n}} + i\sin{\frac{\theta}{n}})$ is an $n^{\text{th}}$ root of $\alpha$.
+    
+\noindent {\bf Proposition $3.8$}
+    
+    Let $\alpha \in \C$ be nonzero.
+    
+    Let $n \in \Z^+$.
+    
+    Let $\beta$ be one $n^{\text{th}}$ root of $\alpha$.
+    
+    Then the complete set of $n^{\text{th}}$ roots of $\alpha$ is $\{\beta, \beta\zeta_n,\beta\zeta_n^2, \hdots, \beta\zeta_n^{n-1}\}$.
+    
+\newpage
+    
+\noindent {\bf Proposition $4.\pi.1$}
+    
+    Let $i,j,n \in \Z$ such that $n \geq 2$.
+    
+    Then,
+    
+    1. Either $[i]_n = [j]_n$ or the sets are disjoint. (but not both, obviously)
+    
+    2. $[i]_n = [j]_n$ if and only if any of the following are true:
+    
+    \indent\indent a. $j\in[i]_n$.
+    
+    \indent\indent b. $j=i+kn$ for $k \in\Z$.
+    
+    \indent\indent c. $j - i = kn$ for $k \in\Z$.
+    
+    \indent\indent d. $n|(j - i)$.
+    
+    3. If $0 \leq i \leq n$, then $[i]_n \neq [j]_n$ for $j \neq i$.
+    
+    4. For all $a \in\Z$, there exists a unique $i \in \{0, 1, \hdots, n-1,\}$ such that $[a]_n = [i]_n$. This value is known as the least non-negative residue (LNNR) of $a$ mod $n$.
+    
+\noindent {\bf Corollary $4.\pi.2$}
+
+    There exist precisely $n$ distinct equivalence classes modulo $n$.
+    
+\noindent {\bf Corollary $4.\pi.3$}
+
+    For all $a, b, k, l \in \Z$,
+    
+    $[a + kn]_n + [b + ln]_n = [a]_n + [b]_n$, and
+    
+    $[a+kn]_n \cdot [b + ln]_n = [a]_n \cdot [b]_n$.
+    
+\noindent  {\bf Proposition $4.\pi.4$}
+
+    The following are properties of $\Z_n$:
+    
+    Additive closure, commutativity, associativity, left and right distributivity, existence of identity, and eistence of inverses.
+    
+    Multiplicative closure, commutativity, associativity, left and right distributivity, and existence of identity.
+
+\noindent {\bf Proposition $4.2$}
+
+    If $n$ is a composite integer, then $\Z_n$ has zero divisors.
+    
+\noindent {\bf Theorem $4.\pi.5$}
+
+    $[a]_n^{-1}$ exists if and only if gcd$(a,n) = 1$.
+
+\noindent {\bf Corollary $4.\pi.6$}
+
+    Suppose $[a]_n \neq 0$. 
+    
+    Then $[a]_n$ is a zero divisor if and only if $[a]_n^{-1}$ does not exist.
+    
+\noindent {\bf Proposition $4.3$}
+
+    Every nonzero element of $\Z_n$ has a multiplicative inverse if and only if $n$ is prime.
+
+\noindent {\bf Proposition $4.\pi.7$}
+
+    $\quat$ has the following properties:
+    
+    Additive closure, associativity, commutativity, identity, and inverses.
+    
+    Multiplicative closure, associativity, identity, and inverses for nonzero elements.
+    
+    Left and right distributivity for both.
+    
+\newpage
+    
+\noindent {\bf Proposition $5.1$}
+    
+    For any field $F$,
+    
+    \indent\indent (1) The identity is unique.
+    
+    \indent\indent (2) For all $a\in F$, $0a = 0$.
+    
+    \indent\indent (3) Additive inverses are unique.
+    
+    \indent\indent (4) For all $a,b \in F$, $(-a)b=-(ab)=a(-b)$.
+    
+    \indent\indent (5) Multiplicative identity is unique.
+    
+    \indent\indent (6) Multiplicative inverses are unique.
+    
+    \indent\indent (7) $1 \neq 0$.
+
+\noindent {\bf Proposition $5.2$}
+
+     If $F$ is a field, and $F$ is a subset of $K$ with the same operations,
+     then $F$ is a subfield of $K$ if and only if:
+     
+     \indent\indent (1) $|F| \geq 2$.
+     
+     \indent\indent (2) $F$ has additive and multiplicative closure and inverses.
+     
+     \indent\indent Note: Identities are not required, since they fall out of the inverses.
+
+\noindent {\bf Proposition $5.\pi.1$}
+
+    If $F$ is a subfield of $K$, then
+    
+    \indent\indent (1) $0_F = 0_K$,
+    
+    \indent\indent (2) $1_F = 1_K$,
+
+    \indent\indent (3) $-a_F=-a_K$,
+    
+    \indent\indent (4) $a^{-1}_F=a^{-1}_K$.
+
+\newpage
+
+\noindent {\bf Proposition $7.1$}
+
+    Let $F$ be a field.
+    
+    Then $F[x]$ is nonempty and has the following properties:
+    
+    \indent\indent Additive closure,
+
+    \indent\indent Additive associativity,
+
+    \indent\indent Additive commutativity,
+
+    \indent\indent Additive identity (0 polynomial),
+
+    \indent\indent Additive inverses,
+
+    \indent\indent Multiplicative closure,
+
+    \indent\indent Multiplicative associativity,
+
+    \indent\indent Multiplicative commutativiy,
+
+    \indent\indent Multiplicative identity ($p(x)=1_F$).
+    
+    \indent\indent Left and right distributivity of polynomial multiplication over polynomial addition.
+    
+\noindent {\bf Proposition $7.2$}
+
+    Let $F$ be a field.
+    
+    Then $p(x)\in F[x]$ has a multiplicative inverse if and only if $p(x)$ is a nonzero constant polynomial.
+
+\noindent {\bf Proposition $7.6$}
+
+    If $F$ is a field, $F[x]$ is an integral domain.
+    
+\noindent {\bf Proposition $7.\pi.1$}
+
+    If $R$ is a ring, so is $R[x]$.
+    
+\noindent {\bf Proposition $7.4$}
+
+    If $R$ is a ring, then the following are true:
+    
+    \indent\indent1. $0_R$ is unique.
+    
+    \indent\indent2. For all $a\in R$, $a\cdot 0_R = 0_R \cdot a = 0_R$
+    
+    \indent\indent3. Additive inverses are unique
+    
+    \indent\indent4. For all $a,b\in R$, $-ab=-(ab)=a(-b)$
+    
+    \indent\indent5. If $R$ has $1_R$, it is unique.
+
+\newpage
+
+\noindent {\bf Proposition $8.2$} (not a formal proposition in class)
+
+    Let $F$ be a field, and let $p(x), q(x) \in F[x]$.
+
+    deg$(p(x)q(x))=$deg$(p(x)) + $deg$(q(x))$.
+
+\noindent {\bf Theorem $8.3$} The division algorithm for $F[x]$
+
+Let $F$ be a field.
+
+Let $f(x), g(x)\in F[x]$.
+
+Then, there exist $q(x), r(x) \in F[x]$ such that $f(x)=q(x)g(x)+r(x)$ with either $r(x)=0$ or $\text{deg}(r(x)) < \text{deg}(g(x))$.
+
+\noindent {\bf Proposition $8.5$}
+
+Let $F$ be a field.
+
+Let $p(x)$ be a nonzero polynomial in $F[x]$.
+
+$p(a)=0_F$ if and only if $(x-a)|p(x)$ for $a\in F$.
+
+\noindent {\bf Theorem $8.7$}
+
+Let $F$ be a field.
+
+Let $f(x), g(x)$ be nonzero polynomials in $F[x]$.
+
+There exists a unique GCD of $f(x)$ and $g(x)$.
+
+Further, there exist $\alpha(x),\beta(x)\in F[x]$ such that 
+
+\indent\indent$\alpha(x)f(x)+\beta(x)g(x)=\text{gcd}(f(x),g(x))$.
+
+\noindent{\bf Proposition $8.12$}
+
+Let $F$ be a field.
+
+Let $p(x)$ be a non-constant polynomial in $F[x]$.
+
+If deg$(p(x))=1$, then $p(x)$ is irreducible over $F$.
+
+If deg$(p(x)) \in \{2,3\}$, then $p(x)$ is irreducible over $F$ if $p(x)$ has no roots in $F$.
+
+\noindent {\bf Proposition $8.16$}
+
+Let $F$ be a field.
+
+Any non-constant polynomial in $F[x]$ can be written as a product of irreducible polynomials in $F$.
+
+(Note: no uniqueness, but there is uniqueness up to scalar multiples)
+
+\noindent {\bf Proposition $8.11$}
+
+Let $F$ be a field.
+
+Let $p(x)$ be a polynomial in $F[x]$.
+
+Then, $p(x)$ is irreducible over $F$ if and only if for all nonzero polynomials $f(x)\in F[x]$, either $p(x)|f(x)$ or gcd$(p(x),f(x))=1_F$.
+
+(Note: We can't say the GCD is either $1_F$ or $p(x)$ because $p(x)$ isn't necessarily monic.)
+
+\noindent {\bf Proposition $8.9$}
+
+Let $F$ be a subfield of $K$.
+
+Let $g(x),f(x)$ be nonzero polynomials in $F[x]\subseteq K[x]$.
+
+If gcd$(g(x),f(x))=d(x)$ over $F$, then gcd$(g(x),f(x))=d(x)$ over $K$, as well.
+
+\newpage
+
+\noindent {\bf Theorem $9.\pi.1$}
+
+    Let $R$ be a ring.
+    
+    Let $S\subseteq R$.
+    
+    $S$ is a subring of $R$ if and only if all of the following hold:
+    
+    \indent\indent1. $S$ is not empty.
+    
+    \indent\indent2. $S$ is closed under addition.
+    
+    \indent\indent3. $S$ is closed under multiplication.
+    
+    \indent\indent4. $S$ has additive inverses.
+    
+\noindent{\bf Proposition $9.\pi.2$}
+
+Let $S$ be a subring of $R$.
+
+The following are true:
+
+\indent\indent1. $0_S=0_R$.
+
+\indent\indent3. If $R$ is a commutative ring, so is $S$.
+
+\indent\indent5. If $R$ has no zero divisors, then $S$ has no zero divisors.
+
+\noindent{\bf Proposition $9.2$}
+
+Let $R$ be a ring.
+
+Let $I\subseteq R$.
+
+$I$ is an ideal if and only if the following are true:
+
+\indent\indent1. $I$ is not empty.
+
+\indent\indent2. $I$ has additive closure.
+
+\indent\indent3. $I$ has additive inverses.
+
+\indent\indent4. For all $r\in R$, $x\in I$, $xr,rx\in I$. (This covers multiplicative closure.)
+
+\noindent{\bf Proposition $9.3$}
+
+In any ring $R$, $R$ and $\{0_R\}$ are ideals of $R$.
+
+\noindent{\bf Proposition $9.4$}
+
+Let $R$ be a ring with unit element.
+
+Let $I$ be an ideal of $R$.
+
+Then $I=R$ if and only if $1_R\in I$.
+
+\noindent{\bf Proposition $9.\pi.3$}
+
+Let $R$ be a commutative ring with unit element.
+
+Let $d\in R$.
+
+Then, $\big{(}d\big{)}$ is the smallest ideal of $R$ containing $d$.
+
+\noindent{\bf Proposition $9.6$}
+
+Let R be a commutative ring with unit element.
+
+Let $d\in R$.
+
+Then, $(d)$ is the smallest ideal of $R$ containing $d$.
+
+Note: If $F$ is a field, $F[x]$ is a commutative ring with unit element.
+
+\noindent{\bf Theorem $9.10$}
+
+Let $F$ be a field.
+
+Then, $F[x]$ is a principal ideal domain.
+
+\noindent {\bf Corollary $9.11$}
+
+If $I$ is a nontrivial ideal of $F[x]$, then any element of $I$ of minimal degree is a generator for $I$.
+
+\newpage
+
+\noindent {\bf Lemma $10.7$}
+
+Let $F$ be a subfield of $U$.
+
+Let $r\in U$ be algebraic over $F$ of degree $n$.
+
+Then, for all $b_0, b_1, \hdots b_m \in F$, there exist $\beta_0, \beta_1, \hdots, \beta_{n-1}\in F$ such that $b_0 + b_1r + \hdots + b_mr^m = \beta_0 + \beta_1r + \hdots + \beta_{n-1}r^{n-1}$.
+
+\noindent {\bf Theorem $10.8$}
+
+If $F$ is a subfield of $U$, and $r\in U$ is algebraic over $F$ of degree $n$, then $F(r) = \{a_0, a_1r + a_2r^2 + \hdots + a_{n-1}r^{n-1} | a_i\in F\}$.
+
+\noindent {\bf Proposition $10.3$}
+
+Let $F$ be a subfield of $U$ and let $r\in U$ be algebraic over $F$.
+
+Let $I = \{g(x)| g(x)\in F[x], g(r)=0$\}.
+
+$I$ is a principal ideal of $F[x]$ and its unique monic generator $m(x)$ is the minimum polynomial for $r$ over $F$.
+
+\noindent{\bf Corollary $10.\pi.1$}
+(Uses same variables as previous theorem)
+
+If $r$ is algebraic over $F$, then the minimum polynomial for $r$ over $F$ is unique.
+
+\noindent{\bf Corollary $10.\pi.2$}
+
+If $r$ is algebraic over $F$ with minimum polynomial $m(x)$, then $m(x)|f(x)$ for all $f(x)\in F[x]$ with $r$ as a root. 
+
+\newpage
+
+\noindent {\bf Proposition $11.\pi.1$}
+
+If $p$ is prime, then $x^{p-1} + x^{p-2} + \hdots + 1$ is irreducible over $\Q$.
+
+\noindent {\bf Proposition $11.\pi.2$}
+
+If $p$ is prime, the minimum polynomial for $\zeta_p$ over $\Q$ is  $x^{p-1} + x^{p-2} + \hdots + 1$.
+
+\noindent {\bf Proposition $11.5$ -- Eisenstein's Irreducibility Criterion}
+
+Let $g(x)=g_0+g_1x\hdots+g_nx^n\in\Z[x]$.
+
+If there exists a prime $p$ such that all of the following hold:
+
+\indent\indent1. $p$ does not divide $g_n$, \\
+\indent\indent2. $p$ divides $g_0, g_1, \hdots, g_{n-1}$, \\
+\indent\indent3. $p^2$ does not divide $g_0$,
+
+then $g(x)$ is irreducible over $\Q$.
+
+\newpage
+
+\noindent{\bf Proposition $12.\pi.1$}
+
+If $K$ is an extension field of $F$, then $K$ is a vector space over the field $F$.
+
+\noindent{\bf Proposition $12.4$}
+
+If $r$ is algebraic over $F$ and $n=[r:F]$ then $\{1,r,r^2,\hdots, r^{n-1}\}$ is a basis for $F(r)$ as a vector space over $F$. Thus $[F(r):F]=[r:F]$.
+
+\noindent{\bf Proposition $12.5$}
+
+Let $F\subseteq L \subseteq K$, fields such that $\{a_1,\hdots,a_m\}$ is a basis of the extension field $K$ over the field $L$ and that $\{b_1,\hdots,b_n\} $ is a basis of the extension field $L$ over the field $F$. Then $\{a_1b_1,\hdots,a_1b_n,\hdots,a_mb_n\}$ is a basis of the extension field $K$ over the field $F$. Additionally, $[K:F]=[K:L][L:F]$.
+
+\noindent{\bf Proposition $12.10$}
+
+If $K$ is a finite-dimensional extension field of a field $F$ and $k\in K$ then $k$ is algebraic over $F$ and $[k:F]$ divides $[K:F]$.
+
+\newpage
+
+\noindent{\bf Proposition $13.8$}
+
+Let $f:R_1\to R_2$ be a ring homomorphism. Then,
+
+\indent\indent1. $f(0_{R_1}) = 0_{R_2}$
+
+\indent\indent2. for all $n\in\Z^+, \forall a\in R_1, f(a^n) = (f(a))^n$
+
+\indent\indent3. If $R_1$ and $R_2$ are integral domains and $f$ is not the zero map, then
+
+\indent\indent\indent(a) $f(1_{R_1}) = 1_{R_2}$
+
+\indent\indent\indent(b) If $x\in R_1$ has a multiplicative inverse $x^{-1}$, then so does $f(x)$. In particular, $f(x\inv)=(f(x))\inv$.
+
+\noindent{\bf Proposition $13.9$}
+
+Suppose $K$ and $L$ are extensions fields of a field $F$ and that $f:K\to L$ is a homomorphism such that $f(a)=a$ for all $a\in F$. Let $r\in K$ be algebraic over $F$ and $m(x)\in F[x]$ such that $r$ is a root of $m(x)$. Then $f(r)$ is also a root of $m(x)$.
+
+\noindent{\bf Proposition $13.11$}
+
+Suppose that $F$ is a subfield of a field $K$, $u,v\in K$, algebraic over $F$ with the same minimum polynomial $m(x)$ of degree $n$. Define $f:F(u)\to F(v)$ by $f(a_0+a_1u+\hdots+a_{n-1}u^{n-1})=a_0+a_1v_1+\hdots+a_{n-1}v^{n-1}$. Then $f$ is an isomorphism that fixes $F$.
+
+\noindent{\bf Corollary $13.\pi.1$}
+
+If $u,v$ are algebraic over $F$ with the same minimum polynomial then $F(u)\cong F(v)$.
+
+\newpage
+
+\noindent{\bf Proposition $14.\pi.1$}
+
+If $f\in\gal F(a_1, \hdots a_n)/F$ then $f$ is uniquely determined by the values of $f(a_1), \hdots, f(a_n)$.
+
+\noindent{\bf Proposition $14.8$}
+
+If $F$ is a subfield of $\C$ and $p(x)\in F[x]$, then the number of elements in $\gal F^{p(x)}/F$ is exactly $[F^{p(x)}:F]$.
+
+\noindent{\bf Proposition $14.1$ -- The Fundamental Theorem of Algebra (Reprise)}
+
+Suppose that $p(x)$ is a polynomial of degree $k$ in $\C[x]$. Then there exists a non-zero element $d\in\C$, $k$ distinct complex numbers $c_1,\hdots,c_k$ so that $p(x)=d(x-c_1)\hdots(x-c_k)$.
+
+That is, every polynomial of positive degree can be factored into linear factors over $\C$.
+
+That is, only degree one polynomials are irreducible over $\C$.
+
+\noindent{\bf Proposition $14.2$}
+
+Let $F$ be a subfield of $\C$ and suppose that $m(x)$ is an irreducible polynomial in $F[x]$ of degree $n$. Then $m(x)$ has exactly $n$ distinct complex roots.
+
+That is, no two roots are equal.
+
+\noindent{\bf Corollary $14.\pi.2$}
+
+If $p(x)\in F[x]$ has two equal roots in $\C$, it is reducible over $F$.
+
+\newpage
+
+\noindent{\bf Proposition $15.1$}
+
+If $K$ is an extension field of a field $F$, then the set $\gal K/F$ is a group under the operation of map composition.
+
+\noindent{\bf Proposition $15.9$}
+
+Let $G$ be a group. Then
+
+\indent\indent i) The identity is unique. Additionally, if $\exists x\in G$ so that $gx=g$ or $xg=g$ for all $g\in G$, then $x=e$. 
+
+This is stronger than just saying the identity is unique. It also shows that you only need to show the identity works on one side.
+
+\indent\indent ii) If $\exists x,y\in G$ such that $xy=e=zx$, then $y=z=x\inv$.
+
+This means that inverses are unique. It also means that if an element acts as an inverse on one side, it also acts as an inverse on the other side.
+
+\indent\indent iii) for all $x\in G$, $(x\inv)\inv=x$.
+
+\indent\indent iv) for all $x,y\in G$, $(xy)\inv = y\inv x\inv$.
+
+\indent\indent v) if $xy=xz$ for some $x,y,z\in G$, then $y=z$.
+
+\indent\indent vi) if $xy=zx$ for $x,y,z\in G$, then $x=z$.
+
+\noindent{\bf Proposition $15.\pi.1$}
+
+For all $x\in G, n\in\Z^+,(x^n)\inv=(x\inv)^n$.
+
+\newpage
+
+\noindent{\bf Proposition $16.1$}
+
+Let $F$ be a subfield of $\C$. Let $p(x)\in F[x]$. Let $a_1,\hdots,a_n$ be the roots of $p(x)$. Then $f\in \text{Gal }F^{p(x)}/F$ is a permutation of $\{a_1, \hdots, a_n\}$.
+
+Note that permutations are not homomorphisms, but these automorphisms are permutations.
+
+\noindent{\bf Proposition $16.2$}
+
+$S_n$ is a group with respect to map composition. If $n > 2$ then $S_n$ is not abelian.
+
+\noindent{\bf Proposition $16.6$}
+
+The group $S_n$ has $n!$ elements.
+
+\noindent{\bf Proposition $16.5$}
+
+Disjoint cycles commute.
+
+\noindent{\bf Proposition $16.\pi.1$}
+
+Every finite permutation can be written as the product of disjoint cycles, unique up to cycle order.
+
+\newpage
+
+\noindent{\bf Proposition $18.12$}
+
+Let $f:G \to H$ be a group homomorphism. Then
+
+\indent\indent1. $f(e_G)=e_H$
+
+\indent\indent2. $f(x\inv)=(f(x))\inv$
+
+\indent\indent3. $f(x^n)=(f(x))^n$ for all $n\in\Z^+$.
+
+\noindent{\bf Proposition $17.5$}
+
+Let $F$ be a subfield of $\C$. Let $p(x)\in F[x]$ and let $a_1,\hdots,a_n$ be the distinct roots of $p(x)$. Define $T:\text{Gal}F^{p(x)}/F\to S_n$ by $T(f)=f|_{a_1,\hdots,a_n}$.
+
+Note: $T$ is not always an onto map.
+
+\noindent{\bf Proposition $18.2$}
+
+Let $S$ be a subset of a group $G$. Then $S$ is a subgroup under the same operation as $G$ if and only if the following conditions hold:
+
+\indent\indent(i) $S\neq \emptyset$.
+
+\indent\indent(ii) if $x,y\in S$, then $xy\in S$.
+
+\indent\indent(iii) if $x\in S$, then $x\inv\in S$.
+
+\noindent{\bf Proposition $18.13$}
+
+Let $G$ and $H$ be groups and $f:G \to H$ a homomorphism. Then ker$(f)$ and $f(G)$ are subgroups of $G$ and $H$ respectively.
+
+\noindent{\bf Corollary $18.15$}
+
+Let $F$ be a subfield of $\C$. Let $p(x)\in F[x]$ have $n$ distinct roots. Then there exists a one-to-one homomorphism of Gal $F^{p(x)}/F$ onto a subgroup of $S_n$.
+
+\noindent{\bf Proposition $18.16$}
+
+Suppose that $F,L,K$ are fields so that $F\subseteq L \subseteq K$. Then
+
+\indent\indent1. Gal $K/L$ is a subgroup of Gal $K/F$.
+
+\indent\indent2. Gal $K/K = \{id\}$, which is a subgroup of Gal $K/F$.
+
+\newpage
+
+\noindent{\bf Proposition $19.\pi.1$}
+
+$S(X)$ is the smallest subgroup of $G$ that contains $X$.
+
+This means that any subgroup of $G$ that contains $X$ also contains $S(X)$.
+
+\noindent{\bf Proposition $19.6$}
+
+Every permutation in $S_n$ can be written as a product of transpositions, (not usually disjoint).
+
+\noindent{\bf Corollary $19.7$}
+
+$S_n$ is generated by its transpositions.
+
+\noindent{\bf Proposition $19.8$}
+
+$S_n$ is generated by any $n$-cycle ($a_1$ $a_2$ $\hdots$ $a_n$) and any transposition of the form ($a_i$ $a_j$) where $[j]_n=[i+1]_n$.
+
+The elements of the transposition are the first two (or any consecutive two) of the cycle. This is necessary for general $n$.
+
+\noindent{\bf Proposition $19.9$}
+
+The group $S_5$ is generated by any 5-cycle and any transposition.
+
+\noindent{\bf Proposition $19.\pi.2$}
+
+If $p$ is a prime number, $S_p$ is generated by any $p$-cycle and any transposition.
+
+If $n$ is not prime, then there is an $n$ cycle and a transposition that do not generate $S_n$.
+
+% \newpage
+% \noindent{\bf Unnamed Facts}
+
+% \indent\indent $\cdot$ If $F$ is a field, $F[x]$ is a commutative ring with unit element.
+
+\newpage
+\noindent{\bf Proposition $20.4$}
+
+Let $G$ be a group, $S$ a subgroup of $G$, and $x,y\in G$.
+
+Then,
+
+\indent\indent 1. Either $xS=yS$ or $xS\cap yS = \emptyset$,
+
+\indent\indent 2. $xS=yS$ if and only if $y\inv x \in S$,
+
+\indent\indent 3. $G$ is the disjoint union of the distinct elements of $G/S$,
+
+\indent\indent 4. The function $f:S\to xS$ by $f(s)=xs$ is one-to-one and onto. Thus if $S$ is finite $|S|=|xS|$.
+
+\newpage
+
+\noindent{\bf Theorem $21.\pi.1$}
+
+The order of a $k$-cycle in $S_n$ is its length $k$. The order of a permutation written in terms of disjoint cycles is the least common multiple of the orders (lengths) of those disjoint cycles.
+
+\noindent{\bf Theorem $21.\pi.1$}
+
+Let $G,H$ be groups, $x\in G$. Let $f:G\to H$ be a group homomorphism.
+
+\indent\indent1. $o(x)=1 \iff x=e$. 
+
+\indent\indent2. Let $o(x)=n$ and $m\in\Z^+$. Then $x^m=e$ if and only if $n$ divides $m$.
+
+\indent\indent3. Let $p$ be prime, $x$ non-trivial in $G$. If $x^p=e$ then $o(x)=p$.
+
+\indent\indent4. If $p$ is a prime then the $p$-cycles are the only elements of order $p$ in $S_p$.
+
+\indent\indent5. If $G$ is finite, $o(x)$ divides $|G|$.
+
+\indent\indent6. $o(f(x))$ divides $o(x)$.
+
+\indent\indent7. If $f$ is one-to-one, then $o(f(x)) = o(x)$.
+
+\noindent{\bf Theorem $21.\pi.3$}
+
+Let $G$ be a group, $S\leq G, x\in G$.
+
+\indent\indent1. If $o(x)=n$, then $S(x)=\{e,x,x^2,\hdots,x^{n-1}\}$ and $|S(x)|=n$.
+
+\indent\indent {\bf Lagrange's Theorem} If $G$ is finite, then $|S|[G:S]=|G|$ and hence $|S|$ divides $|G|$.
+
+\indent\indent Every cyclic group is abelian.
+
+\indent\indent Every finite group of prime order is cyclic and hence abelian.
+
+\indent\indent If $p$ is a prime and $G$ is a group of order $p$, then $G$ is isomorphic to $(\Z_p,+)$.
+
+\newpage
+\noindent{\bf Cauchy's Theorem}
+
+If $p$ is a prime and divides the order of a group $G$ then $G$ contains an element of order $p$.
+
+\newpage
+\noindent{\bf Proposition $23.1$}
+
+For a subgroup $H$ of a group $G$, the following statements are equivalent:
+
+\indent\indent For all $x,y\in G$, there exists $z \in G$ such that $(xH)(yH)=zH$.
+
+\indent\indent For all $x,y \in G$, $(xH)(yH) = (xy)H$.
+
+\indent\indent For all $x \in G$, $xHx\inv \subseteq H$.
+
+\indent\indent For all $x \in G$, $xHx\inv = H$.
+
+\indent\indent For all $x \in G$, $xH = Hx$.
+
+\noindent{\bf Proposition $23.\pi.1$}
+
+Let $H \leq G$. There is closure under multiplication of left cosets of $H$ if and only if $H \lhd G$.
+
+\noindent{\bf Proposition $23.4$}
+
+Every subgroup of an abelian group is a normal subgroup.
+
+\noindent{\bf Proposition $23.5$}
+
+If $f:G \to H$ is a homomorphism then $\ker(f)\lhd G$.
+
+\noindent{\bf Proposition $23.6$}
+
+If $G$ is a group and $N \lhd G$ then $G/N$ is a group with respect to multiplication of left cosets. We call $G/N$ the quotient group of $G$ modulo $N$ or $G$ mod $N$. If $G$ is abelian, $G/N$ is abelian. If $G$ is finite then $|G/N|=[G:N]$.
+
+\newpage
+\noindent{\bf Lemma $24.4$}
+
+Let $G$ and $H$ be groups and let $f:G\to H$ be a homomorphism. Then $f$ is one-to-one if and only if $\ker(f)=\{e_G\}$.
+
+\noindent{\bf Proposition $24.1$}
+
+Let $G$ be a group. Let $N \lhd G$. Define $p:G\to G/N$ by $p(x)=xN$. Then $p$ is an onto homomorphism with kernel $N$.
+
+\noindent{\bf Theorem $24.6$: The Homomorphism Theorem for Groups}
+
+Let $G$ and $H$ be groups and let $f:G \to H$ be an onto homomorphism with kernel $K$. Then there is an isomorphism
+
+$\varphi: G/K\to H$
+
+given by $\varphi(xK) = f(x)$. Thus $G/K \cong H$.
+
+\noindent{\bf Corollary $24.1\pi.1$}
+
+Let $G$ and $H$ be groups, $f: G \to H$ a group homomorphism. Then $G/\ker(f)\cong f(G)$.
+
+\newpage
+\noindent{\bf Proposition $25.\pi.1$}
+
+If $p(x)$ is solvable by radicals over $F$ then $F^{p(x)}$ contains a chain of subfields $F=F_0\subseteq F_1 \subseteq \hdots \subseteq F_m = F^{p(x)}$ so that for each $0 \leq i \leq k-1$, 
+
+\indent\indent Gal $F_m/F_{i+1} \lhd$ Gal $F_m/F_i$
+
+\indent\indent The quotient group (Gal $F_m/F_i) / ($Gal $F_m/F_{i+1})$ is abelian.
+
+\newpage
+
+\noindent{\bf Proposition $26.\pi.1$}
+
+If $G$ is an abelian group then $G$ is solvable.
+
+\noindent{\bf Proposition $26.4$}
+
+Let $G$ be a group and let $N \lhd G$. Then $G/N$ is abelian if and only if $\{x\inv y\inv x y~|~x,y\in G\} \subseteq N$.
+
+\noindent{\bf Proposition $26.5$}
+
+Let $G$ be a group and let $N \lhd G$. Then $G/N$ is abelian if and only if $G'\subseteq N$.
+
+\noindent{\bf Proposition $26.\pi.2$}
+
+Let $G$ be a group. Then $G^{(i)} \lhd G^{(i+1)}$.
+
+In particular, $G' \lhd G \implies G^{(2)} \lhd G' \implies \hdots \implies G^{(k+1)} \lhd G^{(k)}$.
+
+Note: $G^{(i)} \lhd G$.
+
+\noindent{\bf Proposition $26.9$}
+
+A group $G$ is solvable if and only if $G^{(k)} = \{e\}$ for some positive integer $k$.
+
+\noindent{\bf Proposition $26.12$}
+
+For $n \geq 5$, $S_n$ is not solvable.
+
+\end{document}

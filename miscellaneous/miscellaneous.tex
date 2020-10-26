@@ -1,0 +1,63 @@
+\documentclass[12pt]{article}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb,amsthm}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{geometry}
+
+\setlength{\topmargin}{0pt}
+\setlength{\headsep}{0pt}
+\textheight = 600pt
+
+\title{Miscellaneous Notes}
+\author{Ben Kallus}
+
+\begin{document}
+\maketitle
+
+\section*{Warning:} These notes are on topics that I have not (yet) studied in class. It is likely that some of them are wrong. This file is for accumulating definitions that I would otherwise forget, but may be useful to me in the future.
+
+\bigskip
+\noindent{\bf Metric}
+
+    A metric $f$ is a function that defines a concept of distance between any two members of a set $S$. A metric satisfies the following properties for all $a, b \in S$:
+    \begin{align*}
+        f(a, b) &= 0 \implies a = b, \\
+        f(a, b) &= f(b, a), \\
+        |f(a, b)| &= f(a, b), \\
+        f(a, b) &\leq f(a, c) + f(c, b).
+    \end{align*}
+
+\medskip
+\noindent{\bf Metric Space}
+
+    A metric space is a set $S$ together with a metric on $S$.
+
+\medskip
+\noindent{\bf Compactness}
+
+    A space is considered compact if every infinite subsequence of points sampled from the space has an infinite subsequence that converges to some point of the space. Bolzano-Weierstrass tells us that $\mathbb R$ has this property, so $\mathbb R$ is compact. There are other notions of compactness, but I think this is the one that I will care about for now.
+
+\medskip
+\noindent{\bf Neighborhood (Topology)}
+
+    Let $p \in S$, a set. A neighborhood $N$ of $p$ is a subset of $S$ containing an open subset of $S$ containing $p$. For example, $[1,5]$ is a neighborhood of $3 \in \mathbb R$.
+
+\newpage
+\noindent{\bf Topological Space}
+
+    Let $S$ be (potentially empty) set. Let $\mathbf N$ be a function mapping each $p \in S$ to a set of subsets of $S$, which we'll call neighborhoods. $S$ is a topological space if the following all hold:
+    \begin{itemize}
+        \item $p \in N$ for all $N \in \mathbf N(p)$.
+        \item If $M \subseteq S$ and $N \subseteq M$ for some $N \in \mathbf N(p)$, then $M$ is a neighborhood of $p$.
+        \item For all $N_1, N_2 \in \mathbf N(p)$, $N_1 \cap N_2 \in \mathbf N(p)$.
+        \item For all $N \in \mathbf N(p)$, there exists $M \in \mathbf N(p)$ such that $M \subseteq N$ and $N \in \mathbf N(m)$ for all $m \in M$.
+    \end{itemize}
+
+\medskip
+\noindent{\bf Discrete Space}
+
+    A discrete space is a topological space in which all subsets are open.
+
+\end{document}

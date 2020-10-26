@@ -1,0 +1,507 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+
+\newcommand\inv{^{-1}}   
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\R}{\mathbb R}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\C}{\mathbb C}
+\newcommand{\N}{\mathbb N}
+\newcommand{\quat}{\mathbb H}
+
+\begin{document}
+
+\section{Definitions}
+\noindent {\bf Minimal element}
+
+    Let $S \subseteq \R$.
+    
+    We say $m \in S$ is a minimal element if and only if $m \leq s$ for all $s \in S$.
+
+\noindent {\bf Bounded Below}
+
+    $S$ is bounded below by $n\in\R$ if and only if $n \leq s$ for all $s\in S$.
+    
+    If $n$ exists, we say $S$ is bounded below.
+
+\noindent {\bf Divides}
+    
+    $n$ divides $m$ ($n|m$) if and only if one of the following is true:
+    
+    1. $\frac{m}{n}$ is an integer.
+    
+    2. $\exists s \in \Z$ such that $s \cdot n = m$.
+    
+    3. The remainder after performing the division algorithm is 0.
+
+\noindent {\bf Division Algorithm}
+    
+    Let $m, n \in \Z$.
+    Assume $n > 0$.
+    Then $\exists q, r \in \Z$ with $0 \leq r < n$ so that $m = qn + r$.
+    
+\noindent {\bf Well-Ordering Principle}
+    
+    Every non-empty subset of the integers that is bounded below has a minimal element.
+
+\noindent {\bf Greatest Common Divisor}
+
+    Let $m, n$ be integers, neither one 0.
+    
+    GCD of $m, n$ is a unique integer $d$ such that
+    
+    1. $d \leq 1$
+    
+    2. $d|m \land d|n$
+    
+    3. if $k \in \Z$ such that $(k|m \land k|n)$
+    
+    \medskip
+    
+    Some more GCD facts:
+
+    \indent\indent If integer $m \neq 0$, gcd(m, 0) = $|m|$.
+    
+    \indent\indent gcd(0, 0) is undefined.
+
+\noindent{\bf Prime}
+
+    $n \in \Z$ is prime if and only if there does not exist $q \in \Z$ such that $1 < q < n$ and $q|n$.
+    
+\noindent{\bf Complex Numbers}
+
+    $\C = \{a+bi|a,b\in\R\}$.
+    
+    Some things that are true:
+    
+    $(a+bi) + (c+di) = (a+c)+(b+d)i$.
+    
+    $(a+bi)(c+di)=(ac-bd)+(ad+bc)i$.
+    
+    $i^2 = -1$.
+    
+    $r(a+bi) = ra+rbi$.
+    
+\noindent{\bf Modulus}
+    
+    The Modulus of $z=a+bi$ is equal to the distance from $z$ to the origin on the complex plane.
+    
+    $|z|=\sqrt{a^2+b^2}$.
+
+\noindent{\bf Argument}
+
+    The argument of $z$ is equal to the counterclockwise angle from the positive real axis to the modulus.
+    
+\noindent{\bf Complex Conjugate}
+
+    $\overline{a+bi}=a-bi$.
+    
+\noindent{\bf The Zetas}
+
+    $\zeta_n = \cos(\frac{2\pi}{n}) + i\sin(\frac{2\pi}{n})$.
+    
+\noindent{\bf The Complex Roots of Unity}
+
+    $\mathcal{U}_n = \{1, \zeta_n, \zeta_n^2, \hdots, \zeta_n^{n-1}\}$.
+
+\noindent {\bf Modulus}
+
+    For a fixed $n \in \Z^+$, $n \geq 2$, we define
+    
+    $[i]_n = \{i+kn|k\in\Z\}$ for $i \in \Z$.
+    
+\noindent {\bf The Integers Mod $n$ ($\Z_n$)}
+
+    Let $\Z_n = \{[a]_n | a\in\Z\}$ such that
+    
+    \indent\indent $[a]_n + [b]_n = [a+b]_n$, and
+    
+    \indent\indent $[a]_n \cdot [b]_n = [a\cdot b]_n$.
+    
+\noindent {\bf Zero Divisors}
+
+    If $[a]_n, [b]_n \in \Z_n$, both nonzero and $[a]_n \cdot [b]_n = [0]_n$, then we call $[a]_n$ and $[b]_n$ zero divisors.
+    
+\noindent {\bf Multiplicative inverses in $\Z_n$}
+
+    If $[a]_n \cdot [b]_n = [1]_n$, then we say $[a]_n$ and $[b]_n$ are multiplicative inverses of each other. Denote this by $[a]^{-1}_n = [b]_n$. 
+    
+\noindent {\bf Quaternions}
+
+    $\quat = \{a + bi + cj + dk | a,b,c \in\R\}$
+    
+    with component-wise addition,
+    
+    multiplication using left distributivity,
+    
+    $i^2 = j^2 = k^2 = -1$,
+    
+    $ij = k, jk = i, ki = j$,
+    
+    $ji = -k, kj = -i, ik = -j$,
+    
+    $-i = -1 \cdot i$, etc.
+    
+\noindent {\bf Fields}
+
+    A field is a set $F$ with at least 2 elements, and 2 operations, which we call $+$ and $\cdot$, such that the following properties hold:
+    
+    1) Additive closure
+    
+    2) Additive Commutativity
+    
+    3) Additive Associativity
+    
+    4) Additive identity
+    
+    5) Additive Inverses
+    
+    6) Multiplicative Closure
+    
+    7) Multiplicative Commutativity
+    
+    8) Multiplicative Associativity
+    
+    9) Multiplicative Identity
+    
+    10) Multiplicative inverses for nonzero elements.
+    
+    11) Left Distributivity
+    
+    12) Right Distributivity
+    
+\noindent {\bf Subfield}
+
+    Let $F$ and $K$ be fields with $F \subseteq K$ and the same operations.
+    
+    Then, $F$ is a subfield of $K$, and $K$ is an extension field of $F$.
+
+\noindent {\bf The Polynomials Over $F$}
+
+    Let $F$ be a set with $+$ and $\cdot$.
+    
+    $F[x]$ is the set of all polynomials with coefficients in $F$.
+    
+\noindent {\bf $F$ Adjoin $n$}
+
+    $F(n)$ is the smallest field containing all the elements in $F$ and the element $n$.
+    
+    $K = F(n)$ if and only if every field containing $F$ and $n$ also contains $K$.
+
+\noindent {\bf The Polynomials Over $F$}
+    
+    Let $F$ be a set with addition and multiplication.
+    
+    Then, $F[x]$ is the set of all polynomials with coefficients in $F$.
+    
+\noindent {\bf $F$ Adjoin $z$}
+
+    $K$ is the smallest field containing $F$ and $z$ if and only if every field containing $F$ and $z$ also contains $K$.
+
+\noindent {\bf $F$ Adjoin the Roots of $p(x)$}
+
+    Let $F$ be a field, and $p(x)$ a polynomial over $F$.
+
+    Then, $F^{p(x)}$ is the smallest field containing the roots of $p(x)$ and $F$.
+
+    $F^{p(x)}$ is also known as the field generated by $F$ and the roots of $p(x)$.
+
+    Further, if $c_1, c_2, \hdots, c_n$ are the roots of $p(x)$, $F^{p(x)}$ = $F(c_1, c_2, \hdots, c_n)$.
+    
+\noindent {\bf Solvable by Radicals}
+
+    Let $U$ be an extension field of $F$.
+    
+    We say $p(x) \in F[x]$ is solvable by radicals over $F$ if and only if there exist $r_1, r_2, \hdots, r_m \in U$ and $k_1, k_2, \hdots, k_m \in \Z^+$ such that
+    
+    \indent\indent 1. $F^{p(x)} \subseteq F(r_1, r_2, \hdots, r_m)$.
+    
+    \indent\indent 2. $r_i^{k_i}\in F$.
+    
+    \indent\indent 3. For all $i \in \{2,3,\hdots,m\}$, $r_i^{k_i}\in F(r_1, r_2, \hdots, r_{i-1})$.
+
+\noindent {\bf Some Facts About $p(x) \in F[x]$}
+
+    Let $p(x) \in f[x]$.
+    
+    Then, $p(x)=a_0x^0 + a_1x^1 + \hdots + a_nx^n$ for $\{a_0, a_1, \hdots, a_n\} \subseteq F$,
+    
+    \noindent and $p(x)\neq0 \rightarrow a_n\neq0$
+
+    If $a \in F$ is nonzero, $p(x)=a$ is a nonzero constant polynomial, and deg$(p(x))=0$.
+    
+    $p(x) = 0_F$ is the zero polynomial.
+    
+    Suppose $p(x)\neq0_F$. Then, deg$(p(x))=n$.
+    
+    The zero polynomial has degree 0. % Is this true? I thought it was no degree!!!
+    
+\noindent {\bf Polynomial Equality}
+
+    Two polynomials are equal if and only if deg$(p(x)) = \text{deg}(q(x))$ and coefficients are all equal, on a per-term basis.
+    
+\noindent {\bf How Degrees Change with Operations}
+
+    deg$(p(x)q(x))=$deg$(p(x)) + $deg$(q(x))$.
+    
+    deg$(p(x) + q(x))\leq$max$\{$deg$(p(x))$, deg$(q(x))$$\}$.
+
+\noindent {\bf Ring}
+
+    A ring is a nonempty set $R$ with addition, multiplication, and the following properties:
+    
+    \indent\indent Additive closure,
+
+    \indent\indent Additive associativity,
+
+    \indent\indent Additive commutativity,
+
+    \indent\indent Additive identity,
+
+    \indent\indent Additive inverses,
+
+    \indent\indent Multiplicative closure,
+
+    \indent\indent Multiplicative associativity,
+    
+    \indent\indent Left and right distributivity
+
+\noindent {\bf Types of Rings}
+
+    Commutative Ring: Multiplicative commutativity
+    
+    Ring with Unit Element: Multiplicative identity
+    
+    Integral Domain: Multiplicative commutativity, multiplicative identity, and no zero divisors
+    
+    Division Ring: Multiplicative identity and multiplicative inverses for nonzero elements
+
+\noindent {\bf ``Divides" for Polynomials}
+
+Let $f(x), g(x) \in F[x]$.
+
+We say $g(x)$ divides $f(x)$ if and only if there exists $q(x)\inF[x]$ such that
+
+\indent\indent$f(x)=q(x)g(x)$.
+
+\noindent{\bf Monic}
+
+A polynomial over a field is called monic if its highest degree term has a coefficient of 1.
+
+\noindent {\bf GCD of Polynomials}
+
+Let $F$ be a field.
+
+Let $f(x),g(x),d(x)$ be nonzero polynomials in F[x].
+
+We say $d(x)=\text{gcd}(f(x),g(x))$ if the following hold:
+
+\indent\indent1. $d(x)$ is monic.
+
+\indent\indent2. $d(x)|f(x)$ and $d(x)|g(x)$.
+
+\indent\indent3. If $h(x)\in F[x]$ divides $f(x)$ and $g(x)$, then $h(x)|d(x)$.
+
+\noindent {\bf Irreducibility}
+
+Let $F$ be a field.
+Let $p(x)$ be a non-constant polynomials in $F[x]$.
+
+We say $p(x)$ is reducible over $F$ if there exist $d(x),e(x)\in F[x]$, each of smaller degree than $p(x)$, so that $p(x)=d(x)e(x)$.
+
+Otherwise, we say $p(x)$ is irreducible over $F$.
+
+\noindent {\bf Subring}
+
+Let $R$ be a ring. If a ring $S \subseteq R$, and uses same operations as $R$, then it is a subring of $R$.
+
+Note:
+
+\indent\indent 1. Distribution, both associativities, additive commutativity, and multiplicative commutativity (if present) are inherited.
+
+\indent\indent 2. Additive closure and additive inverses guarantee additive identity.
+
+\noindent{\bf Ideal}
+
+An ideal of a ring $R$ is a subring $I$ such that for all $x\in I$, $r\in R$, $rx, xr\in I$
+
+\noindent{\bf Principal Ideal Generated by $d$}
+
+Let $R$ be a commutative ring.
+Let $d\in R$.
+
+$\big{(}d\big{)}=\{rd|r\in R\}$ is called the principal ideal of $R$ generated by $d$.
+
+\noindent{\bf Principal Ideal}
+
+Let $R$ be a commutative ring with unit element.
+
+$I$, an ideal of $R$, is principal if and only if there exists $d\in R$ such that $\big{(}d\big{)}=I$.
+
+\noindent{\bf Principal Ideal Domain}
+
+An integral domain in which every ideal is a principal ideal is called a principal ideal domain.
+
+\newpage
+
+\noindent{\bf Algebraic}
+
+Let $F$ be a subfield of $U$. Let $r\in U$. We say $r$ is algebraic over $F$ if there exists $p(x)\in F[x]$ such that $p(r)=0_F$.
+
+\noindent{\bf $[V:F]$}
+
+If $V$ is a vector space over a field $F$ then $[V:F]$ is the dimension of $V$ over $F$. (The size of any basis for $V$ over $F$)
+
+\noindent{\bf Ring homomorphism}
+
+Let $R_1, R_2$ be rings. A ring homomorphism is a function $f:R_1\to R_2$ so that
+
+\indent\indent 1. for all $a,b\in R_1, f(a+b)=f(a)+f(b)$.
+
+\indent\indent2. for all $a,b\in R_1$, $f(a\cdot b) = f(a)\cdot f(b)$.
+
+\noindent{\bf Isomorphism}
+
+A homomorphism $f:R_1 \to R_2$ is called an isomorphism iff it is one-to-one and onto.
+
+\noindent{\bf Automorphism}
+
+An isomorphism from a ring to itself is called and automorphism.
+
+\noindent{\bf Isomorphic}
+
+If there exists an isomorphism from $R_1\to R_2$, then $R_1$ and $R_2$ are isomorphic. This also means they have identical properties as rings.
+
+\noindent{\bf Galois Group}
+
+Let $K$ be an extension field of a field $F$. The set of all automorphisms $f$ of $K$ that fix $F$ is denoted Gal $K/F$ and is called the Galois Group of $K$ over $F$.
+
+\noindent{\bf Group}
+
+A group is a set $G$ with a binary operation $\cdot$ satisfying the following:
+
+\indent\indent1. For all $x,y\in G, x\cdot y\in G$. (closure)
+
+\indent\indent2. For all $x,y,z\in G, x\cdot (y\cdot z) = (x \cdot y)\cdot z$. (associativity)
+
+\indent\indent3. There exists an element of $G$, denoted $e$, so that for all $x\in G,e\cdot x = e = x \cdot e$. (Existence of identity)
+
+\indent\indent4. For every $x\in G$, there exists an element $y \in G$ so that $x\cdot y = e = y\cdot x$. Here $y$ is denoted $x\inv$. (Existence of inverses for all elements)
+
+\noindent{\bf Abelian }
+
+A group is called abelian if its operation is commutative.
+
+\noindent{\bf Permutation}
+
+A permutation of a set $S$ is a function $f:S\to S$ that is one-to-one and onto.
+
+Note that $S$ does not necessarily have structure, and even if it did, a permutation does not necessarily preserve that structure.
+
+\noindent{$\mathbf{[n]}$}
+
+For $n\in \Z^+$, let $[n]=\{1,\hdots,n\}$.
+
+\noindent{$\mathbf{S_n}$}
+
+The set of permutations of $[n]$, or any set with $n$ elements.
+
+\noindent{\bf Cycle notation}
+
+($a_0$ $a_1$ $\hdots$ $a_{k-1}$) means $f(a_i)=a_{i+1(\text{mod }k)}$. Any element in the set not listed in the cycle is fixed. This is called a $k$-cycle. A 2-cycle is called a transposition.
+
+\noindent{\bf Cycle inverses}
+
+Just reverse the order. For products of cycles, apply this recursively.
+
+\noindent{\bf Homomorphism}
+
+A function $f:G \to H$ is called a homomorphism (or group homomorphism) if for every $x,y\in G$, $f(xy)=f(x)f(y)\in H$. The homomorphism $f$ is called an isomorphism if it is one-to-one and onto; it is called an automorphism if it is an isomorphism and $G=H$.
+
+\noindent{\bf Subgroup}
+
+Let $(G,\cdot)$ be a group. A subset $S$ of $G$ that is a group under the operation $\cdot$ is called a subgroup of $G$. We denote this by $S \leq G$.
+
+\noindent{\bf Kernel, homomorphic image of $G$ under $f$.}
+
+Let $G$ and $H$ be groups with identities $e_G$ and $e_H$ respectively. Let $f:G \to H$ be a homomorphism. The homomorphic image of $G$ under $f$ is the set $f(G) = \{f(x) | x\in G\}$. The kernel of $f$ is the set ker$(f)=\{x\in G|f(x)=e_H\}$.
+
+\noindent{$\mathbf{S(X)}$}
+
+Let $X$ be a nonempty subset of a group $G$. Let $X^\pm = \{x,x\inv|x\in X\}$. Define $S(X)=\{x_1x_2\hdots x_n|x_i\in X^\pm,n$ a nonnegative integer$\}$.
+
+This is the set of all finite products of things in $X^\pm$. Notice that the empty word is there as well.
+
+\noindent{\bf Generates, cyclic}
+
+If $X\subseteq G$ and $S(X)=G$ we say that $X$ generates $G$.
+
+$G$ is called cyclic if there exists $x\in G$ so that $S(x) =G$.
+
+\noindent{\bf Cosets}
+
+Let $S$ be a subset of a group $G$ and $x$ an arbitrary element of $G$.
+
+$xS = \{xs~|~s\in S\}$, a left coset of $S$ in $G$.
+
+$Sx = \{sx~|~s\in S\}$, a right coset of $S$ in $G$.
+
+$G/S = \{xS~|~x\in G\}$, the set of all distinct left cosets of $S$ in $G$.
+
+$|G/S|$, the index of $S$ in $G$, denoted $[G:S]$.
+
+\noindent{\bf Order of an element}
+
+Let $G$ be a group, $x\in G$. The order of $x$, denoted $o(x)$ is the smallest positive integer $n$ so that $x^n=e$. If there is no such integer, then $x$ is said to have infinite order.
+
+\noindent{\bf Order of a group}
+
+The order of a finite group, $|G|$, is the number of elements it contains. If the group has an infinite number of elements it is said to have infinite order.
+
+\noindent{\bf Coset products}
+
+Let $H$ be a subgroup of $G$. Let $x,y\in G$.
+
+Define $(xH) \cdot (yH) = \{(xh_1)(yh_2)~|~h_1,h_2\in H\}$.
+
+This is the product of all things in $xH$ with all things in $yH$.
+
+$xHy = \{xhy~|~h\in H\}$.
+
+\noindent{\bf Normal subgroup}
+
+Any subgroup $H$ of $G$ that satisfies any of the conditions of Proposition $23.1$ is a normal subgroup of $G$. This is denoted by $H \lhd G$.
+
+\noindent{\bf Well-defined Maps}
+
+To show a map is well-defined, show that if $a=b$, $f(a)=f(b)$.
+
+\noindent{\bf Solvable groups}
+
+A group $G$ is solvable if there exist subgroups $G=H_0, H_1, H_2, \hdots H_k=\{e\}$ so that
+
+$\{e\} = H_k \leq \hdots \leq H_1 \leq H_0 = G$,
+
+and so that for all $i$
+
+\indent\indent1. $H_i \lhd H_{i-1}$
+
+\indent\indent2. $H_{i-1}/H_i$ is abelian.
+
+\noindent{\bf Commutator}
+
+Let $G$ be a group. The commutator of $x,y\in G$ is $[x,y]=x\inv y\inv x y$.
+
+$[x,y]\inv = [y,x]$.
+
+\noindent{\bf Commutator Subgroup}
+
+The subgroup generated by the commutators of a group $G$ is called the commutator subgroup of $G$ and is denoted by $G'$ or $G^{(1)}$.
+
+
+
+\end{document}
