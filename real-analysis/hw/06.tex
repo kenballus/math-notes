@@ -1,0 +1,96 @@
+\documentclass[12pt]{article}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb,amsthm}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{geometry}
+
+\setlength{\topmargin}{0pt}
+\setlength{\headsep}{0pt}
+\textheight = 600pt
+
+\title{Real Analysis \\ Homework 6}
+\author{Ben Kallus, Truong Pham}
+\date{Due Thursday, September 17}
+
+\begin{document}
+\maketitle
+
+\hrule
+\bigskip
+
+\noindent {\bf Acknowledgements:} We asked you in class about 17(c). 
+
+\bigskip
+\hrule
+\bigskip
+
+\noindent{\bf 14.}
+
+\noindent{\bf a. Claim:} For all $x,y \in \mathbb R^{\geq0}$, $|x+y|\leq|x|+|y|$.
+\begin{proof}
+    Since $x$ and $y$ are both nonnegative, $|x+y| = x+y$, $|x| = x$, and $|y| = y$. Then,
+    \begin{align*}
+        |x+y| &= x + y \\
+              &= |x| + |y|.
+    \end{align*}
+    Thus, for all $x, y \in \mathbb R^{\geq0}$, $|x+y| \leq |x| + |y|$.
+\end{proof}
+
+\noindent{\bf a. Claim:} For all $x,y \in \mathbb R^-,~|x+y|\leq|x|+|y|$.
+\begin{proof}
+    Since $x, y$ are both negative, $|x+y| = -(x + y)$, $|x| = -x$, and $|y| = -y$. Then,
+    \begin{align*}
+        |x+y| &= -(x + y) \\
+              &= -x + -y \\
+              &= |x| + |y|.
+    \end{align*}
+    Thus, for all $x,y \in \mathbb R^-,~|x+y|\leq|x|+|y|$.
+\end{proof}
+
+\newpage
+\noindent{\bf 15. Claim:} For all $x,y,z \in \mathbb R$, $|x-y| \leq |x - z| + |z - y|$.
+\begin{proof}
+Observe that by the triangle inequality, \begin{align*}
+    |x - z| + |z - y| &\geq |(x-z) + (z-y)| \\
+                      &=    |x - z + z - y| \\
+                      &=    |x - y|.
+\end{align*}
+Thus, for all $x,y,z \in \mathbb R$, $|x-y| \leq |x - z| + |z - y|$.
+\end{proof}
+    
+\newpage
+\noindent{\bf 16. Claim:} For all $x,y \in \mathbb R$, $||x|-|y|| \leq |x-y|$.
+
+    Observe that by the triangle inequality, \begin{align*}
+        |x| &= |x - y + y| \\
+            &\leq |x - y| + |y|.
+    \end{align*}
+    Thus, $|x| - |y| \leq |x - y|$. By a symmetric argument, $|y| - |x| \leq |y - x|$. Thus, since $|y - x| = |x - y|$, $|y| - |x| \leq |x - y|$. Observe that by properties of absolute value, $||x| - |y|| \in \{|x| - |y|, |y| - |x|\}$. Thus, $||x| - |y|| \leq |x - y|$.
+
+\newpage
+\noindent{\bf 17.}
+
+\noindent{a.} $A = [0,2], B = [4,6] \cup [9,10)$.
+
+Let $f:A \to B$ be defined by $f(a) = 
+\begin{cases}
+    2a + 4, & 0 \leq a \leq 1\\
+    11 - a, & 1 < a \leq 2
+\end{cases}$.
+
+\bigskip
+\noindent{b.} $A = \mathbb R, B = (0, 1)$.
+
+Let $f:A \to B$ be defined by $f(a) = \frac{\arctan(a)}{\pi} + \frac12$.
+
+\bigskip
+\noindent{c.} $A = [0, \infty), B = (0, \infty)$.
+
+Let $f:A \to B$ be defined by $f(a)=\begin{cases}
+    a + 1 & a \in \mathbb Z \\
+    a     & a \notin \mathbb Z
+\end{cases}$.
+
+\end{document}

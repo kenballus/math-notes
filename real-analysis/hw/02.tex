@@ -1,0 +1,102 @@
+\documentclass[12pt]{article}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb,amsthm}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{geometry}
+
+\setlength{\topmargin}{0pt}
+\setlength{\headsep}{0pt}
+\textheight = 600pt
+
+\title{Real Analysis \\ Homework 2}
+\author{Ben Kallus}
+\date{Due Monday, August 31}
+
+\begin{document}
+\maketitle
+
+\hrule
+\bigskip
+
+\noindent {\bf Acknowledgements:}  I did not collaborate with anyone for this assignment.
+
+\bigskip
+\hrule
+
+\bigskip
+\noindent 4. {\bf Claim:} $n^3 + 5n$ is divisible by 6 for every $n \in \mathbb N$.
+\begin{proof}
+
+For the base case, observe that $1^3 + 5\cdot1 = 1 + 5 = 6$, which is divisible by 6.
+
+Begin the inductive step by assuming that $n^3 + 5n$ is divisible by 6 for some $n \geq 1$.
+Then, $n^3 + 5n = 6m$ for some integer $m$. Observe that 
+\begin{align*}
+(n+1)^3 + 5(n+1) &= (n^3 + 3n^2 + 3n + 1) + (5n + 5) \\
+&= n^3 + 3n^2 + 8n + 6 \\
+&= n^3 + 5n + 3n^2 + 3n + 6 \\
+&= 6m + 3n^2 + 3n + 6 \\
+&= 6m + 3(n^2 + n) + 6.
+\end{align*}
+
+Note that for even values of $n$, $n^2$ is even, and for odd values of $n$, $n^2$ is odd. Since $n^2 + n$ is therefore even for all possible values of $n$, it can be expressed as $2k$ for some integer $k$. Thus,
+\begin{align*}
+6m + 3(n^2 + n) + 6 &= 6m + 3(2k) + 6 \\
+&= 6m + 6k + 6 \\
+&= 6(m + k + 1).
+\end{align*}
+
+Therefore, $(n+1)^3 + 5(n+1)$ is divisible by 6. Thus, by the principle of mathematical induction, $n^3 + 5n$ is divisible by 6 for every $n \in \mathbb N$.
+
+\end{proof}
+
+\newpage
+\noindent 5. {\bf Definition:} A real number $s$ is the infimum for a set $A \subseteq \mathbb R$ if and only if:
+
+    1. $s$ is a lower bound for $A$
+    
+    2. $s$ is greater than or equal to every lower bound for $A$.
+    
+\newpage
+\noindent {\bf 6.} Let $A \subseteq \mathbb R$ be nonempty and bounded below, and define 
+
+                   \begin{center} $B=\{b \in \mathbb R~|~b$ is a lower bound for $A\}$. \end{center}
+                   
+\noindent {\bf a. Claim:} The supremum of $B$ exists.
+
+\begin{proof}
+    Since $A$ is bounded below and nonempty, it must have a lower bound. By the definition of $B$, this lower bound is an element of $B$. Thus, $B$ is nonempty.  Observe that $b \leq a$ for all $b \in B, a \in A$, since every element of $b$ is defined to be a lower bound for $A$. Thus, by the definition of upper bound, every $a \in A$ is an upper bound for $B$. Thus, by the Axiom of Completeness, $B$ has a supremum.
+
+\end{proof}
+
+\medskip
+\noindent{\bf b. Claim:} Any $a \in A$ is an upper bound for $B$.
+
+(Proven in part a.)
+
+\medskip
+\noindent{\bf c. Claim:} The supremum of $B$ is a lower bound of $A$.
+
+\begin{proof}
+    Suppose sup $B$ is not a lower bound of $A$. Then, there exists $a \in A$ such that $a <$ sup $B$. However, by the result from part b, $a$ must also be an upper bound for $B$. Thus, $a$ is a lesser upper bound of $B$ than sup $B$, which is a constradiction.
+    
+    Thus, it must be that the supremum of $B$ is a lower bound of $A$.
+\end{proof}
+
+\medskip
+\noindent{\bf d. Claim:} If $u$ is any lower bound of $A$, then sup $B \geq u$.
+
+\begin{proof}
+    Note that $u \in B$ by the definition of $B$. Thus, by the definition of supremum, $u \leq$ sup $B$.
+\end{proof}
+
+\medskip
+\noindent{\bf e. Claim:} Every nonempty set that is bounded below has a greatest lower bound.
+
+\begin{proof}
+    Let $A$ be a nonempty set that is bounded below. Let $B$ be the set of lower bounds of $A$. By part a, sup $B$ exists. By part c, sup $B$ is a lower bound of $A$. By part d, sup $B$ is greater than or equal to all lower bounds of $A$. Thus, by the definition of infimum, inf $A =$ sup $B$.
+\end{proof}
+
+\end{document}

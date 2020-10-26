@@ -1,0 +1,96 @@
+\documentclass[12pt]{article}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb,amsthm}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{geometry}
+
+\setlength{\topmargin}{0pt}
+\setlength{\headsep}{0pt}
+\textheight = 600pt
+
+\title{Real Analysis \\ Homework 12}
+\author{Ben Kallus, Truong Pham}
+\date{Due Thursday, October 8}
+
+\begin{document}
+\maketitle
+
+\hrule
+\bigskip
+
+\noindent {\bf Acknowledgements:}
+
+\bigskip
+\hrule
+\bigskip
+
+\noindent{\bf 18. Claim:} If $(a_n)$ converges to $a$, then for every $\epsilon > 0$, there exists $N \in \mathbb N$ such that $|a_n - a_m| < \epsilon$ whenever $m, n \geq N$.
+\begin{proof}
+    Let $\epsilon > 0$ be given. Then, there exists $N \in \mathbb N$ such that for all $x \geq N$, $$|a_x - a| < \frac\epsilon2.$$
+    Let $n, m \geq N$. Then,
+    \begin{align*}
+        |a_n - a_m| &= |a_n - a_m - a + a| \\
+                    &= |(a_n - a) + -(a_m - a)| \\
+                    &\leq |a_n - a| + |-(a_m - a)| \\
+                    &= |a_n - a| + |a_m - a| \\
+                    &< \frac\epsilon2 + \frac\epsilon2 \\
+                    &= \epsilon,
+    \end{align*}
+    as desired.
+\end{proof}
+
+\newpage
+\noindent{\bf 19. Claim:} There exists a sequence of rational numbers that converges to $\sqrt2$.
+\begin{proof}
+    Observe that $\sqrt2$ has an infinite decimal representation: $1.41421...$. Let $(d_i)$ be defined by $d_i =$ the $i^\text{th}$ digit after the decimal point in the decimal representation of $\sqrt2$. Let $(a_n)$ be defined by $$a_n = 1 + \sum_{k=1}^n \frac{d_k}{10^k}.$$
+    Then, $(a_n)$ converges to $\sqrt2$.
+\end{proof}
+
+\newpage
+\noindent{\bf 20.}
+
+\noindent{\bf a. Example:} Let $(a_n)$ be defined by
+$$a_n =
+\begin{cases}
+    \frac{\arctan(n)}{\pi}+\frac{1}{2} & n~\text{is even}, \\
+    \frac{\arctan(-n)}{\pi}+\frac{1}{2} & n~\text{is odd}.
+\end{cases}$$
+
+\medskip
+\noindent{\bf b. Example:} Let $(a_n) = (1, 1, \frac12, 1, \frac12, \frac13, 1, \frac12, \frac13, \frac14, 1, \frac12, \frac13, \frac14, \frac15, 1, \frac12, \frac13, \hdots)$.
+
+\bigskip
+\noindent {\bf Crazy example:} (please don't grade this)
+
+Let $f: \mathbb N \to \mathbb N \times \mathbb N$ be the bijection defined by % Talk to him about this
+$$f(n) =
+\begin{cases}
+    (1, 1) & n = 1, \\
+    (f(n-1)_2 + 1, 1) & f(n-1)_1 = 1, \\
+    (f(n-1)_1-1, f(n-1)_2+1) & \text{otherwise}.
+\end{cases}$$
+Now, let $g: \mathbb N \times \mathbb N \to \mathbb Q^+$ by $$f(a, b) = \frac ab.$$
+Note that $g \circ f$ is onto. Now, define the sequence $(b_n)$ by $$b_n = g(f(n)).$$
+
+Note that for each $(a, b) \in \mathbb N \times \mathbb N$, $f$ maps some natural number to it. Thus, $f$ also maps some natural number to each of $(xa, xb)$ for all $x \in \mathbb N$. Therefore, since $g(a,b) = g(2a, 2b) = g(3a, 3b) = \hdots$, each rational number appears an infinite number of times in $(b_n)$. Thus, $(\frac1m, \frac1m, \frac1m, \hdots)$ is a subsequence of $(b_n)$ for each $m \in \mathbb N$. Thus, $(b_n)$ also has the property we're looking for.
+
+\newpage
+\noindent{\bf 21. Claim:} A sequence that contains subsequences converging to every point in $\{\frac1n~|~n \in \mathbb N\}$ and no subsequence converging to a point outside of this set does not exist.
+\begin{proof}
+    Let $(a_n)$ be a sequence with subsequences converging to every point in $\{\frac1n~|~n \in \mathbb N\}$. Thus, for each natural number $m$, there exists a term $a_{n_m}$ in $(a_n)$ such that $|\frac1m - a_{n_m}| < \frac1m$. Thus, $0 < |a_{n_m}| < \frac1m$.
+    
+    Let $\epsilon > 0$ be given. Then, there exists a natural number $x$ such that $\frac1x < \epsilon$. Observe that
+    \begin{align*}
+        |a_{n_x} - 0| &= |a_{n_x}| \\
+                      &= a_{n_x} \\
+                      &< \frac1x \\
+                      &< \epsilon.
+    \end{align*}
+    Thus, the sequence $(a_{n_k})$ converges to 0. Thus, $(a_n)$ contains a subsequence that converges to a value that is not an element of $\{\frac1n~|~n \in \mathbb N\}$.
+\end{proof}
+
+
+
+\end{document}

@@ -1,0 +1,61 @@
+\documentclass[12pt]{article}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb,amsthm}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{geometry}
+
+\setlength{\topmargin}{0pt}
+\setlength{\headsep}{0pt}
+\textheight = 600pt
+
+\title{Real Analysis \\ Homework 8}
+\author{Ben Kallus, Truong Pham}
+\date{Due Thursday, September 24}
+
+\begin{document}
+\maketitle
+
+\hrule
+\bigskip
+
+\noindent {\bf Acknowledgements:} None
+
+\bigskip
+\hrule
+\bigskip
+
+\noindent{\bf 1. Claim:} The limit as $n$ goes to $\infty$ of $\frac{2n-7}{n+4}$ is $2$.
+\begin{proof}
+    Let $\epsilon > 0$ be given. Then, by the Archimedean Principle, there exists $N \in \mathbb N$ such that $\frac{1}{N} < \frac\epsilon{15}$. Thus, $\frac{1}{N+4} < \frac\epsilon{15}$. Thus, for all $n \geq N$,
+    \begin{align*}
+        \epsilon &> \frac{15}{n+4} \\
+                 &= \frac{15 - 2n  + 2n}{n+4} \\
+                 &= \frac{(2n + 8) - (2n - 7)}{n+4} \\
+                 &= 2 - \frac{2n - 7}{n+4} \\
+                 &= \bigg{|} \frac{2n - 7}{n+4} - 2 \bigg{|}.
+    \end{align*}
+    Thus, by the $\epsilon$-$N$ definition of a limit, $\lim_{n \to \infty} \frac{2n-7}{n+4} = 2$.
+\end{proof}
+
+\newpage
+\noindent{\bf 2. Claim:} Let $N_1, N_2 \in \mathbb N$. If Property $A$ is true for all $n \geq N_1$, and Property $B$ is true for all $n \geq N_2$, then there exists $N \in \mathbb N$ such that both Property $A$ and Property $B$ are true for all $n \geq N$.
+\begin{proof}
+    Let $N_3$ be the greater of $N_1$ and $N_2$. Then, since $N_3$ is greater than or equal to both $N_1$ and $N_2$, both Property $A$ and Property $B$ hold for all natural numbers $n \geq N_3$.
+\end{proof}
+
+\newpage
+\noindent{\bf 3. Claim:} Suppose $(a_n)$ and $(b_n)$ are two sequences such that $\lim_{n\to\infty}a_n=a$ and $\lim_{n\to\infty}b_n=b$. Then, $\lim_{n\to\infty}(a_n+b_n)=a+b$.
+\begin{proof}
+    Let $\epsilon > 0$ be given. Since $\lim_{n\to\infty}a_n=a$, there exists $N_1 \in \mathbb N$ such that $|a_n - a| < \frac\epsilon2$ for all $n \geq N_1$. Similarly, since $\lim_{n\to\infty}b_n=b$, there exists $N_2 \in \mathbb N$ such that $|b_n - b| < \frac\epsilon2$ for all $n \geq N_2$. Let $N_3$ be the greater of $N_1$ and $N_2$. Observe that by the triangle inequality,
+    \begin{align*}
+        |(a_n+b_n) - (a+b)| &= |(a_n-a) + (b_n-b)| \\
+                            &\leq |a_n-a| + |b_n-b| \\
+                            &< \frac\epsilon2 + \frac\epsilon2 \\
+                            &= \epsilon,
+    \end{align*}
+    for all $n \geq N_3$. Thus, by the $\epsilon$-$N$ definition of a limit, $\lim_{n\to\infty}(a_n+b_n)=a+b$.
+\end{proof}
+
+\end{document}

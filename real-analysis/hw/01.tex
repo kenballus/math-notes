@@ -1,0 +1,91 @@
+\documentclass[12pt]{article}		
+\usepackage[english]{babel} 		
+\usepackage[utf8]{inputenc}			
+\usepackage{amsmath, amssymb,amsthm}
+\usepackage{graphicx}				
+\usepackage{hyperref}				
+
+\setlength{\topmargin}{0pt}
+\setlength{\headsep}{0pt}
+\textheight = 600pt
+
+\title{Real Analysis \\ Homework 1}
+\author{Ben Kallus}
+\date{Due Wednesday, August 26}
+
+\begin{document}
+
+\maketitle
+
+\hrule
+\bigskip
+
+\noindent {\bf Acknowledgements:}  I did not collaborate with anyone for this assignment.
+
+\bigskip
+\hrule
+\bigskip
+
+\noindent 1.
+
+\noindent a. {\bf Example:} $A_n = \{n\}$.
+
+\bigskip
+\noindent b. {\bf Example:}
+
+$A_1 = \{3i - 2~|~i \in \mathbb N\}$,
+
+$A_2 = \{3i - 1~|~i \in \mathbb N\}$,
+
+$A_3 = \{3i~|~i \in \mathbb N\}$.
+
+\bigskip
+\noindent {\bf Extra Hard Example:}
+
+Let $T$ be the set containing 1, as well as all natural numbers that are not powers of primes.
+
+Let $p_n$ be the $n^\text{th}$ prime.
+
+Then, $A_n = \{p_n, p_n^2, p_n^3, \hdots\}~\cup~\{$the $n^\text{th}$ smallest element of $T\}$.
+
+\newpage
+\noindent 2.
+
+\noindent a. {\bf Claim:}  $\bigcap\limits_{n=1}^\infty A_n$ must be nonempty.
+
+\begin{proof}
+    Let $A_z$ be the final $A_i$ in the sequence. (If the sequence is infinite, then it must end in the repetition of a set. If this is the case, let $A_z$ be that set.)
+    
+    Let $a \in A_z$.
+    
+    If the sequence is infinite, then $a$ must be in all $A_i$ such that $i > z$, since those sets are all equal to $A_z$.
+    
+    If the sequence is finite, then there are not $A_i$ such that $i > z$, so we need not consider those sets.
+    
+    Since $A_z \subseteq A_{z-1} \subseteq \hdots \subseteq A_1$, $a$ must also be an element of all $A_i$ such that $i < z$.
+    
+    Thus, $a$ is in every set in the sequence, so $a \in \bigcap\limits_{n=1}^\infty A_n$.
+\end{proof}
+
+\medskip
+\noindent b. {\bf Counterexample:} Suppose $A_n = \{n,n+1,n+2,\hdots\}$. Then  $\bigcap\limits_{n=1}^\infty A_n =\emptyset$, which is a finite set, since every integer $m$ is not an element of $A_{m+1}$.
+
+\medskip
+\noindent c. {\bf Counterexample:} Suppose $A_n = \{n,n+1,n+2,\hdots\}$. Then  $\bigcap\limits_{n=1}^\infty A_n =\emptyset$, since every integer $m$ is not an element of $A_{m+1}$.
+
+\bigskip
+\noindent 3. {\bf Claim:} Let $x \in \mathbb R$ and $x \geq 0$. Suppose that $x < \epsilon$ for every real number $\epsilon > 0$. Then, $x = 0$.
+
+\begin{proof}
+    Assume $x > 0$.
+    
+    Suppose that $x < \epsilon$ for every real number $\epsilon > 0$.
+    
+    Consider the case in which $\epsilon = x$. Then, $x \not < \epsilon$, which is a contradiction.
+    
+    Thus, it cannot be that $x > 0$.
+    
+    Thus, $x$ must equal 0.
+\end{proof}
+
+\end{document}

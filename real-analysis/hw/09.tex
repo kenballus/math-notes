@@ -1,0 +1,84 @@
+\documentclass[12pt]{article}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb,amsthm}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{geometry}
+
+\setlength{\topmargin}{0pt}
+\setlength{\headsep}{0pt}
+\textheight = 600pt
+
+\title{Real Analysis \\ Homework 7}
+\author{Ben Kallus, Truong Pham}
+\date{Due Monday, September 21}
+
+\begin{document}
+\maketitle
+
+\hrule
+\bigskip
+
+\noindent {\bf Acknowledgements:} You told us the answers to (5) and (6) in class.
+
+\bigskip
+\hrule
+\bigskip
+
+\noindent{\bf 4. (Just for fun) Claim:} The limit as $n$ goes to $\infty$ of $\frac{2n^2}{n^3+3}$ is $0$.
+\begin{proof}
+    Let $\epsilon > 0$ be given. Then, by the Archimedean Principle, there exists $N \in \mathbb N$ such that $\frac1N < \frac\epsilon2$. Thus, $\frac2N < \epsilon$. Then, for all $n \geq N$,
+    \begin{align*}
+        \epsilon &> \frac2n \\
+                 &= \frac2n \cdot \frac{n^2+\frac3n}{n^2+\frac3n} \\
+                 &= \frac{2n^2+\frac6n}{n^3+3} \\
+                 &> \frac{2n^2}{n^3+3} \\
+                 &= \bigg{|} \frac{2n^2}{n^3+3} - 0 \bigg{|}.
+    \end{align*}
+    Thus, by the $\epsilon$-$N$ definition of a limit, $\lim\limits_{n\to\infty}\frac{2n^2}{n^3+3} = 0$.
+\end{proof}
+
+\newpage
+\noindent{\bf 5. Claim:} The limit as $n$ goes to $\infty$ of $\frac{\sin(n^2)}{n^3+3}$ is $0$.
+\begin{proof}
+    Let $\epsilon > 0$ be given. Then, by the Archimedean Principle, there exists $N \in \mathbb N$ such that $\frac1N < \epsilon^3$. Then, for all $n \geq N$, $\frac1{\sqrt[3]n} < \epsilon$. Observe that for all such $n$,
+    \begin{align*}
+        \bigg{|} \frac{\sin(n^2)}{\sqrt[3]n} - 0\bigg{|} &= \bigg{|} \frac{\sin(n^2)}{\sqrt[3]n} \bigg{|} \\
+        &= \frac{|\sin(n^2)|}{\sqrt[3]n} \\
+        &\leq \frac1{\sqrt[3] n} \\
+        &< \epsilon.
+    \end{align*}
+    Thus, $\lim\limits_{n\to\infty}\frac{\sin(n^2)}{n^3+3} = 0$.
+\end{proof}
+
+\newpage
+\noindent{\bf 6. Claim:} If $\lim\limits_{n\to\infty}a_n = a$ and $\lim\limits_{n\to\infty}a_n = b$, then $a = b$.
+\begin{proof}
+    Let $\epsilon > 0$ be given. Suppose $\lim\limits_{n\to\infty}a_n = a$ and $\lim\limits_{n\to\infty}a_n = b$. Then, there exists $N_1 \in \mathbb N$ such that $|a_n - a| < \frac\epsilon2$ for all $n \geq N_1$. Similarly, since $\lim\limits_{n\to\infty}a_n = b$, there exists $N_2 \in \mathbb N$ such that  $|a_n - b| < \frac\epsilon2$ for all $n \geq N_2$. Define $N = \max\{N_1, N_2\}$. Then, for all $n \geq N$,
+    \begin{align*}
+        |a - b| &= |a - b + a_n - a_n| \\
+                &= |(a - a_n) + (a_n - b)| \\
+                &\leq |a - a_n| + | a_n - b| \\
+                &= |a_n - a| + |a_n - b| \\
+                &< \frac\epsilon2 + \frac\epsilon2 \\
+                &= \epsilon,
+    \end{align*}
+    by the triangle inequality. Thus, $a = b$.
+\end{proof}
+
+
+\newpage
+\noindent{\bf 7. Claim:} If $\lim\limits_{n\to\infty} a_n = 2$, then $\lim\limits_{n\to\infty}\frac{2a_n-1}{3} = 1$.
+\begin{proof}
+    Let $\epsilon > 0$ be given. Then, since $\lim\limits_{n\to\infty} a_n = 2$, there exists $N \in \mathbb N$ such that for all $n \geq N$, $|a_n - 2| < \frac32\epsilon$. Then, for all such $n$,
+    \begin{align*}
+        \bigg{|}\frac{2a_n-1}{3} - 1 \bigg{|} &= \bigg{|}\frac{2a_n - 4}{3} \bigg{|}\\
+                                              &= \bigg{|}\frac23(a_n - 2) \bigg{|} \\
+                                              &= \frac23 \cdot |a_n - 2| \\
+                                              &< \frac23\cdot\frac32\epsilon \\
+                                              &= \epsilon.
+    \end{align*}
+    Thus, $\lim\limits_{n\to\infty}\frac{2a_n-1}{3} = 1$.
+\end{proof}
+\end{document}

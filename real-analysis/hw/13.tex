@@ -1,0 +1,56 @@
+\documentclass[12pt]{article}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb,amsthm}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{geometry}
+
+\setlength{\topmargin}{0pt}
+\setlength{\headsep}{0pt}
+\textheight = 600pt
+
+\title{Real Analysis \\ Homework 13}
+\author{Ben Kallus, Noah Barton}
+\date{Due Friday, October 16}
+
+\begin{document}
+\maketitle
+
+\hrule
+\bigskip
+
+\noindent {\bf Acknowledgements:} You helped us in class with 22.
+
+\bigskip
+\hrule
+\bigskip
+
+\noindent{\bf 22. Claim:} If $(a_n)$ is a bounded sequence such that all of its convergent subsequences converge to $a$, then $(a_n)$ converges to $a$.
+\begin{proof}
+    Suppose $(a_n)$ does not converge to $a$. Then, there exists $\epsilon > 0$ such that for each $k \in \mathbb N$, there exists $n_k \geq k$ such that $|a_{n_k} - a| \geq \epsilon$. Consider $(b_k)$, the subsequence of $(a_n)$ defined by $$b_k = \begin{cases} a_{n_1} & k = 1, \\ a_{n_k+1} & k \geq 2. \end{cases}$$ Since $(a_n)$ is bounded, $(b_n)$ is also bounded. Thus, $(b_n)$ contains a convergent subsequence by the Bolzano-Weierstrass Theorem. Since all terms of $(b_n)$ are at least distance $\epsilon$ from $a$, its convergent subsequence cannot converge to $a$. Thus, we have arrived at a contradiction, so $(a_n)$ must converge to $a$.
+\end{proof}
+
+\newpage
+\noindent{\bf 23.} Suppose $(a_n)$ and $(b_n)$ are Cauchy sequences.
+
+\medskip
+\noindent{\bf a. Claim:} $(a_n + b_n)$ is a Cauchy sequence.
+\begin{proof}
+    By the Cauchy Criterion, $(a_n)$ converges to $a$ and $(b_n)$ converges to $b$ for some $a,b \in \mathbb R$. Then, by the Algebraic Limit Theorem, $(a_n + b_n)$ converges to $a+b$. Thus, by the Cauchy Criterion, $(a_n + b_n)$ is a Cauchy sequence.
+\end{proof}
+
+\medskip
+\noindent{\bf b. Claim:} $(a_n + b_n)$ is a Cauchy sequence.
+\begin{proof}
+    Let $\epsilon > 0$ be given. Since $(a_n)$ is a Cauchy sequence, there exists $N_1 \in \mathbb N$ such that for all $n_1,m_1 \geq N_1$, $|a_{n_1} - a_{m_1}| < \frac\epsilon2$. Similarly, there exists $N_2 \in \mathbb N$ such that for all $n_2,m_2 \geq N_2$, $|b_{n_2} - b_{m_2}| < \frac\epsilon2$. Let $N = \max\{N_1, N_2\}$. Then, for all $n,m \geq N$,
+    \begin{align*}
+        |(a_{n} + b_{n}) - (a_{m} + b_{m})| &= |a_{n} - a_{m} + b_{n} - b_{m}| \\
+                                            &\leq |a_{n} - a_{m}| + |b_{n} - b_{m}| \\
+                                            &< \frac\epsilon2 + \frac\epsilon2 \\
+                                            &= \epsilon.
+    \end{align*}
+    Thus, $(a_n + b_n)$ is a Cauchy sequence.
+\end{proof}
+
+\end{document}

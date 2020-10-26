@@ -1,0 +1,96 @@
+\documentclass[12pt]{article}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb,amsthm}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{geometry}
+
+\setlength{\topmargin}{0pt}
+\setlength{\headsep}{0pt}
+\textheight = 600pt
+
+\title{Real Analysis \\ Homework 5}
+\author{Ben Kallus, Truong Pham}
+\date{Due Thursday, September 10}
+
+\begin{document}
+\maketitle
+
+\hrule
+\bigskip
+
+\noindent {\bf Acknowledgements:} I consulted with you about style for questions 11 and 12.
+
+\bigskip
+\hrule
+\bigskip
+
+\noindent{\bf 11. Claim:} The infimum of $\Big{\{}\frac{3n+2}{2n+1} : n \in \mathbb N\Big{\}}$ is $\frac 3 2$.
+
+\begin{proof}
+    Let $S = \Big{\{}\frac{3n+2}{2n+1} : n \in \mathbb N\Big{\}}$.
+    
+    Observe that \begin{align*}
+        3(2n + 1) &= 6n + 3 \\
+                  &< 6n + 4 \\
+                  &= 2(3n + 2).
+    \end{align*}
+    Since $3(2n + 1) < 2(3n + 2)$, $$\frac32 < \frac{3n+2}{2n+1}.$$
+    Thus, $\frac32$ is a lower bound for $S$.
+    
+    Observe that $\frac53 \in S$, so $S$ is nonempty. Suppose there exists $\epsilon > 0$ such that $\frac32 + \epsilon$ is a lower bound for $S$. Then, $$\frac32 + \epsilon \leq \frac{3n+2}{2n+1}.$$
+    Thus,
+    \begin{align*}
+        \epsilon &\leq \frac{3n+2}{2n+1} - \frac32 \\
+                 &\leq \frac{3n+2}{2n+1} - \frac{3(n + \frac12)}{2(n + \frac12)} \\
+                 &\leq \frac{3n+2 - (3n + \frac32)}{2n+1} \\
+                 &\leq \frac{\frac12}{2n+1} \\
+                 &\leq \frac{1}{4n+2} \\
+                 &\leq \frac{1}{n}.
+    \end{align*}
+    This inequality contradicts the Archimedian Principle.
+    Thus, by the lower bound equivalent of Lemma 1.3.8, $\frac32$ is the infimum of $S$.
+\end{proof}
+
+\newpage
+\noindent{\bf 12. Claim:} For all $n \in \mathbb N, n < 2^n$.
+
+\begin{proof}
+    For the base case, observe that $1 < 2^1$.
+    
+    Begin the inductive step by assuming $n < 2^n$ for some $n \in \mathbb N$. Observe that
+    \begin{align*}
+        n + 1 &\leq n + n \\
+              &= 2n \\
+              &< 2(2^n) \text{ by the inductive assumption,}\\
+              &=2^{n+1}.
+    \end{align*}
+    
+    Thus, by the principle of mathematical induction, $n < 2^n$ for all $n \in \mathbb N$.
+\end{proof}
+
+\newpage
+\noindent{\bf 13. Claim:} The set $S = \{\frac p {2^q} : p \in \mathbb Z, q \in \mathbb N\}$ is dense in $\mathbb R$.
+
+\begin{proof}
+    Let $S = \{\frac p {2^q} : p \in \mathbb Z, q \in \mathbb N\}$. Let $(a,b)$ be an open interval in $\mathbb R$. We claim that there exists an element of $s$, $\frac{p}{2^q}$, such that
+    \begin{align}
+        a < \frac{p}{2^q} < b.
+    \end{align}
+    To see that such an element exists, first observe that (1) is equivalent to
+    \begin{align}
+        2^qa < p < 2^qb.
+    \end{align}
+    Next observe that, by the Archimedian Principle, there exists $q \in \mathbb N$ such that $\frac1q < b - a$. Then, by the result of the previous proof, $\frac1{2^q} < b - a$. Fix such a $q \in \mathbb N$, and let $p$ be the smallest integer that is strictly greater than $2^qa$. Then, $p = 2^qa + \epsilon$ for some $0 < \epsilon < 1$. Clearly $2^qa < p$, which is the first half of (2).
+    Now, observe that $$\frac{1}{2^q} < b - a.$$
+    Then, since $\epsilon < 1$, $$\epsilon\Big{(}\frac{1}{2^q}\Big{)} < b - a.$$
+    Thus, $$a + \epsilon\Big{(}\frac{1}{2^q}\Big{)} < b.$$
+    Then, multiplying both sides by $2^q$, $$2^qa + \epsilon < 2^qb.$$
+    Therefore, $$p < 2^qb.$$
+    Therefore, $S$ is dense in $\mathbb R$.
+    
+    
+\end{proof}
+
+\end{document}

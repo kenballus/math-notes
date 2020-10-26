@@ -1,0 +1,94 @@
+\documentclass[12pt]{article}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb,amsthm}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{geometry}
+\usepackage{xcolor}
+
+\setlength{\topmargin}{0pt}
+\setlength{\headsep}{0pt}
+\textheight = 600pt
+
+\title{Real Analysis \\ Homework 16}
+\author{Ben Kallus, Noah Barton}
+\date{Due Thursday, October 22}
+
+\begin{document}
+\pagecolor{black}
+\color{white}
+\maketitle
+
+\hrule
+\bigskip
+
+\noindent {\bf Acknowledgements:} None.
+
+\bigskip
+\hrule
+\bigskip
+
+\noindent{\bf 29. Claim:} If $\sum\limits_{n=1}^\infty a_n$ diverges, then for all $k \in \mathbb N$, $\sum\limits_{n=1}^\infty a_{n+k}$ diverges.
+\begin{proof}
+    Since $\sum\limits_{n=1}^\infty a_n$ diverges, there exists $\epsilon > 0$ such that for all $N \in \mathbb N$, there exist $n,m \geq N$ with $n > m$ such that $|a_{m+1} + \hdots + a_n| \geq \epsilon$. Then, the same property holds for all $N \in \{n+k~|~n \in \mathbb N\} \subseteq \mathbb N$. Thus, there exists $\epsilon > 0$ such that for all $N \in \{n+k~|~n \in \mathbb N\}$, there exist $n,m \geq N$ with $n > m$ such that $|a_{m+1} + \hdots + a_n| \geq \epsilon$. Therefore, there exists $\epsilon > 0$ such that for all $N \in \mathbb N$, there exist $n,m \geq N$ with $n > m$ such that $|a_{m+k+1} + \hdots + a_{n+k}| \geq \epsilon$. Thus, $\sum\limits_{n=1}^\infty a_{n+k}$ diverges.
+\end{proof}
+
+\newpage
+\noindent{\bf 30. Claim:} If $\sum\limits_{n=1}^\infty a_n$ converges, then $\lim\limits_{k\to\infty} \left( \sum\limits_{n=k}^\infty a_n \right)$ converges.
+\begin{proof}
+    Let $\epsilon > 0$ be given. Let $A$ be the value to which $\sum\limits_{n=1}^\infty a_n$ converges. Then, for all $k \in \mathbb N$,
+    \begin{align*}
+        A &= a_1 + \hdots + a_{k-1} + \sum\limits_{n=k}^\infty a_n \\
+          &= \sum\limits_{n=1}^{k-1} a_n + \sum\limits_{n=k}^\infty a_n.
+    \end{align*}
+    Thus, for all $k \in \mathbb N$, $$\left|A - \sum\limits_{n=1}^{k-1} a_n\right| = \left|\sum\limits_{n=k}^\infty a_n - 0\right|.$$ Since $\sum\limits_{n=1}^\infty a_n$ converges to $A$, there exists $K \in \mathbb N$ such that for all $k \geq K$, $$\left| \sum_{n=1}^k a_n - A\right| < \epsilon.$$
+    Define $K' = K + 1$. Then, for all $k \geq K'$, $$\left| \sum_{n=1}^{k-1} a_n - A\right| < \epsilon.$$
+    Thus, for all $k \geq K'$, $$\left|\sum\limits_{n=k}^\infty a_n - 0\right| < \epsilon.$$
+    Therefore, $\lim\limits_{k\to\infty} \left( \sum\limits_{n=k}^\infty a_n \right) = 0$.
+\end{proof}
+    
+\newpage
+\noindent{\bf 1. Claim:} The set of endpoints in the construction of the Cantor Set, $E$, is countably infinite.
+\begin{proof}
+    Let $f: \mathbb N \to \mathbb Q$ be defined by $$f(n) = \frac{1}{3^n}.$$ Note that $f$ is one-to-one, and that $f(n) \in E$ for all $n \in \mathbb N$. Thus, $|E| \geq |\mathbb N| = \aleph_0$. Note that all elements of $E$ must have the form $\frac k{3^n}$ for some $k,n \in \mathbb N$. Thus, $E \subseteq \mathbb Q$. Thus, $|E| \leq |\mathbb Q| = \aleph_0$. Therefore, $|E| = \aleph_0$.
+\end{proof}
+
+\newpage
+\noindent{\bf 2. Claim:} The base three numbers $[0.\overline{1}]_3$ and $[0.\overline{20}]_3$ are equal to $\frac12$ and $\frac34$, respectively.
+\begin{proof}
+    Observe that
+    \begin{align*}
+        [0.\overline{1}]_3 &= \left(\frac13\right)^1 + \left(\frac13\right)^2 + \left(\frac13\right)^3 + \hdots \\
+                           &= \sum_{n=1}^\infty \left(\frac13\right)^n \\
+                           &= -1 + \sum_{n=0}^\infty \left(\frac13\right)^n \\
+                           &= -1 + \frac1{1-\frac13} \\
+                           &= -1 + \frac32 \\
+                           &= \frac12.
+    \end{align*}
+    Similarly,
+    \begin{align*}
+        [0.\overline{20}]_3 &= 2\left(\frac13\right)^1 + 0\left(\frac13\right)^2 + 2\left(\frac13\right)^3 + 0\left(\frac13\right)^4 + \hdots \\
+                            &= 2\left(\frac13\right)^1 + 2\left(\frac13\right)^3 + 2\left(\frac13\right)^5 + \hdots \\
+                            &= 2\left(\left(\frac13\right)^1 + \left(\frac13\right)^3 + \left(\frac13\right)^5 + \hdots \right) \\
+                            &= \frac23\left(\left(\frac13\right)^0 + \left(\frac13\right)^2 + \left(\frac13\right)^4 + \hdots \right) \\
+                            &= \frac23\left(\left(\frac19\right)^0 + \left(\frac19\right)^1 + \left(\frac19\right)^2 + \hdots \right) \\
+                            &= \frac23\sum_{n=0}^\infty \left(\frac19\right)^n \\
+                            &= \frac23 \cdot \frac98 \\
+                            &= \frac34.
+    \end{align*}
+\end{proof}
+
+\newpage
+\noindent{\bf 3. Claim:} The set of all endpoints in the construction of the Cantor Set, $E$, is not equal to the Cantor Set.
+\begin{proof}
+    Note that all elements of $E$ are of the form $\frac k{3^n}$ for some $k,n \in \mathbb N$. Thus, $\frac34\notin E$. Observe that $\frac34 = [0.\overline{20}]$ is an element of the Cantor Set, since its ternary representation indicates that it is in the upper third of the interval $[0,1]$, the lower third of the interval $[\frac23,1]$, the upper third of the interval $[\frac23, \frac79]$, and so on. Thus, $E$ is not the Cantor Set.
+\end{proof}
+
+\newpage
+\noindent{\bf 4. Claim:} The Cantor Set contains no intervals.
+\begin{proof}
+    Let $a, b \in C$, the Cantor Set. Then, $a = [0.a_1a_2a_3\hdots]_3$ such that $a_i \in \{0,2\}$ for all $i \in \mathbb N$. Similarly, $b = [0.b_1b_2b_3\hdots]_3$ such that $b_i \in \{0,2\}$ for all $i \in \mathbb N$. Let $j \in \mathbb N$ be the least number such that $a_j \neq b_j$. Then, since $a < b$, $a_j = 0$ and $b_j = 2$. Define $d = [0.a_1a_2 \hdots a_{j-1}1a_{j+1}\hdots]_3$. Then, $d \notin C$, since $d$'s ternary representation contains a 1. Note that $a < d$, since $d = a + \left(\frac13\right)^j$. Also note that $b > d$, since the two numbers' ternary representations differ first at index $j$, at which $b$ contains a 2 and $d$ contains a 1. Thus, $C$ contains no intervals.
+\end{proof}
+
+\end{document}

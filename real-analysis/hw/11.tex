@@ -1,0 +1,139 @@
+\documentclass[12pt]{article}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb,amsthm}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{geometry}
+
+\setlength{\topmargin}{0pt}
+\setlength{\headsep}{0pt}
+\textheight = 600pt
+
+\title{Real Analysis \\ Homework 11}
+\author{Ben Kallus, Truong Pham}
+\date{Due Monday, October 5}
+
+\begin{document}
+\maketitle
+
+\hrule
+\bigskip
+
+\noindent {\bf Acknowledgements:} You helped us in class with a few questions.
+
+\bigskip
+\hrule
+\bigskip
+
+\noindent{\bf 14.} Let $(a_n)$ be the sequence defined by $a_1 = 3$ and $a_{n+1} = \frac1{4-a_n}$.
+
+\medskip
+\noindent{\bf a.} The first five terms of $(a_n)$ are $3, 1, \frac13, \frac3{11}, \frac{11}{41}$.
+
+\newpage
+\noindent{\bf b.}
+\begin{proof}
+    Suppose $(a_n)$ is decreasing. Then, since $a_1 = 3$, $4-a_n > 0$ for all $n \in \mathbb N$.
+    Observe that since $a_n \geq a_{n+1}$, $$a_n \geq \frac1{4-a_n}.$$
+    Then, $$a_n(4 - a_n) \geq 1.$$
+    Thus, $$-a_n^2 + 4a_n - 1 \geq 0.$$
+    Since the zeroes of the polynomial $-x^2 + 4x - 1$ are $2 + \sqrt3$ and $2 - \sqrt3$, and graphs of degree 2 polynomials are parabolas, exactly one of the following must be true:
+    $$a_n \in [2 - \sqrt3, 2 + \sqrt3]~\text{for all}~n \in \mathbb N.$$
+    $$a_n \notin [2 - \sqrt3, 2 + \sqrt3]~\text{for all}~n \in \mathbb N.$$
+    Since $2 \in [2 - \sqrt3, 2 + \sqrt3]$, and $-2^2 + 4\cdot2-1 = 3 \geq 0$, the first option is true. Thus, $2 - \sqrt3 \leq a_n \leq 2 + \sqrt3$ for all $n \in \mathbb N$.
+    
+    Now, suppose $2 - \sqrt3 \leq a_n \leq 2 + \sqrt3$ for all $n \in \mathbb N$.
+    Then,
+    \begin{align*}
+        a_n - \frac{1}{4 - a_n} &= \frac{4a_n - a_n^2}{4 - a_n} - \frac1{4 - a_n} \\
+                                &= \frac{-a_n^2+4a_n-1}{4 - a_n}.
+    \end{align*}
+    Since $4 - a_n$ is positive for all $n \in \mathbb N$, this fraction is positive only when $-a_n^2+4a_n-1$ is positive. By an earlier result in this proof, this expression is positive when $a_n \in [2 - \sqrt3, 2 + \sqrt3]$. Thus, $a_n - a_{n+1}$ is positive. Thus, $a_n \geq a_{n+1}$.
+\end{proof}
+
+\newpage
+\noindent{\bf c. Claim:} For all $n \in \mathbb N$, $2 - \sqrt3 \leq a_n \leq 2 + \sqrt3$.
+\begin{proof}
+    For the base case, observe that $2 - \sqrt3 \leq 3 \leq 2 + \sqrt3$, and $a_1 = 3$. Begin the inductive step by assuming that $2 - \sqrt3 \leq a_n \leq 2 + \sqrt3$ for some $n \in \mathbb N$. Observe that
+    \begin{align*}
+        2 + \sqrt3 &= \frac{1}{2- \sqrt3} \\
+                   &= \frac1{4 - (2 + \sqrt3)} \\
+                   &\geq \frac1{4 - a_n} \\
+                   &= a_{n+1}.
+    \end{align*}
+    Now, observe that
+    \begin{align*}
+        2 - \sqrt3 &= \frac{1}{2 + \sqrt3} \\
+                   &= \frac1{4 - (2 - \sqrt3)} \\
+                   &\leq \frac1{4 - a_n} \\
+                   &= a_{n+1}.
+    \end{align*}
+    Thus, by the principle of mathematical induction, $2 - \sqrt3 \leq a_n \leq 2 + \sqrt3$ for all $n \in \mathbb N$.
+\end{proof}
+
+\medskip
+\noindent{\bf d.} We showed in part (c) that $2 - \sqrt3 \leq a_n \leq 2 + \sqrt3$, so $(a_n)$ is bounded. Then, by the result of part (b), $(a_n)$ must be decreasing. Thus, the MCT applies, so $(a_n)$ converges.
+
+\medskip
+\noindent{\bf e. Claim:} If $\lim\limits_{n\to\infty} a_n = a$, then $\lim\limits_{n \to \infty} a_{n+1} = a$.
+\begin{proof}
+    Let $\epsilon > 0$ be given. Then, there exists $N \in \mathbb N$ such that $|a_n - a| < \epsilon$ for all $n \geq N$. Observe that for all $n \geq N$, $n+1 \geq N$. Thus, $|a_{n+1} - a| < \epsilon$ for all $n \in \mathbb N$. Thus, $\lim\limits_{n \to \infty} a_{n+1} = a$.
+\end{proof}
+
+\newpage
+\noindent{\bf f. Claim:} The limit as $n$ goes to $\infty$ of $a_n$ is $2 - \sqrt3$.
+\begin{proof} Since $(a_n)$ is convergent, $\lim_{n\to\infty} a_n = a$ for some $a \in \mathbb R$. Observe that
+\begin{align*}
+    a &= \lim_{n\to\infty} a_n \\
+                          &= \lim_{n\to\infty} a_{n+1} \\
+                          &= \lim_{n\to\infty} \frac1{4-a_n} \\
+                          &= \frac1{4 - \lim_{n\to\infty} a_n} \\
+                          &= \frac1{4 - a},
+\end{align*}
+by the Algebraic Limit Theorem. Thus, $a(4-a) = 1$, so $-a^2 + 4a - 1 = 0$. Thus, $a \in \{2 - \sqrt3, 2 + \sqrt3\}$. Note that since $a_n$ is decreasing, and $a_1 = 3$, $a \leq 3$. Thus, $a = 2 - \sqrt3$.
+\end{proof}
+
+\newpage
+\noindent{\bf 15. Claim:} If $(a_n)$ is a sequence such that $a_n \geq 0$ for every $n \in \mathbb N$, and $\lim\limits_{n\to\infty} a_n = a$ for some $a > 0$, then $\lim\limits_{n\to\infty} \sqrt{a_n} = \sqrt a$.
+\begin{proof}
+    Let $(a_n)$ be a sequence such that $a_n \geq 0$ for every $n \in \mathbb N$. Suppose $\lim\limits_{n\to\infty} a_n = a$ for some $a > 0$. Let $\epsilon > 0$ be given.
+    Since $\lim\limits_{n\to\infty} a_n = a$, there exists $N \in \mathbb N$ such that $|a_n - a| < \epsilon\sqrt a$. Then, for all $n \geq N$,
+    \begin{align*}
+        |\sqrt{a_n} - \sqrt{a}| &= \bigg{|}(\sqrt{a_n} - \sqrt{a}) \cdot \frac{\sqrt{a_n} + \sqrt a}{\sqrt{a_n} + \sqrt a}\bigg{|} \\
+                                &= \bigg{|}\frac{a_n - a}{\sqrt {a_n} + \sqrt a}\bigg{|} \\
+                                &= \frac{|a_n - a|}{\sqrt {a_n} + \sqrt a} \\
+                                &< \frac{|a_n - a|}{\sqrt a} \\
+                                &< \frac{\epsilon\sqrt a}{\sqrt a} \\
+                                &= \epsilon.
+    \end{align*}
+    Thus, $\lim\limits_{n\to\infty} \sqrt{a_n} = \sqrt a$.
+\end{proof}
+
+\newpage
+\noindent{\bf 16.} Basically a proof:
+    \begin{proof}
+        Let $x = \sqrt{2 + \sqrt{2 + \sqrt{2 + \hdots}}}$. Notice that $x = \sqrt{2 + x}$, so $x^2 -x - 2 = 0$. Thus, $x \in \{-1, 2\}$.
+        
+        Now, let $(a_n)$ be defined by $$a_n = \begin{cases} \sqrt2 & n = 1 \\ \sqrt{2 + a_{n-1}} & n \geq 2 \end{cases}.$$ Notice that $\lim\limits_{n\to\infty} a_n = x$. Observe that $(a_n)$ is increasing, since all of its terms are positive, and $\sqrt{2} < \sqrt{2 + \epsilon}$ for all $\epsilon > 0$. Thus, $x > a_1 = \sqrt2$, so $x \neq -1$. Thus, $x = 2$.
+    \end{proof}
+
+\newpage
+\noindent{\bf 17.} Suppose the $n^\text{th}$ partial sum of the series $\sum\limits_{k=1}^\infty a_k$ is $s_n = \frac{n-1}{n+1}$.
+
+\medskip
+\noindent{\bf a.} Observe that $0 = \frac{1-1}{1+1} = s_1 = \sum\limits_{n=1}^1 a_n = a_1$. Now, observe that since $s_n = s_{n-1} + a_n$,
+\begin{align*}
+    a_n &= s_n - s_{n-1} \\
+        &= \frac{n-1}{n+1} - \frac{(n-1) - 1}{(n-1) + 1} \\
+        &= \frac{n-1}{n+1} - \frac{n - 2}{n} \\
+        &= \frac{2}{n(n+1)}.
+\end{align*}
+Thus, $a_n = \begin{cases} 0 & n=1 \\ \frac{2}{n(n+1)} & n > 1\end{cases}$.
+
+\medskip
+\noindent{\bf b.}
+
+    $$\sum\limits_{k=1}^\infty a_k = \lim_{n\to\infty}\frac{n+1}{n-1} = 1.$$
+
+\end{document}

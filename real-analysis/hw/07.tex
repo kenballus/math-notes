@@ -1,0 +1,76 @@
+\documentclass[12pt]{article}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb,amsthm}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{geometry}
+
+\setlength{\topmargin}{0pt}
+\setlength{\headsep}{0pt}
+\textheight = 600pt
+
+\title{Real Analysis \\ Homework 7}
+\author{Ben Kallus, Truong Pham}
+\date{Due Monday, September 21}
+
+\begin{document}
+\maketitle
+
+\hrule
+\bigskip
+
+\noindent {\bf Acknowledgements:} You gave us some major hints in class about (20) and (21).
+
+\bigskip
+\hrule
+\bigskip
+
+\noindent{\bf 18.} Let $f: A \to B$ and $g: B \to C$.
+
+\noindent{\bf a. Claim:} (1) If $g \circ f$ is one-to-one, then $f$ is one-to-one.
+\begin{proof}
+    Suppose $f$ is not one-to-one. Then, there exist $b \in B$ and $a_1,a_2 \in A$ such that $f(a_1) = f(a_2) = b$, and $a_1 \neq a_2$. Observe that $g(f(a_1)) = g(b) = g(f(a_2))$, so $g \circ f$ is not one-to-one. Thus, if $g \circ f$ is one-to-one, then $f$ is one-to-one.
+\end{proof}
+
+\medskip
+\noindent{\bf b. Claim:} (4) If $g \circ f$ is onto, then $f$ is onto.
+
+\noindent{\bf Counterexample:} Let $A = C = \{0\}$, and let $B = \{0,1\}$. Let $f: A \to B$ by $f(x) = x$, and let $g: B \to C$ by $g(x) = x$. Then, $f$ is not onto, since there is no $a \in A$ such that $f(a) = 1$, and $g \circ f$ is onto, since $f(0) = 0$.
+
+\newpage
+\noindent{\bf 19.}
+
+    One error in the proof is that the nested interval property does not guarantee that $x$ is a rational number; it says only that $x$ is a real number.
+
+\newpage
+\noindent{\bf 20. Claim:} The set $S = \{(a_1, a_2, a_3, \hdots)~|~\text{each}~a_n = 0~\text{or}~1\}$ is uncountable.
+
+\begin{proof}
+    Suppose, toward a contradiction, that $S$ were countable. Then, there exists a bijection $f$ from $\mathbb N$ to $S$. Let $a_{ij}$ be the digit in the $j^\text{th}$ position of $f(i)$ for all $i,j \in \mathbb N$. Then, let $$b_k =
+    \begin{cases}
+        0 & a_{kk} = 1 \\
+        1 & a_{kk} = 0
+    \end{cases}$$ for all $k \in \mathbb N$. Let $b = (b_1, b_2, b_3, \hdots)$. Observe that $b \in S$, so $b = f(a_0)$ for some $a_0 \in \mathbb N$, but $b$ differs in at least one position from $f(a)$ for all $a \in \mathbb N$. Thus, $b \notin S$, which is a contradiction. Thus, it must be that $S$ is uncountable.
+\end{proof}
+
+\newpage
+\noindent{\bf 21. Claim:} $\mathbb I$ is uncountable.
+\begin{proof}
+    Suppose, toward a contradiction, that $\mathbb I$ were countable. Then, there exists a bijection $f$ from $\mathbb N$ to $\mathbb I$. Thus, $\mathbb I = \{f(1), f(2), f(3), \hdots\}$. Observe that since $\mathbb Q$ is countable, there exists a bijection $g$ from $\mathbb N$ to $\mathbb Q$. Thus, $\mathbb Q = \{g(1), g(2), g(3), \hdots\}$. Then, since $\mathbb R = \mathbb I \cup \mathbb Q$,
+    \begin{align*}
+        \mathbb R &= \{f(1), f(2), f(3), \hdots\} \cup \{g(1), g(2), g(3), \hdots\} \\
+                  &= \{f(1), g(1), f(2), g(2), f(3), g(3), \hdots\}.
+    \end{align*}
+    Then, let $h:\mathbb N \to \mathbb R$ by $$h(x) =
+        \begin{cases}
+            f(\frac{x+1}2) & x~\text{is odd} \\
+            g(\frac x2)    & x~\text{is even}
+        \end{cases}.$$
+    Let $q$ be a rational number. Then, $q = g(n)$ for some $n \in \mathbb N$. Then, $q = h(2n)$. Thus, all rational numbers are mapped to by $h$. Let $p$ be an irrational number. Then, $p = f(n)$ for some $n \in \mathbb N$. Then, $p = h(2n - 1)$. Thus, all irrational numbers are mapped to by $h$. Thus, $h$ is onto. 
+    Observe that since $\mathbb Q \cap \mathbb I = \emptyset$, $f(a) \neq g(b)$ for all $a,b, \in \mathbb N$. Then, since $s(x) = \frac x2,~t(x) = \frac{x+1}2$ are both one-to-one, and $f,g$ are both one-to-one, $h$ is one-to-one. Thus, $h$ is a bijection.
+    
+    Thus, we have that $\mathbb R$ is countable, which is false. Therefore, $\mathbb I$ is uncountable.
+\end{proof}
+
+\end{document}

@@ -1,0 +1,126 @@
+\documentclass[12pt]{article}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb,amsthm}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{geometry}
+
+\setlength{\topmargin}{0pt}
+\setlength{\headsep}{0pt}
+\textheight = 600pt
+
+\title{Real Analysis \\ Homework 10}
+\author{Ben Kallus, Truong Pham}
+\date{Due Thursday, October 1}
+
+\begin{document}
+\maketitle
+
+\hrule
+\bigskip
+
+\noindent {\bf Acknowledgements:} You helped us out with (8), (12), and (13) in class.
+
+\bigskip
+\hrule
+\bigskip
+
+\noindent{\bf 8. Claim:} If $\lim\limits_{n\to\infty}a_n=-2$, then $\lim\limits_{n\to\infty}a_n^3=-8$.
+\begin{proof}
+    Since the sequence $(a_n)$ is convergent, it is bounded. Therefore, there exists a real number $M > 0$ such that $|a_n| \leq M$ for all $n \in \mathbb N$. Now, let $\epsilon > 0$ be given. Since $\lim\limits_{n\to\infty} a_n = -2$, there exists $N \in \mathbb N$ such that $|a_n + 2| < \frac{\epsilon}{M^2+2M+4}$ for all $n \geq N$. Observe that
+    \begin{align*}
+        |a_n^3 - (-8)| &= |(a_n+2)(a_n^2-2a_n+4)| \\
+                       &\leq |a_n + 2| \cdot |a_n^2 -2a_n + 4| \\
+                       &< \frac{\epsilon}{M^2+2M+4} \cdot |a_n^2 -2a_n + 4| \\
+                       &\leq \frac{\epsilon}{M^2+2M+4} \cdot (|a_n^2| + |-2a_n| + |4|) \\
+                       &= \frac{\epsilon}{M^2+2M+4} \cdot (|a_n| \cdot |a_n| + 2|a_n| + 4) \\
+                       &\leq \frac{\epsilon}{M^2+2M+4} \cdot (M \cdot M + 2M + 4) \\
+                       &= \epsilon.
+    \end{align*}
+    Thus, $\lim\limits_{n\to\infty}a_n^3 = -8$.
+\end{proof}
+    
+\newpage
+\noindent{\bf 9.} Let $(a_n)$ be a sequence of real numbers, and let $(b_n)$ be a bounded sequence of nonzero real numbers.
+
+\medskip
+\noindent{\bf a. Claim:} If $\lim\limits_{n\to\infty}\frac{a_n}{b_n} = 1$, then $\lim\limits_{n\to\infty}a_n-b_n = 0$.
+\begin{proof}
+    Suppose $\lim\limits_{n\to\infty}\frac{a_n}{b_n} = 1$. Since the sequence $(b_n)$ is bounded, there exists a real number $M > 0$ such that $|b_n| \leq M$ for all $n \in \mathbb N$. Now, let $\epsilon > 0$ be given. Since $\lim\limits_{n\to\infty}\frac{a_n}{b_n} = 1$, there exists $N \in \mathbb N$ such that $|\frac{a_n}{b_n} - 1| < \frac\epsilon M$ for all $n \geq N$. Then, for all such $n$,
+    \begin{align*}
+        |(a_n - b_n) - 0| &= |\frac{a_nb_n}{b_n} - b_n| \\
+                          &= |\frac{a_n}{b_n} \cdot b_n - b_n| \\
+                          &= |b_n(\frac{a_n}{b_n} - 1)| \\
+                          &= |b_n| \cdot |\frac{a_n}{b_n} - 1| \\
+                          &< |b_n| \cdot \frac\epsilon M \\
+                          &\leq M \cdot \frac\epsilon M \\
+                          &= \epsilon.
+    \end{align*}
+    Thus, $\lim\limits_{n\to\infty}a_n-b_n = 0$.
+\end{proof}
+
+\newpage
+\noindent{\bf b. Claim:} If $\lim\limits_{n\to\infty}a_n-b_n = 0$, then $\lim\limits_{n\to\infty}\frac{a_n}{b_n}$ is not necessarily $1$.
+\begin{proof}
+    Let $(a_n)$ be the sequence defined by $a_n = 0$ for all $n \in \mathbb N$. Let $(b_n)$ be the sequence defined by $b_n = \frac1n$ for all $n \in \mathbb N$. Now, let $\epsilon > 0$ be given. Then, by the Archimedean Principle, there exists $N \in \mathbb N$ such that $\frac1n < \epsilon$ for all $n \geq N$. Then, for all such $n$, 
+    \begin{align*}
+        |(a_n - b_n) - 0| &= |(0 - \frac1n) - 0| \\
+                    &= \frac1n \\
+                    &< \epsilon.
+    \end{align*}
+    Thus, $\lim\limits_{n\to\infty} a_n - b_n = 0$. Now, observe that for all $n \in \mathbb N$,
+    \begin{align*}
+        \bigg{|}\frac{a_n}{b_n} - 0\bigg{|} &= \bigg{|}\frac0{\frac1n} - 0\bigg{|} \\
+                              &= 0 \\
+                              &< \epsilon.
+    \end{align*}
+    Thus, $\lim\limits_{n\to\infty} \frac{a_n}{b_n} = 0$, which is not equal to 1.
+\end{proof}
+
+\newpage
+\noindent{\bf 10. Claim:} If $\lim\limits_{n\to\infty}a_n=2$, then $\lim\limits_{n\to\infty}\frac1{a_n} = \frac12$.
+\begin{proof} Since $\lim\limits_{n\to\infty}a_n=2$, there exists $N_1 \in \mathbb N$ such that $|a_n| \geq 1$ for all $n \geq N_1$.\footnote{I don't think we have a theorem that says this but it really seems like it's true!} Let $\epsilon > 0$ be given. Since $\lim\limits_{n\to\infty}a_n=2$, there exists $N_2 \in \mathbb N$ such that $|a_n - 2| < \epsilon$ for all $n \geq N$. Define $N = \max\{N_1, N_2\}$. Then, for all $n \geq N$,
+    \begin{align*}
+        \bigg{|}\frac1{a_n} - \frac12\bigg{|} &= \bigg{|}\frac{2}{2a_n} - \frac{a_n}{2a_n}\bigg{|} \\
+                                              &= \bigg{|}\frac{2 - a_n}{2a_n}\bigg{|} \\
+                                              &= \frac{|2 - a_n|}{|2a_n|} \\
+                                              &= \frac{|a_n - 2|}{2|a_n|} \\
+                                              &< \frac{|a_n - 2|}{|a_n|} \\
+                                              &< \frac\epsilon{|a_n|} \\
+                                              &\leq \frac\epsilon1 \\
+                                              &= \epsilon.
+    \end{align*}
+\end{proof}
+
+\newpage
+\noindent{\bf 11. Example:} Let $(a_n)$ be defined by $a_n = n$, and let $(b_N)$ be defined by $b_n = -n$. Then, both $(a_n)$ and $(b_n)$ diverge, but $(a_n + b_n)$ converges to $0$.
+
+\newpage
+\noindent{\bf 12. Claim:} If $\lim\limits_{n\to\infty}a_n = a$, and $\lim\limits_{n\to\infty}(b_n-a_n) = 0$, then $\lim\limits_{n\to\infty}b_n=a$.
+\begin{proof}
+    Observe that by the Algebraic Limit Theorem,
+    \begin{align*}
+        \lim\limits_{n\to\infty} b_n &= \lim\limits_{n\to\infty} (b_n-a_n + a_n) \\
+                                     &= \lim\limits_{n\to\infty} ((b_n-a_n) + a_n) \\
+                                     &= 0 + a \\
+                                     &= a.
+    \end{align*}
+    Thus, $\lim\limits_{n\to\infty}b_n = a$.
+\end{proof}
+
+\newpage
+\noindent{\bf 13. Claim:} If $(a_n)$ converges and $(b_n)$ diverges, then $(a_n + b_n)$ diverges.
+\begin{proof}
+    Let $(a_n)$ be converge to $a$, and let $(b_n)$ be a divergent sequence. Then, by the Algebraic Limit Theorem, $(-a_n)$ converges to $-a$. Suppose $(a_n + b_n)$ converges to $c$. Now, observe that
+    \begin{align*}
+        \lim\limits_{n\to\infty} (b_n) &= \lim\limits_{n\to\infty} (-a_n + a_n + b_n) \\
+                                       &= \lim\limits_{n\to\infty} (-a_n + (a_n + b_n)) \\
+                                       &= -a + c,
+    \end{align*}
+    by the Algebraic Limit Theorem.
+    Therefore, $(b_n)$ converges to $-a+c$, which is a contradiction. Thus, $(a_n + b_n)$ diverges.
+\end{proof}
+    
+
+\end{document}

@@ -5,6 +5,7 @@
 \usepackage{amssymb}
 \usepackage{graphicx}
 \usepackage{geometry}
+\usepackage{xcolor}
 
 \newcommand\inv{^{-1}}   
 \newcommand{\Z}{\mathbb Z}
@@ -16,6 +17,8 @@
 \newcommand{\gal}{\text{Gal }}
 
 \begin{document}
+\pagecolor{black}
+\color{white}
 
 \noindent{\bf Theorem 1.1.1}
 
@@ -291,7 +294,7 @@ In other words, a set is dense if every open interval contained in it has at lea
 
     A series $\sum\limits_{n=1}^\infty a_n$ converges if and only if for all $\epsilon > 0$, there exists $N \in \mathbb N$ such that for all $n,m \geq N$ with $n > m$, $$|a_{m+1}+a_{m+2} + \hdots + a_n| < \epsilon.$$
 
-\mewdskip
+\medskip
 \noindent{\bf Theorem 2.7.3}
 
     If the series $\sum\limits_{k=1}^\infty a_k$ converges, then $(a_k) \to 0$.
@@ -339,5 +342,25 @@ In other words, a set is dense if every open interval contained in it has at lea
 \noindent{\bf The Cantor Set}
 
     Let $C_0 = [0,1]$. Define $$C_n = C_{n-1} \setminus \text{the open middle third of each separate piece of } C_{n-1}.$$ The intersection of all of these sets is known as the Cantor set. The Cantor set is not just the set of all the endpoints of these segments. It's actually uncountable.
+
+\medskip
+\noindent{\bf $\epsilon$-Neighborhood}
+
+    Given $x \in \mathbb R$ and $\epsilon > 0$, the $\epsilon$-neighborhood around $x$ is the interval $V_\epsilon(x) = (x-\epsilon, x + \epsilon)$.
+
+\medskip
+\noindent{\bf Open}
+
+    A set $A \subseteq \mathbb R$ is open provided that for every $a \in \mathbb A$, there exists $\epsilon > 0$ such that $V_\epsilon(a) \subseteq A$.
+
+\medskip
+\noindent{\bf Limit Point}
+
+    Given $A \subseteq \mathbb R$, a limit point of $A$ is a point $x \in \mathbb R$ such that every $\epsilon$-neighborhood of $x$ contains a point in $A$ other than $x$ (which may or may not be in $A$).
+
+\medskip
+\noindent{\bf Closed}
+
+    A set $A \subseteq \mathbb R$ is closed if it contains all of its limit points.
 
 \end{document}

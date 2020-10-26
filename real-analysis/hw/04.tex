@@ -1,0 +1,69 @@
+\documentclass[12pt]{article}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb,amsthm}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{geometry}
+
+\setlength{\topmargin}{0pt}
+\setlength{\headsep}{0pt}
+\textheight = 600pt
+
+\title{Real Analysis \\ Homework 4}
+\author{Ben Kallus, Truong Pham}
+\date{Due Monday, September 6}
+
+\begin{document}
+\maketitle
+
+\hrule
+\bigskip
+
+\noindent {\bf Acknowledgements:}  We callaborated with you for 10(a).
+
+\bigskip
+\hrule
+\bigskip
+
+\noindent {\bf 9.} Let $A \subseteq \mathbb R$ be nonempty and bounded above, and let $x < 0$. Define the set $$B = \{xa:a\in A\}.$$
+
+\noindent{\bf a. Claim:} The supremum of $A$ exists.
+
+\begin{proof}
+    By the Axiom of Completeness, the supremum of $A$ exists.
+\end{proof}
+
+\medskip
+\noindent{\bf b. Claim:} The infimum of $B$ exists.
+
+\begin{proof}
+
+    Since $A$ is nonempty, there exists $c \in A$. Observe that $xc \in B$, so $B$ is nonempty.
+
+    Let $a_0$ be the supremum of $A$. Let $b \in B$. Then, $b=xa$ for some $a \in A$. Then, since $x \neq 0$, $\frac b x = a$. Thus, since $a_0$ is an upper bound for $A$, $\frac b x \leq a_0$. Since $x<0$, multiplying both sides of this inequality by $x$ yields $b \geq xa_0$. Thus, $B$ is bounded below, since $xa_0$ is a lower bound for $B$.
+
+    Thus, by the lower bound equivalent of the Axiom of Completeness, $B$ has an infimum.
+
+\end{proof}
+
+\medskip
+\noindent{\bf c. Claim:} The infimum of $B$ is $x \cdot \text{sup } A$.
+
+\begin{proof}
+    Let $a_0$ be the supremum of $A$. It is shown in the previous proof that $xa_0$ is a lower bound for $B$. Let $t$ be a lower bound for $B$. Then, $t \leq b$ for all $b \in B$. Therefore, $t \leq xa$ for all $a \in A$. Since $x < 0$, dividing both sides of this inequality by $x$ yields $\frac t x \geq a$ for all $a \in A$. Thus, $\frac t x$ is an upper bound for $A$. Thus, $\frac t x \geq a_0$. Multiplying both sides of this inequality by $x$ yields $t \leq xa_0$. Thus, $xa_0$ is the greatest lower bound for $B$.
+\end{proof}
+
+\newpage
+\noindent {\bf 10.} Let $A, B \subseteq \mathbb R$ be bounded above, so that each set has a supremum.
+
+\medskip
+\noindent{\bf a. Claim:} If the supremum of $A$ is less than the supremum of $B$, then there exists some $b \in B$ that is an upper bound for $A$.
+\begin{proof}
+    Let $a_0$ be the supremum of $A$, and let $b_0$ be the supremum of $B$. Suppose $a_0 < b_0$. Then, by the definition of sup $B$, $a_0$ cannot be an upper bound for $B$. Thus, there exists $b \in B$ such that $b \geq a_0$. Thus, $b$ is an upper bound for $A$.
+\end{proof}
+
+\medskip
+\noindent{\bf b. Example:} Let $A=[0,1)$, and let $B = A$. Then, 1 is the supremum of both $A$ and $B$. Thus, $\text{sup } A \leq \text{sup } B$. Observe that there is no element of $[0,1)$ that is an upper bound for $[0,1)$.
+
+\end{document}
