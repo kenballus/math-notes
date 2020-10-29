@@ -103,17 +103,23 @@ $$\mathbb P(B \geq 1|A=0) = \frac34$$
                             0 & \text{else.} \end{cases}
 \end{align*} These are the areas of the rectangles under the surface $z=\frac25y$ at the input $y$.
 
-\medskip
+\newpage
 \noindent{\bf c.}
 \begin{align*}
     \mathbb P(Y > 1) &= \frac12 \cdot 1 \cdot \frac25 \cdot 1 + 1 \cdot 1 \cdot \frac25 \\
                      &= \frac35.
 \end{align*} This is the volume under the surface $z=\frac25y$ with $1 < x,y \leq 2$. That's equal to the volume of a triangular prism with height $\frac25$, width and length 1, added to the volume of a rectangular prism with height $\frac25$, width and length 1.
 
-\newpage
+\medskip
 \noindent{\bf d.}
 
-    Let $T$ be the amount of time it takes to retrieve the ball, starting at the ball's $X$ position. Then, $$T = 20Y + 10.$$
+    Let $T$ be the amount of time it takes to retrieve the ball, starting at the ball's $X$ position. Then, $$T = 20Y + 10,$$ and
+    \begin{align*}
+        \mathbb ET &= 20\mathbb EY + 10 \\
+                   &= \int_{-\infty}^\infty f_Y(y)y\,dy \\
+                   &= \int_0^1 \frac45y^2 \,dy + \int_1^2 \frac25y^2 \,dy \\
+                   &= \frac65.
+    \end{align*}
 
 \medskip
 \noindent{\bf e.}
