@@ -80,13 +80,97 @@ $$\mathbb P(B \geq 1|A=0) = \frac34$$
 \medskip
 \noindent{\bf a.}
 \begin{align*}
-    \int_{-\infty}^\infty \int_{-\infty}^\infty ky\,dy\,dx &= 1 \\
-    \int_0^1\int_0^1ky\,dy\,dx + \int_1^2\int_0^2 ky\,dy\,dx &= 1 \\
-    \int_0^1\int_0^1y\,dy\,dx + \int_1^2\int_0^2 y\,dy\,dx &= \frac1k \\
+    \int\limits_{-\infty}^\infty \int\limits_{-\infty}^\infty ky\,dy\,dx &= 1 \\
+    \int\limits_0^1\int\limits_0^1ky\,dy\,dx + \int\limits_1^2\int\limits_0^2 ky\,dy\,dx &= 1 \\
+    \int\limits_0^1\int\limits_0^1y\,dy\,dx + \int\limits_1^2\int\limits_0^2 y\,dy\,dx &= \frac1k \\
     \frac12 + 2 &= \frac1k \\
     k &= \frac25
 \end{align*}
 
+\medskip
 \noindent{\bf b.}
+\begin{align*}
+    f_X(x) &= \int\limits_{-\infty}^\infty f_{X,Y}(x,y) \\
+           &= \begin{cases} \frac15 & 0 \leq x < 1, \\
+                            \frac45 & 1 \leq x < 2, \\
+                            0 & \text{else.} \end{cases}
+\end{align*} These are the areas of the triangles under the surface $z=\frac25y$ at the input $x$.
+
+\begin{align*}
+    f_Y(y) &= \int\limits_{-\infty}^\infty f_{X,Y}(x,y) \\
+           &= \begin{cases} \frac45y & 0 \leq y < 1, \\
+                            \frac25y & 1 \leq y < 2, \\
+                            0 & \text{else.} \end{cases}
+\end{align*} These are the areas of the rectangles under the surface $z=\frac25y$ at the input $y$.
+
+\medskip
+\noindent{\bf c.}
+\begin{align*}
+    \mathbb P(Y > 1) &= \frac12 \cdot 1 \cdot \frac25 \cdot 1 + 1 \cdot 1 \cdot \frac25 \\
+                     &= \frac35.
+\end{align*} This is the volume under the surface $z=\frac25y$ with $1 < x,y \leq 2$. That's equal to the volume of a triangular prism with height $\frac25$, width and length 1, added to the volume of a rectangular prism with height $\frac25$, width and length 1.
+
+\newpage
+\noindent{\bf d.}
+
+    Let $T$ be the amount of time it takes to retrieve the ball, starting at the ball's $X$ position. Then, $$T = 20Y + 10.$$
+
+\medskip
+\noindent{\bf e.}
+
+    In order to be barbecued by the flamethrower, I have to try to retrieve a ball at least 1 unit away from the fence. The probability that the ball ends up at least 1 unit from the fence, as we found in part \copyright, is $\frac35$. Thus, the probability that I avoid incineration is $\frac25$.
+
+\medskip
+\noindent{\bf f.} Given $X=1.2$,
+\begin{align*}
+    \mathbb P(Y > 1) &= \frac{\frac25 + \frac15}{\frac45} \\
+                     &= \frac34.
+\end{align*} The denominator is the area of the triangle under the surface $z=\frac25y$ at $x=1.2$, and the numerator is the area of that triangle for which $y > 1$. Thus, the fraction represents the proportion of the area under that curve that corresponds to the danger zone.
+
+The answer to part (d) remains unchanged.
+
+The probability that I survive is $\frac14$.
+
+\newpage
+\noindent{\bf 3.}
+
+\medskip
+\noindent{\bf a.} Claim: $Q$ and $R$ are independent if and only if $f_{Q|R}(q|r) = f_Q(q)$ for all $q,r$ such that $f_R(r) > 0$.
+\begin{proof}
+    Suppose $Q$ and $R$ are independent. Then,
+    \begin{align*}
+        f_{Q|R}(q|r) &= \frac{f_{Q,R}(q,r)}{f_R(r)} \\
+                     &= \frac{f_Q(q)f_R(r)}{f_R(r)} \\
+                     &= f_Q(q).
+    \end{align*}
+    Now, suppose $$f_{Q|R}(q|r) = f_Q(q).$$ Then, $$\frac{f_{Q,R}(q,r)}{f_R(r)} = f_Q(q).$$ Thus, $$f_{Q,R}(q,r) = f_Q(q)f_R(r).$$ Therefore, $Q$ and $R$ are independent.
+\end{proof}
+
+\medskip
+\noindent{\bf b.} Claim: If $Q$ and $R$ are independent, then $\mathbb E[QR] = (\mathbb EQ)(\mathbb ER)$.
+\begin{proof}
+    Observe that
+    \begin{align*}
+        \mathbb E[QR] &= \int\limits_{-\infty}^\infty \int\limits_{-\infty}^\infty f_{Q,R}(q,r) qr\,dr\,dq \\
+                      &= \int\limits_{-\infty}^\infty \int\limits_{-\infty}^\infty f_Q(q)f_R(r) qr\,dr\,dq \\
+                      &= \int\limits_{-\infty}^\infty f_Q(q)q \int\limits_{-\infty}^\infty f_R(r) r\,dr\,dq \\
+                      &= \int\limits_{-\infty}^\infty f_Q(q)q \,dq\int\limits_{-\infty}^\infty f_R(r) r\,dr \\
+                      &= (\mathbb EQ)(\mathbb ER).
+    \end{align*}
+\end{proof}
+
+\newpage
+\noindent{\bf 4.}
+
+\medskip
+\noindent{\bf a.}
+
+\medskip
+\noindent{\bf b.}
+\begin{align*}
+    \mathbb P(|U-V|<1) &= \mathbb P(V \leq U + \frac12) - \mathbb P(V \leq U - \frac12) \\
+                       &= (1 - e^{-U(U+\frac12)}) - (1 - e^{-U(U-\frac12)}) \\
+                       &= -e^{-U(U+\frac12)} + e^{-U(U-\frac12)}
+\end{align*}
 
 \end{document}

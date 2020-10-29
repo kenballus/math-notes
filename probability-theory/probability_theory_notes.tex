@@ -445,4 +445,18 @@
 
     Let $(X,Y)$ be a continuous random vector and $P_{X,Y}(x,y)$ their joint distribution. Let $$g(x,y) : \mathbb R^2 \to \mathbb R$$ be a function. Then, $$\mathbb E[g(X,Y)] = \int\limits_{-\infty}^\infty \int\limits_{-\infty}^\infty f_{X,Y}(x,y)g(x,y)\,dy\,dx.$$
 
+\medskip
+\noindent{\bf Covariance}
+
+    Let $X,Y$ be random variables. The covariance of $X$ and $Y$ is given by
+    \begin{align*}
+        \text{Cov}(X,Y) &= \mathbb E[(X-\mathbb EX)(Y-\mathbb EY)] \\
+                        &= \mathbb E[XY] - (\mathbb EX)(\mathbb EY).
+    \end{align*}
+
+\medskip
+\noindent{\bf Correlation Coefficient}
+
+    Let $X,Y$ be random variables. The correlation coefficient of $X$ and $Y$, denoted $\rho_{XY}$ or $\rho(X,Y)$ is given by $$\frac{\text{Cov}(X,Y)}{\sqrt{\mathbb VX}\sqrt{\mathbb VY}}.$$ Note that Cauchy-Schwarz guarantees that a correlation coefficient is between -1 and 1.
+
 \end{document}
