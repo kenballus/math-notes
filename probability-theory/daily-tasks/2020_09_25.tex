@@ -1,0 +1,44 @@
+\documentclass[12pt]{article}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb,amsthm}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{geometry}
+
+\graphicspath{ {./images/} }
+
+\setlength{\topmargin}{0pt}
+\setlength{\headsep}{0pt}
+\textheight = 600pt
+
+\title{Probability Theory \\ Daily Task}
+\author{Ben Kallus}
+\date{September 21, 2020}
+
+\begin{document}
+\maketitle
+
+\noindent{\bf 1.1}
+
+    $\mathbb P(X \geq 9) = {10 \choose 9}(\frac12)^9(\frac12) + {10 \choose 10}(\frac12)^{10}(\frac12)^0 = 11(\frac12)^{10}$.
+
+\noindent{\bf 1.2}
+
+    $\mathbb P(X \geq 9) \leq \frac59$.
+    
+\noindent{\bf 1.3}
+
+    Markov's inequality does a pretty bad job. $\frac59$ is pretty far away from $11(\frac12)^{10}$.
+    
+\noindent{\bf 1.4}
+
+    Chebyshev is the most horrible. Tschebyscheff is the coolest.
+    
+\newpage
+
+\noindent{\bf 2.}
+
+    What they're saying is that any winning streak (which will cause a little spike in a graph like the one on the right of the page) will eventually be smoothed out by the sheer number of events occurring. Basically, in the long run, even the biggest winning streaks are balanced out.
+
+\end{document}

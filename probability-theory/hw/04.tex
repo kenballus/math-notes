@@ -1,0 +1,150 @@
+\documentclass[12pt]{article}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb,amsthm}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{geometry}
+
+\setlength{\topmargin}{0pt}
+\setlength{\headsep}{0pt}
+\textheight = 600pt
+
+\title{Probability Theory \\ Homework 4}
+\author{Ben Kallus}
+\date{Due Friday, October 2}
+
+\begin{document}
+\maketitle
+
+\noindent{\bf 1.}
+
+    Let $X$ be a random variable. Let $$Y=\frac{X-\mathbb EX}{\sqrt{\mathbb VX}}.$$
+    \begin{align*}
+        \mathbb EY &= \mathbb E[\frac{X-\mathbb EX}{\sqrt{\mathbb VX}}] \\
+                   &= \mathbb E[\frac{X}{\sqrt{\mathbb VX}} - \frac{\mathbb EX}{\sqrt{\mathbb VX}}] \\
+                   &= \mathbb E[\frac{X}{\sqrt{\mathbb VX}}] - \mathbb E[\frac{\mathbb EX}{\mathbb VX}] \\
+                   &= \frac{1}{\sqrt{\mathbb VX}} \mathbb EX - \frac{1}{\sqrt{\mathbb VX}} \mathbb E[\mathbb EX] \\
+                   &= \frac{1}{\sqrt{\mathbb VX}} \mathbb EX - \frac{1}{\sqrt{\mathbb VX}} \mathbb EX \\
+                   &= 0.
+    \end{align*}
+    \begin{align*}
+        \mathbb VY &=\mathbb V[\frac{X-\mathbb EX}{\sqrt{VX}}] \\
+                   &= (\frac{1}{\sqrt{VX}})^2 \mathbb V[X - \mathbb EX] \\
+                   &= \frac{1}{\mathbb VX}(\mathbb E[(X - \mathbb EX)^2] - \mathbb E[X- \mathbb EX]^2) \\
+                   &= \frac{1}{\mathbb VX}(\mathbb E[(X - \mathbb EX)^2] - (\mathbb EX - \mathbb E [\mathbb EX])^2) \\
+                   &= \frac{1}{\mathbb VX}(\mathbb E[(X - \mathbb EX)^2] - 0^2) \\
+                   &= \frac{1}{\mathbb VX}(\mathbb E[X^2 - 2X\mathbb EX + (\mathbb EX)^2)]) \\
+                   &= \frac{1}{\mathbb VX}(\mathbb E[X^2] - \mathbb E[2X\mathbb EX] + \mathbb E[(\mathbb EX)^2]) \\
+                   &= \frac{1}{\mathbb VX}(\mathbb E[X^2] - \mathbb E[2X\mathbb EX] + (\mathbb EX)^2) \\
+                   &= \frac{1}{\mathbb VX}(\mathbb E[X^2] - 2(\mathbb EX)^2 + (\mathbb EX)^2) \\
+                   &= \frac{1}{\mathbb VX}(\mathbb E[X^2] - (\mathbb EX)^2) \\
+                   &= \frac{1}{\mathbb VX}\mathbb VX \\
+                   &= 1.
+    \end{align*}
+    
+\newpage
+\noindent{\bf 2.} Let $X$ be hypergeometric with parameters $N, K, n$.
+
+\medskip
+\noindent{\bf a. Claim:} $\mathbb EX = \frac{nK}{N}$.
+\begin{proof}
+    Let $$X_i = \begin{cases} 0 & \text{The ith item picked is not special.} \\ 1 & \text{The ith item picked is special.} \end{cases}$$
+    Observe that $X = \sum\limits_{i=1}^{n} X_i$. Then,
+    \begin{align*}
+        \mathbb EX &= \mathbb E[\sum\limits_{i=1}^{n} X_i] \\
+                   &= \sum\limits_{i=1}^{n} \mathbb EX_i \\
+                   &= n \mathbb EX_1 \\
+                   &= n (1 \cdot \frac KN + 0 (1- \frac KN)) \\
+                   &= \frac{nK}{N}
+    \end{align*}
+    This works because each of the items has an equal probability ($\frac KN$) of being special.
+    \begin{align*}
+    \end{align*}
+\end{proof}
+\medskip
+\noindent{\bf b.}
+    $$\mathbb P(X < 70) = 1 - \mathbb P(X \geq 70)$$
+    By Markov's Inequality,
+    \begin{align*}
+        \mathbb P(X \geq 70) &\leq \frac{\mathbb EX}{70} \\
+                             &= \frac{\frac{100 \cdot 297}{1148}}{70} \\
+                             &= \frac{100 \cdot 297}{1148 \cdot 70}.
+    \end{align*}
+    Thus,
+    $$\mathbb P(X < 70) = 1 - \mathbb P(X \geq 70) \geq 1 - \frac{100 \cdot 297}{1148 \cdot 70}.$$
+
+\newpage
+\noindent{\bf 3.}
+
+\medskip
+\noindent{\bf a.} Let $X$ be the number of mistakes the typist made in a 2000 word submission. Then, $X\sim$Poisson$(\lambda=\frac1{800}, T=2000) =~$Poisson$(\lambda=2.5)$.
+    
+    Then,
+    \begin{align*}
+        \mathbb P(X = 0) &= \frac{e^{-2.5}(2.5)^0}{0!} \\
+                         &= e^{-2.5}.
+    \end{align*}
+    
+\medskip
+\noindent{\bf b.} The probability that there are 0 typos in a block of $N$ words is $e^{-\frac{N}{800}}$. We want to find the smallest integer $N$ such that $e^{-\frac{N}{800}} < \frac12$. So,
+    \begin{align*}
+        e^{-\frac{N}{800}} &= \frac12 \\
+        -\frac{N}{800} &= \ln(\frac12) \\
+        N &= -800\ln(\frac12).
+    \end{align*}
+    Thus, $N \approx 554.5$, so the typist must type 555 words or more in order to be more likely than not to have made a typo.
+    
+\medskip
+\noindent{\bf c.} Let $X$ be the number of typos the typist makes in a block of $N$ words. We're trying to figure out the value of $N$ for which $EX = 1$. Then,
+    \begin{align*}
+        \mathbb EX &= \frac1{800} \cdot N \\
+        1 &= \frac1{800} \cdot N \\
+        800 &= N.
+    \end{align*}
+    Thus, she needs to type 800 words before she is expected to make 1 typo.
+    
+\medskip
+\noindent{\bf d.} The result of part (b) tells us the number of words she must type before the probability that she makes one or more typos. The result of part (c) tells us the number of words she must type before she is expected to have made 1 typo. This distribution is not symmetric, since it is possible for the typist to make her first typo on the $\mathbb EX + 9000 = 9800^\text{th}$ word, but it is impossible for her make her first typo on the $\mathbb EX - 9000 = -8200^\text{th}$ word. Thus, it makes sense that the median (b) and mean (c) of the distribution are different.
+    
+\newpage
+\noindent{\bf 4.} Let $Z$ be a random variable such that $$\mathbb P(Z=-1) = \frac1{18},~~~~~~\mathbb P(Z=0)=\frac{16}{18},~~~~~~\mathbb P(Z=1)=\frac{1}{18}.$$
+
+\noindent{\bf a.}
+    $$\mathbb EZ = -1 \cdot \frac1{18} + 0 \cdot \frac{16}{18} + 1 \cdot \frac1{18} = 0.$$
+    
+    $$\mathbb VZ = \mathbb E[Z^2] - \mathbb E[Z]^2 = ((-1)^2 \cdot \frac1{18} + 0^2 \cdot \frac{16}{18} + 1^2 \cdot \frac1{18}) - 0^2 = \frac2{18} = \frac19.$$
+    
+\noindent{\bf b.}
+\begin{proof}
+    Let $a = 1$. Then,
+    \begin{align*}
+        \mathbb P(|Z| \geq a) &= \mathbb P(|Z| \geq 1) \\
+                            &= \frac1{18} + \frac1{18} \\
+                            &= \frac19 \\
+                            &= \frac1{9 \cdot 1^2} \\
+                            &= \frac{\frac19}{1^2} \\
+                            &= \frac{\mathbb VZ}{a^2}.
+    \end{align*}
+\end{proof}
+    
+\newpage
+\noindent{\bf 5.}
+
+\medskip
+\noindent{\bf a.} There are ${k-1 \choose n-1}$ different outcomes with $Y=k$. This is because the $k^\text{th}$ trial is definitely a success, so we're really asking for the number of ways to distribute $n-1$ successes among $k-1$ trials.
+
+\medskip
+\noindent{\bf b.} Each outcome requires $n$ successes and $k-n$ failures. Therefore, each outcome occurs with probability $p^n(1-p)^{k-n}$.
+
+\medskip
+\noindent{\bf c.} $$\mathbb P(X=k) = {k-1 \choose n-1 }p^n(1-p)^{k-n}$$
+
+\medskip
+\noindent{\bf d.} When $n=1$,
+\begin{align*}
+    \mathbb P(X=k) &= {k-1 \choose 1 - 1}p^1(1-p)^{k-1} \\
+                   &= p(1-p)^{k-1}.
+\end{align*}
+This agrees with the geometric pmf.
+\end{document}

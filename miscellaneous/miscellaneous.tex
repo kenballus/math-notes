@@ -5,6 +5,7 @@
 \usepackage{graphicx}
 \usepackage{hyperref}
 \usepackage{geometry}
+\usepackage{xcolor}
 
 \setlength{\topmargin}{0pt}
 \setlength{\headsep}{0pt}
@@ -14,9 +15,11 @@
 \author{Ben Kallus}
 
 \begin{document}
+\pagecolor{black}
+\color{white}
 \maketitle
 
-\section*{Warning:} These notes are on topics that I have not (yet) studied in class. It is likely that some of them are wrong. This file is for accumulating definitions that I would otherwise forget, but may be useful to me in the future.
+\section*{Warning:} These are notes on topics that I have not (yet) studied in class. It is likely that some of them are wrong. This file is for accumulating definitions that I would otherwise forget, but may be useful to me in the future.
 
 \bigskip
 \noindent{\bf Metric}
@@ -59,5 +62,34 @@
 \noindent{\bf Discrete Space}
 
     A discrete space is a topological space in which all subsets are open.
+
+\medskip
+\noindent{\bf Category}
+
+    A category $C$ consists of a class ob$(C)$ of objects and a class of arrows hom$(C)$ between the objects such that arrows can be composed associatively, and there exists an arrow $\text{id}_X$ from $X$ to $X$ for all $X \in \text{ob}(C)$.
+
+    Examples:
+    \begin{itemize}
+        \item The category of sets, in which the objects are sets and the arrows are unary functions.
+        \item The category of rings, in which the objects are rings and the arrows are ring homomorphisms.
+    \end{itemize}
+
+\medskip
+\noindent{\bf Functor}
+
+    Let $C, D$ be categories. A functor $F$ from $C$ to $D$ is a mapping such that
+    \begin{itemize}
+        \item For each object $X \in \text{ob}(C)$, $F(X) \in \text{ob}(D)$.
+        \item For each morphism $f: X \to Y$ for $X,Y \in \text{ob}(C)$, $F(f) : F(X) \to F(Y)$.
+        \item $F(\text{id}_X) = \text{id}_{F(X)}$ for all $X \in \text{ob}(C)$.
+        \item $F(g \circ f) = F(g) \circ F(f)$ for all $f : X \to Y, g : Y \to Z \in \text{ob}(C)$.
+    \end{itemize}
+
+    In other words, a functor is a mapping from one category to another that preserves composition of arrows and plays nice with identity arrows.
+
+\medskip
+\noindent{\bf Endofunctor}
+
+    An endofunctor is a functor from a category $C$ to itself.
 
 \end{document}

@@ -1,0 +1,24 @@
+\documentclass[12pt]{article}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb,amsthm}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{geometry}
+
+\setlength{\topmargin}{0pt}
+\setlength{\headsep}{0pt}
+\textheight = 600pt
+
+\title{Probability Theory \\ Daily Task}
+\author{Ben Kallus}
+\date{September 14, 2020}
+
+\begin{document}
+\maketitle
+
+The provided probability mass function makes sense because the probability of putting all three balls in any one basket is $\frac33 \cdot \frac13 \cdot \frac13$, yielding $\frac19$ for the probability that 2 baskets are empty. The probability of putting all three balls in different baskets is $\frac33 \cdot \frac23 \cdot \frac13$, yielding $\frac29$ for the probability that 0 baskets are empty. The probability of putting two balls in one basket and one in another is $\frac33 \cdot \frac13 \cdot \frac23 + \frac33 \cdot \frac23 \cdot \frac23$, yielding $\frac23$ for the probability that 1 basket is empty.
+
+$$\mathbb EY = \sum_{k=0}^2 \mathbb P(Y = k) \cdot k = \frac1{10} \cdot 0 + \frac6{10} \cdot 1 + \frac3{10}\cdot 2 = \frac{12}{10} = 1.2.$$
+
+\end{document}

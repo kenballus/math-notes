@@ -426,7 +426,7 @@
     Let $X,Y$ be continuous random variables with density $f_{X,Y}(x,y)$. The marginal distribution of $X$ is $$f_X(x) = \int\limits_{-\infty}^\infty f_{X,Y}(x,y)\,dy,$$ and the marginal distribution of $Y$ is $$f_Y(y) = \int\limits_{-\infty}^\infty f_{X,Y}(x,y)\,dx.$$
 
 \medskip
-\noindent{\bf Conditional Distribution of Discrete a Continuous Variable}
+\noindent{\bf Conditional Distribution of Continuous Variables}
 
     The conditional distribution of $X$ given $Y=y$ is $$P_{X|Y}(x) = \frac{f_{X,Y}(x,y)}{f_Y(y)}.$$
 
@@ -434,5 +434,15 @@
 \noindent{\bf Independence for Joint Distributions of Continuous Random Variables}
 
     $X$ and $Y$ are independent if and only if $f_{X,Y}(x,y) = f_X(x)f_Y(y)$ for all $x,y \in \mathbb R$.
+
+\medskip
+\noindent{\bf Expected Value of a Function of Discrete Random Variables}
+
+    Let $(X,Y)$ be a discrete random vector and $P_{X,Y}(x,y)$ their joint distribution. Let $$g(x,y) \to \mathbb R$$ be a function. Then, $$\mathbb E[g(X,Y)] = \sum_x\sum_yP_{X,Y}(x,y)g(x,y).$$
+
+\medskip
+\noindent{\bf Expected Value of a Function of Continuous Random Variables}
+
+    Let $(X,Y)$ be a continuous random vector and $P_{X,Y}(x,y)$ their joint distribution. Let $$g(x,y) : \mathbb R^2 \to \mathbb R$$ be a function. Then, $$\mathbb E[g(X,Y)] = \int\limits_{-\infty}^\infty \int\limits_{-\infty}^\infty f_{X,Y}(x,y)g(x,y)\,dy\,dx.$$
 
 \end{document}

@@ -13,7 +13,7 @@
 
 \title{Real Analysis \\ Homework 16}
 \author{Ben Kallus, Noah Barton}
-\date{Due Thursday, October 22}
+\date{Due Monday, October 26}
 
 \begin{document}
 \pagecolor{black}
@@ -60,7 +60,7 @@
     Observe that
     \begin{align*}
         [0.\overline{1}]_3 &= \left(\frac13\right)^1 + \left(\frac13\right)^2 + \left(\frac13\right)^3 + \hdots \\
-                           &= \sum_{n=1}^\infty \left(\frac13\right)^n \\
+                           &= -\left(\frac13\right)^0 + \left(\frac13\right)^0 + \left(\frac13\right)^1 + \left(\frac13\right)^2 + \left(\frac13\right)^3 + \hdots \\
                            &= -1 + \sum_{n=0}^\infty \left(\frac13\right)^n \\
                            &= -1 + \frac1{1-\frac13} \\
                            &= -1 + \frac32 \\
@@ -82,13 +82,13 @@
 \newpage
 \noindent{\bf 3. Claim:} The set of all endpoints in the construction of the Cantor Set, $E$, is not equal to the Cantor Set.
 \begin{proof}
-    Note that all elements of $E$ are of the form $\frac k{3^n}$ for some $k,n \in \mathbb N$. Thus, $\frac34\notin E$. Observe that $\frac34 = [0.\overline{20}]$ is an element of the Cantor Set, since its ternary representation indicates that it is in the upper third of the interval $[0,1]$, the lower third of the interval $[\frac23,1]$, the upper third of the interval $[\frac23, \frac79]$, and so on. Thus, $E$ is not the Cantor Set.
+    Note that all elements of $E$ are by construction of the form $\frac k{3^n}$ for some $k,n \in \mathbb N$. Thus, $\frac34\notin E$. Observe that $\frac34 = [0.\overline{20}]_3$ is an element of the Cantor Set, since its ternary representation contains no $1$s. Thus, $E$ is not the Cantor Set.
 \end{proof}
 
 \newpage
 \noindent{\bf 4. Claim:} The Cantor Set contains no intervals.
 \begin{proof}
-    Let $a, b \in C$, the Cantor Set. Then, $a = [0.a_1a_2a_3\hdots]_3$ such that $a_i \in \{0,2\}$ for all $i \in \mathbb N$. Similarly, $b = [0.b_1b_2b_3\hdots]_3$ such that $b_i \in \{0,2\}$ for all $i \in \mathbb N$. Let $j \in \mathbb N$ be the least number such that $a_j \neq b_j$. Then, since $a < b$, $a_j = 0$ and $b_j = 2$. Define $d = [0.a_1a_2 \hdots a_{j-1}1a_{j+1}\hdots]_3$. Then, $d \notin C$, since $d$'s ternary representation contains a 1. Note that $a < d$, since $d = a + \left(\frac13\right)^j$. Also note that $b > d$, since the two numbers' ternary representations differ first at index $j$, at which $b$ contains a 2 and $d$ contains a 1. Thus, $C$ contains no intervals.
+    Let $a, b \in \mathcal C$, the Cantor Set. Then, $a = [0.a_1a_2a_3\hdots]_3$ such that $a_i \in \{0,2\}$ for all $i \in \mathbb N$. Similarly, $b = [0.b_1b_2b_3\hdots]_3$ such that $b_i \in \{0,2\}$ for all $i \in \mathbb N$. Let $j \in \mathbb N$ be the least number such that $a_j \neq b_j$. Then, since $a < b$, $a_j = 0$ and $b_j = 2$. Define $d = [0.a_1a_2 \hdots a_{j-1}1a_{j+1}\hdots]_3$. Then, $d \notin \mathcal C$, since $d$'s ternary representation contains a 1. Note that $a < d$, since $d = a + \left(\frac13\right)^j$. Also note that $b > d$, since the two numbers' ternary representations differ first at index $j$, at which $b$ has a 2 and $d$ has a 1. Thus, the Cantor Set contains no interval from $a$ to $b$. Thus, $\mathcal C$ contains no intervals.
 \end{proof}
 
 \end{document}

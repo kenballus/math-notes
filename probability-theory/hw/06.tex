@@ -1,0 +1,136 @@
+\documentclass[12pt]{article}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb,amsthm}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    urlcolor=blue
+}
+\urlstyle{same}
+\graphicspath{{./images/}}
+\setlength{\topmargin}{0pt}
+\setlength{\headsep}{0pt}
+\textheight = 600pt
+
+\title{Probability Theory \\ Homework 6}
+\author{Ben Kallus}
+\date{Due Friday, October 23}
+
+\begin{document}
+\maketitle
+
+\noindent{\bf 1.}
+
+\noindent{\bf a.} Let $X \sim \text{Poisson}(\lambda=26, T=8)$. $$\mathbb EX = 26 \cdot 8 = 208$$ Thus, I would expect 208 people to be born.
+
+\medskip
+\noindent{\bf b.} Let $Y \sim \text{Exponential}(\lambda=26)$.
+\begin{align*}
+    \mathbb P\left(\frac3{60} < Y < \frac7{60}\right) &= F_Y\left(\frac7{60}\right) - F_Y\left(\frac3{60}\right) \\
+                                                      &= 1 - e^{-26\cdot \frac7{60}} - (1 - e^{-26\cdot \frac3{60}}) \\
+                                                      &= -e^{-\frac{91}{30}}+e^{-\frac{13}{10}} \\
+                                                      &\approx 0.224376938913
+\end{align*}
+Thus, the probability that the next birth occurs between 3 and 7 minutes from now is approximately 0.224376938913.
+
+\medskip
+\noindent{\bf c.} Since the exponential distribution is memoryless, this is really just asking for $\mathbb EY$. $$\mathbb EY = \frac1{26}.$$ Thus, I expect to wait $\frac1{26}$ hours until the next birth.
+    
+\medskip
+\noindent{\bf d.} Let $Z \sim \text{Gamma}(\lambda=26, r=100000)$. $$\mathbb EZ = \frac{100000}{26} = 3846.\overline{153846}.$$ Thus, I would expect to wait roughly $3846.153846$ hours, or $160.2564$ days, until baby 100000 is born. That means the baby is expected to be born on June 10, 2021.
+
+\newpage
+\noindent{\bf 2.} I'm going to do this problem in a different way, inspired by \href{https://www.youtube.com/watch?v=OkmNXy7er84}{this video}.
+
+Let's take our stick and connect its ends into a circle. Then, we'll pick three random points on the circle. If we think of these points as snipping the circle into pieces, we're looking for the probability that none of the resulting arcs is longer than the other two combined. This situation occurs if and only if all of the points are on the same half of the circle. Thus, we're looking for the probability that all of these points are contained within some semicircle. Note that we're still making only two meaningful choices: no matter where we choose to stick the first point, we can rotate the circle and move the point anywhere we want.
+
+What's the probability that all three cuts fall along some semicircle? Well, we already established that the first point we pick doesn't matter, since it always results in the same situation. We just need to figure out the probability that both of the other points fall within the semicircle centered at the first point. Since that's a $\frac12$ probability for each point, we have that the overall probability is $\frac12 \cdot \frac12 = \frac14$.
+
+
+\newpage
+\noindent{\bf 3.}
+\noindent{\bf a.}
+\begin{align*}
+    \mathbb E\overline{X} &= \mathbb E\left[\frac1{100}\sum\limits_{i=1}^{100}X_i\right] \\
+                          &= \frac1{100}\sum\limits_{i=1}^{100}\mathbb EX_i \\
+                          &= \frac1{100} \cdot 100\mu \\
+                          &= \mu.
+\end{align*}
+\begin{align*}
+    \mathbb V\overline{X} &= \mathbb V\left[\frac1{100}\sum\limits_{i=1}^{100}X_i\right] \\
+                          &= \frac1{10000} \sum\limits_{i=1}^{100}\mathbb VX_i \\
+                          &= \frac{100}{10000} \\
+                          &= \frac1{100}.
+\end{align*} Thus, the standard deviation of $\overline{X} = \sqrt{\frac1{100}} = \frac1{10}$
+
+\medskip
+\noindent{\bf b.}
+\begin{align*}
+    \mathbb P(\overline{X} > 7.5) &= \mathbb P(Z > \frac{7.5 - 7}{\frac1{10}}) \\
+                                  &= \mathbb P(Z > 5) \\
+                                  &= 1 - F_Z(5).
+\end{align*}
+
+\medskip
+\noindent{\bf c.} $(6.8, 7.2)$ is the interval we want, since 95\% of the area under the bell curve falls within 2 standard deviations of the mean.
+
+\newpage
+\noindent{\bf d.} By the result of the previous question, $$\mu - \frac2{10} < \overline X < \mu + \frac2{10}$$ 95\% of the time. In that case,
+\begin{align*}
+    -\frac2{10} &< \overline X - \mu < + \frac2{10} \\
+    -\overline X -\frac2{10} &< -\mu < -\overline X + \frac2{10} \\
+    \overline X + \frac2{10} &> \mu > \overline X - \frac2{10}.
+\end{align*}
+Thus, $$\mu &\in \left(\overline X - \frac2{10}, \overline X + \frac2{10}\right).$$
+
+\newpage
+\noindent{\bf 4.} \begin{align*} f_{X,Y}(x,y) &= \begin{cases} cx & (x,y) \in A, \\ 0 & \text{otherwise.} \end{cases}
+\end{align*}
+\noindent{\bf a.} $A =$ the unit square.
+\begin{align*}
+    \int_{-\infty}^\infty \int_{-\infty}^\infty f_{X,Y}(x,y)\,dy\,dx &= \int_0^1\int_0^1 cx\,dy\,dx \\
+                                                                     &= c\int_0^1 x \int_0^1 1 \,dy\,dx \\
+                                                                     &= c \int_0^1 x\,dx \\
+                                                                     &= \frac c2.
+\end{align*}
+Thus, $c = 2$.
+\begin{align*}
+    \mathbb P\left(X > \frac12\right) &= 1 - \mathbb P\left(X \leq \frac12\right) \\
+                       &= 1 - \int_0^\frac12 \int_0^1 2x \,dy\,dx \\
+                       &= 1 - \frac14 \\
+                       &= \frac34.
+\end{align*}
+
+\newpage
+\noindent{\bf b.} $A =$ the portion of the first quadrant under the curve $y=1-x^2$.
+\begin{align*}
+    \int_{-\infty}^\infty \int_{-\infty}^\infty f_{X,Y}(x,y)\,dy\,dx &= \int_0^1 \int_0^{1-x^2} cx\,dy\,dx \\
+                                                                     &= c\int_0^1 x \int_0^{1-x^2} 1 \,dy\,dx \\
+                                                                     &= \frac c4.
+\end{align*}
+Thus, $c = 4$.
+\begin{align*}
+    \mathbb P\left(X > \frac12\right) &= 1 - \mathbb P\left(X \leq \frac12\right) \\
+                       &= 1 - \int_0^\frac12 \int_0^{1-x^2} 4x\,dy\,dx \\
+                       &= 1 - 4\int_0^\frac12 x\int_0^{1-x^2} 1\,dy\,dx \\
+                       &= 1 - 4\int_0^{\frac12} x - x^3\,dx \\
+                       &= 1 - 4\left(\frac7{64}\right) \\
+                       &= \frac9{16}.
+\end{align*}
+
+\newpage
+\noindent{\bf c.} $A =$ the triangle bounded on the left by the $y$ axis, on the top by the line $y=1$, and on the bottom by the line $y=x$.
+\begin{align*}
+    \int_{-\infty}^\infty \int_{-\infty}^\infty f_{X,Y}(x,y)\,dy\,dx &= \int_0^1 \int_0^y cx \,dx \,dy \\
+                                                                     &= c\int_0^1 \int_0^y x \,dx \,dy \\
+                                                                     &= c\int_0^1 \frac{y^2}2 \,dy \\
+                                                                     &= \frac c2 \int_0^1 y^2 \,dy \\
+                                                                     &= \frac c6.
+\end{align*}
+Thus, $c = 6$.
+
+To find $\mathbb P(X > \frac12)$, I used some geometric intuition. We have this triangle-base pyramid with base area $\frac12$ and height 6, and we're asking for the proportion of its volume that's past the $x=\frac12$ plane. Well, that volume can be broken up into two pieces; a triangle-base pyramid with base area $\frac18$ and height 3, and a triangular prism with base area $\frac18$ and height 3. Adding up their volumes gets us $\frac18 + \frac38 = \frac48 = \frac12$. Thus, $\mathbb P(X > \frac12) = \frac12$.
+\end{document}

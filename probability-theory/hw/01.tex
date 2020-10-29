@@ -1,0 +1,93 @@
+\documentclass[12pt]{article}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb,amsthm}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{geometry}
+
+\setlength{\topmargin}{0pt}
+\setlength{\headsep}{0pt}
+\textheight = 600pt
+
+\title{Probability Theory \\ Homework 1}
+\author{Ben Kallus}
+\date{Due Friday, September 4}
+
+\begin{document}
+\maketitle
+
+\noindent {\bf Problem 1.}
+
+    Let $E_n$ be the event that we roll an $n$.
+
+    $\mathbb P(E_1) = \frac 2 5$.
+    
+    $\mathbb P(E_2) = \mathbb P(E_3) = \mathbb P(E_4) = \frac 1 5$.
+
+\medskip
+\noindent {\bf Problem 2.}
+
+\noindent {\bf a.}
+
+    $\mathbb P(A \cup B) = \mathbb P(A) + \mathbb P(B) + \mathbb P(A \cap B)$ because $\mathbb P(A \cap B)$ is contained within both $\mathbb P(A)$ and $\mathbb P(B)$, so we need to subtract off $\mathbb P(A \cap B)$ to prevent double counting.
+
+\medskip
+\noindent {\bf b.}
+
+    Let $A$ be the event that the random student owns a parka.
+    
+    Let $B$ by the event that the random student owns boots.
+    
+    \begin{align*}
+        \mathbb P(A \cup B) &= \mathbb P(A) + \mathbb P(B) - \mathbb P(A \cap B) \\
+        .9 &= .6 + .8 - \mathbb P(A \cap B) \\
+        .9 &= .6 + .8 - \mathbb P(A \cap B) \\
+        -.5 &= - \mathbb P(A \cap B) \\
+        \implies .5 &= \mathbb P(A \cap B)
+    \end{align*}
+
+\newpage
+\noindent {\bf Problem 3.}
+
+\noindent {\bf a.}
+
+    The probability that we observe exactly 8 heads is $$\frac{{10 \choose 8}}{2^{10}}$$
+    
+\medskip
+\noindent {\bf b.}
+
+    There are $10 \choose 2$ ways to make exactly 2 wrong guesses, $10 \choose 1$ ways to make exactly 1 wrong guess, and $10 \choose 0$ ways to make no wrong guesses.
+    
+    Thus, there are ${10 \choose 2} + {10 \choose 1} + {10 \choose 0}$ total ways to make at least 8 correct guesses. Since there are $2^{10}$ ways to flip a coin ten times, the probability that you make at least 8 correct guesses is $\frac {{10 \choose 2} + {10 \choose 1} + {10 \choose 0}} {2^{10}}$.
+
+\medskip
+\noindent {\bf Problem 4.}
+
+\noindent{\bf a.}
+
+    The probability that the contestant picks $G$ on the very first guess is $\frac 1 3$. The probability that they pick $W$ on their first guess is $\frac 2 3$.
+    
+\medskip
+\noindent{\bf b.}
+
+    If their first guess was $G$, they win.
+    
+    If their first guess was $W$, they lose.
+    
+\medskip
+\noindent{\bf c.}
+
+    The probability of $G$ if the contestant keeps their original guess is $\frac 1 3$.
+    
+\medskip
+\noindent{\bf d.}
+
+    If their first guess was $G$, they lose. If their first guess was $W$, they win.
+    
+\medskip
+\noindent{\bf e.}
+
+    The probability of $G$ if the contestant switches doors is $\frac 2 3$.
+
+\end{document}

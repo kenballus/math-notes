@@ -1,0 +1,46 @@
+\documentclass[12pt]{article}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb,amsthm}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{geometry}
+
+\graphicspath{ {./images/} }
+
+\setlength{\topmargin}{0pt}
+\setlength{\headsep}{0pt}
+\textheight = 600pt
+
+\title{Probability Theory \\ Daily Task}
+\author{Ben Kallus}
+\date{September 16, 2020}
+
+\begin{document}
+\maketitle
+
+I didn't get $\frac89$ last time because I accidentally used the wrong probability mass function to calculate the expected value. Oops!
+
+\noindent{\bf 1.}
+
+    \includegraphics{frog.png}
+
+\noindent{\bf 2.}
+
+    $\mathbb P(Y_1 = 1) = (\frac23)^3$.
+
+\noindent{\bf 3.}
+
+    $\mathbb EY_1 = (\frac23)^3 \cdot 1 + (1 - (\frac23)^3) \cdot 0 = (\frac23)^3$.
+
+\noindent{\bf 4.}
+    \begin{align*}
+        \mathbb EY &= \mathbb E(Y_1 + Y_2 + Y_3) \\
+                   &= \mathbb EY_1 + \mathbb EY_2 + \mathbb EY_3 \\
+                   &= (\frac23)^3 + (\frac23)^3 + (\frac23)^3 \\
+                   &= 3\frac8{27} \\
+                   &= \frac89
+    \end{align*}
+    This matches the expected value from earlier.
+
+\end{document}

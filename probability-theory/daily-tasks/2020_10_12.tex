@@ -1,0 +1,29 @@
+\documentclass[12pt]{article}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb,amsthm}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{geometry}
+
+\graphicspath{{./images/}}
+\setlength{\topmargin}{0pt}
+\setlength{\headsep}{0pt}
+\textheight = 600pt
+
+\title{Probability Theory \\ Daily Task}
+\author{Ben Kallus}
+\date{October 12, 2020}
+
+\begin{document}
+\maketitle
+
+\noindent{\bf 1.} Roughly $68\%$ of ACT takers score between $15.3$ and $26.5$.
+
+\noindent{\bf 2.} To find the fraction of ACT takers who score between 25 and 30, compute $$F\left(\frac{30 - 20.9}{5.6}\right) - F\left(\frac{25 - 20.9}{5.6}\right) \approx .18.$$
+
+\noindent{\bf 3.} I expect roughly $16\%$ of students score less than a 15.3, since about $32\%$ are outside of one standard deviation from the mean, and we're assuming the distribution is symmetric.
+
+\noindent{\bf 4.} I expect the ratio of $a$ to $b$ is roughly the ratio of $\frac1{\sqrt{2\pi(5.6)^2}} e^{-\frac{(25-20.9)^2}{2(5.6^2)}}$ to $\frac1{\sqrt{2\pi(5.6)^2}} e^{-\frac{(30-20.9)^2}{2(5.6^2)}}$. This is because even though our distribution is discrete, since you can't score fractional points on the ACT, it approximates a normal distribution, so using the PDF of the normal distribution should give us a sense of the amount of students getting each score.
+
+\end{document}

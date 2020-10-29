@@ -1,0 +1,137 @@
+\documentclass[12pt]{article}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb,amsthm}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{geometry}
+
+\setlength{\topmargin}{0pt}
+\setlength{\headsep}{0pt}
+\textheight = 600pt
+
+\title{Probability Theory \\ Homework 3}
+\author{Ben Kallus}
+\date{Due Friday, September 18}
+
+\begin{document}
+\maketitle
+
+\noindent{\bf 1.}
+
+\noindent{\bf a.}
+$$p_Z(k) = \begin{cases}
+    p + (1-p)(p)(p) & k = 0 \\
+    (1-p)(1-p)(p) + (1-p)(p)(1-p) & k = 2 \\
+    (1-p)(1-p)(1-p) & k = 4 \\
+    0 & k=\text{anything else}
+\end{cases}$$
+
+\medskip
+\noindent{\bf b.}
+
+\begin{align*}
+    \mathbb EZ &= 0(p + (1-p)(p)(p)) + 2((1-p)(1-p)(p) + (1-p)(p)(1-p)) + 4((1-p)(1-p)(1-p)) \\
+               &= 4p(1-p)^2 + 4(1-p)^3 \\
+               &= 4(1-p)^2(p + (1-p)) \\
+               &= 4(1-p)^2
+\end{align*}
+
+\newpage
+\noindent{\bf 2.}
+
+\noindent{\bf a.}
+
+    $\frac12 \cdot \frac12 \cdot \frac12$.
+
+\medskip
+\noindent{\bf b.}
+
+    $\frac13 + \frac23 \cdot \frac13 + \frac23 \cdot \frac23 \cdot \frac13$.
+
+\medskip
+\noindent{\bf c.}
+
+    My answer to part (a) would decrease, and my answer to part (b) would increase.
+
+\newpage
+\noindent{\bf 3.}
+
+\noindent{\bf a.}
+
+    $$p_W(k) = \begin{cases}
+        .01 \cdot .99 & k = 995 \\
+        .01 \cdot .01 & k = 1000 \\
+        .99 \cdot .01 & k = 0 \\
+        .99 \cdot .99 & k = -5 \\
+        0             & k = \text{anything else}
+    \end{cases}$$
+
+\medskip
+\noindent{\bf b.}
+
+    $$\mathbb EW = .01 \cdot .99 \cdot 995 + .01 \cdot .01 \cdot 1000 + .99 \cdot .01 \cdot 0 + .99 \cdot .99 \cdot -5 = 5.05$$ This indicates that if we were allowed to play this game repeatedly, we would expect to make \$5.05 more on average by always choosing ticket $A$ over ticket $B$.
+
+\medskip
+\noindent{\bf c.}
+
+    $$\mathbb P(W < 0) = .99 \cdot .99 = .9801$$
+
+\medskip
+\noindent{\bf d.}
+
+    Even though $W$ is almost always negative, it's really big whenever it's positive, so its expected value ends up being positive. Despite $W$'s expected value, I would still go with ticket $B$, since we only get one shot at the game. If we had infinite attempts at the game, I would always take option $A$, since $W$'s expected value indicates that always choosing $A$ leads to better outcomes than always choosing $B$ over many trials.
+
+\newpage
+\noindent{\bf 4.}
+
+\noindent{\bf a.}
+
+    $$p_Y(k) = \begin{cases}
+        .01 & Y = -\$98,900 \\
+        .99 & Y = \$1,100 \\
+        0   & Y = \text{anything else}
+    \end{cases}$$
+
+\medskip
+\noindent{\bf b.}
+
+    $$\mathbb EY = .01 \cdot -98900 + .99 \cdot 1100 = 100$$
+    This indicates that over long periods of time, I should expect to lose an average of \$100 per year to the insurance company. People still buy insurance because life is short, so we don't get to enjoy this long term behavior. If I could live forever, then buying insurance wouldn't make sense, because I am likely to recoup the value of my burnt \$100,000 house over many years of not paying for insurance. Since I am not likely to live that long, insurance protects me from taking a giant, unlikely economic hit.
+
+\medskip
+\noindent{\bf c.}
+
+    The probability that my house is still standing after 30 years is $(\frac{99}{100})^{30}$.
+
+\newpage
+\noindent{\bf 5.}
+
+\noindent{\bf a.}
+
+    Since $X \sim$ Binomial$(n, p)$, $P_X(k) = {n \choose k}p^k(1-p)^{n-k}$.
+    
+    $\frac1{n-k+1}$ is the value of $p$ for which our observations would have been the most probable.
+    
+    Observe that $\mathcal L(p) = {n \choose k}p^k(1-p)^{n-k}$. Taking the derivative with the respect to $p$, we find that $$\mathcal L'(p) = {n \choose k}(p^k(1-p)^{n-k-1}(n-k)\cdot-1+kp^{k-1}(1-p)^{n-k}).$$
+
+    Setting this equal to 0 to find critical points, we have that \begin{align*}
+        0                   &= {n \choose k}(p^k(1-p)^{n-k-1}(n-k)\cdot-1+kp^{k-1}(1-p)^{n-k}) \\
+        0                   &= -p^k(1-p)^{n-k-1}(n-k) + kp^{k-1}(1-p)^{n-k} \\
+        kp^{k-1}(1-p)^{n-k} &= p^k(1-p)^{n-k-1}(n-k) \\
+        k(1-p)^{n-k}        &= p(1-p)^{n-k-1}(n-k) \\
+        k(1-p)              &= p(n-k) \\
+        k - kp              &= pn - pk \\
+        k                   &= kp + pn - pk \\
+        k                   &= pn \\
+        p                   &= \frac kn.
+    \end{align*} Note that we can throw out the ${n \choose k}$ because $k \leq n$, so ${n \choose k} \neq 0$.
+
+    Thus, $\frac kn$ is the value of $p$ for which our observations would have been the most probable.
+
+\medskip
+\noindent{\bf b.}
+
+    $\frac kn = \frac{350}{500}$ is the most likely value for $p$ in this scenario. Since we observed 350 out of 500 coin flips were heads, it makes sense that the odds of getting heads are probably $\frac{350}{500}$.
+
+\end{document}

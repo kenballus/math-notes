@@ -1,0 +1,38 @@
+\documentclass[12pt]{article}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb,amsthm}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{geometry}
+
+\setlength{\topmargin}{0pt}
+\setlength{\headsep}{0pt}
+\textheight = 600pt
+
+\title{Probability Theory \\ Daily Task}
+\author{Ben Kallus}
+\date{September 28, 2020}
+
+\begin{document}
+\maketitle
+
+\noindent{\bf 1.} Let $X = \text{Binomial}(20,0.1)$.
+
+    $$\mathbb P(X \leq 3) \approx 0.867046676566$$
+
+\noindent{\bf 2.} Let $Y = \text{Binomial}(20,0.5)$.
+
+    $$\mathbb P(Y \leq 15) \approx 0.994091033936$$
+
+\noindent{\bf 3.} Since there is no infinitesimal ``time" interval in this scenario, Poisson can provide only approximations. A Poisson distribution assigns a nonzero probability to getting more than 20 successes, which actually has probability 0. Thus, I expect Poisson to provide a better approximation for $X$, since $X$'s experiment is less likely to be successful, so situations in which the number of successes is greater than 20 are less likely.
+
+\noindent{\bf 4.} Let $X \sim \text{Poisson}(0.1, 20)$.
+
+    $$\mathbb P(X \leq 3) = \sum_{k=0}^3 \frac{e^{-0.1\cdot20}(0.1 \cdot 20)^k}{k!} = \sum_{k=0}^3 \frac{e^{-2}(2)^k}{k!} \approx 0.857123460499$$
+
+\noindent{\bf 5.} Let $Y \sim \text{Poisson}(0.5, 20)$.
+
+    $$\mathbb P(X \leq 15) = \sum_{k=0}^{15} \frac{e^{-0.5\cdot20}(0.5 \cdot 20)^k}{k!} = \sum_{k=0}^{15} \frac{e^{-10}(10)^k}{k!} \approx 0.951259596696$$
+    
+\end{document}

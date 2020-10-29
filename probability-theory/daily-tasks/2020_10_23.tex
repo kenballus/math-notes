@@ -1,0 +1,33 @@
+\documentclass[12pt]{article}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb,amsthm}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{geometry}
+
+\graphicspath{{./images/}}
+\setlength{\topmargin}{0pt}
+\setlength{\headsep}{0pt}
+\textheight = 600pt
+
+\title{Probability Theory \\ Daily Task}
+\author{Ben Kallus}
+\date{October 23, 2020}
+
+\begin{document}
+\maketitle
+
+\noindent{\bf 1.} $$\mathbb P(N < I) = \frac{8 + 8 + 17}{1000}.$$
+
+\noindent{\bf 2.} $$P_{N|2}(n) = \begin{cases} \frac{8}{8 + 17 + 11} & n = 0, \\ \frac{17}{8 + 17 + 11} & n = 1, \\ \frac{11}{8+17+11} & n = 2. \end{cases}$$
+
+\noindent{\bf 3.} $$\mathbb P(N=2~|~I=2) = \frac{11}{8+17+11}.$$
+
+\noindent{\bf 4.} $$\mathbb P(N < 2) = \frac{1+7+17+8+8+948}{1000}.$$
+
+\noindent{\bf 5.} $$\mathbb P(N<I~|~I=2) = \frac{8+8+17}{8+17+11}.$$
+
+\noindent{\bf 6.} They're not the same, and they shouldn't be. This is because the second question doesn't capture the situation in which $N < 2$ and $N \geq I$.
+
+\end{document}

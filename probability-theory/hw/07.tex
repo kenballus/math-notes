@@ -1,0 +1,65 @@
+\documentclass[12pt]{article}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb,amsthm}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\hypersetup{
+    colorlinks=true,
+    urlcolor=blue
+}
+\urlstyle{same}
+\graphicspath{{./images/}}
+\setlength{\topmargin}{0pt}
+\setlength{\headsep}{0pt}
+\textheight = 600pt
+
+\title{Probability Theory \\ Homework 7}
+\author{Ben Kallus}
+\date{Due Friday, October 30}
+
+\begin{document}
+\pagecolor{black}
+\color{white}
+\maketitle
+
+\noindent{\bf 1.}
+\noindent{\bf a.} $$P_{A,B}(a,b) =
+\begin{cases}
+    \frac19 & a = 0, b = 0, \\
+    \frac29 & a = 0, b = 1, \\
+    \frac29 & a = 1, b = 0, \\
+    \frac29 & a = 1, b = 1, \\
+    \frac19 & a = 2, b = 0, \\
+    \frac19 & a = 0, b = 2, \\
+    0 & \text{else.}
+\end{cases}$$
+
+\medskip
+\noindent{\bf b.}
+\begin{align*}
+    \mathbb P(B < A) &=\frac29 + \frac19 \\
+                     &= \frac13.
+\end{align*}
+
+\medskip
+\noindent{\bf c.}
+\begin{align*}
+    \mathbb E[A^B] &= \sum_{a=0}^2 \sum_{b=0}^2 P_{A,B}(a,b) \cdot a^b \\
+                   &= \frac19 \cdot 0^0 + \frac29 \cdot 0^1 + \frac29 \cdot 1^0 + \frac29 \cdot 1^1 + \frac19 \cdot 2^0 + \frac19 \cdot 0^2\\
+                   &= \frac19 + \frac29 + \frac29 + \frac19 \\
+                   &= \frac23.
+\end{align*}
+
+\medskip
+\noindent{\bf d.} \[p_A(a) = \begin{cases} \frac49 & a = 0, \\
+                                           \frac49 & a = 1, \\
+                                           \frac19 & a = 2, \\
+                                           0 & \text{else.} \end{cases}\]
+\begin{align*}
+\end{align*}
+
+
+\end{document}

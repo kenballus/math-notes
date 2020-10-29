@@ -1,0 +1,90 @@
+\documentclass[12pt]{article}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb,amsthm}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{geometry}
+\usepackage{xcolor}
+
+\setlength{\topmargin}{0pt}
+\setlength{\headsep}{0pt}
+\textheight = 600pt
+
+\title{Real Analysis \\ Homework 17}
+\author{Ben Kallus, Noah Barton}
+\date{Due Thursday, October 29}
+
+\begin{document}
+\pagecolor{black}
+\color{white}
+\maketitle
+
+\hrule
+\bigskip
+
+\noindent {\bf Acknowledgements:} None.
+
+\bigskip
+\hrule
+\bigskip
+
+\noindent{\bf 5.}
+
+\medskip
+\noindent{\bf a. Claim:} $\mathbb Q$ is not open and not closed.
+\begin{proof}
+    $\mathbb Q$ is not closed, since $\sqrt2$ is a limit point of $\mathbb Q$, and $\sqrt2 \notin \mathbb Q$. $\mathbb Q$ is not open, since the irrationals are dense in $\mathbb R$, so any $\epsilon$-neighborhood of a rational number must contain an irrational number.
+\end{proof}
+
+\medskip
+\noindent{\bf b. Claim:} $\mathbb N$ is not open and closed.
+\begin{proof}
+    $\mathbb N$ is closed, since it has no limit points. Let $\epsilon > 0$ be given. Then, the $\epsilon$-neighborhood of 1 contains a number less than $1$, which must not be a natural number. Thus, $\mathbb N$ is not open.
+\end{proof}
+
+\medskip
+\noindent{\bf c. Claim:} $S = \{x \in \mathbb R~|~x \neq 0\}$ is open and not closed.
+\begin{proof}
+    $S$ is not closed, since 0 is a limit point of $S$. $S$ is open, since for all $x \in S$, $(x - \left|\frac x2 \right|, x + \left|\frac x2 \right|) \subseteq S$.
+\end{proof}
+
+\medskip
+\noindent{\bf d. Claim:} $S = \{1 + \frac14 + \frac19 + \hdots + \frac1{n^2}~|~n\in \mathbb N\}$ is not open and not closed.
+\begin{proof}
+    $S$ is not closed, since $\frac\pi2$ is a limit point of $S$. $S$ is not open, since $S$ is increasing, $S$'s minimum is 1, and any $\epsilon$-neighborhood of 1 must contain a number less than 1.
+\end{proof}
+
+\medskip
+\noindent{\bf e. Claim:} $S = \{1 + \frac12 + \frac13 + \hdots + \frac1{n}~|~n\in \mathbb N\}$ is 
+\begin{proof}
+    $S$ is closed, since it has no limit points. $S$ is not open, since $S$ is increasing, $S$'s minimum is 1, and any $\epsilon$-neighborhood of 1 must contain a number less than 1.
+\end{proof}
+
+\newpage
+\noindent{\bf 6.}
+
+\medskip
+\noindent{\bf a.} Example: $A = \mathbb N$
+
+    
+
+\medskip
+\noindent{\bf b.} Example: $A = \mathbb Q$
+
+    
+
+\medskip
+\noindent{\bf c.} Example: $A = \{1\}$
+
+
+
+\medskip
+\noindent{\bf d.} Example: 
+
+
+
+\medskip
+\noindent{\bf e.} Impossible.
+
+\end{document}

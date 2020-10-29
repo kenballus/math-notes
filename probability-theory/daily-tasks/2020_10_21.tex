@@ -1,0 +1,29 @@
+\documentclass[12pt]{article}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb,amsthm}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{geometry}
+
+\graphicspath{{./images/}}
+\setlength{\topmargin}{0pt}
+\setlength{\headsep}{0pt}
+\textheight = 600pt
+
+\title{Probability Theory \\ Daily Task}
+\author{Ben Kallus}
+\date{October 21, 2020}
+
+\begin{document}
+\maketitle
+
+\noindent{\bf 1.} $$P_N(n) = \begin{cases} \frac{964}{1000} & n = 0, \\ \frac{25}{1000} & n = 1, \\ \frac{11}{1000} & n = 2. \end{cases}$$ Thus, on any given day, Niskayuna has a $\frac{964}{1000}$ probability of have no delay, a $\frac{25}{1000}$ probability of being delayed, and a $\frac{11}{1000}$ probability of being closed.
+
+\medskip
+\noindent{\bf 2.} $$P_{N|1} = \begin{cases} \frac{8}{15} & n=0, \\ \frac{7}{15} & n=1, \\ 0 & n=2. \end{cases}$$ Thus, on a day in which Ichabod Crane is closed, Niskayuna has a $\frac{8}{15}$ probability of having no delay, a $\frac{7}{15}$ probability of being delayed, and no chance of being closed.
+
+\medskip
+\noindent{\bf 3.} I do not expect $N$ and $I$ to be independet, since the previous question showed that knowing that Ichabod crane delayed tells us that Niskayuna did not cancel. This is supported by the math: $$P_{N,I}(2,1) = 0 \neq \frac{11}{1000} \cdot \frac{15}{1000} = P_N(2)P_I(1)$$.
+
+\end{document}

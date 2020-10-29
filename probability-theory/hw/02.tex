@@ -1,0 +1,155 @@
+\documentclass[12pt]{article}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb,amsthm}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{geometry}
+
+\setlength{\topmargin}{0pt}
+\setlength{\headsep}{0pt}
+\textheight = 600pt
+
+\title{Probability Theory \\ Homework 2}
+\author{Ben Kallus}
+\date{Due Saturday, September 12}
+
+\begin{document}
+\maketitle
+
+\noindent{\bf 1. Claim:} If $A \subset B$, $\mathbb P(A) \leq \mathbb P(B)$.
+\begin{proof}
+    Let $A, B$ be events such that $A \subseteq B$. Suppose $\mathbb P(A) > \mathbb P(B)$. Then,
+    \begin{align*}
+        \mathbb P(A) &> \mathbb P(A \cup (B \setminus A)) \\
+        \mathbb P(A) &> \mathbb P(A) + \mathbb P(B \setminus A), \text{since $A$ and $B \setminus A$ are disjoint,} \\
+        0            &> \mathbb P(B \setminus A)
+    \end{align*}
+    Since probabilities are nonnegative, this is a contradiction. Thus, $\mathbb P(A) \leq \mathbb P(B)$.
+\end{proof}
+
+\newpage
+\noindent{\bf 2.}
+
+\noindent{\bf a.}
+
+    Let $A_n$ be the event that the $n^\text{th}$ person you ask is the first person who shares your birthday. Then, $\mathbb P(A_n) = (\frac{364}{365})^{n-1} \cdot \frac{1}{365}$. We're looking for the smallest $x \in \mathbb N$ such that $\sum_{n=1}^x \mathbb P(A_n) \geq \frac12$. I graphed this summation, and it intersects $y=\frac12$ at $252.5$. Thus, $n=253$ is the smallest value of $n$ for which it is more likely than not that someone you ask shares your birthday.
+
+\medskip
+\noindent{\bf b.}
+
+    Let $A_n$ be the event that no pair of people in a group of $n$ people shares a birthday. Then, $\mathbb P(A_n) = \prod_{i=1}^n \frac{365 - i + 1}{365}$. We're looking for the smallest $n \in \mathbb N$ such that $1 - \mathbb P(A_n) > \frac12$. I graphed this product, and it jumps over $y=\frac12$ at $22.5$. Thus, $n=23$ is the smallest value of $n$ for which it is more likely than not that two people you ask share a birthday.
+    
+\newpage
+\noindent{\bf 3.}
+
+\noindent{\bf a.}
+
+    Let $A_1$ be the event that the next Rufus vs. Phoebe fight does not involve yowling.
+    Let $A_2$ be the event that the next Rufus vs. Shojo fight does not involve yowling.
+    Let $A_3$ be the event that the next Phoebe vs. Shojo fight does not involve yowling.
+    Let $A_4$ be the event that the next three cat free-for-all does not involve yowling.
+    
+    Then,
+    \begin{align*}
+        \mathbb P(A_1) &= (.8)(.5) \\
+        \mathbb P(A_2) &= (.8)(.1) \\
+        \mathbb P(A_3) &= (.5)(.1) \\
+        \mathbb P(A_4) &= (.8)(.5)(.1)
+    \end{align*}
+    Thus, the probability that the next fight involves no yowling is $(.2)(.8)(.5) + (.3)(.8)(.1) + (.4)(.5)(.1) + (.1)(.8)(.5)(.1)$. Thus, the probability that the next fight involves yowling is $1 - ((.2)(.8)(.5) + (.3)(.8)(.1) + (.4)(.5)(.1) + (.1)(.8)(.5)(.1)) = \frac{109}{125}$.
+
+\medskip
+\noindent{\bf b.}
+    
+    \begin{tabular}{c | c | c | c}
+        Matchup          & Only gladiator 1 yowls & Only gladiator 2 yowls & Both yowl \\
+        \hline
+        Rufus vs. Phoebe & $.2 \cdot .5$    & $.8 \cdot .5$    & $.2 \cdot .5$ \\
+        Rufus vs. Shojo  & $.2 \cdot .1$    & $.8 \cdot .9$    & $.2 \cdot .9$ \\
+        Phoebe vs. Shojo & $.5 \cdot .1$    & $.5 \cdot .9$    & $.5 \cdot .9$
+    \end{tabular}
+    
+    \medskip
+    \begin{tabular}{c | c | c | c | c | c | c | c}
+        & R & P & S & RP & RS & PS & RPS \\
+        \hline
+        Free-for-all & $.2 \cdot .5 \cdot .1$ & $.8 \cdot .5 \cdot .1$ & $.8 \cdot .5 \cdot .9$ & $.2 \cdot .5 \cdot .1$ & $.2 \cdot .5 \cdot .9$ & $.8 \cdot .5 \cdot .9$ & $.2 \cdot .5 \cdot .9$
+    \end{tabular}
+
+    \medskip
+    Thus, the probability of Rufus given yowling is
+    
+    \medskip
+    \begin{centering}
+    $\frac{.2(.2\cdot.5 + .8\cdot.5 + .2\cdot.5) + .3(.2\cdot.1 + .8\cdot.9 + .2\cdot.9) + .1(.2\cdot.5\cdot.1 + .8\cdot.5\cdot.1 + .8\cdot.5\cdot.9 + .2\cdot.5\cdot.1 + .2\cdot.5\cdot.9 + .8\cdot.5\cdot.9 + .2\cdot.5\cdot.9)}{1 - ((.2)(.8)(.5) + (.3)(.8)(.1) + (.4)(.5)(.1) + (.1)(.8)(.5)(.1))} = \frac{123}{218}$
+    \end{centering}
+
+\newpage
+\noindent{\bf 4.}
+
+\noindent{\bf a.} Suppose that $A \subset B$ with $\mathbb P(A) > 0$.
+
+{\bf i.} Is it possible for $A$ and $B$ to be independent?
+
+    Yes. Let $A$ be the event that a 6-sided die lands on 6 when rolled, and let $B$ be the event that a 6-sided die has six sides when rolled. Then, $\mathbb P(A \cap B) = \frac16 = \frac16 \cdot 1 = \mathbb P(A) \mathbb P(B)$. Thus, $A$ and $B$ are independent.
+
+\medskip
+{\bf ii.} Is it possible for $A$ and $B$ to be dependent?
+
+    Yes. Let $A$ be the event that a 6-sided die lands on a 2 when rolled, and let $B$ be the event that a 6-sided die lands on an even number when rolled. $\mathbb P(A) \mathbb P(B) = \frac16 \cdot \frac12 = \frac1{12}$. However, $\mathbb P(A \cap B) = \frac16$. Thus, $A$ and $B$ are dependent.
+
+\bigskip
+\noindent{\bf b.} Suppose that $A$ and $B$ are disjoint and $\mathbb P(A) > 0$.
+
+{\bf i.} Is it possible for $A$ and $B$ to be independent?
+
+    Yes. Let $A$ be the event that a 6-sided die lands on a 6 when rolled, and let $B$ be the event that a 6-sided die turns into a 6-dimensional die when rolled. Then, $\mathbb P(A \cap B) = 0 = \frac16 \cdot 0 = \mathbb P(A) \cdot \mathbb P(B)$. Thus, $A$ and $B$ are independent.
+
+\medskip
+{\bf ii.} Is it possible for $A$ and $B$ to be dependent?
+
+    Yes. Let $A$ be the event that a 6-sided die lands on a 6 when rolled, and let $B$ be the event that a 6-sided die lands on a 6 when rolled. Then, $\mathbb P(A \cap B) = \frac16$. However, $\mathbb P(A) \mathbb P(B) = \frac16 \cdot \frac16 = \frac1{36}$. Thus, $A$ and $B$ are dependent.
+
+\newpage
+\noindent{\bf 5.} Let $A$ be the event that the player who goes first wins, and let $B$ be the event that the player who goes second wins.
+
+\noindent{a.} $\mathbb P(A) = \sum_{i=1}^\infty (\frac{1}{2})^{2i-1} = \frac23$.
+
+\medskip
+\noindent{b.} $\mathbb P(\text{The first 3 flips are all tails}) =  \frac12 \cdot \frac12 \cdot \frac12$.
+
+\medskip
+\noindent{c.} This is the same as the probability that the second player wins, since the second player makes the fourth flip, so we're effectively switching the players. $\mathbb P(B) = \frac13$.
+
+\newpage
+\noindent{\bf 6.} Suppose that $A$ and $B$ are two events such that $\frac12 \leq \mathbb P(A) + \mathbb(B) \leq 1$.
+
+\noindent{a. Claim:} The smallest possible value of $\mathbb P(A \cap B)$ is 0.
+
+\begin{proof}
+    Let $A$ be the event that a flipped coin is heads, and let $B$ be the event that a flipped coin is tails. Then, $\mathbb P(A \cap B) = 0$, and $\mathbb P(A) + \mathbb P(B) = \frac12 + \frac12 = 1$, so $\frac12 \leq \mathbb P(A) + \mathbb(B) \leq 1$. Since $0$ is the minimum possible value for a probability, the smallest possible value of $\mathbb P(A \cap B)$ is 0.
+\end{proof}
+
+\medskip
+\noindent{b.} The largest possible value of $\mathbb P(A \cap B)$ is $\frac12$.
+
+\begin{proof}
+    $\mathbb P(A \cap B)$ is upper bounded by the smaller of $\mathbb P(A)$ and $\mathbb P(B)$. Since the maximum value for he smaller of $\mathbb P(A)$ and $\mathbb P(B)$ is $\frac12$, $\mathbb P(A \cap B)$ is upper bounded by $\frac12$. Observe that when $A = B$ and $\mathbb P(A) = \frac12$, then, $\mathbb P(A \cap B) = \frac12$. Thus, since $\mathbb P(A \cap B)$ is upper bounded by $\frac12$, and we have shown an example in which $\mathbb P(A \cap B) = \frac12$, then the largest possible value of $\mathbb P(A \cap B)$ is $\frac12$. 
+\end{proof}
+
+\medskip
+\noindent{c.} The smallest possible value of $\mathbb P(A \cup B)$ is $\frac14$.
+
+\begin{proof}
+    Observe that $\mathbb P(A \cup B) = \mathbb P(A) + \mathbb P(B) - \mathbb(A \cap B)$. To minimize this expression, we need to maximize $\mathbb P(A \cap B)$, and minimize $\mathbb P(A)$ and $\mathbb P(B)$. To maximize $\mathbb P(A \cap B)$, we need to set $A = B$. To minimize $\mathbb P(A)$ (also $\mathbb P(B)$), we need the smallest value $x$ such that $2x \geq \frac12$. Thus, $\mathbb P(A) = \mathbb P(B) = \frac14$. Thus, the smallest possible value for $\mathbb P(A \cup B) = \mathbb P(A) + \mathbb P(B) - \mathbb P(A \cap B) = \frac14 + \frac14 - \frac14 = \frac14$.
+\end{proof}
+
+\medskip
+\noindent{d.} The largest possible value of $\mathbb P(A \cup B)$ is 1.
+
+\begin{proof}
+    Let $A$ be the event that a flipped coin is heads, and let $B$ be the event that a flipped coin is tails. Then, $\mathbb P(A \cup B) = 1$, and $\mathbb P(A) + \mathbb P(B) = \frac12 + \frac12 = 1$, so $\frac12 \leq \mathbb P(A) + \mathbb(B) \leq 1$. Since $1$ is the maximum possible value for a probability, the largest possible value of $\mathbb P(A \cap B)$ is 1.
+\end{proof}
+
+\end{document}
