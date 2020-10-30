@@ -63,7 +63,7 @@
 \end{align*}
 
 \medskip
-\noindent{\bf e.} $$p_{B|A}(b|0) = \begin{cases} \frac14 & b = 0 \\ \frac12 & b = 1 \\ \frac14 & b = 2 \end{cases}$$
+\noindent{\bf e.} $$p_{B|A}(b|0) = \begin{cases} \frac14 & b = 0, \\ \frac12 & b = 1, \\ \frac14 & b = 2, \\ 0 & \text{else.} \end{cases}$$
 $$\mathbb P(B \geq 1|A=0) = \frac34$$
 
 \medskip
@@ -94,14 +94,14 @@ $$\mathbb P(B \geq 1|A=0) = \frac34$$
            &= \begin{cases} \frac15 & 0 \leq x < 1, \\
                             \frac45 & 1 \leq x < 2, \\
                             0 & \text{else.} \end{cases}
-\end{align*} These are the areas of the triangles under the surface $z=\frac25y$ at the input $x$.
+\end{align*} These are the areas of the triangles under the surface $z=\frac25y$ at the input $x$, taking into account the shape of the yard.
 
 \begin{align*}
     f_Y(y) &= \int\limits_{-\infty}^\infty f_{X,Y}(x,y) \\
            &= \begin{cases} \frac45y & 0 \leq y < 1, \\
                             \frac25y & 1 \leq y < 2, \\
                             0 & \text{else.} \end{cases}
-\end{align*} These are the areas of the rectangles under the surface $z=\frac25y$ at the input $y$.
+\end{align*} These are the areas of the rectangles under the surface $z=\frac25y$ at the input $y$, taking into account the shape of the yard.
 
 \newpage
 \noindent{\bf c.}
@@ -116,9 +116,10 @@ $$\mathbb P(B \geq 1|A=0) = \frac34$$
     Let $T$ be the amount of time it takes to retrieve the ball, starting at the ball's $X$ position. Then, $$T = 20Y + 10,$$ and
     \begin{align*}
         \mathbb ET &= 20\mathbb EY + 10 \\
-                   &= \int_{-\infty}^\infty f_Y(y)y\,dy \\
-                   &= \int_0^1 \frac45y^2 \,dy + \int_1^2 \frac25y^2 \,dy \\
-                   &= \frac65.
+                   &= 20\int_{-\infty}^\infty f_Y(y)y\,dy + 10 \\
+                   &= 20\left(\int_0^1 \frac45y^2 \,dy + \int_1^2 \frac25y^2 \,dy\right) + 10 \\
+                   &= 20\left(\frac65\right) + 10 \\
+                   &= 34.
     \end{align*}
 
 \medskip
@@ -126,14 +127,29 @@ $$\mathbb P(B \geq 1|A=0) = \frac34$$
 
     In order to be barbecued by the flamethrower, I have to try to retrieve a ball at least 1 unit away from the fence. The probability that the ball ends up at least 1 unit from the fence, as we found in part \copyright, is $\frac35$. Thus, the probability that I avoid incineration is $\frac25$.
 
-\medskip
+\newpage
 \noindent{\bf f.} Given $X=1.2$,
 \begin{align*}
     \mathbb P(Y > 1) &= \frac{\frac25 + \frac15}{\frac45} \\
                      &= \frac34.
 \end{align*} The denominator is the area of the triangle under the surface $z=\frac25y$ at $x=1.2$, and the numerator is the area of that triangle for which $y > 1$. Thus, the fraction represents the proportion of the area under that curve that corresponds to the danger zone.
 
-The answer to part (d) remains unchanged.
+\begin{align*}
+    p_{Y|X}(y|1.2) &= \frac{f_{X,Y}(1.2, y)}{f_X(1.2)} \\
+                   &= \frac{\frac25y}{\frac45} \\
+                   &= \frac y2.
+\end{align*}
+Thus, 
+\begin{align*}
+    \mathbb EY &= \int_0^2\frac{y^2}2\,dy \\
+               &= \frac43.
+\end{align*}
+Thus,
+\begin{align*}
+    \mathbb ET &= 20 \mathbb EY + 10 \\
+               &= 36.\overline{6}
+\end{align*}
+
 
 The probability that I survive is $\frac14$.
 
@@ -170,13 +186,22 @@ The probability that I survive is $\frac14$.
 
 \medskip
 \noindent{\bf a.}
+$$f_U(u) = \begin{cases} 1 & 1 \leq u \leq 2, \\ 0 & \text{else.} \end{cases}$$ 
+\begin{align*}
+    \frac{f_{U,V}(u,v)}{f_U(u)} &= f_{V|U}(v|u) \\
+    f_{U,V}(u,v) &= f_{V|U}(v|u)f_U(u) \\
+                 &= \begin{cases} ue^{-uv} & v \geq 0, 1 \leq u \leq 2, \\
+                                  0 & \text{else.}
+                    \end{cases}
+\end{align*}
 
 \medskip
 \noindent{\bf b.}
 \begin{align*}
-    \mathbb P(|U-V|<1) &= \mathbb P(V \leq U + \frac12) - \mathbb P(V \leq U - \frac12) \\
-                       &= (1 - e^{-U(U+\frac12)}) - (1 - e^{-U(U-\frac12)}) \\
-                       &= -e^{-U(U+\frac12)} + e^{-U(U-\frac12)}
+    \mathbb P(|U-V|<1) &= \int_1^2 \left(\mathbb P(V \leq U + 1) - \mathbb P(V \leq U - 1)\right)\,dU \\
+                       &= \int_1^2\left((1 - e^{-U(U+1)}) - (1 - e^{-U(U-1)})\right)\,dU \\
+                       &= \int_1^2\left(-e^{-U(U+1)} + e^{-U(U-1)}\right)\,dU \\
+                       &\approx 0.468964.
 \end{align*}
 
 \end{document}
