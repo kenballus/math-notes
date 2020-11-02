@@ -459,4 +459,16 @@
 
     Let $X,Y$ be random variables. The correlation coefficient of $X$ and $Y$, denoted $\rho_{XY}$ or $\rho(X,Y)$ is given by $$\frac{\text{Cov}(X,Y)}{\sqrt{\mathbb VX}\sqrt{\mathbb VY}}.$$ Note that Cauchy-Schwarz guarantees that a correlation coefficient is between -1 and 1.
 
+\medskip
+\noindent{\bf Estimation/Inference}
+
+    Let $x_1, \hdots, x_n$ be the observed outcomes of $n$ independent, identically-distributed random variables $X_1, \hdots, X_n$.
+
+    The collection of observations $x_1, \hdots, x_n$ of $X_1, \hdots, X_n$ are referred to as a sample. The process of identifying unknown parameters of $X_i$ using a sample is estimation or inference.
+ 
+ \medskip
+ \noindent{\bf Point Estimator}
+    
+    A point estimator is a random variable $\hat\theta$ defined using the sample $X_1, \hdots, X_n$ which is an estimate for the true parameter $\theta$ of $X_i$. The bias of a point estimator $\hat\theta$ for a parameter $\theta$ is given by $$\text{Bias}\hat\theta) = \mathbb E[\hat\theta] - \theta.$$ $\hat\theta$ is called unbiased if its bias is 0.
+
 \end{document}
