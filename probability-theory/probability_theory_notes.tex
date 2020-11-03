@@ -469,6 +469,23 @@
  \medskip
  \noindent{\bf Point Estimator}
     
-    A point estimator is a random variable $\hat\theta$ defined using the sample $X_1, \hdots, X_n$ which is an estimate for the true parameter $\theta$ of $X_i$. The bias of a point estimator $\hat\theta$ for a parameter $\theta$ is given by $$\text{Bias}\hat\theta) = \mathbb E[\hat\theta] - \theta.$$ $\hat\theta$ is called unbiased if its bias is 0.
+    A point estimator is a random variable $\hat\theta$ defined using the sample $X_1, \hdots, X_n$ which is an estimate for the true parameter $\theta$ of $X_i$. The bias of a point estimator $\hat\theta$ for a parameter $\theta$ is given by $$\text{Bias}(\hat\theta) = \mathbb E[\hat\theta] - \theta.$$ $\hat\theta$ is called unbiased if its bias is 0.
+
+\medskip
+\noindent{\bf Sample Mean}
+
+    Let $X_1, \hdots X_n$ be independent, identically-distributed random variables such that their means are equal. Then, the sample mean is defined by $$\hat\mu = \frac1n\sum_{i=1}^nX_i.$$
+
+\medskip
+\noindent{\bf Unbiased Sample Variance}
+
+    Let $X_1, \hdots X_n$ be independent, identically-distributed random variables such that their variances are equal. Then, the unbiased sample variance is defined by $$\hat{\sigma^2} = \frac1{n-1}\sum_{i=1}^n(X_i-\overline X)^2.$$
+
+\medskip
+\noindent{\bf Method of Moments}
+
+    Let $X$ be a random variable and $X_1, \hdots, X_n$ be independent, identically-distributed samples with the same distribution as $X$. The $k^\text{th}$ moment of $X$ is defined as $\mathbb E[X^k]$. The $k^\text{th}$ sample moment is $\frac1n \sum_{i=1}^nX_i^k$.
+
+    To estimate $k$ unknown parameters, set the first $k$ moments equal ot the first $k$ sample moments and cross your fingers.
 
 \end{document}

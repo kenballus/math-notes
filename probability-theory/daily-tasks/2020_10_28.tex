@@ -21,5 +21,22 @@
 \pagecolor{black}
 \maketitle
 
+\[f_{X,Y}(x,y) = \begin{cases} 6 & x^2 \leq y \leq x, \\ 0 & \text{else.} \end{cases}\]
+
+\begin{align*}
+    f_X(x) &= \begin{cases} 6(\sqrt x - x) & 0 \leq x \leq 1, \\ 0 & \text{else.} \end{cases} \\
+    f_Y(y) &= \begin{cases} 6(y - y^2) & 0 \leq y \leq 1, \\ 0 & \text{else.} \end{cases}
+\end{align*}
+
+\noindent{\bf 1.} I expect the covariance to be positive because as $X$ gets larger, the window between $x^2$ and $x$ gets smaller, so $Y$ must also get larger.
+
+\medskip
+\noindent{\bf 2.} $\mathbb E[X] = \int_0^1 6(\sqrt x - x) \cdot x\,dx = 0.4$.
+
+\medskip
+\noindent{\bf 3.} $\mathbb E[Y] = \int_0^1 6(y-y^2) \cdot y\,dy = 0.5$.
+
+\medskip
+\noindent{\bf 4.} $\text{Cov}(X,Y) = \mathbb E[XY] - (\mathbb EX)(\mathbb EY) = \frac14 - \frac15 = \frac1{20}$.
 
 \end{document}
