@@ -111,16 +111,16 @@
         
         ($X(\text{sample point}) = \#$)
         
-        Notation: $\mathbb P(X = k) = P_X(k)$.
+        Notation: $\mathbb P(X = k) = p_X(k)$.
 
 \medskip
 \noindent{\bf Probability Mass Function (Distribution Function)}
 
-    $P_X(k):\mathbb R \to [0,1]$ is called the probability mass function.
+    $p_X(k):\mathbb R \to [0,1]$ is called the probability mass function.
     
-    Note that $0 \leq P_X(k) \leq 1$.
+    Note that $0 \leq p_X(k) \leq 1$.
     
-    $\sum_kP_X(k)=1$.
+    $\sum_kp_X(k)=1$.
     
     (Assuming that $X$ takes a countable number of possible values.)
     
@@ -129,18 +129,18 @@
 \medskip
 \noindent{\bf Binomial Random Variable}
 
-    Let $X = \#$ of successes in $n$ independent trials of an experiment with two possible outcomes. Let $p$ denote the probability of success in each independent trial. (often $q=1-p$ denotes the probability of failure) Then $X$ is a binomial random variable if $P_X(k) = \mathbb P(X=k) = {n \choose k}p^k(1-p)^{n-k}$ for all integers $0 \leq k \leq n$.
+    Let $X = \#$ of successes in $n$ independent trials of an experiment with two possible outcomes. Let $p$ denote the probability of success in each independent trial. (often $q=1-p$ denotes the probability of failure) Then $X$ is a binomial random variable if $p_X(k) = \mathbb P(X=k) = {n \choose k}p^k(1-p)^{n-k}$ for all integers $0 \leq k \leq n$.
 
     Example: Let $X$ be a binomial random variable with parameters $n$ and $p$. (Denoted $X \sim \text{Binomial}(n,p)$, where $\sim$ means ``is distributed as")
     
-    The PMF of $X$ is then $P_X(k) = {n \choose k}p^k(1-p)^{n-k}$. ($0 \leq n \leq k$) This is called the binomial distribution.
+    The PMF of $X$ is then $p_X(k) = {n \choose k}p^k(1-p)^{n-k}$. ($0 \leq n \leq k$) This is called the binomial distribution.
 
 \medskip
 \noindent{\bf Geometric Random Variable}
 
     Let $X = \#$ of independent trials of an experiment with two possible outcomes up to and including the first success. Then, $X$ is a geometric random variable wih parameter $p$, denoted $X \sim$ Geometric$(p)$.
     
-    $P_X(k) = \mathbb P(X = k) = (1 - p)^{k - 1}p$.
+    $p_X(k) = \mathbb P(X = k) = (1 - p)^{k - 1}p$.
     
 \medskip
 \noindent{\bf Bayes' Theorem}
@@ -389,7 +389,7 @@
 \medskip
 \noindent{\bf Joint Distribution for Discrete Random Variables}
 
-    Let $X: S \to \{x_1, x_2, x_3, \hdots\}$ and $Y: S \to \{y_1, y_2, y_3, \hdots\}$ be discrete random variables on the same sample space $S$. The joint distribution of the random vector $(X, Y)$ is given by $$\mathbb P(X = x_k, Y=y_l),$$ sometimes denoted $P_{X,Y}(x_k,y_l)$.
+    Let $X: S \to \{x_1, x_2, x_3, \hdots\}$ and $Y: S \to \{y_1, y_2, y_3, \hdots\}$ be discrete random variables on the same sample space $S$. The joint distribution of the random vector $(X, Y)$ is given by $$\mathbb P(X = x_k, Y=y_l),$$ sometimes denoted $p_{X,Y}(x_k,y_l)$.
     
 \medskip
 \noindent{\bf CDF of a Random Vector}
@@ -408,17 +408,17 @@
 \medskip
 \noindent{\bf Marginal Distribution of Discrete a Random Variable}
 
-    Let $X, Y$ be discrete random variables with joint distribution $P_{X,Y}(x,y)=\mathbb P(X=x, Y=y)$. The marginal distribution of $Y$, denoted $P_Y(y)$, is defined by $$P_X(x) = \sum_{y}P_{X,Y}(x,y).$$
+    Let $X, Y$ be discrete random variables with joint distribution $p_{X,Y}(x,y)=\mathbb P(X=x, Y=y)$. The marginal distribution of $Y$, denoted $p_Y(y)$, is defined by $$p_X(x) = \sum_{y}p_{X,Y}(x,y).$$
 
 \medskip
 \noindent{\bf Conditional Distribution of Discrete a Random Variable}
 
-    The conditional distribution of $X$ given $Y=y$ is $$P_{X|Y}(x) = \frac{P_{X,Y}(x,y)}{P_Y(y)}.$$
+    The conditional distribution of $X$ given $Y=y$ is $$p_{X|Y}(x) = \frac{p_{X,Y}(x,y)}{p_Y(y)}.$$
 
 \medskip
 \noindent{\bf Independence for Joint Distributions of Discrete Random Variables}
 
-    $X$ and $Y$ are independent if and only if $P_{X,Y}(x,y) = P_X(x)P_Y(y)$ for all $x,y$.
+    $X$ and $Y$ are independent if and only if $p_{X,Y}(x,y) = p_X(x)p_Y(y)$ for all $x,y$.
 
 \medskip
 \noindent{\bf Marginal Distribution of a Continuous Random Variable}
@@ -428,7 +428,7 @@
 \medskip
 \noindent{\bf Conditional Distribution of Continuous Variables}
 
-    The conditional distribution of $X$ given $Y=y$ is $$P_{X|Y}(x) = \frac{f_{X,Y}(x,y)}{f_Y(y)}.$$
+    The conditional distribution of $X$ given $Y=y$ is $$p_{X|Y}(x) = \frac{f_{X,Y}(x,y)}{f_Y(y)}.$$
 
 \medskip
 \noindent{\bf Independence for Joint Distributions of Continuous Random Variables}
@@ -438,12 +438,12 @@
 \medskip
 \noindent{\bf Expected Value of a Function of Discrete Random Variables}
 
-    Let $(X,Y)$ be a discrete random vector and $P_{X,Y}(x,y)$ their joint distribution. Let $$g(x,y) \to \mathbb R$$ be a function. Then, $$\mathbb E[g(X,Y)] = \sum_x\sum_yP_{X,Y}(x,y)g(x,y).$$
+    Let $(X,Y)$ be a discrete random vector and $p_{X,Y}(x,y)$ their joint distribution. Let $$g(x,y) \to \mathbb R$$ be a function. Then, $$\mathbb E[g(X,Y)] = \sum_x\sum_yp_{X,Y}(x,y)g(x,y).$$
 
 \medskip
 \noindent{\bf Expected Value of a Function of Continuous Random Variables}
 
-    Let $(X,Y)$ be a continuous random vector and $P_{X,Y}(x,y)$ their joint distribution. Let $$g(x,y) : \mathbb R^2 \to \mathbb R$$ be a function. Then, $$\mathbb E[g(X,Y)] = \int\limits_{-\infty}^\infty \int\limits_{-\infty}^\infty f_{X,Y}(x,y)g(x,y)\,dy\,dx.$$
+    Let $(X,Y)$ be a continuous random vector and $p_{X,Y}(x,y)$ their joint distribution. Let $$g(x,y) : \mathbb R^2 \to \mathbb R$$ be a function. Then, $$\mathbb E[g(X,Y)] = \int\limits_{-\infty}^\infty \int\limits_{-\infty}^\infty f_{X,Y}(x,y)g(x,y)\,dy\,dx.$$
 
 \medskip
 \noindent{\bf Covariance}
@@ -469,6 +469,6 @@
  \medskip
  \noindent{\bf Point Estimator}
     
-    A point estimator is a random variable $\hat\theta$ defined using the sample $X_1, \hdots, X_n$ which is an estimate for the true parameter $\theta$ of $X_i$. The bias of a point estimator $\hat\theta$ for a parameter $\theta$ is given by $$\text{Bias}\hat\theta) = \mathbb E[\hat\theta] - \theta.$$ $\hat\theta$ is called unbiased if its bias is 0.
+    A point estimator is a random variable $\hat\theta$ defined using the sample $X_1, \hdots, X_n$ which is an estimate for the true parameter $\theta$ of $X_i$. The bias of a point estimator $\hat\theta$ for a parameter $\theta$ is given by $$\text{Bias}(\hat\theta) = \mathbb E[\hat\theta] - \theta.$$ $\hat\theta$ is called unbiased if its bias is 0.
 
 \end{document}
