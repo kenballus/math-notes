@@ -1,0 +1,65 @@
+\documentclass[12pt]{article}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb,amsthm}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{geometry}
+\usepackage{xcolor}
+
+\setlength{\topmargin}{0pt}
+\setlength{\headsep}{0pt}
+\textheight = 600pt
+
+\title{Real Analysis \\ Homework 19}
+\author{Ben Kallus and Jonathan Sills}
+\date{Due Thursday, November 5, 2020}
+
+\begin{document}
+\pagecolor{black}
+\color{white}
+\maketitle
+
+\hrule
+\bigskip
+
+\noindent {\bf Acknowledgements:} 
+
+\bigskip
+\hrule
+\bigskip
+
+\noindent{\bf 2.} Let $f$ and $g$ be functions defined on a domain $A \subseteq \mathbb R$ such that $\lim\limits_{x\to c}f(x)=L$ and $\lim\limits_{x\to c}g(x) = M$.
+
+\medskip
+\noindent{\bf a.} Claim: $\lim\limits_{x \to c}[f(x) + g(x)] = L + M$.
+\begin{proof}
+    Let $\epsilon > 0$ be given.
+    Then, since $\lim\limits_{x\to c}f(x)=L$, there exists $\delta_f$ such that for all $x \in A$ satisfying $0 < |x - c| < \delta_f$, $|f(x) - L| < \frac\epsilon2$.
+    Similarly, since $\lim\limits_{x\to c}g(x)=L$, there exists $\delta_g$ such that  for all $x \in A$ satisfying $0 < |x - c| < \delta_g$, $|g(x) - M| < \frac\epsilon2$.
+    Define $\delta = \min\{\delta_f, \delta_g\}$.
+    Then, for all $x \in A$ satisfying $0 < |x - c| < \delta$, $|f(x) - L| < \frac\epsilon2$ and $|g(x) - M| < \frac\epsilon2$.
+    Thus, $|f(x) - L| + |g(x) - M| < \epsilon$.
+    Therefore, $|f(x) - L + g(x) - M| < \epsilon$.
+    Then, $|(f(x) - g(x)) - (L + M)| < \epsilon$.
+    Thus, $\lim\limits_{x \to c}[f(x) + g(x)] = L + M$.
+\end{proof}
+
+\medskip
+\noindent{\bf b.} Claim: $\lim\limits_{x \to c}[f(x) + g(x)] = L + M$.
+\begin{proof}
+    Let $(x_n)$ be a sequence in $A$ such that $(x_n) \to c$ and $x_n \neq c$ for all $n \in \mathbb N$.
+    Then, since $\lim\limits_{x\to c}f(x)=L$, $\lim\limits_{n\to \infty}f(x_n) = L$.
+    Similarly, since $\lim\limits_{x\to c}g(x)=L$, $\lim\limits_{n\to \infty}g(x_n) = M$.
+    Then, by the algebraic limit theorem for sequences, $\lim\limits_{n\to \infty}[f(x_n) + g(x_n)] = L + M$.
+    Thus, by Theorem 4.2.3, $\lim\limits_{x \to c}[f(x) + g(x)] = L + M$.
+\end{proof}
+
+\newpage
+\noindent{\bf 3.} Let $A \subseteq \mathbb R$, and let $f:A \to \mathbb R$, $g: A \to \mathbb R$. Suppose there exists $M$ such that $|g(x)| \leq M$ for all $x \in A$. Then, for each limit point $c$ of $A$, if $\lim\limits_{x \to c} f(x) = 0$, then $\lim\limits_{x \to c}f(x)g(x) = 0$.
+\begin{proof}
+    Let $\epsilon > 0$ be given. Then, there exists $\delta$ such that for all $x \in A$ satisfying $0 < |x -c| < \delta$, 
+\end{proof}
+
+
+\end{document}

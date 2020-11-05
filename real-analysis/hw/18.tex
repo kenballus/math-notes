@@ -12,8 +12,8 @@
 \textheight = 600pt
 
 \title{Real Analysis \\ Homework 18}
-\author{Ben Kallus, Jon Sills}
-\date{Due Monday, November 2}
+\author{Ben Kallus and Jonathan Sills}
+\date{Due Monday, November 2, 2020}
 
 \begin{document}
 \pagecolor{black}
@@ -23,7 +23,7 @@
 \hrule
 \bigskip
 
-\noindent {\bf Acknowledgements:} None.
+\noindent {\bf Acknowledgements:} Professor Dykstra helped us with question 1.
 
 \bigskip
 \hrule
@@ -31,16 +31,23 @@
 
 \noindent{\bf 7.} Claim: There exists a sequence $(a_n)$ in $A \subseteq \mathbb R$ such that $a_n \neq x$ for all $n \in \mathbb N$ and $\lim\limits_{n\to\infty}a_n=x$ if and only if $x$ is a limit point of $A$.
 \begin{proof}
-    Suppose $x$ is a limit point of $A$. Let $\epsilon > 0$ be given. Then, there exists $a_1 \in A$ such that $a_1 \in (x-\epsilon, x+\epsilon)$. This proof is easy from here; we just define a bunch of intervals in terms of each other that give us an infinite sequence.
-
-    Now, suppose there exists a sequence $(a_n)$ in $A$ such that $a_n \neq x$ for all $n \in \mathbb N$ and $\lim\limits_{n\to\infty}a_n=x$.
+    Suppose $x$ is a limit point of $A$. Let $\epsilon > 0$ be given. Then, for each $n \in \mathbb N$, there exists $a_n \in A$ such that $a_n \in (x-\frac\epsilon n, x + \frac\epsilon n)$ and $a_n \neq x$. Consequently, $|a_n - x| < \frac{\epsilon}{n} \leq \epsilon$ for all $n \in \mathbb N$. Thus, $\lim\limits_{n\to\infty}a_n = x$, so the sequence $(a_n)$ has the desired properties.
+    
+    Now, suppose there exists a sequence $(a_n)$ in $A$ such that $a_n \neq x$ for all $n \in \mathbb N$ and $\lim\limits_{n\to\infty}a_n=x$. Let $\epsilon > 0$ be given. Then, since $\lim\limits_{n\to\infty}a_n=x$, there exists $N \in \mathbb N$ such that for all $n \geq N$, $|a_n - x| < \epsilon$. Thus, $a_N \in (x-\epsilon, x+\epsilon)$. Thus, $x$ is a limit point of $A$. 
 \end{proof}
 
 
 \newpage
-\noindent{\bf 1.} Claim: CHANGE THIS: $\lim\limits_{x\to-1}(x^3+x-1)=-3$.
+\noindent{\bf 1.} Claim: The limit as $x$ approaches $-1$ of $x^3+x-1$ is $-3$.
 \begin{proof}
-    
+    Let $\epsilon > 0$ be given. Let $\delta = \min\{1, \frac\epsilon8\}$. Suppose $0 < |x + 1| < \delta$. Then, since $\delta \leq 1$, $-2 < x < 0$. Then, since $\max\{|x^2-x+2|:-2 < x < 0\}= 8$, $|x^2-x + 2| < 8$. Then,
+    \begin{align*}
+        |x^3+x-1 - (-3)| &= |x+1||x^2-x+2| \\
+                         &< |x+1| \cdot 8 \\
+                         &< \delta \cdot 8 \\
+                         &\leq \frac\epsilon8 \cdot 8 \\
+                         &= \epsilon.
+    \end{align*} Thus, $\lim\limits_{n\to-1}(x^3+x-1)=-3$.
 \end{proof}
 
 
