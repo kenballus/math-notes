@@ -1,0 +1,39 @@
+\documentclass[12pt]{article}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb,amsthm}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{geometry}
+\usepackage{xcolor}
+
+\graphicspath{{./images/}}
+\setlength{\topmargin}{0pt}
+\setlength{\headsep}{0pt}
+\textheight = 600pt
+
+\title{Probability Theory \\ Daily Task}
+\author{Ben Kallus}
+\date{November 4, 2020}
+
+\begin{document}
+\color{white}
+\pagecolor{black}
+\maketitle
+
+\noindent{\bf 1.}
+\begin{align*}
+  \text{MSE}(\hat\theta) &= \mathbb V\hat\theta + \text{Bias}(\hat\theta)^2 \\
+                         &= \mathbb V\hat\theta + (\mathbb E\hat\theta - \theta)^2 \\
+                         &= \mathbb V\hat\theta \\
+                         &= \mathbb V\left[\overline X - \frac12\right] \\
+                         &= \mathbb V\overline X \\
+                         &= \mathbb V \left[ \frac1n \sum_{i=1}^nX_i \right] \\
+                         &= \frac1{n^2} \sum_{i=1}^n \mathbb VX_i \\
+                         &= \frac1{n} \mathbb VX_1 \\
+                         &= \frac1{12n}.
+\end{align*}
+
+\noindent{\bf 2.} $\hat\theta$ is a consistent esitmator for $\theta$ because $\frac1{12n}$ approaches 0 as $n$ increases.
+
+\end{document}

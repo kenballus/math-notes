@@ -470,7 +470,6 @@
  \noindent{\bf Point Estimator}
     
     A point estimator is a random variable $\hat\theta$ defined using the sample $X_1, \hdots, X_n$ which is an estimate for the true parameter $\theta$ of $X_i$. The bias of a point estimator $\hat\theta$ for a parameter $\theta$ is given by $$\text{Bias}(\hat\theta) = \mathbb E[\hat\theta] - \theta.$$ $\hat\theta$ is called unbiased if its bias is 0.
-<<<<<<< HEAD
 
 \medskip
 \noindent{\bf Sample Mean}
@@ -488,7 +487,46 @@
     Let $X$ be a random variable and $X_1, \hdots, X_n$ be independent, identically-distributed samples with the same distribution as $X$. The $k^\text{th}$ moment of $X$ is defined as $\mathbb E[X^k]$. The $k^\text{th}$ sample moment is $\frac1n \sum_{i=1}^nX_i^k$.
 
     To estimate $k$ unknown parameters, set the first $k$ moments equal ot the first $k$ sample moments and cross your fingers.
-=======
->>>>>>> 3243433fb6e4525c13474b1b7bd4ff6f0542a530
+
+\medskip
+\noindent{\bf Mean-squared error}
+
+    Let $\Theta$ be a parameter of interest and $\hat\Theta$ be a random variable in terms of $n$ independent, identically-distributed random variables be our guess for $\Theta$. The mean-squared error (MSE) of $\hat\Theta$ is given by \[\text{MSE}(\hat\Theta)=  \mathbb E[(\hat\Theta - \Theta)^2].\] This is useful because then negative and positive errors don't cancel each other out.
+
+    Property: \[\text{MSE}(\hat\Theta) = \mathbb V[\hat\Theta] + (\text{Bias}(\hat\Theta))^2.\]
+
+\medskip
+\noindent{\bf Consistency}
+
+    Let's say we have $n$ independent, identically-distributed random variables, where $n$ can vary. Then, $\hat\Theta$ is called consistent if for any $\epsilon > 0$, \[\lim_{n\to\infty} \mathbb P(|\hat\Theta - \Theta| > \epsilon) = 0.\]
+
+    Equivalently, an estimate $\hat\Theta$ is consistent if it is unbiased and $\mathbb V[\hat\Theta] \to 0$ as $n \to \infty$. (usually)
+
+\medskip
+\noindent{\bf Likelihood Function}
+
+    Let $X_1, \hdots, X_n$ be independent, identically-distributed samples of a distribution with $k$ unknowns $\Theta_1, \hdots, \Theta_k$. Let $x_1, \hdots, x_n$ be the observed values of $X_1, \hdots, X_n$. The likelihood function of the parameters is given by
+    $$\mathcal L(\Theta_1, \hdots, \Theta_k) = p_{X_1, \hdots, X_n}(x_1, \hdots, x_n~|~\Theta_1, \hdots, \Theta_k)$$ if $X_i$ are discrete, and
+    $$\mathcal L(\Theta_1, \hdots, \Theta_k) = f_{X_1, \hdots, X_n}(x_1, \hdots, x_n~|~\Theta_1, \hdots, \Theta_k)$$ if $X_i$ are continuous.
+
+    These are not conditional probabilities that we would need to use the formula for. They're just reminders that we use the $\Theta$s to compute the probabilities (densities).
+
+\medskip
+\noindent{\bf Method of Maximum Likelihood}
+
+    Choose as estimates the values of $\Theta_1, \hdots, \Theta_k$ which maximize $\mathcal L(\Theta_1, \hdots, \Theta_k)$. In other words, our guess should be whichever parameters would have led to the highest probability of observing our results.
+
+    Note: To maximize $\mathcal L$, it's usually easier to take the log and maximize that (allowed because log is monotic).
+
+    Note: If the samples are i.i.d., we can split up the likelihood function into a product of probabilities (densities).
+
+\medskip
+\noindent{\bf The Central Limit Theorem}
+
+    Let $X_1, \hdots, X_n$ be i.i.d. If $n$ is large, then $\overline X = \frac1n\sum\limits_{i=1}^nX_i$ is approximately normal.
+
+    Note: This means that if $\mu = \mathbb EX_i$ and $\sigma^2 = \mathbb VX_i$, then $\overline X \sim \text{Normal}(\mu, \frac{\sigma^2}n)$ for large $n$.
+
+    A typical value of ``large" is 30.
 
 \end{document}

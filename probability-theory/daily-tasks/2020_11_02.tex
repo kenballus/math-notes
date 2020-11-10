@@ -1,0 +1,60 @@
+\documentclass[12pt]{article}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb,amsthm}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{geometry}
+\usepackage{xcolor}
+
+\graphicspath{{./images/}}
+\setlength{\topmargin}{0pt}
+\setlength{\headsep}{0pt}
+\textheight = 600pt
+
+\title{Probability Theory \\ Daily Task}
+\author{Ben Kallus}
+\date{November 2, 2020}
+
+\begin{document}
+\color{white}
+\pagecolor{black}
+\maketitle
+
+\noindent{\bf 1.} The average value of one die roll is $1 + \frac{k-1}2$.
+
+\medskip
+\noindent{\bf 2.}
+\begin{align*}
+    \frac{\hat k-1}{2} &= \frac1n\sum_{i=1}^nY_i \\
+    \hat k &= 1 + \frac2n\sum_{i=1}^nY_i
+\end{align*}
+
+\medskip
+\noindent{\bf 3.}
+\begin{align*}
+    \hat k &= 1 + \frac2n\sum_{i=1}^nY_i \\
+           &= 1 + \frac23(3 + 4 + 5) \\
+           &= 9.
+\end{align*}
+
+\medskip
+\noindent{\bf 4.}
+\begin{align*}
+    \hat k &= 1 + \frac2n\sum_{i=1}^nY_i \\
+           &= 1 + \frac23(3 + 4 + 6) \\
+           &= 9 + \frac23.
+\end{align*}
+
+\medskip
+\noindent{\bf 5.}
+\begin{align*}
+    \hat k &= 1 + \frac2n\sum_{i=1}^nY_i \\
+           &= 1 + \frac23(3 + 4 + 26) \\
+           &= 23.
+\end{align*}
+
+\medskip
+\noindent{\bf 6.} $\hat k$ is a pretty weird guess. In question 3 it seems pretty good, but in question 4 it's not a possibility at all. Question 5 it also seems like a weak guess, but I'm not sure how to make a better guess than that.
+
+\end{document}
