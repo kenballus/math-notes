@@ -23,20 +23,20 @@
 \hrule
 \bigskip
 
-\noindent {\bf Acknowledgements:} 
+\noindent {\bf Acknowledgements:} None.
 
 \bigskip
 \hrule
 \bigskip
 
-\noindent{\bf 5.} Claim: Let $f: \mathbb R \to \mathbb R$ defined by \[f(x) = \begin{cases} 1 & x \in \mathbb Q, \\ 0 & x \notin \mathbb Q. \end{cases}\] Then, $\lim\limits_{x \to 0}f(x)$ does not exist.
+\noindent{\bf 5.} Claim: Let $f: \mathbb R \to \mathbb R$ be defined by \[f(x) = \begin{cases} 1 & x \in \mathbb Q, \\ 0 & x \notin \mathbb Q. \end{cases}\] Then, $\lim\limits_{x \to 0}f(x)$ does not exist.
 \begin{proof}
     Let the sequence $(a_n)$ be defined by $a_n = \frac1n$, and let the sequence $(b_n)$ be defined by $b_n = \frac1{n\sqrt2}$.
     We have previously shown that $\lim\limits_{n\to\infty} a_n = 0$.
     Thus, by the Algebraic Limit Theorem, $\lim\limits_{n\to\infty} b_n = 0$.
     Note that all terms of $(a_n)$ are rational, all terms of $(b_n)$ are irrational.
     Therefore, $f(a_n) = (1, 1, 1, \hdots)$, and $f(b_n) = (0, 0, 0, \hdots)$.
-    Thus, $\lim\limits_{n\to\infty} a_n = 1$, and $\lim\limits_{n\to\infty} b_n = 0$.
+    Thus, $\lim\limits_{n\to\infty} f(a_n) = 1$, and $\lim\limits_{n\to\infty} f(b_n) = 0$.
     Note that 0 is a term of neither $(a_n)$ nor $(b_n)$.
     Thus, by Theorem 4.2.3, $\lim\limits_{x\to0}f(x)$ does not exist.
 \end{proof}
@@ -49,6 +49,7 @@
     Let $(y_n)$ be the subsequence of $(x_n)$ consisting of $(x_n)$'s rational terms.
 
     Suppose $(y_n)$ is an infinite sequence.
+        Then, $\lim\limits_{n\to\infty} (y_n) = 0.$
         Then, since $f(y_n) = (y_n)$, $\lim\limits_{n \to \infty} f(y_n) = 0$.
         Thus, there exists $N \in \mathbb N$ such that for all $n \geq N$, $|f(y_n) - 0| < \epsilon$.
         Let $N'$ be the index of $f(y_N)$ in $(x_n)$.
@@ -73,16 +74,15 @@
 \newpage
 \noindent{\bf 7.} Claim: If $f: \mathbb R \to \mathbb R$ is continuous on $\mathbb R$, then $K = \{x~|~f(x)=1\}$ is a closed set.
 \begin{proof}
-    Let $\epsilon > 0$ be given.
     Let $a$ be a limit point of $K$.
+    Let $\epsilon > 0$ be given.
     Then, since $a \in \mathbb R$, $f$ is continuous at $a$.
-    Thus, there exists $\delta \in \mathbb R$ such that for all $x \in \mathbb R$ satisfying $|x - a| < \delta$, $|f(x) - f(a)| < \epsilon$.
-    Since $a$ is a limit point of $K$, there exists $k \in K$ satisfying $|k - a| < \delta$.
+    Thus, there exists $\delta > 0$ such that for all $x \in \mathbb R$ satisfying $|x - a| < \delta$, $|f(x) - f(a)| < \epsilon$.
+    Since $a$ is a limit point of $K$, there exists $k \in K$ such that $k \in V_\delta(a)$.
+    Thus, $|k - a| < \delta$.
     Thus, $|1 - f(a)| < \epsilon$.
-    Thus, $|1 - f(a)| < \frac1n$ for all $n \in \mathbb N$.
-    Thus, by the Archimedean Property, $|1 - f(a)| \leq 0$.
-    Therefore, $f(a) = 1$.
-    Thus, $a \in K$.
+    Therefore, by Theorem 1.2.6, $f(a) = 1$.
+    Thus, $a \in K$, so $K$ is a closed set.
 \end{proof}
 
 \newpage
@@ -90,12 +90,12 @@
 \begin{proof}
     Let $s \in S$.
     Then, since $s \in \mathbb R$, $f$ is continuous at $s$.
-    Thus, there exists $\delta \in \mathbb R$ such that for all $x \in \mathbb R$ satisfying $|x - s| < \delta$, $|f(x) - f(s)| < \min\{2 - f(s), f(s) - 1\}$.
-    Let $y \in (s - \delta, s + \delta)$.
+    Thus, there exists $\delta > 0$ such that for all $x \in \mathbb R$ satisfying $|x - s| < \delta$, $|f(x) - f(s)| < \min\{2 - f(s), f(s) - 1\}$.
+    Let $y \in V_\delta(s)$.
     Then, $|f(y) - f(s)|$ is less than both $2 - f(s)$ and $f(s) - 1$.
-    Therefore, $-(2 - f(s)) < f(y) - f(s) < 2 - f(s)$ and $-(f(s) - 1) < f(y) - f(s) < f(s) - 1$.
-    Then, $-(f(s) - 1) < f(y) - f(s) < 2 - f(s)$.
+    Therefore, \[-(2 - f(s)) < f(y) - f(s) < 2 - f(s),\] and \[-(f(s) - 1) < f(y) - f(s) < f(s) - 1.\]
+    Then, \[-f(s) + 1 < f(y) - f(s) < 2 - f(s).\]
     Therefore, $1 < f(y) < 2$, so $y \in S$.
-    Thus, $(s - \delta, s + \delta) \subseteq S$, so $S$ is an open set.
+    Thus, $V_\delta(s) \subseteq S$, so $S$ is an open set.
 \end{proof}
 \end{document}

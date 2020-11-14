@@ -486,7 +486,7 @@
 
     Let $X$ be a random variable and $X_1, \hdots, X_n$ be independent, identically-distributed samples with the same distribution as $X$. The $k^\text{th}$ moment of $X$ is defined as $\mathbb E[X^k]$. The $k^\text{th}$ sample moment is $\frac1n \sum_{i=1}^nX_i^k$.
 
-    To estimate $k$ unknown parameters, set the first $k$ moments equal ot the first $k$ sample moments and cross your fingers.
+    To estimate $k$ unknown parameters, set the first $k$ moments equal to the first $k$ sample moments and cross your fingers.
 
 \medskip
 \noindent{\bf Mean-squared error}
@@ -528,5 +528,11 @@
     Note: This means that if $\mu = \mathbb EX_i$ and $\sigma^2 = \mathbb VX_i$, then $\overline X \sim \text{Normal}(\mu, \frac{\sigma^2}n)$ for large $n$.
 
     A typical value of ``large" is 30.
+
+    More precisely, \[\frac{\overline X - \mu}{\frac{\sigma}{\sqrt n}} \sim \text{Normal}(0,1).\]
+
+    As a consequence, \[\overline X \sim \text{Normal}(\mu, \frac{\sigma^2}{n}).\]
+
+    Further, \[\mathbb P(-z_{\frac\alpha2} \leq Z \leq z_{\frac\alpha2}) = 1 - \alpha.\]
 
 \end{document}

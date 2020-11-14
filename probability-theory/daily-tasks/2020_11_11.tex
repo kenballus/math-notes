@@ -1,0 +1,38 @@
+\documentclass[12pt]{article}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb,amsthm}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{geometry}
+\usepackage{xcolor}
+
+\graphicspath{{./images/}}
+\setlength{\topmargin}{0pt}
+\setlength{\headsep}{0pt}
+\textheight = 600pt
+
+\title{Probability Theory \\ Daily Task}
+\author{Ben Kallus}
+\date{November 11, 2020}
+
+\begin{document}
+\color{white}
+\pagecolor{black}
+\maketitle
+
+\noindent{\bf 1.} 
+\begin{align*}
+    \mathbb P\left(-z_{\frac{.5}2} \leq \frac{\overline X - \mu}{\frac\sigma{\sqrt n}} \leq z_\frac{.5}2\right) &= 
+    \mathbb P\left(-1.96 \leq \frac{1.7 - \mu}{\frac1{\sqrt{100}}} \leq 1.96\right) \\
+    &= \mathbb P\left(-1.96 \leq 10(1.7 - \mu) \leq 1.96\right) \\
+    &= \mathbb P\left(-.196 \leq 1.7 - \mu \leq .196\right) \\
+    &= \mathbb P\left(-.196 - 1.7 \leq -\mu \leq .196 - 1.7\right) \\
+    &= \mathbb P\left(-.196 + 1.7 \leq \mu \leq .196 + 1.7\right)
+\end{align*} Thus, a 95\% confidence interval for $\mu$ is \[1.7 \pm .196.\]
+
+\medskip
+\noindent{\bf 2.} You'd need to have a sample size of 400 to double $\sqrt n$. Thus, you'd need to cash out 300 more customers.
+
+   
+ \end{document}
