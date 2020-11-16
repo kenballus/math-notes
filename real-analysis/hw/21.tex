@@ -1,0 +1,75 @@
+\documentclass[12pt]{article}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb,amsthm}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{geometry}
+\usepackage{xcolor}
+
+\setlength{\topmargin}{0pt}
+\setlength{\headsep}{0pt}
+\textheight = 600pt
+
+\title{Real Analysis \\ Homework 21}
+\author{Ben Kallus and Jonathan Sills}
+\date{Due Monday, November 16, 2020}
+
+\begin{document}
+\pagecolor{black}
+\color{white}
+\maketitle
+
+\hrule
+\bigskip
+
+\noindent {\bf Acknowledgements:} None.
+
+\bigskip
+\hrule
+\bigskip
+
+\noindent{\bf 9.}
+
+\medskip
+\noindent{\bf a.} Claim: If $f: [a,b] \to \mathbb R$ is a function such that, for every $x \in [a,b]$, there is a number $\delta_x>0$ for which $f$ is bounded on $V_{\delta_x}(x)$, then $f$ is bounded on $[a,b]$.
+\begin{proof}
+    Suppose $f$ is not bounded on $[a,b]$.
+    Then, for each natural number $n$, there exists $x_n \in [a,b]$ such that $|f(x_n)| > n$.
+    This defines a bounded sequence $(x_n)$, and an unbounded sequence $f(x_n)$.
+    Note that every subsequence of $f(x_n)$ is unbounded.
+    Then, by the Bolzano-Weierstrass Theorem, there exists a convergent subsequence of $(x_n)$.
+    Let $(y_n)$ be that sequence.
+    Let $y = \lim\limits_{n \to \infty}(y_n)$.
+    By the definition of $f$, there exists $\delta_y > 0$ such that f is bounded on $V_{\delta_y}(y)$.
+    Since $\lim\limits_{n \to \infty} y_n = y$, there exists $N \in \mathbb N$ such that for all $n \geq N$, $y_n \in V_{\delta_y}(y)$.
+    Let $(z_n)$ be the sequence obtained by removing the first $N-1$ terms of $(y_n)$.
+    Then, $f(z_n)$ is unbounded, since every subsequence of $f(x_n)$ is unbounded.
+    Let $M$ be the bound of $f$ on $V_{\delta_y}(y)$.
+    Then, since $f(z_n)$ is unbounded, there exists $m \in \mathbb N$ such that $|f(y_m)| > M$.
+    However, since $y_m \in V_{\delta_y}(y)$, $|f(y_m)| \leq M$.
+    Thus, we have shown a contradiction, so $f$ must be bounded on $[a,b]$.
+\end{proof}
+
+\medskip
+\noindent{\bf b.} Claim: The result of part (a) does not hold if the interval is $(a,b)$.
+\begin{proof}
+    Let $(a, b) = (0, 1)$, and let $f: (0, 1) \to \mathbb R$ by \[f(x) = \frac1x.\]
+    Observe that $f$ contradicts the claim from part (a), since $f$ is bounded on any interval with endpoints in $(0,1)$, but $f$ is not bounded on $(0,1)$.
+\end{proof}
+
+\newpage
+\noindent{\bf 10.}
+
+\medskip
+\noindent{\bf a.} Impossible. % But maybe a voice memos logo situation is possible?
+
+\medskip
+\noindent{\bf b.} $f(x) = \sin(\pi x) + 1$
+
+\medskip
+\noindent{\bf c.} % Possible. Something with infinite oscillations and a constant baseline at 0, but the tops of the curves get closer and closer to 2 as x goes to 0.
+
+\medskip
+\noindent{\bf d.} % idk
+\end{document}
