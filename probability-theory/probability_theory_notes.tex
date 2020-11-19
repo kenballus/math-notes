@@ -352,7 +352,7 @@
 \medskip
 \noindent{\bf Standard Normal Distribution}
 
-    If $X$ is a Guassian random variable, then $$Z = \frac{X-\mu_X}{\sigma_X} \sim \text{ Normal}(\mu=0, \sigma^2=1)$$ is a standard normal random variable. To compute probabilities for $X$, convert to probabilities involving $Z$ and use precomputed values for standard normal.
+    If $X$ is a Gaussian random variable, then $$Z = \frac{X-\mu_X}{\sigma_X} \sim \text{ Normal}(\mu=0, \sigma^2=1)$$ is a standard normal random variable. To compute probabilities for $X$, convert to probabilities involving $Z$ and use precomputed values for standard normal.
 
 \medskip
 \noindent{\bf Exponential Random Variable}
@@ -534,5 +534,8 @@
     As a consequence, \[\overline X \sim \text{Normal}(\mu, \frac{\sigma^2}{n}).\]
 
     Further, \[\mathbb P(-z_{\frac\alpha2} \leq Z \leq z_{\frac\alpha2}) = 1 - \alpha.\]
+
+    To construct a confidence interval with confidence $(1-\alpha)$, solve
+    \[\mathbb P\left(\overline X - z_{\frac\alpha2}\frac\sigma{\sqrt n} \leq \overline X \leq \overline X + z_{\frac\alpha2}\frac\sigma{\sqrt n}\right) = 1 - \alpha.\]
 
 \end{document}
