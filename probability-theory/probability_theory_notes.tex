@@ -531,8 +531,38 @@
 
     More precisely, \[\frac{\overline X - \mu}{\frac{\sigma}{\sqrt n}} \sim \text{Normal}(0,1).\]
 
-    As a consequence, \[\overline X \sim \text{Normal}(\mu, \frac{\sigma^2}{n}).\]
+    As a consequence, \[\overline X \sim \text{Normal}\left(\mu, \frac{\sigma^2}{n}\right)\]
 
-    Further, \[\mathbb P(-z_{\frac\alpha2} \leq Z \leq z_{\frac\alpha2}) = 1 - \alpha.\]
+    Another form: If $\mu = \mathbb EX_i$, and $\sigma^2 = \mathbb VX_i$, CLT implies that $\overline X \sim \text{Normal}(\mu, \frac{\sigma^2}n)$ for large $n$.
+
+    Further, \[\mathbb P\left(-z_{\frac\alpha2} \leq Z \leq z_{\frac\alpha2}\right) = 1 - \alpha,\] where $z_x$ is defined such that $\mathbb P(Z \geq z_x) = x$.
+
+\medskip
+\noindent{\bf Confidence Interval for a Mean with a Known Standard Deviation}
+
+    A $1 - \alpha$ confidence interval for $\mu$ if sample size $n$ is large:
+    \[\left(\overline X - z_{\frac\alpha2}\frac\sigma{\sqrt n}, \overline X + z_{\frac\alpha2}\frac\sigma{\sqrt n}\right)\]
+    If we don't know $\sigma$, and $n$ is large, it's common (dirty trick) to replace it with $$s = \frac1{n-1}\sum_{i=1}^n(X_i - \overline X)^2$$
+
+    This is what you should do if you know $\sigma$ and not $\mu$.
+
+\medskip
+\noindent{\bf $t$-Distribution}
+
+    Let $X_1, X_2, \hdots, X_n$ be i.i.d. Normal$(\mu, \sigma^2)$ R.V.s.
+
+    Let $$T = \frac{\overline X - \mu}{\frac s{\sqrt n}}.$$
+
+    Then $T$ is said to be $t$-distributed with $n-1$ degrees of freedom.
+
+    Note: If samples are approximately normally distributed, or the sample size is large enough for the CLT to apply, then this is a good approach.
+
+    Note: As $n$ increases, the $t$-distribution with $n$ degrees of freedom gets closer to the standard normal.
+
+\medskip
+\noindent{\bf Confidence Interval when Standard Deviation is Unknown}
+
+    This is what you should do if you don't know $\sigma$ or $\mu$.
+    $$\mathbb P\left(\overline X - \frac s{\sqrt n} t_{n-1, \frac\alpha2} \leq \mu \leq \overline X + \frac s{\sqrt n} t_{n-1, \frac\alpha2}\right) = 1 - \alpha$$
 
 \end{document}

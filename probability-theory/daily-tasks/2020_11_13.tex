@@ -1,0 +1,37 @@
+\documentclass[12pt]{article}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb,amsthm}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{geometry}
+\usepackage{xcolor}
+
+\graphicspath{{./images/}}
+\setlength{\topmargin}{0pt}
+\setlength{\headsep}{0pt}
+\textheight = 600pt
+
+\title{Probability Theory \\ Daily Task}
+\author{Ben Kallus}
+\date{November 13, 2020}
+
+\begin{document}
+\color{white}
+\pagecolor{black}
+\maketitle
+
+\noindent{\bf 1.} \[\overline{X} = \frac{4460}{11440}\]
+
+\noindent{\bf 2.}
+\begin{align*}
+    s &= \sqrt{\frac1{n-1}\sum\limits_{i=1}^n (X_i - \overline X)^2} \\
+      &= \sqrt{\frac1{11439}\sum\limits_{i=1}^{11440} \left(X_i - \frac{4460}{11440}\right)^2} \\
+      &= \sqrt{\frac1{11439}\left(4460\left(1 - \frac{4460}{11440}\right)^2 + 6980\left(0 - \frac{4460}{11440}\right)^2\right)} \\
+      &\approx 0.487739690603
+\end{align*}
+
+\noindent{\bf 3.} $$\frac{4460}{11440} \pm 1.96 \cdot \frac{0.487718372843}{\sqrt{11440}}$$
+                  $$(0.380922719697, 0.398797560024)$$
+   
+ \end{document}

@@ -1,0 +1,64 @@
+\documentclass[12pt]{article}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb,amsthm}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{geometry}
+\usepackage{xcolor}
+
+\setlength{\topmargin}{0pt}
+\setlength{\headsep}{0pt}
+\textheight = 600pt
+
+\title{Real Analysis \\ Homework 22}
+\author{Ben Kallus and Jonathan Sills}
+\date{Due Thursday, November 19, 2020}
+
+\begin{document}
+\pagecolor{black}
+\color{white}
+\maketitle
+
+\hrule
+\bigskip
+
+\noindent {\bf Acknowledgements:} None.
+
+\bigskip
+\hrule
+\bigskip
+
+\noindent{\bf 11.}
+
+\medskip
+\noindent{\bf a.} Claim: The function $f(x) = \frac1{1-x}$ is not uniformly continuous on the domain $(-\infty, 1)$.
+\begin{proof}
+    Define $(x_n)$ by $x_n = -\frac1{n} + 1$, and define $(y_n)$ by $y_n = -\frac2{n} + 1$. Then, for all $n \in \mathbb N$,
+    \begin{align*}
+        |x_n - y_n| &= \left|\left(-\frac1{n} + 1\right) - \left(-\frac2{n} + 1\right)\right| \\
+                    &= \left|\frac1n\right|.
+    \end{align*}
+    Thus, $\lim\limits_{n \to \infty} |x_n - y_n| = 0$. Observe that
+    \begin{align*}
+        |f(x_n) - f(y_n)| &= \left| \frac1{1-\left(-\frac1{n} + 1\right)} - \frac1{1-\left(-\frac2{n} + 1\right)} \right| \\
+                          &= \left| \frac1{1 + \frac1{n} - 1} - \frac1{1 + \frac2{n} - 1} \right| \\
+                          &= \left| n - \frac n2 \right| \\
+                          &= \left| \frac n2 \right|
+    \end{align*}
+    Thus, $|f(x_n) - f(y_n)| \geq \frac12$ for all $n \in \mathbb N$.
+\end{proof}
+
+\medskip
+\noindent{\bf b.} Claim: $f$ is continuous on $A$.
+\begin{proof}
+    Let $c \in A$. 
+\end{proof}
+
+\newpage
+\noindent{\bf 12.} Claim: $f(x) = \frac1{x^2}$ is uniformly continuous on $[1,\infty)$, but not on $(0,1]$.
+\begin{proof}
+    
+\end{proof}
+
+\end{document}
