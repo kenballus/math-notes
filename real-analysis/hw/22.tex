@@ -44,21 +44,86 @@
         |f(x_n) - f(y_n)| &= \left| \frac1{1-\left(-\frac1{n} + 1\right)} - \frac1{1-\left(-\frac2{n} + 1\right)} \right| \\
                           &= \left| \frac1{1 + \frac1{n} - 1} - \frac1{1 + \frac2{n} - 1} \right| \\
                           &= \left| n - \frac n2 \right| \\
-                          &= \left| \frac n2 \right|
+                          &= \left| \frac n2 \right| \\
+                          &= \frac n2 \\
+                          &\geq \frac12.
     \end{align*}
-    Thus, $|f(x_n) - f(y_n)| \geq \frac12$ for all $n \in \mathbb N$.
-\end{proof}
-
-\medskip
-\noindent{\bf b.} Claim: $f$ is continuous on $A$.
-\begin{proof}
-    Let $c \in A$. 
+    Thus, by Theorem 4.4.5, $f$ is not uniformly continuous on $(-\infty, 1)$.
 \end{proof}
 
 \newpage
-\noindent{\bf 12.} Claim: $f(x) = \frac1{x^2}$ is uniformly continuous on $[1,\infty)$, but not on $(0,1]$.
+\noindent{\bf b.} Claim: $f$ is continuous on $A$.
 \begin{proof}
-    
+    Let $\epsilon > 0$ be given. Let $c$ be a limit point of $(-\infty, 1)$. Suppose $|x - c| < \min\left\{\frac12(1-c), \frac12(1-c)^2\epsilon\right\}$. Then,
+    \begin{align*}
+        x - c &< \frac12(1 - c) \\
+              &= \frac12 - \frac12c.
+    \end{align*} Thus,
+    \begin{align*}
+        x &< \frac12 + \frac12c.
+    \end{align*} Therefore,
+    \begin{align*}
+        -x &> -\frac12 - \frac12c.
+    \end{align*} Thus,
+    \begin{align*}
+        1 - x &> \frac12 - \frac12c \\
+              &= \frac12(1-c).
+    \end{align*} Then,
+    \begin{align*}
+        |1 - x| &> \frac12(1-c).
+    \end{align*}
+
+    Observe that
+    \begin{align*}
+        |f(x) - f(c)| &= \left| \frac1{1-x} - \frac1{1-c} \right| \\
+                      &= \frac{|x-c|}{|1-x||1-c|} \\
+                      &< \frac{\frac12(1-c)^2\epsilon}{\frac12(1-c)|1-c|} \\
+                      &= \frac{\frac12(1-c)^2\epsilon}{\frac12(1-c)^2} \\
+                      &= \epsilon.
+    \end{align*}
+    Thus, $f$ is continuous on $(-\infty, 1)$.
+
+\end{proof}
+
+\newpage
+\noindent{\bf 12.} Let $f: \mathbb R \to \mathbb R$ by $$f(x) = \frac1{x^2}.$$
+
+\medskip
+\noindent{\bf a.} Claim: $f$ is uniformly continuous on $[1,\infty)$.
+\begin{proof}
+    Let $\epsilon > 0$ be given.
+    Let $x, y \in [1, \infty)$.
+    Suppose $|x-y| < \frac\epsilon2$.
+    Then,
+    \begin{align*}
+        |f(x) - f(y)| &= \left| \frac1{x^2} - \frac1{y^2} \right| \\
+                      &= \frac{|x^2-y^2|}{|x^2y^2|} \\
+                      &= \frac{|x-y||x+y|}{|x^2y^2|} \\
+                      &= \frac{|x-y|(x+y)}{x^2y^2} \\
+                      &= |x-y|\left( \frac{x+y}{x^2y^2} \right) \\
+                      &= |x-y|\left( \frac1{xy^2} + \frac1{x^2y} \right) \\
+                      &< 2|x-y| \\
+                      &= \epsilon.
+    \end{align*}
+    Thus, $f$ is uniformly continuous on $[1, \infty)$.
+\end{proof}
+
+\newpage
+\noindent{\bf b.} Claim: $f$ is not uniformly continuous on $(0,1]$.
+\begin{proof}
+    Define $(x_n) = \frac1n$ and $(y_n) = \frac1{2n}$. Then,
+    \begin{align*}
+        |x_n - y_n| &= \left| \frac1n - \frac1{2n} \right| \\
+                    &= \left| \frac{1}{2n} \right| \\
+                    &= \frac1{2n}.
+    \end{align*} Thus, $\lim\limits_{n \to \infty} |x_n - y_n| = 0$.
+    Observe that
+    \begin{align*}
+        |f(x_n) - f(y_n)| &= \left| \frac1{\left(\frac1{n}\right)^2} - \frac1{\left(\frac1{2n}\right)^2} \right| \\
+                          &= |n^2 - 4n^2| \\
+                          &= 3n^2 \\
+                          &\geq 3.
+    \end{align*} Thus, by Theorem 4.4.5, $f$ is not uniformly continuous on $(0, 1]$.
 \end{proof}
 
 \end{document}
