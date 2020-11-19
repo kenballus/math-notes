@@ -38,17 +38,19 @@
     Then, for each natural number $n$, there exists $x_n \in [a,b]$ such that $|f(x_n)| > n$.
     This defines a bounded sequence $(x_n)$, and an unbounded sequence $f(x_n)$.
     Note that every subsequence of $f(x_n)$ is unbounded.
-    Then, by the Bolzano-Weierstrass Theorem, there exists a convergent subsequence of $(x_n)$.
-    Let $(y_n)$ be that sequence.
+    By the Bolzano-Weierstrass Theorem, there exists a convergent subsequence of $(x_n)$.
+    Let $(y_n)$ be one such sequence.
     Let $y = \lim\limits_{n \to \infty}(y_n)$.
+    Thus, $y$ is a limit point of $[a,b]$.
+    Since $[a,b]$ is a closed set, $y \in [a,b]$.
     By the definition of $f$, there exists $\delta_y > 0$ such that f is bounded on $V_{\delta_y}(y)$.
     Since $\lim\limits_{n \to \infty} y_n = y$, there exists $N \in \mathbb N$ such that for all $n \geq N$, $y_n \in V_{\delta_y}(y)$.
     Let $(z_n)$ be the sequence obtained by removing the first $N-1$ terms of $(y_n)$.
     Then, $f(z_n)$ is unbounded, since every subsequence of $f(x_n)$ is unbounded.
     Let $M$ be the bound of $f$ on $V_{\delta_y}(y)$.
-    Then, since $f(z_n)$ is unbounded, there exists $m \in \mathbb N$ such that $|f(y_m)| > M$.
-    However, since $y_m \in V_{\delta_y}(y)$, $|f(y_m)| \leq M$.
-    Thus, we have shown a contradiction, so $f$ must be bounded on $[a,b]$.
+    Then, since $f(z_n)$ is unbounded, there exists $m \in \mathbb N$ such that $|f(z_m)| > M$.
+    However, since $z_m \in V_{\delta_y}(y)$, $|f(z_m)| \leq M$.
+    We have now shown a contradiction, so $f$ must be bounded on $[a,b]$.
 \end{proof}
 
 \medskip
@@ -62,14 +64,14 @@
 \noindent{\bf 10.}
 
 \medskip
-\noindent{\bf a.} Impossible. % But maybe a voice memos logo situation is possible?
+\noindent{\bf a.} Impossible.
 
 \medskip
-\noindent{\bf b.} $f(x) = \sin(\pi x) + 1$
+\noindent{\bf b.} $f(x) = \sin\left(\pi x\right) + 1$.
 
 \medskip
-\noindent{\bf c.} % Possible. Something with infinite oscillations and a constant baseline at 0, but the tops of the curves get closer and closer to 2 as x goes to 0.
+\noindent{\bf c.} $f(x) = \frac1{2^x}\sin(\frac1x)$.
 
 \medskip
-\noindent{\bf d.} % idk
+\noindent{\bf d.} $f(x) = \begin{cases} x & x < \pi, \\ 0 & \text{otherwise.} \end{cases}$
 \end{document}
