@@ -1,0 +1,71 @@
+\documentclass[12pt]{article}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{geometry}
+\usepackage{xcolor}
+
+\setlength{\topmargin}{0pt}
+\setlength{\headsep}{0pt}
+\textheight = 600pt
+
+\title{Real Analysis \\ Homework 23}
+\author{Ben Kallus and Jonathan Sills}
+\date{Due Monday, November 23, 2020}
+
+\begin{document}
+\pagecolor{black}
+\color{white}
+\maketitle
+
+\hrule
+\bigskip
+
+\noindent {\bf Acknowledgements:} None.
+
+\bigskip
+\hrule
+\bigskip
+
+\noindent{\bf 14.} Example: The function $f: A \to \mathbb Q$ defined by $$f(x) = \begin{cases} -1 & x < \frac\pi2, \\ 1 & \text{otherwise,} \end{cases}$$ has the desired properties. Observe that $f(0) = -2$, and $f(2) = 1$, but there is no $x \in A$ for which $f(x) = 0$.
+
+\newpage
+\noindent{\bf 2.}
+
+\medskip
+\noindent{\bf a.} $P = \{0,1,2\}$.
+\begin{align*}
+    L(f, P) &= 0 \\
+    U(f, P) &= 2
+\end{align*}
+
+\medskip
+\noindent{\bf b.} $P = \{0, 1 - \frac\epsilon3, 1 + \frac\epsilon3, 2 - \frac\epsilon3, 2\}$ with a fixed $\epsilon$ such that $0 < \epsilon < 1$.
+\begin{align*}
+    L(f, P) &= 2 - \epsilon \\
+    U(f, P) &= 2
+\end{align*}
+
+\medskip
+\noindent{\bf c.}
+\begin{proof}
+    Let $P_1$ be a partition of $[0,2]$.
+    Since the irrational numbers are dense in $\mathbb R$, every interval of the real numbers contains some irrational number.
+    Thus, every interval with endpoints in $P$ contains some real number $x$ such that $f(x) = 1$.
+    Since 1 is the maximum possible value for $f(x)$, $U(f, P_1)$ is equal to the sum of the lengths of the intervals in $P_1$.
+    Thus, $U(f,P_1) = 2$.
+    Thus, $U(f) = 2$.
+
+    Let $(\mu_n)$ be a sequence of real numbers such that $0 < \mu_i < 1$ for all $i \in \mathbb N$, and $\lim\limits_{n \to \infty} \mu_n = 0$.
+    Then, for the partition $P_n = \left\{0, 1 - \frac{\mu_n}3, 1 + \frac{\mu_n}3, 2 - \frac{\mu_n}3, 2 \right\}$, $L(f, P_n) = 2 - \mu_n$.
+    Thus, $\lim\limits_{n\to\infty}L(f, P_n) = 2$.
+    Thus, $L(f) \geq 2$.
+    By Theorem 7.2.6, $L(f) \leq U(f) = 2$.
+    Thus, $L(f) = 2$.
+
+    Thus, $f$ is Riemann integrable, and $$\int_0^2 f(x) \,dx = 2.$$
+\end{proof}
+
+\end{document}

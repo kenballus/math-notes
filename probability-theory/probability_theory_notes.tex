@@ -568,4 +568,47 @@
     To construct a confidence interval with confidence $(1-\alpha)$, solve
     \[\mathbb P\left(\overline X - z_{\frac\alpha2}\frac\sigma{\sqrt n} \leq \overline X \leq \overline X + z_{\frac\alpha2}\frac\sigma{\sqrt n}\right) = 1 - \alpha.\]
 
+\medskip
+\noindent{\bf Statistic}
+
+    A statistic is a random variable $T$ which is computed from a sample $X_1, \hdots, X_n$.
+
+    Examples: Estimators, the median, the mode, the mean, the variance.
+
+\medskip
+\noindent{\bf Hypothesis Test}
+
+    A hypothesis test is a procedure with four components: \\
+    1. A null hypothesis $H_0$: A hypothesis you are trying to evaluate based on the data. Almost always a specific value, e.g. the coin is fair. \\
+    2. An alternative hypothesis $H_a$: the hypothesis which we are looking for evidence for compared to the null hypothesis. Often a range of values, e.g. the coin is not fair. \\
+    3. Atest statistic: A statistic to be used to evaluate both hypotheses. \\
+    4. A rejection region: A set such that if the test statistic is in this region, we conclude that $H_0$ is false in favor of $H_a$. If the test statistic is not in this region, we fail to reject $H_a$.
+
+\medskip
+\noindent{\bf Type I Error}
+
+    A type I error occurs when $H_0$ is true but it is rejected.
+
+\medskip
+\noindent{\bf Type II Error}
+
+    A type II error occurs when $H_a$ is true but you fail to reject $H_0$.
+
+\medskip
+\noindent{Large Sample Test for Mean}
+
+    Let $X_1, \hdots, X_n$ be i.i.d. with $\mu = \mathbb EX_i$ unknown and $\mathbb VX_i = \sigma^2$ unknown. (If $n$ is large and $\sigma^2$ is unknown, it's not too bad to just use $s^2$ instead.)
+
+    Null hypothesis: $\mu = \mu_0$, (for testing fairness of a coin, $\mu_0 = .5$)
+
+    Alternative hypothesis: One of the following: $\mu > \mu_0$, $\mu < \mu_0$, $\mu \neq \mu_0$.
+
+    Test statistic: $\overline X$.
+
+    Rejection region: We would like a type I error rate of $\alpha$, which we select.
+
+    Case $H_a$:
+
+    \indent\indent \mu > \mu_0
+
 \end{document}
