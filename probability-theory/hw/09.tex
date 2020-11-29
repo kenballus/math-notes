@@ -25,6 +25,127 @@
 \color{white}
 \maketitle
 
+\noindent{\bf 1.}
+
+\medskip
+\noindent{\bf a.}
+\begin{align*}
+    \mathbb E [\overline X] &= \mathbb E\left[\frac1m \sum_{i=1}^m X_i\right] \\
+                            &= \frac1m \mathbb E\left[ \sum_{i=1}^m X_i \right] \\
+                            &= \mathbb E[X_i] \\
+                            &= \mu_X.
+\end{align*}
+
+\begin{align*}
+    \mathbb V [\overline X] &= \mathbb V\left[\frac1m \sum_{i=1}^m X_i\right] \\
+                            &= \frac1{m^2} \mathbb E\left[ \sum_{i=1}^m X_i \right] \\
+                            &= \frac1m \mathbb V[X_i] \\
+                            &= \frac{\sigma^2_X}m.
+\end{align*}
+
+The standard deviation of the sampling distribution of $\overline X$ is $$\frac{\sigma_X}{\sqrt m}.$$
+
+\medskip
+\noindent{\bf b.}
+\begin{align*}
+    \mathbb E[W] &= \mathbb E[\overline X - \overline Y] \\
+                 &= \mathbb E[\overline X] - \mathbb E[\overline Y] \\
+                 &= \mu_X - \mu_Y.
+\end{align*}
+
+\begin{align*}
+    \mathbb V[W] &= \mathbb V[\overline X - \overline Y] \\
+                 &= \mathbb V[\overline X] + \mathbb V[\overline Y] \\
+                 &= \frac{\sigma^2_X}m + \frac{\sigma^2_Y}n
+\end{align*}
+
+The standard deviation of the sampling distribution of $W$ is $$\sqrt{\frac{\sigma^2_X}m + \frac{\sigma^2_Y}n}.$$
 
 
+\newpage
+\noindent{\bf 2.}
+
+\medskip
+\noindent{\bf a.} A 95\% confidence interval for $p$ is
+$$\left(\overline X - 1.644854\left(\frac{\sqrt{p(1-p)}}{\sqrt n}\right), \overline X + 1.644854\left(\frac{\sqrt{p(1-p)}}{\sqrt n}\right) \right).$$
+
+Thus, we need to solve the following inequality for $n$:
+\begin{align*}
+    2 \cdot 1.644854\left(\frac{\sqrt{p(1-p)}}{\sqrt n}\right) &\leq 0.10 \\
+    3.289708\left(\frac{\sqrt{p(1-p)}}{\sqrt n}\right) &\leq 0.10 \\
+    3.289708\left(\frac{\sqrt{p(1-p)}}{0.10}\right) &\leq \sqrt n \\
+    1082.21787253(p(1-p)) &\leq n
+\end{align*}
+
+Thus, we should poll $\left\lceil 1082.21787253(p(1-p)) \right\rceil$ students.
+
+\medskip
+\noindent{\bf b.} $p(1-p)$ is maximized at $p=0.5$. Thus, we should poll
+\begin{align*}
+    \left\lceil 1082.21787253(0.5(1-0.5)) \right\rceil &= \left\lceil \frac{1082.21787253}4 \right\rceil \\
+                                                            &= 271
+\end{align*} students.
+
+\medskip
+\noindent{\bf c.} $$s = \sqrt{\frac1{500-1}\left(280(1-0.56)^2 + 220(0-0.56)^2\right)} \approx 0.496884078609$$
+
+
+80\% confidence interval:
+\begin{align*}
+    & \left(0.56 - 1.281552\left(\frac{0.496884078609}{\sqrt{500}}\right), 0.56 + 1.281552\left(\frac{0.496884078609}{\sqrt{500}}\right) \right) \\
+    &= (0.53152220813, 0.58847779187)
+\end{align*}
+
+90\% confidence interval:
+\begin{align*}
+    & \left(0.56 - 1.644854\left(\frac{0.496884078609}{\sqrt{500}}\right), 0.56 + 1.644854\left(\frac{0.496884078609}{\sqrt{500}}\right) \right) \\
+    &= (0.523449153941, 0.596550846059)
+\end{align*}
+
+99\% confidence interval:
+\begin{align*}
+    & \left(0.56 - 2.575829\left(\frac{0.496884078609}{\sqrt{500}}\right), 0.56 + 2.575829\left(\frac{0.496884078609}{\sqrt{500}}\right) \right) \\
+    &= (0.502761649816, 0.617238350184)
+\end{align*}
+
+100\% confidence interval:
+\begin{align*}
+    & \left(0.56 - 0\left(\frac{0.496884078609}{\sqrt{500}}\right), 0.56 + 0\left(\frac{0.496884078609}{\sqrt{500}}\right) \right) \\
+    &= (0.56, 0.56)
+\end{align*} This 100\% confidence interval is stupid and makes no sense. Even though the math says that the interval would only contain a single point, 0.56, obviously we are not 100\% confident that $p=0.56$. In my opinion, the 100\% confidence interval should be $(0,1)$.
+
+\newpage
+\noindent{\bf 3.}
+
+\medskip
+\noindent{\bf a.}
+
+    $$\overline w = \overline q - \overline p = 0.62 - 0.56 = 0.06$$
+    $$s_q^2 = \frac1{500-1} \left( 280(1-0.56)^2 + 220(0-0.56)^2 \right) \approx 0.23797979798$$
+    $$s_p^2 = \frac1{100-1} \left( 62(1-0.62)^2 + 38(0-0.62)^2 \right) \approx 0.246893787575$$
+    By part 1 (b), the standard deviation of $\overline w$ is approximately $$\sqrt{\frac{s_q^2}{100} + \frac{s_p^2}{500}} = \sqrt{\frac{0.23797979798}{100} + \frac{0.246893787575}{500}} = 0.053605835083$$
+
+    80\% confidence interval:
+    \begin{align*}
+        & \left( 0.06 - 1.281552\left( \frac{0.053605835083}{600} \right), 0.06 + 1.281552\left( \frac{0.053605835083}{600} \right) \right) \\
+        &= (0.0598855022247, 0.0601144977753)
+    \end{align*} Thus, if we conducted these two experiments an infinite number of times, then 80\% of the confidence intervals constructed in this way will contain the true value of $w$.
+
+\medskip
+\noindent{\bf b.} It seems unlikely that $\overline w = 0$, which isn't contained in our 80\% confidence interval. It's possible, but I wouldn't bet on it.
+
+\medskip
+\noindent{\bf c.} It was important that the surveys were independent, since we need independence to break up the variance of $\overline w$ into the sum of the variances of $\overline p$ and $\overline q$.
+
+\newpage
+\noindent{\bf 4.}
+
+\medskip
+\noindent{\bf b.} The $n-1$ comes from the fact that
+\begin{align*}
+    \mathbb E\sum(X_i^2 - \overline X^2) &= \sum X_i^2 - n\overline X^2 \\
+                                         &= \sum(\sigma^2 + \mu^2) - n\frac{\sigma^2}{n} - n\mu^2 \\
+                                         &= n\sigma^2 + n\mu^2 - \sigma^2 - n\mu^2 \\
+                                         &= (n-1)\sigma^2.
+\end{align*} Basically, the $X_i^2$s each contribute a $\sigma^2$ to the sum, and the $\overline X^2s$ each contrinbute a $-\frac{\sigma^2}n$ to the sum. Therefore, the $\overline X^2$s will contribute an extra $-\sigma^2$ to the sum, which causes the $-1$.
 \end{document}
