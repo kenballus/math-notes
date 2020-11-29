@@ -408,4 +408,50 @@ In other words, a set is dense if every open interval contained in it has at lea
 
     A function $f: A \to \mathbb R$ fails to be uniformly continuous on $A$ if and only if there exists $\epsilon_0 > 0$ and two sequences $(x_n)$ and $(y_n)$ in $A$ such that $\lim\limits_{n \to \infty}|x_n - y_n| = 0$, but $|f(x_n) - f(y_n)| \geq \epsilon_0$ for every $n \in \mathbb N$.
 
+\medskip
+\noindent{\bf The Intermediate Value Theorem}
+    
+    Let $f: [a,b] \to \mathbb R$ be continuous. If $L \in \mathbb R$ satisfies $f(a) < L < f(b)$ or $f(b) < L < f(a)$, then there exists $c \in (a,b)$ such that $f(c) = L$.
+
+\medskip
+\noindent{\bf Partition}
+
+    A partition of $[a,b]$ is a set $P = \{x_0, x_1, \hdots, x_n\}$ for some $n \in \mathbb N$ where $x_0 = a, x_n = b$, and $a = x_0 < x_1 < \hdots < x_n = b$.
+
+\medskip
+\noindent{\bf Upper and Lower Riemann Sums of a Partition}
+
+    Given a partition $P = \{x_0, x_1, \hdots, x_n\}$, for each sub-interval $[x_{i-1}, x_i]$, define
+    \begin{align*}
+        M_i &= \sup\{f(x) ~|~ x_{i-1} \leq x \leq x_i\} \\
+        m_i &= \inf\{f(x) ~|~ x_{i-1} \leq x \leq x_i\}
+    \end{align*} Then,
+    \begin{align*}
+        U(f, P) = \sum_{i=1}^nM_i(x_i-x_{i-1}) \\
+        L(f, P) = \sum_{i=1}^nm_i(x_i-x_{i-1})
+    \end{align*}
+
+\medskip
+\noindent{\bf Upper and Lower Riemann Sums of a Function}
+
+    \begin{align*}
+        U(f) &= \inf\{U(f,P) ~|~ P \text{ is a partition} \} \\
+        L(f) &= \sup\{L(f,P) ~|~ P \text{ is a partition} \}
+    \end{align*}
+
+
+\medskip{\bf Riemann Integrability}
+
+    $f$ is Riemann integrable if $U(f) = L(F)$. then $$\int_a^b f(x)\,dx = U(f) = L(f).$$
+
+\medskip
+\noindent{\bf Refinement of a Partition}
+
+    $P'$ is considered a refinement of a partition $P$ if $P'$ is contained within $P$.
+
+\medskip
+\noindent{\bf Theorem 7.2.8}
+
+    $f$ is Riemann integrable if and only if for all $\epsilon > 0$, there exists a partition $P$ such that $U(f, P) - L(f, P) < \epsilon$.
+
 \end{document}
