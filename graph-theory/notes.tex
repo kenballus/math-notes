@@ -1,0 +1,167 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{xcolor}
+
+\newcommand{\inv}{^{-1}}   
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\R}{\mathbb R}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\C}{\mathbb C}
+\newcommand{\N}{\mathbb N}
+
+\begin{document}
+\pagecolor{black}
+\color{white}
+
+\noindent{\bf Graph}
+
+    A graph $G$ consists of a finite nonempty set $V(G)$ of vertices, and a set $E(E)$ of edges, 2-element subsets of $V$.
+
+\medskip
+\noindent{\bf Trivial Graph}
+
+    A graph with only one vertex.
+
+\medskip
+\noindent{\bf Size of a Graph}
+
+    The number of edges in a graph.
+
+\medskip
+\noindent{\bf Degree of a Graph}
+
+    The number of a vertices in a graph.
+
+\medskip
+\noindent{\bf Word Graph}
+
+    The word graph for a set of words has one vertex for each word in the set, and an edge between two vertices $a$ and $b$ indicate that $a$'s word can be transformed into $b$'s word by either exchanging two letters, or replacing a letter.
+
+    A graph is a word graph if it is the word graph for some set of words.
+
+\medskip
+\noindent{\bf Incident Edges and Vertices}
+
+    A vertex $v$ and an edge $e$ are said to be incident if $v \in e$.
+
+\medskip
+\noindent{\bf Adjacent Edges}
+
+    Two edges are adjacent if they are both incident to some vertex $v$.
+
+\medskip
+\noindent{\bf Subgraph}
+
+    A graph $H$ is a subgraph of a graph $G$ ($H \subseteq G$) if $V(H) \subseteq V(G)$ and $E(H) \subseteq E(G)$.
+
+    If $H \subseteq G$, $V(H) \subset V(G)$, and $E(H) \subset E(G)$, then $H$ is a proper subgraph of $G$ ($H \subset G$).
+
+\medskip
+\noindent{\bf Spanning Subgraph}
+
+    If $H \subseteq G$ and $V(H) = V(G)$, then $H$ is a spanning subgraph of $G$.
+
+\medskip
+\noindent{\bf Induced Subgraph}
+
+    If $H \subseteq G$, and $(u,v \in V(H) \wedge uv \in E(G)) \implies uv \in E(H)$, then $H$ is an induced subgraph of $G$.
+
+    If $S$ is a nonempty set of vertices from $G$, then the subgraph of $G$ induced by $S$ ($G[S]$ or $\langle S \rangle G$) is the induced subgraph $J$ with $V(J) = S$.
+
+    If $X$ is a nonempty set of vertices from $G$, then the subgraph of $G$ induced by $X$ ($G[X]$ or $\langle X \rangle G$) is the induced subgraph $K$ with $E(J) = X$ and $v \in V(J) \iff v \in e$ for some $e \in E(J)$. This subgraph is called an edge-induced subgraph.
+
+\medskip
+\noindent{\bf Walk}
+
+    A $u-v$ walk $W$ in $G$ is a sequence of vertices in $G$, beginning with $u$ and ending with $v$ such that consecutive vertices in the sequence are adjacent. A walk of length 0 is a trivial walk.
+
+    The length of a walk $W$ is one less than its length as a sequence, since a walk's length is defined in terms of edges.
+
+\medskip
+\noindent{\bf Trail}
+
+    A $u-v$ trail in a graph $G$ is a $u-v$ walk in which no edge is traversed more than once.
+
+\medskip
+\noindent{\bf Path}
+
+    A $u-v$ walk in a graph in which no vertices are repeated is a $u-v$ path.
+
+\medskip
+\noindent{\bf Theorem 1.6}
+
+    If a graph $G$ contains a $u-v$ walk of length $l$, then $G$ contains a $u-v$ path of length at most $l$.
+
+\medskip
+\noindent{\bf Circuit}
+
+    A circuit in a graph $G$ is a closed trail of length 3 or more.
+
+\medskip
+\noindent{\bf Cycle}
+
+    A circuit in which no vertices are repeated is a cycle. A cycle is referred to as an odd cycle or an even cycle depending on the parity of its length.
+
+\medskip
+\noindent{\bf Connected Graph}
+
+    A graph $G$ is connected if for all $u,v \in G$, there exists a $u-v$ walk in $G$.
+
+\medskip
+\noindent{\bf Connected Component}
+
+    A connected subgraph of a graph $G$ that is not a proper subgraph of any other connected subgraph of $G$ is a connected component (or just component) of $G$.
+
+\medskip
+\noindent{\bf Equivalence Relation}
+
+    A binary relation $R$ is an equivalence relation on a set $S$ if and only if for all $s,u,v \in S$,
+    \begin{enumerate}
+        \item $u R u$ ($R$ is reflexive)
+        \item $u R v$ and $v R s$ $\implies$ $u R s$ ($R$ is transitive)
+        \item $u R v \implies v R u$ ($R$ is symmetric)
+    \end{enumerate}
+
+\medskip
+\noindent{\bf Theorem 1.7}
+
+    Let $R$ be the relation defined on the vertex set of a graph $G$ by $u R v$, where $u,v \in V(G)$, if $u$ is connected to $v$. $R$ is an equivalence relation.
+
+\medskip
+\noindent{\bf Theorem 1.8}
+
+    Let $G$ be a graph of order 3 or more. If $G$ contains two distinct vertices $u$ and $v$ such that $G - u$ and $G - v$ are connected, then $G$ itself is connected.
+
+\medskip
+\noindent{\bf Distance}
+
+    The distance between two vertices $u$ and $v$ in a graph $G$ is the length of the shortest path between $u$ and $v$.
+
+\medskip
+\noindent{\bf Geodesic}
+
+    A path between $u$ and $v$ of length $d(u,v)$ is a $u-v$ geodesic.
+
+\medskip
+\noindent{\bf Diameter}
+
+    The diameter of a graph $G$ is the greatest distance between any two vertices in $G$.
+
+\medskip
+\noindent{\bf Theorem 1.9}
+
+    If $G$ is a connected graph of order 3 or more, then $G$ contains two distinct vertices $u$ and $v$ such that $G - u$ and $G - v$ are connected.
+
+\medskip
+\noindent{\bf Theorem 1.10}
+
+    Let $G$ be a graph of order 3 or more. Then $G$ is connected if and only if $G$ contains two distinct vertices $u$ and $v$ such that $G - u$ and $G - v$ are connected.
+
+
+
+\end{document}
