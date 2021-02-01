@@ -33,7 +33,7 @@
     The number of edges in a graph.
 
 \medskip
-\noindent{\bf Degree of a Graph}
+\noindent{\bf Order of a Graph}
 
     The number of a vertices in a graph.
 
@@ -85,12 +85,12 @@
 \medskip
 \noindent{\bf Trail}
 
-    A $u-v$ trail in a graph $G$ is a $u-v$ walk in which no edge is traversed more than once.
+    A $u-v$ trail is a $u-v$ walk in which no edge is traversed more than once.
 
 \medskip
 \noindent{\bf Path}
 
-    A $u-v$ walk in a graph in which no vertices are repeated is a $u-v$ path.
+    A $u-v$ walk in which no vertices are repeated is a $u-v$ path.
 
 \medskip
 \noindent{\bf Theorem 1.6}
@@ -162,6 +162,79 @@
 
     Let $G$ be a graph of order 3 or more. Then $G$ is connected if and only if $G$ contains two distinct vertices $u$ and $v$ such that $G - u$ and $G - v$ are connected.
 
+\medskip
+\noindent{\bf Complete Graph}
 
+    A complete graph on $n$ vertices ($K_n$) has an edge between every pair of distinct vertices.
+    Thus, it has size ${n \choose 2}$.
+
+\medskip
+\noindent{\bf Path Graph}
+
+    A path graph on $n$ vertices ($P_n$) is a connected graph with all vertices of degree less than or equal to 2, and at least one vertex of degree less than or equal to 1. Equivalently, it can be labeled $v_1, v_2, \hdots, v_n$ so that its edges are $v_1v_2, v_2v_3, \hdots, v_{n-1}v_n$.
+
+\medskip
+\noindent{\bf Cycle Graph}
+
+    A path graph on $n$ vertices ($P_n$) is a connected graph with only degree 2 vertices. Equivalently, it can be labeled $v_1, v_2, \hdots, v_n$ so that its edges are $v_1v_2, v_2v_3, \hdots, v_{n-1}v_n, v_nv_1$.
+
+\medskip
+\noindent{\bf Complement}
+
+    A complement $\overline G$ of a graph $G$ is a graph with the same vertex set as $G$, but it has edges only where $G$ has none.
+
+\medskip
+\noindent{\bf Empty Graph}
+
+    The empty graph of order $n$ has $n$ vertices and 0 edges.
+
+\medskip
+\noindent{\bf Theorem 1.11}
+
+    If $G$ is a disconnected graph, then $\overline G$ is connected.
+
+\medskip
+\noindent{\bf Bipartite Graph}
+
+    A bipartite graph can be partitioned into two sets called partite sets, such that no edge in the graph connects two edges in the same partite set.
+
+\medskip
+\noindent{\bf Theorem 1.12}
+
+    A nontrivial graph $G$ is a bipartite graph if and only if $G$ contains no odd cycles.
+
+\medskip
+\noindent{\bf Complete Bipartite Graph}
+
+    A complete bipartite graph is a bipartite graph with all possible edges present. This is denoted $K_{n,m}$ for a bipartite graph with $n$ vertices in one partite set and $m$ in the other.
+
+\medskip
+\noindent{\bf $k$-partite Graph}
+
+    A $k$-partite graph can be partitioned into $k$ partite sets.
+
+    A complete $k$-partite graph is defined as you would expect.
+
+\medskip
+\noindent{\bf Union of Graphs}
+
+    For graphs $G, H$, $G \cup H$ is defined by $V(G \cup H) = V(G) \cup V(H)$, and $E(G \cup H) = E(G) \cup E(H)$.
+
+\medskip
+\noindent{\bf Join}
+
+    For graphs $G, H$, the join $G + H$ consists of $G \cup H$ with all possible edges added between vertices in $G$ and vertices in $H$.
+
+\medskip
+\noindent{\bf Cartesian Product}
+
+    For two graphs $G$ and $H$, their Cartesian product $G \times H$ (or $G \square H$) is defined by $V(G \times H) = V(G) \times V(H)$, and vertex $(u,v)$ is adjacent to $(x,y)$ if either $u=x$ and $vy \in E(H)$, or $v=y$ and $ux \in E(G)$.
+
+\medskip
+\noindent{\bf $n$-cube (Hypercube)}
+
+    Define $Q_1$ to be $K_2$, and define $Q_n$ for $n \geq 2$ to be $Q_{n-1} \times K_2$.
+    These graphs are known as the $n$-cubes or hypercubes.
+    The $n$ cube may also be constructed by adding a vertex for each $n$-bit string, then connecting each vertex $v$ to each other vertex with Hamming distance 1 from $v$.
 
 \end{document}
