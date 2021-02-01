@@ -31,7 +31,7 @@
 \noindent{\bf 1.4}
 
     $G:$
-
+    \begin{center}
     \begin{tikzpicture}
         %% vertices
         \draw[fill=white] (1,0) circle (3pt);
@@ -48,12 +48,12 @@
         %% edges
         \draw[thick] (1,0) -- (3,0) -- (4,2) -- (2,3) -- (0,2) -- (1,0) -- (4,2) -- (0,2) -- (3,0) -- (2,3) -- (1,0);
     \end{tikzpicture}
+    \end{center}
 
 \newpage
 \noindent{\bf 1.6}
     
     $F:$
-    \bigskip
 
     \newcommand{\cone}{(-.5,-.5)}
     \newcommand{\ctwo}{(1,-4)}
@@ -68,6 +68,7 @@
     \newcommand{\celeven}{(3,0)}
     \newcommand{\ctwelve}{(3,-2)}
 
+    \begin{center}
     \begin{tikzpicture}
         %% vertices
         \draw[fill=white] \cone circle (3pt);
@@ -99,6 +100,7 @@
         \draw[thick] \cone -- \cfive -- \cten -- \ctwo -- \cseven -- \cthree -- \cten -- \csix -- \cone -- \ceight -- \cfour -- \cnine -- \cone;
         \draw[thick] \cfour -- \celeven -- \cseven -- \ctwelve -- \cfour;
     \end{tikzpicture}
+    \end{center}
 
 \bigskip
 \noindent{\bf 1.8(a)}
@@ -116,7 +118,7 @@
 \noindent{\bf 1.11}
 
     $G - X:$
-
+    \begin{center}
     \begin{tikzpicture}
         \draw[fill=white] (0,0) circle (3pt);
         \draw[fill=white] (0,1) circle (3pt);
@@ -145,9 +147,10 @@
         \draw[thick] (0,1) -- (1,1);
         \draw[thick] (2,2) -- (1,1) -- (0,2);
     \end{tikzpicture}
+    \end{center}
 
     $G - U:$
-
+    \begin{center}
     \begin{tikzpicture}
         \draw[fill=white] (0,0) circle (3pt);
         \draw[fill=white] (0,2) circle (3pt);
@@ -170,6 +173,7 @@
         \draw[thick] (1,0) -- (2,0);
         \draw[thick] (2,2) -- (1,1) -- (0,2);
     \end{tikzpicture}
+    \end{center}
 
 \bigskip
 \noindent{\bf 1.12}
@@ -189,7 +193,7 @@
 \noindent{\bf (d)}
 
     Impossible. In order for such a path to exist, $x$ would need to have a neighbor in common with either of $z$'s neighbors, $y$ and $w$. $x$'s neighbors have no overlap with the neighbors of $y$ and $w$.
-    
+
 \noindent{\bf (e)}
 
     $(x, y, v, t)$
@@ -245,7 +249,7 @@
     Therefore, by transitivity, $x R c$.
     By transitivity, $x R b$. % Fix wording here.
     By transitivity, $x R y$.
-    Consequently, since $R$ is symmetric, $y R x$.
+    Then, since $R$ is symmetric, $y R x$.
     Thus, $[a] = [b]$.
 \end{proof}
 

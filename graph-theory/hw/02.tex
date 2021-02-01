@@ -75,11 +75,13 @@
 
 \medskip
 \noindent{\bf (b)}
-\begin{proof} % Probably needs to be more formal.
-    We claim that two geodesics of length $k$ in a connected graph of diameter $k$ do not necessarily have a vertex in common.
+\begin{proof}
+    Let $G$ be a connected graph of diameter $k$.
+    We claim that two geodesics of length $k$ in $G$ do not necessarily have a vertex in common.
     Consider the complete graph of order 4, with vertices $\{c_1, c_2, c_3, c_4\}$.
     Since there exists an edge between all pairs of distinct vertices in this graph, it has diameter 1.
     Observe that the edges $c_1c_2$ and $c_3c_4$ are geodesics of length 1 that do not share a vertex.
+    Thus, two geodesics of length $k$ in $G$ do not necessarily have a vertex in common.
 \end{proof}
 
 \bigskip
@@ -95,7 +97,7 @@
 \bigskip
 \noindent{\bf 1.22}
 
-    % case 1: $uv \notin G$. Thus, $uv \in \overline G$, so $d_{\overline G}(u,v)=1$.
+    % case 1: $uv \notin G$. Thus, $uv \in \overline G$, so $d_{\overline G}(u,v)=1$. & might need to account for u=v depending on wording
     % case 2.1: $uv \in G$. Since $G$ is disconnected, it has at least 2 components. Since $uv \in G$, $u,v$ are in the same component in $G$. Let $w$ be a vertex in another component in $G$. Then, $uw, wv \in \overline G$. Thus, $d_{\overline G}(u,v) \leq 2$.
     % QED
 
@@ -103,6 +105,6 @@
 \noindent{\bf 1.24}
 
     % $G_1$ is bipartite, $G_2$ is not (because of odd cycle theorem)
-    % Drawing is trivial, but really annoying.
+    % Drawing is trivial, but annoying.
 
 \end{document}
