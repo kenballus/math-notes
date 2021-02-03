@@ -49,11 +49,11 @@
         \draw[thick] (1,0) -- (3,0) -- (4,2) -- (2,3) -- (0,2) -- (1,0) -- (4,2) -- (0,2) -- (3,0) -- (2,3) -- (1,0);
     \end{tikzpicture}
     \end{center}
-
 \newpage
 \noindent{\bf 1.6}
     
     $F:$
+    \bigskip
 
     \newcommand{\cone}{(-.5,-.5)}
     \newcommand{\ctwo}{(1,-4)}
@@ -67,7 +67,6 @@
     \newcommand{\cten}{(-.5,-1.5)}
     \newcommand{\celeven}{(3,0)}
     \newcommand{\ctwelve}{(3,-2)}
-
     \begin{center}
     \begin{tikzpicture}
         %% vertices
@@ -193,7 +192,7 @@
 \noindent{\bf (d)}
 
     Impossible. In order for such a path to exist, $x$ would need to have a neighbor in common with either of $z$'s neighbors, $y$ and $w$. $x$'s neighbors have no overlap with the neighbors of $y$ and $w$.
-
+    
 \noindent{\bf (e)}
 
     $(x, y, v, t)$
@@ -238,19 +237,15 @@
     $(c_1, c_3, c_5, c_8, c_7)$
 
 \bigskip
+\noindent{{\bf Proposition:}} Let $R$ be an equivalence relation on a nonempty set $A$ and let $a,b\in A$. If $[a]\cap[b] \neq \emptyset$, then $[a] = [b]$.
 \begin{proof}
     Let $R$ be an equivalence relation on a nonempty set $A$, and let $a,b \in A$ such that $[a] \cap [b] \neq \emptyset$.
-    We claim that $[a] = [b]$.
     Since $[a] \cap [b] \neq \emptyset$, there exists $c \in [a] \cap [b]$.
-    Let $x \in [a]$, and let $y \in [b]$.
-    Since $c \in [a]$ and $c \in [b]$, $c R a$ and $c R b$.
-    Thus, since $x \in [a]$ and $y \in [b]$, $x R a$ and $y R b$.
-    Then, since $R$ is symmetric, $a R c$ and $b R y$.
-    Therefore, by transitivity, $x R c$.
-    By transitivity, $x R b$. % Fix wording here.
-    By transitivity, $x R y$.
-    Then, since $R$ is symmetric, $y R x$.
-    Thus, $[a] = [b]$.
+    Let $x \in [a]$, and let $y \in [b]$. Then $x R a$ and $y R b$.
+    Since $c \in [a]$ and $c \in [b]$ by definition of $[a]\cap[b]$, $c R a$ and $c R b$.
+    Then, since $R$ is symmetric, $a R c$ and $b R c$.
+    Therefore, by transitivity, $x R a $ and $ aR c$ implies that $x R c$ and $y R b$ and $b R c$ implies $y R c$. Thus, $x , y\in[c]$ and, by transitivity, $x R y$.
+    Consequently, since $R$ is symmetric, $y R x$. Thus, $[a] = [b]$.
 \end{proof}
 
 \end{document}
