@@ -1,0 +1,79 @@
+\documentclass[11pt]{article}       % The percent symbol in your code starts a comment.  The comment ends at the next linebreak.
+\usepackage[english]{babel}         % Packages add functionality and style conventions to your documents. Don't edit this section!
+\usepackage{fullpage}               % Eliminates wasted space
+\usepackage[utf8]{inputenc}         % Necessary for character encoding
+\usepackage{amsmath, amssymb,amsthm}% Required math packages
+\usepackage{graphicx}               % For handling graphics
+\usepackage[colorinlistoftodos]{todonotes}  % For the fancy "todo" stuff
+\usepackage{hyperref}               % For clickable links in the final PDF
+\usepackage{tikz}
+\theoremstyle{definition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{prop}[theorem]{Proposition}
+\newtheorem{claim}[theorem]{Claim}
+
+\title{Complex Analysis -- Homework \#0}
+
+\author{ Ben Kallus and Josef Komissar }
+
+\date{ Due Wednesday, February 3 }
+
+\begin{document}
+\pagecolor{black}
+\color{white}
+\maketitle
+
+\noindent{\bf 1. }  Gerolamo Cardano (1501-1576) wrote,
+{\sl ``If someone says to you, divide 10 into two parts, one of which multiplied by the other shall produce 40, it is evident that this case or question is impossible. Nevertheless, we shall solve it ..."} \quad 
+OK, so solve it!
+
+    We need the imaginary components of these two numbers to cancel when they're added, so they must be additive inverses.
+    \begin{align*}
+        10 &= (a+bi) + (c-bi) \\
+        10 &= a + c \\
+        c  &= 10 - a
+    \end{align*}
+    \begin{align*}
+        40 &= (a+bi)(c-bi) \\
+           &= (a+bi)(10-a-bi) \\
+           &= 10a - a^2 - abi + 10bi - abi -b^2i^2 \\
+           &= -a^2 + b^2 + 10a - 2abi + 10bi
+    \end{align*}
+
+    Since 40 has no imaginary component, either $b=0$ or $-2a+10=0$.
+    Since this question is ``impossible", it must be that $-2a+10=0$.
+    Thus $a=5$, and consequently, $c=5$.
+    \begin{align*}
+        40 &= (5+bi)(5-bi) \\
+        40 &= 25 -b^2i^2 \\
+        40 &= 25 + b^2 \\
+        15 &= b^2 \\
+        b  &= \sqrt{15}
+    \end{align*}
+
+    Thus, the two numbers are $5+\sqrt{15}i$ and $5-\sqrt{15}i$.
+
+\newpage
+\noindent{\bf 2. }  Given that $x=3$ is a solution to the cubic equation $x^3-5x^2+5x+3=0$, find the other two solutions. [{\sc Hint:} The fact that $x=3$ is a solution to the equation $x^3-5x^2+5x+3=0$ implies that $x-3$ is a \emph{factor} of the polynomial
+$x^3-5x^2+5x+3$.]
+
+    $$\frac{x^3-5x^2+5x+3}{x-3} = x^2-2x-1$$
+
+    The roots of $x^2-2x-1$ are $$\left(x+\left(\sqrt{2}-1\right)\right)\left(x-\left(\sqrt{2}+1\right)\right).$$
+
+    Thus, the solutions to $x^3-5x^2+5x+3=0$ are $x=3$, $x=-\sqrt{2}+1$, and $x=\sqrt{2}+1$.
+
+\newpage
+\noindent{\bf 3. }  Use Cardano's formula (from class) to find a solution to the cubic equation $x^3=6x+8$.
+
+    \begin{align*}
+        x &= \sqrt[3]{\frac d2 + \sqrt{\left(\frac d2\right)^2 - \left(\frac c3\right)^3}} + \sqrt[3]{\frac d2 - \sqrt{\left(\frac d2\right)^2 - \left(\frac c3\right)^3}} \\
+          &= \sqrt[3]{\frac 82 + \sqrt{\left(\frac 82\right)^2 - \left(\frac 63\right)^3}} + \sqrt[3]{\frac 82 - \sqrt{\left(\frac 82\right)^2 - \left(\frac 63\right)^3}} \\
+          &= \sqrt[3]{4 + \sqrt{4^2 - 2^3}} + \sqrt[3]{4 - \sqrt{4^2 - 2^3}} \\
+          &= \sqrt[3]{4 + \sqrt{8}} + \sqrt[3]{4 - \sqrt{8}} \\
+          &= \sqrt[3]{4 + 2\sqrt{2}} + \sqrt[3]{4 - 2\sqrt{2}} \\
+          &= \sqrt[3]{4 + 2\sqrt{2}} + \sqrt[3]{4 - 2\sqrt{2}}
+    \end{align*}
+
+\end{document}

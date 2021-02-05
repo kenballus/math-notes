@@ -1,0 +1,73 @@
+\documentclass[11pt]{article}       % The percent symbol in your code starts a comment.  The comment ends at the next linebreak.
+\usepackage[english]{babel}         % Packages add functionality and style conventions to your documents. Don't edit this section!
+\usepackage{fullpage}               % Eliminates wasted space
+\usepackage[utf8]{inputenc}         % Necessary for character encoding
+\usepackage{amsmath, amssymb,amsthm}% Required math packages
+\usepackage{graphicx}               % For handling graphics
+\usepackage[colorinlistoftodos]{todonotes}  % For the fancy "todo" stuff
+\usepackage{hyperref}               % For clickable links in the final PDF
+\usepackage{tikz}
+
+\theoremstyle{definition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{prop}[theorem]{Proposition}
+\newtheorem{claim}[theorem]{Claim}
+
+\title{Complex Analysis -- Homework \#2}
+
+\author{ Josef Komissar and Ben Kallus }
+
+\date{ Due Monday, February 8 }
+
+\begin{document}
+\pagecolor{black}
+\color{white}
+\maketitle
+
+\noindent{\bf 1. }  Find a root of the cubic equation $x^3-3x^2+4x+8=0$ by
+
+\medskip
+\noindent{\bf a. }  finding the depressed cubic that results from Tartaglia's transformation, and then
+\begin{align*}
+    t^3 + t\left(4 - \frac{(-3)^2}3\right) + \frac{2(-3)^3}{27} - \frac{(-3)(4)}3 + 8 &= t^3 + t + 10
+\end{align*}
+
+\medskip
+\noindent{\bf b. }  invoking Cardano's formula for a depressed cubic.
+\begin{align*}
+    t &= \sqrt[3]{\frac{-10}2 + \sqrt{\left(\frac{-10}2\right)^2 - \left(\frac{-1}3\right)^3}} + \sqrt[3]{\frac{-10}2 - \sqrt{\left(\frac{-10}2\right)^2 - \left(\frac{-1}3\right)^3}} \\
+    &= \sqrt[3]{-5 + \sqrt{25 +\frac{1}{27}}} + \sqrt[3]{-5 - \sqrt{25 +\frac{1}{27}}},
+\end{align*} but this is ugly and not cool; we must take the path of Bombelli:
+
+Suppose 
+\begin{align*}
+\end{align*}
+
+\bigskip
+\noindent{\bf 2. }  Apply formulas (4) on page 2 and (6) on page 4 to compute $(0,1) \cdot (1,-1)^{-1}$.
+\begin{align*}
+    (0,1) \cdot (1,-1)^{-1} &= (0,1) \cdot \left(\frac1{1^2 + (-1)^2},\frac{-1}{1^2 + (-1)^2}\right) \\
+                            &= (0,1) \cdot \left(\frac12, \frac12\right) \\
+                            &= \left(-\frac12, \frac12\right)
+\end{align*}
+
+\bigskip
+\noindent{\bf 3. }  Jacques S. Hadamard (1865-1963) wrote, {\sl ``The shortest path between two truths in the real domain passes through the complex domain."}
+As an illustration of Hadamard's assertion,  prove that the product of sums of two squares of integers is again a sum of two squares of integers.
+
+\begin{proof}
+Let $a, b, c,$ and $d$ be integers.  Define 
+
+$$u=ac+bd,~v=ad-bc.$$
+
+Then $u$ and $v$ are integers and, moreover,
+\begin{align*}
+(a^2+b^2)(c^2+d^2) &= (a+bi)(a-bi)(c+di)(c-di) \\
+                   &= (a+bi)(c-di)(c+di)(a-bi) \\
+                   &= ((ac+bd)+(-ad+bc)i)((ac+bd)+(ad-bc)i) \\
+                   &= (ac+bd)^2 + (ad-bc)^2 \\
+                   &= u^2 + v^2,
+\end{align*} to complete the proof.
+\end{proof}
+\end{document}
