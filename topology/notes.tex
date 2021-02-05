@@ -27,4 +27,33 @@
 
     Let $f: \R \to \R$ be a real function. Then $f$ is continuous if for all $c \in \R$ and for all $\epsilon > 0$ there exists $\delta>0$ such that $$|f(x)-f(c)<\epsilon|$$ whenever $x \in \R$ and $|x-c|<\delta$.
 
+\noindent{\bf Metric}
+
+	Let $X$ be a set. A metric on $X$ is a function $d: X \times X \to \R_{\geq 0}$ satisfying
+	\begin{enumerate}
+		\item $d(x,x')=0 \iff x=x'$ ($d$ separates points)
+		\item $d(x,x') = d(x',x)$ ($d$ is symmetric)
+		\item $d(x,x'') \leq d(x,x') + d(x', x'')$ (Triangle inequality)
+	\end{enumerate}
+
+\noindent{\bf Metric Space}
+	
+	A metric space is a set equipped with a metric.
+
+\noindent{\bf Euclidean Space}
+
+	An $n$-dimensional Euclidean space is the metric space $\R^n \times \R^n, d)$, with $d: \R^n \to \R$ by $$d(x, y) = \sqrt{\sum_{i=1}^n (x_i-y_i)^2}
+
+\noindent{\bf Open Set}
+
+	Let $U \subseteq \R$. $U$ is open if for all $u \in U$, there exists $\epsilon > 0$ such that $$B_\epsilon(x) \subseteq U.$$
+
+\noindent{\bf Continuity (round 2)}
+
+	A function $f: \R \to \R$ is continuous if the pre-image of open sets is open. In other words, $U \subseteq \R$ is open $\implies f\inv(U) = \{x \in \R~|~f(x) \in U\} \subseteq \R$.
+
+\noindent{\bf Topological Space}
+
+	
+
 \end{document}
