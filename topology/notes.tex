@@ -27,6 +27,7 @@
 
     Let $f: \R \to \R$ be a real function. Then $f$ is continuous if for all $c \in \R$ and for all $\epsilon > 0$ there exists $\delta>0$ such that $$|f(x)-f(c)<\epsilon|$$ whenever $x \in \R$ and $|x-c|<\delta$.
 
+\medskip
 \noindent{\bf Metric}
 
 	Let $X$ be a set. A metric on $X$ is a function $d: X \times X \to \R_{\geq 0}$ satisfying
@@ -36,24 +37,55 @@
 		\item $d(x,x'') \leq d(x,x') + d(x', x'')$ (Triangle inequality)
 	\end{enumerate}
 
+\medskip
 \noindent{\bf Metric Space}
 	
 	A metric space is a set equipped with a metric.
 
+\medskip
 \noindent{\bf Euclidean Space}
 
-	An $n$-dimensional Euclidean space is the metric space $\R^n \times \R^n, d)$, with $d: \R^n \to \R$ by $$d(x, y) = \sqrt{\sum_{i=1}^n (x_i-y_i)^2}
+	An $n$-dimensional Euclidean space is the metric space $\R^n \times \R^n, d)$, with $d: \R^n \to \R$ by $$d(x, y) = \sqrt{\sum_{i=1}^n (x_i-y_i)^2}.$$
 
+\medskip
 \noindent{\bf Open Set}
 
 	Let $U \subseteq \R$. $U$ is open if for all $u \in U$, there exists $\epsilon > 0$ such that $$B_\epsilon(x) \subseteq U.$$
 
+\medskip
 \noindent{\bf Continuity (round 2)}
 
 	A function $f: \R \to \R$ is continuous if the pre-image of open sets is open. In other words, $U \subseteq \R$ is open $\implies f\inv(U) = \{x \in \R~|~f(x) \in U\} \subseteq \R$.
 
+\medskip
+\noindent{\bf Topology}
+
+	A topology on a set $X$ is a collection $\tau$ of subsets of $X$ having the following properties:
+
+    \begin{enumerate}
+        \item $\emptyset$ and $X$ are in $\tau$.
+        \item The union of the elements of any subcollection of $\tau$ is in $\tau$.
+        \item The intersection of the elements of any finite subcollection of $\tau$ is in $\tau$.
+    \end{enumerate}
+
+\medskip
 \noindent{\bf Topological Space}
 
-	
+    A set $X$ for which a topology $\tau$ has been specified is called a topological space.
+
+\medskip
+\noindent{\bf Open Set of a Topological Space}
+
+    If $(X, \tau)$ is a topological space, we say that a subset $U$ of $X$ is an open set of $X$ is $U$ belongs to the collection $\tau$.
+
+\medskip
+\noindent{\bf Discrete Topology}
+
+    If $X$ is any set, the collection of all subsets of $X$ is a topology on $X$ called the discrete topology.
+
+\medskip
+\noindent{\bf Indiscrete/Trivial Topology}
+
+    If $X$ is any set, the trivial (or indiscrete) topology on $X$ is $(X, \{\emptyset, X\})$.
 
 \end{document}
