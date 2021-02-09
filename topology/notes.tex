@@ -69,14 +69,14 @@
     \end{enumerate}
 
 \medskip
+\noindent{\bf Point/Open Set}
+
+	Elements of a topology are called points, or open sets.
+
+\medskip
 \noindent{\bf Topological Space}
 
     A set $X$ for which a topology $\tau$ has been specified is called a topological space.
-
-\medskip
-\noindent{\bf Open Set of a Topological Space}
-
-    If $(X, \tau)$ is a topological space, we say that a subset $U$ of $X$ is an open set of $X$ is $U$ belongs to the collection $\tau$.
 
 \medskip
 \noindent{\bf Discrete Topology}
@@ -87,5 +87,31 @@
 \noindent{\bf Indiscrete/Trivial Topology}
 
     If $X$ is any set, the trivial (or indiscrete) topology on $X$ is $(X, \{\emptyset, X\})$.
+
+\medskip
+\noindent{\bf Closed Set}
+
+	A subset $Z \subseteq X$ is closed if $X \setminus Z$ is open.
+
+\medskip
+\noindent{\bf Lemma 0.01}
+
+	\begin{enumerate}
+		\item $\emptyset$ and $X$ are closed.
+		\item Arbitrary intersections of closed sets are closed.
+		\item Finite unions of closed sets are closed.
+	\end{enumerate}
+
+\medskip
+\noindent{\bf Lemma 0.02}
+
+	(Use this when you are proving that a collection $\tau$ is a topology.
+	
+	Let $X$ be a set and $\tau$ a collection of subsets of $X$ such that for all $A,B \in \tau$, $A \cap B \in \tau$, then Axiom 3 of the topology definition is satisfied.
+
+\medskip
+\noindent{\bf Fine/Coarse}
+
+	A topology $\tau'$ is finer than a topology $\tau$ if $\tau \subseteq \tau'$. We also say that $\tau$ is coarser than $\tau'$. The topologies $\tau$ and $\tau'$ are comparable if $\tau \subseteq \tau'$ or $\tau' \subseteq \tau$.
 
 \end{document}
