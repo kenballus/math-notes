@@ -1,0 +1,103 @@
+\documentclass[11pt]{article}       % The percent symbol in your code starts a comment.  The comment ends at the next linebreak.
+\usepackage[english]{babel}         % Packages add functionality and style conventions to your documents. Don't edit this section!
+\usepackage{fullpage}               % Eliminates wasted space
+\usepackage[utf8]{inputenc}         % Necessary for character encoding
+\usepackage{amsmath, amssymb,amsthm}% Required math packages
+\usepackage{graphicx}               % For handling graphics
+\usepackage[colorinlistoftodos]{todonotes}  % For the fancy "todo" stuff
+\usepackage{hyperref}               % For clickable links in the final PDF
+\usepackage{tikz}
+\theoremstyle{definition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{prop}[theorem]{Proposition}
+\newtheorem{claim}[theorem]{Claim}
+
+\title{Complex Analysis -- Homework \#3}
+
+\author{ Kallus, Komissar, Feldman }
+
+\date{ Due Wednesday, February 10 }
+
+\begin{document}
+\pagecolor{black}
+\color{white}
+\maketitle
+
+\noindent{\bf 1.} Let  $M$  denote the set of all  $2 \times 2$  matrices of the form
+$\begin{bmatrix} x & y \\ -y & x \end{bmatrix}$, where  $x,y \in \mathbf R$, endowed with the ordinary addition and multiplication of matrices.
+
+\medskip
+\noindent {\bf a. } Prove that multiplication in $M$ is commutative. 
+\begin{proof}
+    Let $A = \begin{bmatrix} a & b \\ -b & a \end{bmatrix},~B = \begin{bmatrix} c & d \\ -d & c \end{bmatrix} \in M$.
+    Observe that
+    \begin{align*}
+        AB &= \begin{bmatrix} a & b \\ -b & a \end{bmatrix} \begin{bmatrix} c & d \\ -d & c \end{bmatrix} \\
+           &= \begin{bmatrix} ac -bd & ad + bc \\ -bc - ad  & -bd + ac \end{bmatrix} \\
+           &= \begin{bmatrix} -db + ca & cb + da \\ -da - cb  & ca - db \end{bmatrix} \\
+           &= \begin{bmatrix} c & d \\ -d & c \end{bmatrix} \begin{bmatrix} a & b \\ -b & a \end{bmatrix} \\
+           &= BA.
+    \end{align*} Thus, multiplication in $M$ is commutative.
+\end{proof}
+
+\medskip
+\noindent {\bf b. } Replace the asterisks: the multiplicative identity element in $M$ is $\begin{bmatrix}  1 & 0 \\ 0 & 1 \end{bmatrix}$.
+
+\medskip
+\noindent {\bf c. } Replace the asterisks: the multiplicative inverse of the non-zero matrix $\begin{bmatrix}  x & y \\ -y & x \end{bmatrix}$ is 
+$\begin{bmatrix} \frac{x}{x^2+y^2} & \frac{-y}{x^2+y^2} \\ \frac{y}{x^2+y^2} & \frac{x}{x^2+y^2} \end{bmatrix}$.
+
+In fact, $(M, +, \cdot)$ is a field; we take the rest of the properties as given.  Define $f: \mathbf C \longrightarrow M$ as follows:  for $z=x+iy \in \mathbf C$,
+\[
+f(z)=f (x+iy) = \begin{bmatrix}  x & y \\ -y & x \end{bmatrix}.
+\]
+\medskip
+\noindent{\bf 2.}  Prove that $f$ prescribes an isomorphism of the fields $\mathbf C$ and $M$ by proving that:
+
+\medskip
+\noindent {\bf a. }  $f$ is one-to-one. \, {\sc [Done for you.]}
+\begin{proof}
+Suppose that the numbers $z_1 = x_1+iy_1, z_2=x_2+iy_2 \in \mathbf C$ satisfy $f(z_1)=f(z_2)$. Then
+\[
+\begin{bmatrix}  x_1 & y_1 \\ -y_1 & x_1 \end{bmatrix} = \begin{bmatrix}  x_2 & y_2 \\ -y_2 & x_2 \end{bmatrix},
+\]
+from which it follows that $x_1=x_2$ and $y_1=y_2$. But then $z_1=z_2$ which implies that $f$ is one-to-one.
+\end{proof}
+
+\medskip
+\noindent {\bf b. }  $f$ is onto. \, {\sc [Done for you.]}
+\begin{proof}
+For any matrix $A=\begin{bmatrix} x & y \\ -y & x \end{bmatrix} \in M$, the complex number $z=x+iy$ satisfies $f(z)=A$ to establish that the function $f$ maps $\mathbf C$ onto $M$.
+\end{proof}
+
+\medskip
+\noindent {\bf c. }  $f(z_1 + z_2)=f(z_1)+f(z_2)$ for all $z_1, z_2 \in \mathbf C$.
+\begin{proof}
+    Let $z_1 = a+bi$, $z_2 = c+di$ for $a,b,c,d \in \mathbb R$.
+    Observe that
+    \begin{align*}
+        f(z_1 + z_2) &= f(a+c + (b+d)i) \\
+                     &= \begin{bmatrix} a+c & b+d \\ -(b+d) & a+c \end{bmatrix} \\
+                     &= \begin{bmatrix} a & b \\ -b & a \end{bmatrix} + \begin{bmatrix} c & d \\ -d & c \end{bmatrix} \\
+                     &= f(z_1) + f(z_2),
+    \end{align*} to complete the proof.
+\end{proof}
+
+\medskip
+\noindent {\bf d. }  $f(z_1z_2)=f(z_1)f(z_2)$ for all $z_1, z_2 \in \mathbf C$.
+\begin{proof}
+    Let $z_1 = a+bi$, $z_2 = c+di$ for $a,b,c,d \in \mathbb R$.
+    Observe that
+    \begin{align*}
+        f(z_1z_2) &= f((a+bi)(c+di)) \\
+                  &= f(ac-bd + (ad+bc)i) \\
+                  &= \begin{bmatrix} ac - bd & ad + bc\\ -ad - bc & ac - bd \end{bmatrix} \\
+                  &= \begin{bmatrix} a & b \\ -b & a \end{bmatrix} \begin{bmatrix} c & d \\ -d & c \end{bmatrix} \\
+                  &= f(z_1)f(z_2),
+    \end{align*} to complete the proof.
+\end{proof}
+\vskip.15in
+\hrule
+
+\end{document}
