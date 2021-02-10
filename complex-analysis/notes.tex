@@ -13,6 +13,7 @@
 \newcommand{\Q}{\mathbb Q}
 \newcommand{\C}{\mathbb C}
 \newcommand{\N}{\mathbb N}
+\newcommand{\Arg}{\text{Arg}}
 
 \begin{document}
 \pagecolor{black}
@@ -25,12 +26,79 @@
         x &= \sqrt[3]{\frac d2 + \sqrt{\left(\frac d2\right)^2 - \left(\frac c3\right)^3}} + \sqrt[3]{\frac d2 - \sqrt{\left(\frac d2\right)^2 - \left(\frac c3\right)^3}}
     \end{align*}
 
+\medskip
 \noindent{\bf Modulus}
 
 	The modulus of $a+bi$ is $\sqrt{a^2+b^2}$.
 
+\medskip
 \noindent{\bf Theorem}
 
 	$\C$ cannot be ordered as a field. This is because if $i > 0$, then $i^2 > 0$, which is a contradiction. On the other hand, if $i < 0$, then $-i^2 < 0$, which is also a contradiction.
+
+\medskip
+\noindent{\bf Complex Conjugate}
+
+    If $z = a+bi$, the complex conjugate of $z$, denoted $\overline z$, is $a-bi$.
+
+\medskip
+\noindent{\bf Modulus}
+
+    For $z = a + ib$, $$|z| = \sqrt{a^2+b^2}.$$
+
+\medskip
+\noindent{\bf Properties of Complex Numbers}
+    \begin{enumerate}
+        \item $|z| \geq 0$
+        \item $|z|=0 \iff z=0$
+        \item $x \leq |a| \leq |z|; ~ b \leq |b| \leq |z|$
+        \item $|z| = |\overline z|$
+        \item $\overline{z_1 + z_2} = \overline{z_1} + \overline{z_2}$
+        \item $\overline{z_1z_2} = \overline{z_1}\cdot\overline{z_2}$
+        \item $\left( \overline{\frac{z_1}{z_2}} = \frac{\overline{z_1}}{\overline{z_2}} \right), z \neq 0$
+        \item $\overline{\overline z} = z$
+        \item $\frac{z + \overline z}2 = \text{Re}(z) = a$
+        \item $\frac{z - \overline z}2 = \text{Im}(z) = b$
+        \item $z \overline z = |z|^2$
+        \item $z\inv = \frac{\overline z}{|z|^2}, z \neq 0$
+        \item $|z_1 + z_2| \leq |z_1| + |z_2|$
+    \end{enumerate}
+
+\medskip
+\noindent{\bf Modulus Metric}
+
+    One standard metric for $\C$ is the function $$d(z_1, z_2) = |z_1 - z_2|.$$
+    Properties of this metric:
+
+    \begin{enumerate}
+        \item $d(z_1, z_2) \geq 0$
+        \item $d(z_1, z_2) = 0 \iff z_1 = z_2$
+        \item $d(z_1, z_2) = d(z_2, z_1)$
+        \item $d(z_1, z_2) \leq d(z_1, z_3) + d(z_3, z_2)$
+    \end{enumerate}
+
+\medskip
+\noindent{Polar Form}
+
+    The polar form of a complex number $z = a+bi$ is $$r\cos\theta + ir\sin\theta = r(\cos\theta + i\sin\theta),$$ with $$r = |z| = \sqrt{z^2+y^2}, \theta = \arctan{\frac yx},$$ in the appropriate quadrant, except when $z=0$ (since there is no argument of $0$).
+
+    Note that this representation is not unique. For instance,
+    \begin{align*}
+        1 + i &= \sqrt{2}(\cos{\frac{\pi}4} + i\sin{\frac{\pi}4}) \\
+              &= \sqrt{2}(\cos{\frac{9\pi}4} + i\sin{\frac{9\pi}4}) \\
+              &= \sqrt{2}(\cos{-\frac{7\pi}4} + i\sin{-\frac{7\pi}4}) \\
+              &= \hdots
+    \end{align*} Since angles don't have a unique representation, neither do polar forms of complex numbers.
+
+    Thus, $\overline z = r(cos\theta - isin\theta)$, and $ z\inv = \frac1r(\cos\theta-i\sin\theta).$
+
+    Therefore, $|z\inv| = \frac1r = \frac1{|z|} = |z|\inv$.
+
+\medskip
+\noindent{\bf Argument}
+
+    The argument of a complex number $0 \neq z = r\cos\theta + ir\sin\theta$, denoted $\arg z$, is $\theta$.
+
+    The Argument (capitalized) of $z$ is the value of $\arg z$ satisfying $-\pi < \Arg z \leq \pi$.
 
 \end{document}
