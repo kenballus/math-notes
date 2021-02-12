@@ -18,9 +18,9 @@
 \pagecolor{black}
 \color{white}
 
-\noindent{\bf Graph}
+\noindent{\bf Simple Graph}
 
-    A graph $G$ consists of a finite nonempty set $V(G)$ of vertices, and a set $E(E)$ of edges, 2-element subsets of $V$.
+    A simple graph $G$ consists of a finite nonempty set $V(G)$ of vertices, and a set $E(E)$ of edges, 2-element subsets of $V$.
 
 \medskip
 \noindent{\bf Trivial Graph}
@@ -255,6 +255,58 @@
     The $n$ cube may also be constructed by adding a vertex for each $n$-bit string, then connecting each vertex $v$ to each other vertex with Hamming distance 1 from $v$.
 
 \medskip
-\noindent{\bf }
+\noindent{\bf Multiset}
+
+    A multiset is a set in which multiple copies of the same element are permitted.
+
+\medskip
+\noindent{\bf Multigraph}
+
+    A multigraph is a graph with a multiset for its edge set. In other words, multiple copies of the same edge are permitted. Edges that connect the same two vertices are known as parallel edges. (In many definitions of a multigraph, loops are allowed. In this one, they are not.)
+
+\medskip
+\noindent{\bf Pseudograph}
+
+    A pseudograph is a multigraph in which edges are 2-element multisets of the vertex set. In other words, it's a multigraph in which loops are permitted.
+
+\medskip
+\noindent{\bf Digraph}
+
+    A graph in which edges are not 2-element subsets of the vertex set, but ordered pairs with entries from the vertex set, are known as directed graphs, or digraphs. Note that an edge $(a,b)$ and an edge $(b,a)$ are permitted in the same directed graph, without requiring that that graph be a multigraph, too. Directed edges are called arcs, so the edge set of a digraph is usually labeled $A$.
+
+    Note that loops are fine here, since we're dealing with ordered pairs, not sets.
+    Also note that (unintuitively) $(a,b)$ is not parallel to $(b,a)$.
+
+\medskip
+\noindent{\bf Oriented Graph}
+
+    An oriented graph is a digraph with no directed loops and if $uv \in A$, then $vu \notin A$.
+
+\medskip
+\noindent{\bf Underlying Undirected Graph of a Directed Graph}
+
+    The underlying undirected graph $G$ of a directed graph $D$ is constructed by making $D$'s edges undirected.
+
+\medskip
+\noindent{\bf Degree of a Vertex}
+
+    The degree of a vertex in a graph $G$ is the number of vertices adjacent to $v$ in $G$.
+
+\medskip
+\noindent{\bf Isolated Vertex}
+
+    A vertex of degree 0.
+
+\medskip
+\noindent{\bf Endvertex/Leaf/Pendant Vertex}
+
+    A vertex of degree 1.
+
+\medskip
+\noindent{\bf Minimum and Maximum Degree Vertices}
+
+    The minimum degree of a vertex in a graph $G$ is denoted $\delta(G)$.
+
+    The maximum degree of a vertex in a graph $G$ is denoted $\Delta(G)$.
 
 \end{document}
