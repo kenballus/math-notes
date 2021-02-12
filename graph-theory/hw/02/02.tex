@@ -21,7 +21,7 @@
 \color{white}
 \maketitle
 
-\noindent{\bf 1.16}\\
+\noindent{\bf 1.16}
 
 \noindent{\bf Proposition:} Let $P = (u=v_0,v_1,...,v_k=v)$, $k\geq 1$, be a $u - v$ geodesic in a connected graph $G$. Then, $d(u,v_i) = i$ for each integer $i$ with $1 \leq i \leq k$.
 \begin{proof}
@@ -61,8 +61,7 @@
 \newpage
 \noindent{\bf 1.17}
 
-\noindent{\bf (a)}
-\noindent{\bf Proposition:} Let $P$ and $Q$ be two longest paths in a connected graph. Then $P$ and $Q$ have at least one vertex in common.
+\noindent{\bf (a) Proposition:} Let $P$ and $Q$ be two longest paths in a connected graph. Then $P$ and $Q$ have at least one vertex in common.
 \begin{proof}
     Let $G$ be a connected graph.
     Let $P=(p_0, p_1,\hdots,p_k)$ and $Q=(q_0, q_1,\hdots, q_k)$ be two longest paths in $G$.
@@ -83,8 +82,7 @@
     Thus, $P$ and $Q$ have a vertex in common.
 \end{proof}
 \medskip
-\noindent{\bf (b)}\\
-\noindent{\bf Counterexample:}
+\noindent{\bf (b) Counterexample:}
     Let $G$ be the complete graph of order 4, with vertices $\{c_1, c_2, c_3, c_4\}$.
     Since there exists an edge between all pairs of distinct vertices in $G$, it has diameter 1.
     Observe that the edges $c_1c_2$ and $c_3c_4$ are geodesics of length 1 that do not share a vertex.
@@ -93,9 +91,9 @@
 \bigskip
 \noindent{\bf 1.19}
 This statement is not true.
-Let $G$ be the path graph of order 4, with vertices $\{p_0, p_1, p_2, p_3\}$.
-Clearly, $G - p_0$ and $G - p_3$ are connected, and $G - p_1$ and $G - p_2$ are disconnected.
-Thus, there do not exist three vertices $u,v,w \in V(G)$ such that $G-u,G-v,G-w$ are all connected.
+Let $G$ be the path graph of order 4, with vertices $\{p_0, p_1, p_2, p_3\}$, and edges $\{p_0p_1, p_1p_2, p_2p_3\}$.
+Clearly, $G - p_1$ and $G - p_2$ are disconnected.
+Thus, since $G$ has only 4 vertices, there do not exist three vertices $u,v,w \in V(G)$ such that $G-u,G-v,G-w$ are all connected.
 
 \bigskip
 \noindent{\bf 1.21}
@@ -104,7 +102,9 @@ Thus, there do not exist three vertices $u,v,w \in V(G)$ such that $G-u,G-v,G-w$
 \end{center}
 
 \bigskip
-\noindent{\bf 1.22 Proposition}: Let $G$ be a disconnected graph. If $u,v \in V(\overline{G})$, then $d_{\overline{G}}(u,v) = 1$ or $d_{\overline{G}}(u,v) = 2$.
+\noindent{\bf 1.22}
+
+\noindent{\bf Proposition}: Let $G$ be a disconnected graph. If $u,v \in V(\overline{G})$, then $d_{\overline{G}}(u,v) = 1$ or $d_{\overline{G}}(u,v) = 2$.
 \begin{proof}
 Let $G$ be a disconnected graph.
 Then, by Theorem 1.11, $\overline{G}$ is connected.
@@ -120,12 +120,18 @@ Thus, $uw \notin E(G)$, and $vw \notin E(G)$.
 Therefore, $uw, vw \in E(\overline G)$.
 Observe that $(u, w, v)$ is a $u-v$ path of length $2$ in $\overline G$.
 Thus, since $uv \notin E(\overline G)$, $d_{\overline{G}}(u,v) = 2$.
+Thus, each pair of distinct vertices in $\overline G$ is of distance either 1 or 2 apart.
 \end{proof}
 
 \bigskip
 \noindent{\bf 1.24}
 
-    % $G_1$ is bipartite, $G_2$ is not (because of odd cycle theorem)
-    % Drawing is trivial, but annoying.
+    By Theorem 1.12, $G_1$ is bipartite.
+
+    \begin{center}
+    \includegraphics[scale=.1]{graph.jpg}
+    \end{center}
+
+    $G_2$ has an odd cycle: $(x_2, r_2, w_2, z_2, y_2, x_2)$. Thus, by Theorem 1.12, $G_2$ is not bipartite.
 
 \end{document}
