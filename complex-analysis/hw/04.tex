@@ -28,15 +28,16 @@
 \begin{proof}
     Let $z = x + iy \in \mathbb C$.
     \begin{align*}
-    (|x|-|y|)^2 &\geq 0\\
-    |x|^2 + |y|^2 -2|xy| &\geq 0\\
-    |x|^2 + |y|^2 &\geq 2|xy|\\
-    2(|x|^2 + |y|^2) &\geq |x|^2 + 2|xy| + |y|^2\\
-    \sqrt2|z| &\geq |x| + |y|\\
+    (|x|-|y|)^2 &\geq 0 \\
+    |x|^2 + |y|^2 -2|xy| &\geq 0 \\
+    |x|^2 + |y|^2 &\geq 2|xy| \\
+    2(|x|^2 + |y|^2) &\geq |x|^2 + 2|xy| + |y|^2 \\
+    \sqrt2|z| &\geq |x| + |y| \\
     \sqrt2|z| &\geq |\text{Re}~z| + |\text{Im}~z|.
     \end{align*}
 \end{proof}
 
+\bigskip
 \noindent{\bf 2. } Exercise 5.5(a)
 
 \centerline{
@@ -54,6 +55,7 @@
 \end{tikzpicture}
 }
 
+\newpage
 \noindent{\bf 3. Exercise 6.7 } Claim: For all $z \in \mathbb C$ such that $|z| \leq 1$, $|\text{Re}(2+\overline z + z^3)| \leq 4$.
 \begin{proof}
     Let $z = a+bi$ be an element of $\mathbb C$ such that $|z| \leq 1$.
@@ -62,15 +64,13 @@
            |\text{Re}(2+\overline z + z^3)|
         &= |2 + \text{Re}(\overline z) + \text{Re}(z^3)| \\
         &= |2 + a + (a^3-3ab^2)| \\
-        &\leq 2 + a + (a^3-3ab^2) \\
-        &= 2 + a + a^3 - 3ab^2 \\
-        &= 2 + a(a^2 - 3b^2 + 1).
+        &= |2 + a(a^2 - 3b^2 + 1)|.
     \end{align*}
     Note that $0 \leq b^2 \leq 1$, since $a^2 + b^2 \leq 1$, and both $a^2$ and $b^2$ are positive.
     Similarly, $0 \leq a^2 \leq 1$.
     Thus, $-1 \leq a \leq 1$.
     Therefore, $-2 \leq a(a^2 - 3b^2 + 1) \leq 2$.
-    Consequently, $2 + a(a^2 - 3b^2 + 1) \leq 4$.
+    Consequently, $|2 + a(a^2 - 3b^2 + 1)| \leq 4$.
     Therefore, $|\text{Re}(2+\overline z + z^3)| \leq 4$.
 \end{proof}
 
