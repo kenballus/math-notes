@@ -1,0 +1,45 @@
+\documentclass[11pt]{article}       % The percent symbol in your code starts a comment.  The comment ends at the next linebreak.
+\usepackage[english]{babel}         % Packages add functionality and style conventions to your documents. Don't edit this section!
+\usepackage{fullpage}               % Eliminates wasted space
+\usepackage[utf8]{inputenc}         % Necessary for character encoding
+\usepackage{amsmath, amssymb,amsthm}% Required math packages
+\usepackage{graphicx}               % For handling graphics
+\usepackage[colorinlistoftodos]{todonotes}  % For the fancy "todo" stuff
+\usepackage{hyperref}               % For clickable links in the final PDF
+\usepackage{tikz}
+\theoremstyle{definition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{prop}[theorem]{Proposition}
+\newtheorem{claim}[theorem]{Claim}
+
+\title{Complex Analysis -- Homework \#4}
+
+\author{ Komissar, Feldman, Kallus }
+
+\date{ Due Monday, February 15 }
+
+\begin{document}
+\pagecolor{black}
+\color{white}
+\maketitle
+
+\noindent{\bf 1. } Claim: If $|z_1| < 1$ and $|z_2| < 1$, then $\left| \frac{z_1 - z_2}{1 - \overline{z_1}z_2} < 1 \right|$.
+\begin{proof}
+    Let $z_1, z_2 \in \mathbb C$ such that $|z_1| < 1$ and $|z_2| < 1$.
+    Then,
+    \begin{align*}
+        |z_1|^2 &< 1, \\
+        |z_1|^2(1-|z_2|^2) &< 1 - |z_2|^2, \\
+        |z_1|^2 - |z_1|^2|z_2|^2 + |z_2|^2 &< 1, \\
+        |z_1|^2 + |z_2|^2 &< 1 + |z_1|^2|z_2|^2, \\
+        z_1\overline{z_1} + z_2\overline{z_2} &< 1 + z_1\overline{z_1}z_2\overline{z_2}, \\
+        z_1\overline{z_1} + z_2\overline{z_2} - \overline{z_1}z_2 - z_1\overline{z_2} &< 1 + z_1\overline{z_1}z_2\overline{z_2} - \overline{z_1}z_2 - z_1\overline{z_2}, \\
+        (z_1 - z_2)(\overline{z_1} - \overline{z_2}) &< (1 - \overline{z_1}z_2)(1 - z_1\overline{z_2}), \\
+        (z_1 - z_2)\overline{(z_1 - z_2)} &< (1 - \overline{z_1}z_2)\overline{(1 - \overline{z_1}z_2)}, \\
+        |z_1 - z_2|^2 &< |1-\overline{z_1}z_2|^2.
+    \end{align*}
+    Therefore, $$\left|\frac{z_1 - z_2}{1-\overline{z_1}z_2}\right| < 1.$$
+\end{proof}
+
+\end{document}
