@@ -25,39 +25,81 @@
 \begin{proof}
     Let $\tau = \{A \subset \R~|~\R \setminus A \text{ is a finite set or } \R\}$.
     We claim that $(\R, \tau)$ is a topological space.
+
     Since $\R \setminus \R = \emptyset$, which is a finite set, $\R \in \tau$.
     Since $\R \setminus \emptyset = \R$, $\emptyset \in \tau$.
 
     Let $A,B \in \tau$.
-    Observe 
+    By DeMorgan's Law, $\R \setminus (A \cap B) = (\R \setminus A) \cup (\R \setminus B)$.
+    Since $\R \setminus A$ and $\R \setminus B$ are either finite or $\R$, their union is therefore either finite or $\R$.
+    Thus, $A \cap B \in \tau$.
+    Therefore, by Lemma 0.02, $\tau$ contains all finite intersections of its elements.
+    
+    Let $C \subseteq \tau$, and let $x \in C$.
+    Let $U$ be the union of the elements of $C$.
+    Suppose $U = \emptyset$.
+    In this case, $U \in \tau$, as shown above.
+    Now, suppose $U \neq \emptyset$.
+    Then, there exists a nonempty $x \in C$.
+    Therefore, $\R \setminus x \neq \R$, and is thus finite.
+    Since $x \subseteq U$, $\R \setminus U \subset \R \setminus x$.
+    Thus, since $\R \setminus x$ is finite, $\R \setminus U$ is also finite.
+    Therefore, $U \in \tau$ in this case, as well.
+
+    Thus, $\tau$ is a topology on $\R$.
 \end{proof}
 
 \bigskip
 \noindent{\bf 2.}
 \begin{proof}
+    Let $(X, \tau)$ be a topological space, and let $A$ be a subset of $X$ such that for each $x \in A$, there exists an open set $U_x \subseteq A$ containing $x$.
+    We claim that $A$ is an open set.
+
+    Observe that $\bigcup\limits_{x \in A} U_x \subseteq A$, since $U_x \subseteq A$ for all $x \in A$.
+    Next, observe that $A \subseteq \bigcup\limits_{x \in A} U_x$, since $x \in U_x$ for all $x \in A$.
+    Thus, $A = \bigcup\limits_{x \in A} U_x$.
+    Therefore, by the definition of a topology, $A$ is an open set.
 \end{proof}
 
 \bigskip
-\noindent{\bf 3.} Yes.
+\noindent{\bf 3.} No, since $X \notin \tau$.
 
-\bigskip
-\noindent{\bf 4.} 
+\newpage
+\noindent{\bf 4.}
+
+{\bf a.}
+\begin{proof}
+    Let $\mathcal B = \{[a,b) ~|~ a,b \in \R\}$. We claim that $\mathcal B$ is a basis for a topology on $\R$.
+
+    Let $a \in \R$.
+    Observe that $a \in [a, a+1) \in \mathcal B$.
+    Thus, $\mathcal B$ covers $\R$.
+    Let $[s, t), [v, w) \in \mathcal B$, and suppose, without loss of generality, that $s \leq v$.
+    Let $B_0 = [s, t) \cap [v, w)$.
+    Then, $B_0$ is one of $\emptyset, [v,w), [v,t)$.
+    Thus, $B_0 \in \mathcal B$.
+    Thus, $\mathcal B$ is a basis for a topology on $\R$.
+\end{proof}
+
+\medskip
+{\bf b.} The half-open topology can be generated from $\mathcal B$ by taking all unions of elements of $\mathcal B$.
 
 \bigskip
 \noindent{\bf 5.}
-\noindent{\bf a.} No.
+
+{\bf a.} No.
 
 \medskip
-\noindent{\bf b.} 
+{\bf b.} No.
 
 \medskip
-\noindent{\bf c.}
+{\bf c.} No.
 
 \medskip
-\noindent{\bf d.}
+{\bf d.} Yes.
 
 \medskip
-\noindent{\bf e.}
+{\bf e.} No.
 
 
 \end{document}

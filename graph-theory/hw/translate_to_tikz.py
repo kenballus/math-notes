@@ -12,8 +12,8 @@ class Graph:
             if v not in self.adj_list:
                 self.add_node(v)
         
-        self.adj_list[v1] = v2
-        self.adj_list[v2] = v1
+        self.adj_list[v1].add(v2)
+        self.adj_list[v2].add(v1)
 
     def add_node(self, v):
         if v not in self.adj_list:
@@ -41,16 +41,18 @@ def read_graph(filename):
 
     return g
 
-def circle_tikz(g, radius=1, node_color="white", node_size=3):
+def circle_tikz(g, radius=1, node_color="white", node_size=3, label=False, label_x_offset=0, label_y_offset=.35):
     """ Prints out a tikz picture of g, with its vertices along a circle of radius r """
     pt_locs = {}
 
     print("\\begin{tikzpicture}")
     for i, v in enumerate(g.adj_list):
-        x = radius * math.cos(2 * math.pi * i / g.n)
-        y = radius * math.sin(2 * math.pi * i / g.n)
+        x = round(radius * math.cos(2 * math.pi * i / g.n), 3)
+        y = round(radius * math.sin(2 * math.pi * i / g.n), 3)
         pt_locs[v] = x, y
         print(f"\\draw[fill={node_color}] ({x}, {y}) circle ({node_size}pt);")
+        if label:
+            print(f"\\node at ({x + label_x_offset}, {y + label_y_offset}) " + "{" + f"{v}" + "};")
     
     print()
     for v1 in g.adj_list:
@@ -89,7 +91,7 @@ def bipartitize(g):
 
     return p1, p2
 
-def bipartite_tikz(g, h_space=1, v_space=1, node_color="white", node_size=3):
+def bipartite_tikz(g, h_space=1, v_space=1, node_color="white", node_size=3, label=False, label_x_offset=0, label_y_offset=.35):
     pt_locs = {}
 
     p1, p2 = bipartitize(g)
@@ -109,6 +111,8 @@ def bipartite_tikz(g, h_space=1, v_space=1, node_color="white", node_size=3):
 
         pt_locs[v] = x, y
         print(f"\\draw[fill={node_color}] ({x}, {y}) circle ({node_size}pt);")
+        if label:
+            print(f"\\node at ({x + label_x_offset}, {y + label_y_offset}) " + "{" + f"{v}" + "};")
 
     print()
     for v1 in g.adj_list:
@@ -117,15 +121,17 @@ def bipartite_tikz(g, h_space=1, v_space=1, node_color="white", node_size=3):
 
     print("\\end{tikzpicture}")
 
-def random_tikz(g, radius=1, node_color="white", node_size=3):
+def random_tikz(g, radius=1, node_color="white", node_size=3, label=False, label_x_offset=0, label_y_offset=.35):
     pt_locs = {}
 
     print("\\begin{tikzpicture}")
     for v in g.adj_list:
-        x = random.random() * radius * 2 - radius
-        y = random.random() * radius * 2 - radius
+        x = round(random.random() * radius * 2 - radius, 3)
+        y = round(random.random() * radius * 2 - radius, 3)
         pt_locs[v] = x, y
         print(f"\\draw[fill={node_color}] ({x}, {y}) circle ({node_size}pt);")
+        if label:
+            print(f"\\node at ({x + label_x_offset}, {y + label_y_offset}) " + "{" + f"{v}" + "};")
 
     print()
     for v1 in g.adj_list:
@@ -150,7 +156,7 @@ def main():
     elif mode == "random":
         random_tikz(g)
     elif mode == "circle":
-        circle_tikz(g)
+        circle_tikz(g, label=True, radius=3)
     else:
         print("Invalid graph mode:", mode, file=sys.stderr)
         sys.exit(1)

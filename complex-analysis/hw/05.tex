@@ -27,18 +27,16 @@
 \noindent{\bf 1. } Claim: If $|z_1| < 1$ and $|z_2| < 1$, then $\left| \frac{z_1 - z_2}{1 - \overline{z_1}z_2} < 1 \right|$.
 \begin{proof}
     Let $z_1, z_2 \in \mathbb C$ such that $|z_1| < 1$ and $|z_2| < 1$.
-    Then,
-    \begin{align*}
-        |z_1|^2 &< 1, \\
-        |z_1|^2(1-|z_2|^2) &< 1 - |z_2|^2, \\
-        |z_1|^2 - |z_1|^2|z_2|^2 + |z_2|^2 &< 1, \\
-        |z_1|^2 + |z_2|^2 &< 1 + |z_1|^2|z_2|^2, \\
-        z_1\overline{z_1} + z_2\overline{z_2} &< 1 + z_1\overline{z_1}z_2\overline{z_2}, \\
-        z_1\overline{z_1} + z_2\overline{z_2} - \overline{z_1}z_2 - z_1\overline{z_2} &< 1 + z_1\overline{z_1}z_2\overline{z_2} - \overline{z_1}z_2 - z_1\overline{z_2}, \\
-        (z_1 - z_2)(\overline{z_1} - \overline{z_2}) &< (1 - \overline{z_1}z_2)(1 - z_1\overline{z_2}), \\
-        (z_1 - z_2)\overline{(z_1 - z_2)} &< (1 - \overline{z_1}z_2)\overline{(1 - \overline{z_1}z_2)}, \\
-        |z_1 - z_2|^2 &< |1-\overline{z_1}z_2|^2.
-    \end{align*}
+    Then, $$|z_1|^2 < 1.$$
+    Since $|z_2| < 1$, $(1-|z_2|^2)$ is positive.
+    Therefore, $$|z_1|^2(1-|z_2|^2) < 1 - |z_2|^2.$$
+    Thus, $$|z_1|^2 + |z_2|^2 < 1 + |z_1|^2|z_2|^2.$$
+    Then, by property
+    $$z_1\overline{z_1} + z_2\overline{z_2} < 1 + z_1\overline{z_1}z_2\overline{z_2}.$$
+    $$z_1\overline{z_1} + z_2\overline{z_2} - \overline{z_1}z_2 - z_1\overline{z_2} < 1 + z_1\overline{z_1}z_2\overline{z_2} - \overline{z_1}z_2 - z_1\overline{z_2}.$$
+    $$(z_1 - z_2)(\overline{z_1} - \overline{z_2}) < (1 - \overline{z_1}z_2)(1 - z_1\overline{z_2}).$$
+    $$(z_1 - z_2)\overline{(z_1 - z_2)} < (1 - \overline{z_1}z_2)\overline{(1 - \overline{z_1}z_2)}.$$
+    $$|z_1 - z_2|^2 < |1-\overline{z_1}z_2|^2.$$
     Therefore, $$\left|\frac{z_1 - z_2}{1-\overline{z_1}z_2}\right| < 1.$$
 \end{proof}
 
