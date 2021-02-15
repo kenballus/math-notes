@@ -91,12 +91,14 @@ For $k=2$, the following graph satisfies the condition:
 \end{tikzpicture}
 
 \medskip
-{\bf Proposition:} 3 is the largest value of $k$ for which the answer to the question is ``yes".
+{\bf Proposition:} 3 is the largest value of $k$ for which the answer to the question is yes.
 \begin{proof}
     Let $G$ be a connected graph whose complement is also connected.
-    Suppose, toward a contradiction, that $G$ contains four distinct vertices $u,v,x,y$ such that $d_G(u,v) = 4 = d_{\overline{G}}(x,y)$.
-    Then, there exists a $u-v$ geodesic $P = (u = p_0, p_1, p_2, p_3 = v)$ in $G$, and a $x-y$ geodesic $Q = (x = q_0, q_1, q_2, q_3 = y)$ in $\overline G$.
-    FINISH ME!!!!!!!
+    Let $J$ be the subgraph of $G$ induced by $\{u,v,x,y\}$.
+    Then, by Theorem 1.11, at least one of $J, \overline J$ is connected.
+    Thus, since $J$ has only four vertices, either $\text{diam}(J) \leq 3$ or $\text{diam}(\overline J) \leq 3$.
+    Thus, either $d_J(u,v) \leq3$, or $d_{\overline J}(x,y) \leq 3$.
+    Thus, the corresponding distances in $G$ and $\overline G$ are less than or equal to 3, so 3 is the largest value of $k$ for which the answer to the question is yes.
 \end{proof}
 
 \bigskip
@@ -109,10 +111,10 @@ For $k=2$, the following graph satisfies the condition:
     Note that a partite set of size 3 or more is guaranteed to exist, since $G$ is of order 5 or more.
     Since $a$, $b$, and $c$ are in the same partite set in $G$, $ab, bc, ca \notin E(G)$.
     By definition of $\overline{G}$, $ab,bc,ca\in E(\overline{G})$.
-    Thus, $\overline G$ contains the odd cycle $C = (a,b,c,a)$.
+    Thus, $\overline G$ contains the odd cycle $(a,b,c,a)$.
     Thus, by Theorem 1.12, $\overline{G}$ is not bipartite.
     Thus, if $G$ is bipartite, then $\overline G$ is not bipartite.
-    Thus, at most one of $G$ and $\overline G$ is bipartite.
+    Therefore, at most one of $G$ and $\overline G$ is bipartite.
 \end{proof}
 
 \bigskip
@@ -296,7 +298,7 @@ $\overline{K_5} \times \overline{K_3}$:
 \draw[fill=white] (0.914, -0.407) circle (3pt);
 \end{tikzpicture}
 
-\newpage
+\bigskip
 \noindent{\bf (c)} $C_5 + K_1$:
 
 \medskip
@@ -422,7 +424,7 @@ $R_3$:
 \draw[thick] (1.414, -1.414) -- (-1.414, -1.414);
 \end{tikzpicture}
 
-\newpage
+\bigskip
 \noindent{\bf (b)} $S_3$:
 
 \medskip
@@ -600,76 +602,41 @@ $S_4$:
 \end{tikzpicture}
 
 \medskip
-{\bf (b)} The solution in (a) is changed only by adding a $2-2$ loop.
+{\bf (b)} The solution to (a) is changed only by adding a $2-2$ loop.
 
 \bigskip
 \noindent{\bf 1.30}
-\begin{tikzpicture}
-\draw[fill=white] (3.0, 0.0) circle (3pt);
-\node at (3.0, 0.35) {$1$};
-\draw[fill=white] (2.598, 1.5) circle (3pt);
-\node at (2.598, 1.85) {$4$};
-\draw[fill=white] (1.5, 2.598) circle (3pt);
-\node at (1.5, 2.948) {$7$};
-\draw[fill=white] (0.0, 3.0) circle (3pt);
-\node at (0.0, 3.35) {$2$};
-\draw[fill=white] (-1.5, 2.598) circle (3pt);
-\node at (-1.5, 2.948) {$5$};
-\draw[fill=white] (-2.598, 1.5) circle (3pt);
-\node at (-2.598, 1.85) {$9$};
-\draw[fill=white] (-3.0, 0.0) circle (3pt);
-\node at (-3.0, 0.35) {$3$};
-\draw[fill=white] (-2.598, -1.5) circle (3pt);
-\node at (-2.598, -1.15) {$6$};
-\draw[fill=white] (-1.5, -2.598) circle (3pt);
-\node at (-1.5, -2.2479999999999998) {$8$};
-\draw[fill=white] (-0.0, -3.0) circle (3pt);
-\node at (0.0, -2.65) {$10$};
-\draw[fill=white] (1.5, -2.598) circle (3pt);
-\node at (1.5, -2.2479999999999998) {$12$};
-\draw[fill=white] (2.598, -1.5) circle (3pt);
-\node at (2.598, -1.15) {$11$};
 
-\draw[->] (3.0, 0.0) -- (2.598, 1.5);
-% \draw[thick] (3.0, 0.0) -- (-0.0, -3.0);
-% \draw[thick] (3.0, 0.0) -- (1.5, 2.598);
-% \draw[thick] (2.598, 1.5) -- (-0.0, -3.0);
-% \draw[thick] (2.598, 1.5) -- (3.0, 0.0);
-% \draw[thick] (2.598, 1.5) -- (1.5, 2.598);
-% \draw[thick] (1.5, 2.598) -- (2.598, 1.5);
-% \draw[thick] (1.5, 2.598) -- (3.0, 0.0);
-% \draw[thick] (1.5, 2.598) -- (-0.0, -3.0);
-% \draw[thick] (0.0, 3.0) -- (-2.598, 1.5);
-% \draw[thick] (0.0, 3.0) -- (1.5, -2.598);
-% \draw[thick] (0.0, 3.0) -- (-1.5, 2.598);
-% \draw[thick] (-1.5, 2.598) -- (-2.598, 1.5);
-% \draw[thick] (-1.5, 2.598) -- (1.5, -2.598);
-% \draw[thick] (-1.5, 2.598) -- (0.0, 3.0);
-% \draw[thick] (-2.598, 1.5) -- (1.5, -2.598);
-% \draw[thick] (-2.598, 1.5) -- (0.0, 3.0);
-% \draw[thick] (-2.598, 1.5) -- (-1.5, 2.598);
-% \draw[thick] (-3.0, 0.0) -- (-1.5, -2.598);
-% \draw[thick] (-3.0, 0.0) -- (2.598, -1.5);
-% \draw[thick] (-3.0, 0.0) -- (-2.598, -1.5);
-% \draw[thick] (-2.598, -1.5) -- (-3.0, 0.0);
-% \draw[thick] (-2.598, -1.5) -- (-1.5, -2.598);
-% \draw[thick] (-2.598, -1.5) -- (2.598, -1.5);
-% \draw[thick] (-1.5, -2.598) -- (-3.0, 0.0);
-% \draw[thick] (-1.5, -2.598) -- (2.598, -1.5);
-% \draw[thick] (-1.5, -2.598) -- (-2.598, -1.5);
-% \draw[thick] (-0.0, -3.0) -- (2.598, 1.5);
-% \draw[thick] (-0.0, -3.0) -- (3.0, 0.0);
-% \draw[thick] (-0.0, -3.0) -- (1.5, 2.598);
-% \draw[thick] (1.5, -2.598) -- (-2.598, 1.5);
-% \draw[thick] (1.5, -2.598) -- (0.0, 3.0);
-% \draw[thick] (1.5, -2.598) -- (-1.5, 2.598);
-% \draw[thick] (2.598, -1.5) -- (-3.0, 0.0);
-% \draw[thick] (2.598, -1.5) -- (-1.5, -2.598);
-% \draw[thick] (2.598, -1.5) -- (-2.598, -1.5);
-\end{tikzpicture}
+\begin{center}
+\includegraphics[scale=.2]{1.30}
+\end{center}
 
+$V(G) = \{c_1,c_2,c_3,c_4,c_5,c_6,c_7,c_8,c_9,c_{10},c_{11},c_{12}\}$
+
+$E(G) = \{(c_1,c_4),(c_1,c_7), (c_2, c_5), (c_2,c_9), (c_3, c_6), (c_3, c_8), (c_4,c_7), (c_4,c_{10}), (c_5, c_{12}), (c_5, c_9), (c_6, c_8),$ \\
+\indent\indent\indent\,\,\,\,\,\,\,$(c_6,c_{11}), (c_7, c_1), (c_7,c_{10}), (c_8,c_{11}), (c_8,c_3), (c_9, c_2), (c_9, c_{12}), (c_{10}, c_4), (c_{10}, c_1), (c_{11}, c_3),$\\
+\indent\indent\indent\,\,\,\,\,\,\,$(c_{11}, c_6), (c_{12}, c_2), (c_{12}, c_5)\}$
 
 \bigskip
 \noindent{\bf 1.32}
+
+\textbf{(a)} 
+\begin{center}
+\includegraphics[scale=.1]{IMG-0765.jpg}
+\end{center}
+
+$V(G) = \{0,1,2,3,4\}$
+
+$E(G) = \{(2,0), (0,1), (3,1), (1,2), (0,2), (4,2), (1,3), (2,3), (0,4), (2,4), (3,4)\}$
+
+\textbf{(b)} The resulting graph will be the null graph of order $|A|$, since the difference between any two odd numbers is always even, so it would not be in $S$.
+
+\textbf{(c)} Let $n \geq 2$ be an integer, and let $\mathcal N$ be a nonzero equivalence class modulo $n$. If $(A \cup S) \subseteq \mathcal N$, the resulting digraph will be null. The generalized question is as follows:
+
+What can be said about $D$ is $A$ and $S$ consist only of integers such that $(i \text{~mod~} n) = (j \text{~mod~} n) \neq (0 \text{~mod~} n)$ for all $i,j \in A \cup S$?
+
+\textbf{(d)} If $|A| = |S| = 5$, the size of $D$ is no more than 16. I arrived at this answer by setting $A=\{-2,-1,0,1,2\}$, and setting $S$ equal to the set of all differences of elements of $A$. I then repeatedly removed the element of $S$ that contributed the least edges until $|S|=5$, arriving at $S=\{-2,-1,1,2,3\}$. The resulting digraph had 16 arcs.
+
+I believe that this process is correct because spacing the elements of $A$ equally should minimize the number of distinct differences between elements of $A$.
 
 \end{document}
