@@ -48,18 +48,28 @@ For $k=2$, the following graph satisfies the condition:
 \begin{tikzpicture}
 \draw[fill=white] (1.0, 0.0) circle (3pt);
 \node at (1.0, 0.35) {$u$};
-\draw[fill=white] (0.0, 1.0) circle (3pt);
-\node at (0.0, 1.35) {$v$};
-\draw[fill=white] (-1.0, 0.0) circle (3pt);
-\node at (-1.0, 0.35) {$x$};
-\draw[fill=white] (-0.0, -1.0) circle (3pt);
-\node at (0.0, -1.35) {$y$};
+\draw[fill=white] (0.309, 0.951) circle (3pt);
+\node at (0.309, 1.301) {$x$};
+\draw[fill=white] (-0.809, 0.588) circle (3pt);
+\node at (-0.809, 0.938) {$y$};
+\draw[fill=white] (-0.809, -0.588) circle (3pt);
+\node at (-1, -0.238) {$v$};
+\draw[fill=white] (0.309, -0.951) circle (3pt);
+\node at (0.309, -0.601) {$w$};
 
-\draw[thick] (1.0, 0.0) -- (0.0, 1.0);
-\draw[thick] (0.0, 1.0) -- (-0.0, -1.0);
-\draw[thick] (-1.0, 0.0) -- (0.0, 1.0);
-\draw[thick] (-0.0, -1.0) -- (0.0, 1.0);
+\draw[thick] (1.0, 0.0) -- (0.309, -0.951);
+\draw[thick] (1.0, 0.0) -- (0.309, 0.951);
+\draw[thick] (0.309, 0.951) -- (-0.809, 0.588);
+\draw[thick] (0.309, 0.951) -- (1.0, 0.0);
+\draw[thick] (-0.809, 0.588) -- (-0.809, -0.588);
+\draw[thick] (-0.809, 0.588) -- (0.309, 0.951);
+\draw[thick] (-0.809, -0.588) -- (-0.809, 0.588);
+\draw[thick] (-0.809, -0.588) -- (0.309, -0.951);
+\draw[thick] (0.309, -0.951) -- (-0.809, -0.588);
+\draw[thick] (0.309, -0.951) -- (1.0, 0.0);
 \end{tikzpicture}
+
+
 
 {\bf (b)} Observe that the following graph satisfies the condition for $k=3$:
 
@@ -81,7 +91,7 @@ For $k=2$, the following graph satisfies the condition:
 \end{tikzpicture}
 
 \medskip
-{\bf Proposition:} 3 is the largest value of $k$ for which the answer to the question is "yes".
+{\bf Proposition:} 3 is the largest value of $k$ for which the answer to the question is ``yes".
 \begin{proof}
     Let $G$ be a connected graph whose complement is also connected.
     Suppose, toward a contradiction, that $G$ contains four distinct vertices $u,v,x,y$ such that $d_G(u,v) = 4 = d_{\overline{G}}(x,y)$.
@@ -94,14 +104,15 @@ For $k=2$, the following graph satisfies the condition:
 
 {\bf Proposition:} Let $G$ be a connected graph of order 5 or more. Then, at most one of $G$ and $\overline G$ is bipartite.
 \begin{proof}
-    Let $G$ be a connected, bipartite graph of order 5 or more.
+    Let $G$ be a connected bipartite graph of order 5 or more.
     Let $a$, $b$, and $c$ be three distinct vertices in one of $G$'s partite sets.
-    Note that such vertices are guaranteed to exist, since 5 cannot be split into 2 nonnegative integer parts both less than 3.
-    Since $a$, $b$, and $c$ are in the same partite set in $G$, there must be no edges between them in $G$.
-    Thus, $a$, $b$, and $c$ must be a clique in $\overline G$.
-    Thus, $\overline G$ contains the odd cycle $(a,b,c)$.
-    Therefore, by Theorem 1.12, $\overline G$ is not bipartite.
-    Thus, at most one of $G$ and $\overline G$ can be bipartite.
+    Note that a partite set of size 3 or more is guaranteed to exist, since $G$ is of order 5 or more.
+    Since $a$, $b$, and $c$ are in the same partite set in $G$, $ab, bc, ca \notin E(G)$.
+    By definition of $\overline{G}$, $ab,bc,ca\in E(\overline{G})$.
+    Thus, $\overline G$ contains the odd cycle $C = (a,b,c,a)$.
+    Thus, by Theorem 1.12, $\overline{G}$ is not bipartite.
+    Thus, if $G$ is bipartite, then $\overline G$ is not bipartite.
+    Thus, at most one of $G$ and $\overline G$ is bipartite.
 \end{proof}
 
 \bigskip
@@ -551,8 +562,112 @@ $S_4$:
 \bigskip
 \noindent{\bf 1.29}
 
+{\bf (a)}
+
+\medskip
+\begin{tikzpicture}
+\draw[fill=white] (1.0, 0.0) circle (3pt);
+\node at (1.0, 0.35) {$2$};
+\draw[fill=white] (0.5, 0.866) circle (3pt);
+\node at (0.5, 1.216) {$3$};
+\draw[fill=white] (-0.5, 0.866) circle (3pt);
+\node at (-0.5, 1.216) {$4$};
+\draw[fill=white] (-1.0, 0.0) circle (3pt);
+\node at (-1.0, 0.35) {$13$};
+\draw[fill=white] (-0.5, -0.866) circle (3pt);
+\node at (-0.5, -1.25) {$7$};
+\draw[fill=white] (0.5, -0.866) circle (3pt);
+\node at (0.6, -0.516) {$11$};
+
+\draw (1.0, 0.0) -- (0.5, 0.866);
+\draw (1.0, 0.0) -- (-1.0, 0.0);
+\draw (1.0, 0.0) -- (-0.5, 0.866);
+\draw (0.5, 0.866) -- (-0.5, 0.866);
+\draw (0.5, 0.866) -- (-0.5, -0.866);
+\draw (0.5, 0.866) -- (1.0, 0.0);
+\draw (-0.5, 0.866) -- (0.5, 0.866);
+\draw (-0.5, 0.866) -- (-0.5, -0.866);
+\draw (-0.5, 0.866) -- (0.5, -0.866);
+\draw (-0.5, 0.866) -- (1.0, 0.0);
+\draw (-1.0, 0.0) -- (0.5, -0.866);
+\draw (-1.0, 0.0) -- (1.0, 0.0);
+\draw (-0.5, -0.866) -- (0.5, 0.866);
+\draw (-0.5, -0.866) -- (0.5, -0.866);
+\draw (0.5, -0.866) -- (-0.5, 0.866);
+\draw (0.5, -0.866) -- (-0.5, -0.866);
+\draw (0.5, -0.866) -- (-1.0, 0.0);
+\draw plot [smooth] coordinates {(-0.5, 0.866) (-0.7, 0) (-0.5, -0.866)};
+\end{tikzpicture}
+
+\medskip
+{\bf (b)} The solution in (a) is changed only by adding a $2-2$ loop.
+
 \bigskip
 \noindent{\bf 1.30}
+\begin{tikzpicture}
+\draw[fill=white] (3.0, 0.0) circle (3pt);
+\node at (3.0, 0.35) {$1$};
+\draw[fill=white] (2.598, 1.5) circle (3pt);
+\node at (2.598, 1.85) {$4$};
+\draw[fill=white] (1.5, 2.598) circle (3pt);
+\node at (1.5, 2.948) {$7$};
+\draw[fill=white] (0.0, 3.0) circle (3pt);
+\node at (0.0, 3.35) {$2$};
+\draw[fill=white] (-1.5, 2.598) circle (3pt);
+\node at (-1.5, 2.948) {$5$};
+\draw[fill=white] (-2.598, 1.5) circle (3pt);
+\node at (-2.598, 1.85) {$9$};
+\draw[fill=white] (-3.0, 0.0) circle (3pt);
+\node at (-3.0, 0.35) {$3$};
+\draw[fill=white] (-2.598, -1.5) circle (3pt);
+\node at (-2.598, -1.15) {$6$};
+\draw[fill=white] (-1.5, -2.598) circle (3pt);
+\node at (-1.5, -2.2479999999999998) {$8$};
+\draw[fill=white] (-0.0, -3.0) circle (3pt);
+\node at (0.0, -2.65) {$10$};
+\draw[fill=white] (1.5, -2.598) circle (3pt);
+\node at (1.5, -2.2479999999999998) {$12$};
+\draw[fill=white] (2.598, -1.5) circle (3pt);
+\node at (2.598, -1.15) {$11$};
+
+\draw[->] (3.0, 0.0) -- (2.598, 1.5);
+% \draw[thick] (3.0, 0.0) -- (-0.0, -3.0);
+% \draw[thick] (3.0, 0.0) -- (1.5, 2.598);
+% \draw[thick] (2.598, 1.5) -- (-0.0, -3.0);
+% \draw[thick] (2.598, 1.5) -- (3.0, 0.0);
+% \draw[thick] (2.598, 1.5) -- (1.5, 2.598);
+% \draw[thick] (1.5, 2.598) -- (2.598, 1.5);
+% \draw[thick] (1.5, 2.598) -- (3.0, 0.0);
+% \draw[thick] (1.5, 2.598) -- (-0.0, -3.0);
+% \draw[thick] (0.0, 3.0) -- (-2.598, 1.5);
+% \draw[thick] (0.0, 3.0) -- (1.5, -2.598);
+% \draw[thick] (0.0, 3.0) -- (-1.5, 2.598);
+% \draw[thick] (-1.5, 2.598) -- (-2.598, 1.5);
+% \draw[thick] (-1.5, 2.598) -- (1.5, -2.598);
+% \draw[thick] (-1.5, 2.598) -- (0.0, 3.0);
+% \draw[thick] (-2.598, 1.5) -- (1.5, -2.598);
+% \draw[thick] (-2.598, 1.5) -- (0.0, 3.0);
+% \draw[thick] (-2.598, 1.5) -- (-1.5, 2.598);
+% \draw[thick] (-3.0, 0.0) -- (-1.5, -2.598);
+% \draw[thick] (-3.0, 0.0) -- (2.598, -1.5);
+% \draw[thick] (-3.0, 0.0) -- (-2.598, -1.5);
+% \draw[thick] (-2.598, -1.5) -- (-3.0, 0.0);
+% \draw[thick] (-2.598, -1.5) -- (-1.5, -2.598);
+% \draw[thick] (-2.598, -1.5) -- (2.598, -1.5);
+% \draw[thick] (-1.5, -2.598) -- (-3.0, 0.0);
+% \draw[thick] (-1.5, -2.598) -- (2.598, -1.5);
+% \draw[thick] (-1.5, -2.598) -- (-2.598, -1.5);
+% \draw[thick] (-0.0, -3.0) -- (2.598, 1.5);
+% \draw[thick] (-0.0, -3.0) -- (3.0, 0.0);
+% \draw[thick] (-0.0, -3.0) -- (1.5, 2.598);
+% \draw[thick] (1.5, -2.598) -- (-2.598, 1.5);
+% \draw[thick] (1.5, -2.598) -- (0.0, 3.0);
+% \draw[thick] (1.5, -2.598) -- (-1.5, 2.598);
+% \draw[thick] (2.598, -1.5) -- (-3.0, 0.0);
+% \draw[thick] (2.598, -1.5) -- (-1.5, -2.598);
+% \draw[thick] (2.598, -1.5) -- (-2.598, -1.5);
+\end{tikzpicture}
+
 
 \bigskip
 \noindent{\bf 1.32}
