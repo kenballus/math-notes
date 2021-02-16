@@ -1,0 +1,85 @@
+\documentclass[11pt]{article}       % The percent symbol in your code starts a comment.  The comment ends at the next linebreak.
+\usepackage[english]{babel}         % Packages add functionality and style conventions to your documents. Don't edit this section!
+\usepackage{fullpage}               % Eliminates wasted space
+\usepackage[utf8]{inputenc}         % Necessary for character encoding
+\usepackage{amsmath, amssymb,amsthm}% Required math packages
+\usepackage{graphicx}               % For handling graphics
+\usepackage[colorinlistoftodos]{todonotes}  % For the fancy "todo" stuff
+\usepackage{hyperref}               % For clickable links in the final PDF
+\usepackage{tikz}
+\theoremstyle{definition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{prop}[theorem]{Proposition}
+\newtheorem{claim}[theorem]{Claim}
+
+\title{Complex Analysis -- Homework \#6}
+
+\author{ Komissar, Feldman, Kallus }
+
+\date{ Due Wednesday, February 17 }
+
+\begin{document}
+\pagecolor{black}
+\color{white}
+\maketitle
+
+\noindent{\bf 1. }  Express each of the following in the form $x+iy$, where $x,y \in \mathbf R$.
+\vskip.1in
+\noindent {\bf a. }
+\begin{align*}
+    {\rm e}^{-\pi i/2} &= \cos\left(\frac{-\pi}2\right) + i\sin\left(\frac{-\pi}2\right) \\
+                       &= 0-i
+\end{align*}
+\vskip.1in
+\noindent {\bf b. }
+\begin{align*}
+    (1+i)^{100} &= \sqrt2(\cos\left(\frac{\pi}4\right) + i\sin\left(\frac{\pi}4)\right)^{100} \\
+                &= \sqrt2^{100}(\cos(25\pi) + i\sin(25\pi)) \\
+                &= 2^{50}(\cos(\pi) + i\sin(\pi)) \\
+                &= -2^{50}+0i
+\end{align*}
+\vskip.1in
+\noindent {\bf c. }
+\begin{align*}
+    (\sqrt{3} - i)^{50} &= 2^{50}\left(\cos\left(-\frac{\pi}6\right) + i\sin\left(-\frac{\pi}6\right)\right)^{50} \\
+                        &= 2^{50}\left(\cos\left(-\frac{25\pi}3\right) + i\sin\left(-\frac{25\pi}3\right)\right) \\
+                        &= 2^{50}\left(\cos\left(-\frac{\pi}3\right) + i\sin\left(-\frac{\pi}3\right)\right) \\
+                        &= 2^{50}\left(\frac12 -\frac{\sqrt3}2i\right) \\
+                        &= 2^{49} - \sqrt3 \cdot 2^{49}i
+\end{align*}
+
+
+\newpage
+\hrule
+\vskip.1in
+
+\noindent{\bf 2. }  Apply de Moivre's formula and the binomial formula to derive a formula for $\cos(4\theta)$ in terms of $\cos(\theta)$.
+\begin{align*}
+    \cos(4\theta) &= \cos(4\theta) + i\sin(4\theta) - i\sin(4\theta) \\
+                  &= (\cos(\theta) + i\sin(\theta))^4 - i\sin(4\theta) \\
+                  &= \cos(\theta)^4 + 4\cos(\theta)^3i\sin(\theta) + 6\cos(\theta)^2(i\sin(\theta))^2 + 4\cos(\theta)(i\sin(\theta))^3 + (i\sin(\theta))^4 - i\sin(4\theta) \\
+                  &= \cos^4(\theta) + 4i\cos^3(\theta)\sin(\theta) -6\cos^2(\theta)\sin^2(\theta) -4i\cos(\theta)\sin^3(\theta) + \sin^4(\theta) - i\sin(4\theta) \\
+                  &= \cos^4(\theta) -6\cos^2(\theta)\sin^2(\theta) + \sin^4(\theta) + i(4\cos^3(\theta)\sin(\theta) -4\cos(\theta)\sin^3(\theta) - \sin(4\theta)) \\
+                  &= \cos^4(\theta) -6\cos^2(\theta)\sin^2(\theta) + \sin^4(\theta) \\
+                  &= \cos^4(\theta) -6\cos^2(\theta)(1-\cos^2(\theta)) + (1-\cos^2(\theta))^2 \\
+                  &= \cos^4(\theta) -6\cos^2(\theta) + 6\cos^4(\theta) + 1 + \cos^4(\theta) - 2\cos^2(\theta) \\
+                  &= 8\cos^4(\theta) - 8\cos^2(\theta) + 1
+\end{align*}
+
+\vskip.1in
+\hrule
+\vskip.1in
+
+\noindent{\bf 3. }  Let $T_4$ be the real polynomial that arises by substituting the variable $x$ for $\cos(\theta)$ in the formula from problem {\bf 2. }    Find the solutions to the polynomial equation $T_4(x)=0$.
+
+$$T_4(x) = 8x^4 - 8x^2 + 1 = 0.$$
+
+Therefore, by the quadratic formula, $$x^2 \in \left\{\frac{2-\sqrt2}4, \frac{2+\sqrt2}4\right\}.$$
+
+Thus, $$x \in \left\{\frac{\sqrt{2-\sqrt2}}2, \frac{\sqrt{2+\sqrt2}}2\right\}.$$
+
+\vskip.1in
+\hrule
+
+\end{document}
