@@ -1,0 +1,81 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amsfonts, amssymb, amsthm}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{xcolor}
+
+\newcommand{\inv}{^{-1}}   
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\R}{\mathbb R}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\C}{\mathbb C}
+\newcommand{\N}{\mathbb N}
+\newcommand{\B}{\mathcal B}
+
+\date{Due Friday, February 19, 2021}
+\author{Ben Kallus}
+\title{Topology \\ Homework 2}
+
+\begin{document}
+\pagecolor{black}
+\color{white}
+\maketitle
+
+\noindent{\bf 1)}
+\begin{proof}
+    Let $K = \{\frac1n ~|~ n \in \N\}$.
+    Let $\B'' = \{(a,b) ~|~ a,b \in \R, a < b\} \cup \{(a,b) \setminus K ~|~ a,b \in \R, a < b\}$.
+    We claim that $\B''$ is the basis for a topology on $\R$.
+    Let $x \in \R$, and let $B_0 = (x-1,x+1)$.
+    By the definition of $\B''$, $B_0 \in \B''$.
+    Thus, since $x \in B_0$, $\B''$ covers $\R$.
+    Let $B_1, B_2 \in \B''$ such that $x \in B_1 \cap B_2$.
+    
+    \noindent{\bf Case 1:} $x \notin K$. \\
+    \indent
+    Let $B_3 = (\max(\inf(B_1), \inf(B_2)), \min(\sup(B_1), \sup(B_2))) \setminus K$.
+    Then, $x \in B_3 \subseteq (B_1 \cap B_2)$.
+    
+    \noindent{\bf Case 2:} $x \in K$. \\
+    \indent
+    Then, since $x \in B_1 \cap B_2$, $B_1$ and $B_2$ must be open intervals of the form $(a,b)$ in $\R$.
+    Let $B_3 = (\max(\inf(B_1), \inf(B_2)), \min(\sup(B_1), \sup(B_2)))$.
+    Thus, $x \in B_3 \subseteq B_1 \cap B_2$.
+
+    Thus, $\B''$ is a basis for a topology on $\R$.
+\end{proof}
+
+\bigskip
+\noindent{\bf 2)}
+\begin{proof}
+    Let $\tau, \tau'$ be the topology of $\R_l$ and $\R_K$, respectively.
+
+    Let $B = [1, 2)$.
+    Note that $B$ is a basis element for $\tau$.
+    Suppose, toward a contradiction, that there exists a basis element $B'$ for $\tau'$ such that $1 \in B'$ and $B' \subseteq B$.
+    Since $B' \subseteq B$, $\inf(B) \leq \inf(B')$.
+    Since $\inf(B) = 1$, and $1 \in B'$, $B'$ contains an element less than or equal to its infimum.
+    Since a set cannot contain an element less than its infimum, $B'$ must then contain its infimum.
+    Thus, a contradiction has been shown, since $B'$ is a basis element of $\tau'$, so it does not contain its infimum.
+    Thus, $\tau'$ is not finer than $\tau$.
+
+
+    Now, let $B' = (-1,1) \setminus K$.
+    Suppose, toward a contradiction, that there exists a basis element $B = [a,b)$ for $\tau$ such that $0 \in B$ and $B \subseteq B'$.
+    Then, by the Archimedean Property, there exists $n \in \N$ such that $0 < \frac1n < b$.
+    Since $0 \in B$, $a \leq 0$.
+    Thus, $\frac1n \in B$.
+    However, $\frac1n \notin B'$, so a contradiction has been shown.
+    Thus, $\tau$ is not finer than $\tau'$.
+
+    Thus, $\R_l$ and $\R_K$ are not comparable.
+\end{proof}
+
+\bigskip
+\noindent{\bf 3)}
+
+\bigskip
+\noindent{\bf 4)}
+
+\end{document}
