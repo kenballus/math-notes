@@ -201,9 +201,9 @@
     The complement $\overline G$ of a graph $G$ is a graph with the same vertex set as $G$, but it has edges only where $G$ has none.
 
 \medskip
-\noindent{\bf Empty Graph}
+\noindent{\bf Empty/Null Graph}
 
-    The empty graph of order $n$ has $n$ vertices and 0 edges.
+    The empty graph, or null graph, of order $n$ has $n$ vertices and 0 edges, and is denoted $N_n$.
 
 \medskip
 \noindent{\bf Theorem 1.11}
@@ -264,10 +264,14 @@
 
     A multigraph is a graph with a multiset for its edge set. In other words, multiple copies of the same edge are permitted. Edges that connect the same two vertices are known as parallel edges. (In many definitions of a multigraph, loops are allowed. In this one, they are not.)
 
+    In a multigraph, the degree of a vertex is the number of edges incident to that vertex, counted with multiplicity. Thus, the Handshaking Lemma holds, since each edge contributes one to the degree of each of its endvertices.
+
 \medskip
 \noindent{\bf Pseudograph}
 
     A pseudograph is a multigraph in which edges are 2-element multisets of the vertex set. In other words, it's a multigraph in which loops are permitted.
+
+    In a pseudograph, the degree of a vertex is the number of edges incident to that vertex, plus double the number of loops at that vertex. Thus, the Handshaking Lemma still applies.
 
 \medskip
 \noindent{\bf Digraph}
@@ -276,6 +280,8 @@
 
     Note that loops are fine here, since we're dealing with ordered pairs, not sets.
     Also note that (unintuitively) $(a,b)$ is not parallel to $(b,a)$.
+
+    In a digraph, we split the notion of degree into indegree and outdegree. The indegree of a veretx is the number of arcs entering that vertex, and the outdegree is the number of arcs leaving that vertex. Thus, the Handshaking Lemma applies to the sum of either degree, and the sum is $m$, instead of $2m$.
 
 \medskip
 \noindent{\bf Oriented Graph}
@@ -324,4 +330,26 @@
 
     Let $G$ be a graph of order $n$. If $\deg(u) + \deg(v) \geq n-1$ for all nonadjacent $u,v \in V(G)$, then $G$ is connected, and the diameter of $G$ is not more than 2.
 
+\medskip
+\noindent{\bf }
+
+\medskip
+\noindent{\bf Regular Graph}
+
+    If all vertices in a graph are degree $r$, then it is a $r$-regular graph
+
+\medskip
+\noindent{\bf Cubic Graph}
+
+    A 3-regular graph is called a cubic graph.
+
+\medskip
+\noindent{\bf Theorem 2.6}
+
+    Let $r, n \in \mathbb Z$, with $0 \leq r \leq n-1$. Then, there exists an $r$-regular graph of order $n$ if and only if either $r$ or $n$ is even.
+
+\medskip
+\noindent{\bf Theorem 2.7}
+
+    Let $G$ be a graph and let $r \in \mathbb Z$ such that $r \geq \Delta(G)$. Then, $G$ is an induced subgraph of an $r$-regular graph $H$.
 \end{document}
