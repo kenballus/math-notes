@@ -12,9 +12,9 @@
 \setlength{\headsep}{0pt}
 \textheight = 600pt
 
-\title{Graph Theory \\ Homework 4}
+\title{Graph Theory \\ Homework 2}
 \author{Ben Kallus and Maddy LaPoint}
-\date{Due Friday, February 19}
+\date{Due Monday, February 15}
 
 \begin{document}
 \pagecolor{black}
@@ -119,7 +119,7 @@
 \draw[thick] (0.309, -0.951) -- (-0.809, -0.588);
 \end{tikzpicture}
 
-\bigskip
+\newpage
 \noindent{\bf 2.3}
 
     $K_7 \cup K_5$ has order 12, size 31, and each of its vertices is either degree 4 or degree 6. Thus, such a graph would have 5 vertices of degree 4.
@@ -127,41 +127,52 @@
 \bigskip
 \noindent{\bf 2.6}
 
-{\bf Proposition:} If a graph of order $3n$ ($n \geq 1$) has $n$ vertices of each of the degrees $n-1$, $n$, and $n+1$, then $n$ is even.
+\noindent{{\bf Proposition:}} If a graph of order $3n$ ($n \geq 1$) has $n$ vertices of each of the degrees $n-1$, $n$, and $n+1$, then $n$ is even.
 \begin{proof}
     Let $n \in \mathbb N$, and let $G$ be a graph of order $3n$ with $n$ vertices of each of the degrees $n-1$, $n$, and $n+1$.
-    Suppose, toward a contradiction, that the order of $G$ is odd.
+    Suppose, toward a contradiction, that $n$ is odd.
     Then, $G$ contains $2n$ even vertices, and $n$ odd vertices.
     Since $n$ is odd, this violates the Handshaking Lemma.
-    Thus, if a graph of order $3n$ ($n \geq 1$) has $n$ vertices of each of the degrees $n-1$, $n$, and $n+1$, then $n$ is even.
+    Thus, if a graph of order $3n$ ($n \geq 1$) has $n$ vertices of each of the degrees $n-1$, $n$, and $n+1$, $n$ must be even.
 \end{proof}
 
 \bigskip
 \noindent{\bf 2.12}
 
-{\bf Proposition:} If $G$ is a graph of order $n$ such that $\Delta(G) + \delta(G) \geq n - 1$, then $G$ is connected and $\text{diam}(G) \leq 4$.
+\noindent{{\bf Proposition:}} If $G$ is a graph of order $n$ such that $\Delta(G) + \delta(G) \geq n - 1$, then $G$ is connected and $\text{diam}(G) \leq 4$.
 \begin{proof}
     Let $G$ be a graph of order $n$ such that $\Delta(G) + \delta(G) \geq n - 1$.
     Let $x$ and $y$ be distinct vertices in $G$, and let $u$ be a vertex of maximum degree in $G$.
-    Consider the case in which $xy \in E(G)$.
+    Consider the following two cases:
+
+    {\bf Case 1.} Assume $u \notin \{x,y\}$.
+    Suppose that $xy \in E(G)$.
     Then, $x$ and $y$ are connected by a path of length 1, so $d_G(u,v) = 1$.
-    Now, consider the case in which $xy \notin E(G)$.
+    Now, suppose that $xy \notin E(G)$.
     Since $\Delta(G) + \delta(G) \geq n - 1$, $\deg(u) + \deg(x) \geq n - 1$.
     Thus, there exists a vertex $w$ adjacent to both $u$ and $x$.
     By a symmetric argument, there exists a vertex $t$ adjacent to both $u$ and $y$.
     Thus, $(x, w, u, t, y)$ is a walk of length 4 in $G$ that connects $x$ and $y$.
-    Thus, $G$ is connected, and the diamater of $G$ is 4.
+    Thus, $G$ is connected.
+
+    {\bf Case 2.} Assume $u \in \{x,y\}$.
+    Suppose, without loss of generality, that $x = u$.
+    Then, by the same argument used in the previous case, there exists a vertex $t$ adjacent to both $x$ and $y$.
+    Thus, $(x, t, y)$ is a path of length 2 that connects $x$ and $y$.
+    Therefore, $G$ is connected.
+
+    Thus, $G$ is connected, and $\text{diam}(G) \leq 4$.
 \end{proof}
 
 
-{\bf Proposition:} The bound given in the previous proof is sharp.
+\noindent{{\bf Proposition:}} The bound given in the previous proof is sharp.
 \begin{proof}
     Consider the disconnected graph $G = K_2 \cup K_1$.
-    Since $1 + 0 \geq 3 - 2$, $$\Delta(G) + \delta(G) \geq n - 1.$$
+    Since $1 + 0 \geq 3 - 2$, $$\Delta(G) + \delta(G) = n - 1.$$
     Thus, the bound given in the previous proof is sharp.
 \end{proof}
 
-\newpage
+\bigskip
 \noindent{\bf 2.18}
 
 Observe that $v_8$ must have degree 4:
@@ -219,7 +230,366 @@ Observe that $v_8$ must have degree 4:
 
 \bigskip
 \noindent{\bf 2.19}
+\begin{center}
+$r$-regular graphs of order $6$:
+\end{center}
+$r=0:$\hspace*{50mm}$r=1:$\hspace*{50mm}$r=2:$
 
+\begin{tikzpicture}
+\draw[fill=white] (2.0, 0.0) circle (3pt);
+\draw[fill=white] (1.0, 1.732) circle (3pt);
+\draw[fill=white] (-1.0, 1.732) circle (3pt);
+\draw[fill=white] (-2.0, 0.0) circle (3pt);
+\draw[fill=white] (-1.0, -1.732) circle (3pt);
+\draw[fill=white] (1.0, -1.732) circle (3pt);
 
+\end{tikzpicture}\hspace*{15mm}
+\begin{tikzpicture}
+\draw[fill=white] (2.0, 0.0) circle (3pt);
+\draw[fill=white] (1.0, 1.732) circle (3pt);
+\draw[fill=white] (-1.0, 1.732) circle (3pt);
+\draw[fill=white] (-1.0, -1.732) circle (3pt);
+\draw[fill=white] (1.0, -1.732) circle (3pt);
+\draw[fill=white] (-2.0, 0.0) circle (3pt);
+
+\draw[thick] (2.0, 0.0) -- (1.0, 1.732);
+\draw[thick] (1.0, 1.732) -- (2.0, 0.0);
+\draw[thick] (-1.0, 1.732) -- (-2.0, 0.0);
+\draw[thick] (-2.0, 0.0) -- (-1.0, 1.732);
+\draw[thick] (-1.0, -1.732) -- (1.0, -1.732);
+\draw[thick] (1.0, -1.732) -- (-1.0, -1.732);
+\end{tikzpicture}\hspace*{15mm}
+\begin{tikzpicture}
+\draw[fill=white] (2.0, 0.0) circle (3pt);
+\draw[fill=white] (1.0, 1.732) circle (3pt);
+\draw[fill=white] (-1.0, 1.732) circle (3pt);
+\draw[fill=white] (-2.0, 0.0) circle (3pt);
+\draw[fill=white] (-1.0, -1.732) circle (3pt);
+\draw[fill=white] (1.0, -1.732) circle (3pt);
+
+\draw[thick] (2.0, 0.0) -- (1.0, 1.732);
+\draw[thick] (2.0, 0.0) -- (1.0, -1.732);
+\draw[thick] (1.0, 1.732) -- (-1.0, 1.732);
+\draw[thick] (1.0, 1.732) -- (2.0, 0.0);
+\draw[thick] (-1.0, 1.732) -- (-2.0, 0.0);
+\draw[thick] (-1.0, 1.732) -- (1.0, 1.732);
+\draw[thick] (-2.0, 0.0) -- (-1.0, 1.732);
+\draw[thick] (-2.0, 0.0) -- (-1.0, -1.732);
+\draw[thick] (-1.0, -1.732) -- (-2.0, 0.0);
+\draw[thick] (-1.0, -1.732) -- (1.0, -1.732);
+\draw[thick] (1.0, -1.732) -- (2.0, 0.0);
+\draw[thick] (1.0, -1.732) -- (-1.0, -1.732);
+\end{tikzpicture}
+
+$r=3:$\hspace*{50mm}$r=4:$\hspace*{50mm}$r=5:$
+
+\begin{tikzpicture}
+\draw[fill=white] (2.0, 0.0) circle (3pt);
+\draw[fill=white] (1.0, 1.732) circle (3pt);
+\draw[fill=white] (-1.0, 1.732) circle (3pt);
+\draw[fill=white] (-2.0, 0.0) circle (3pt);
+\draw[fill=white] (-1.0, -1.732) circle (3pt);
+\draw[fill=white] (1.0, -1.732) circle (3pt);
+
+\draw[thick] (2.0, 0.0) -- (-1.0, -1.732);
+\draw[thick] (2.0, 0.0) -- (-1.0, 1.732);
+\draw[thick] (2.0, 0.0) -- (1.0, 1.732);
+\draw[thick] (1.0, 1.732) -- (2.0, 0.0);
+\draw[thick] (1.0, 1.732) -- (-2.0, 0.0);
+\draw[thick] (1.0, 1.732) -- (-1.0, -1.732);
+\draw[thick] (-1.0, 1.732) -- (2.0, 0.0);
+\draw[thick] (-1.0, 1.732) -- (-2.0, 0.0);
+\draw[thick] (-1.0, 1.732) -- (1.0, -1.732);
+\draw[thick] (-2.0, 0.0) -- (-1.0, 1.732);
+\draw[thick] (-2.0, 0.0) -- (1.0, -1.732);
+\draw[thick] (-2.0, 0.0) -- (1.0, 1.732);
+\draw[thick] (-1.0, -1.732) -- (2.0, 0.0);
+\draw[thick] (-1.0, -1.732) -- (1.0, -1.732);
+\draw[thick] (-1.0, -1.732) -- (1.0, 1.732);
+\draw[thick] (1.0, -1.732) -- (-1.0, -1.732);
+\draw[thick] (1.0, -1.732) -- (-2.0, 0.0);
+\draw[thick] (1.0, -1.732) -- (-1.0, 1.732);
+\end{tikzpicture}\hspace*{15mm}\begin{tikzpicture}
+\draw[fill=white] (2.0, 0.0) circle (3pt);
+\draw[fill=white] (1.0, 1.732) circle (3pt);
+\draw[fill=white] (-1.0, 1.732) circle (3pt);
+\draw[fill=white] (-2.0, 0.0) circle (3pt);
+\draw[fill=white] (-1.0, -1.732) circle (3pt);
+\draw[fill=white] (1.0, -1.732) circle (3pt);
+
+\draw[thick] (2.0, 0.0) -- (-1.0, 1.732);
+\draw[thick] (2.0, 0.0) -- (-2.0, 0.0);
+\draw[thick] (2.0, 0.0) -- (1.0, 1.732);
+\draw[thick] (2.0, 0.0) -- (-1.0, -1.732);
+\draw[thick] (1.0, 1.732) -- (-1.0, 1.732);
+\draw[thick] (1.0, 1.732) -- (1.0, -1.732);
+\draw[thick] (1.0, 1.732) -- (2.0, 0.0);
+\draw[thick] (1.0, 1.732) -- (-1.0, -1.732);
+\draw[thick] (-1.0, 1.732) -- (-2.0, 0.0);
+\draw[thick] (-1.0, 1.732) -- (1.0, 1.732);
+\draw[thick] (-1.0, 1.732) -- (1.0, -1.732);
+\draw[thick] (-1.0, 1.732) -- (2.0, 0.0);
+\draw[thick] (-2.0, 0.0) -- (-1.0, 1.732);
+\draw[thick] (-2.0, 0.0) -- (1.0, -1.732);
+\draw[thick] (-2.0, 0.0) -- (2.0, 0.0);
+\draw[thick] (-2.0, 0.0) -- (-1.0, -1.732);
+\draw[thick] (-1.0, -1.732) -- (-2.0, 0.0);
+\draw[thick] (-1.0, -1.732) -- (1.0, 1.732);
+\draw[thick] (-1.0, -1.732) -- (1.0, -1.732);
+\draw[thick] (-1.0, -1.732) -- (2.0, 0.0);
+\draw[thick] (1.0, -1.732) -- (-1.0, 1.732);
+\draw[thick] (1.0, -1.732) -- (-2.0, 0.0);
+\draw[thick] (1.0, -1.732) -- (1.0, 1.732);
+\draw[thick] (1.0, -1.732) -- (-1.0, -1.732);
+\end{tikzpicture}\hspace*{15mm}\begin{tikzpicture}
+\draw[fill=white] (2.0, 0.0) circle (3pt);
+\draw[fill=white] (1.0, 1.732) circle (3pt);
+\draw[fill=white] (-1.0, 1.732) circle (3pt);
+\draw[fill=white] (-2.0, 0.0) circle (3pt);
+\draw[fill=white] (-1.0, -1.732) circle (3pt);
+\draw[fill=white] (1.0, -1.732) circle (3pt);
+
+\draw[thick] (2.0, 0.0) -- (1.0, -1.732);
+\draw[thick] (2.0, 0.0) -- (1.0, 1.732);
+\draw[thick] (2.0, 0.0) -- (-1.0, -1.732);
+\draw[thick] (2.0, 0.0) -- (-1.0, 1.732);
+\draw[thick] (2.0, 0.0) -- (-2.0, 0.0);
+\draw[thick] (1.0, 1.732) -- (1.0, -1.732);
+\draw[thick] (1.0, 1.732) -- (-1.0, -1.732);
+\draw[thick] (1.0, 1.732) -- (2.0, 0.0);
+\draw[thick] (1.0, 1.732) -- (-1.0, 1.732);
+\draw[thick] (1.0, 1.732) -- (-2.0, 0.0);
+\draw[thick] (-1.0, 1.732) -- (1.0, -1.732);
+\draw[thick] (-1.0, 1.732) -- (1.0, 1.732);
+\draw[thick] (-1.0, 1.732) -- (-1.0, -1.732);
+\draw[thick] (-1.0, 1.732) -- (2.0, 0.0);
+\draw[thick] (-1.0, 1.732) -- (-2.0, 0.0);
+\draw[thick] (-2.0, 0.0) -- (1.0, -1.732);
+\draw[thick] (-2.0, 0.0) -- (1.0, 1.732);
+\draw[thick] (-2.0, 0.0) -- (-1.0, -1.732);
+\draw[thick] (-2.0, 0.0) -- (2.0, 0.0);
+\draw[thick] (-2.0, 0.0) -- (-1.0, 1.732);
+\draw[thick] (-1.0, -1.732) -- (1.0, -1.732);
+\draw[thick] (-1.0, -1.732) -- (1.0, 1.732);
+\draw[thick] (-1.0, -1.732) -- (2.0, 0.0);
+\draw[thick] (-1.0, -1.732) -- (-1.0, 1.732);
+\draw[thick] (-1.0, -1.732) -- (-2.0, 0.0);
+\draw[thick] (1.0, -1.732) -- (1.0, 1.732);
+\draw[thick] (1.0, -1.732) -- (-1.0, -1.732);
+\draw[thick] (1.0, -1.732) -- (2.0, 0.0);
+\draw[thick] (1.0, -1.732) -- (-1.0, 1.732);
+\draw[thick] (1.0, -1.732) -- (-2.0, 0.0);
+\end{tikzpicture}
+\newpage
+\begin{center}
+$s$-regular graphs of order $7$:
+\end{center}
+$s=0:$\hspace*{50mm}$s=2:$\hspace*{50mm}$s=4:$
+
+\begin{tikzpicture}
+\draw[fill=white] (2.0, 0.0) circle (3pt);
+\draw[fill=white] (1.247, 1.564) circle (3pt);
+\draw[fill=white] (-0.445, 1.95) circle (3pt);
+\draw[fill=white] (-1.802, 0.868) circle (3pt);
+\draw[fill=white] (-1.802, -0.868) circle (3pt);
+\draw[fill=white] (-0.445, -1.95) circle (3pt);
+\draw[fill=white] (1.247, -1.564) circle (3pt);
+\end{tikzpicture}\hspace*{15mm}\begin{tikzpicture}
+\draw[fill=white] (2.0, 0.0) circle (3pt);
+\draw[fill=white] (1.247, 1.564) circle (3pt);
+\draw[fill=white] (-0.445, 1.95) circle (3pt);
+\draw[fill=white] (-1.802, 0.868) circle (3pt);
+\draw[fill=white] (-1.802, -0.868) circle (3pt);
+\draw[fill=white] (-0.445, -1.95) circle (3pt);
+\draw[fill=white] (1.247, -1.564) circle (3pt);
+
+\draw[thick] (2.0, 0.0) -- (1.247, -1.564);
+\draw[thick] (2.0, 0.0) -- (1.247, 1.564);
+\draw[thick] (1.247, 1.564) -- (2.0, 0.0);
+\draw[thick] (1.247, 1.564) -- (-0.445, 1.95);
+\draw[thick] (-0.445, 1.95) -- (-1.802, 0.868);
+\draw[thick] (-0.445, 1.95) -- (1.247, 1.564);
+\draw[thick] (-1.802, 0.868) -- (-0.445, 1.95);
+\draw[thick] (-1.802, 0.868) -- (-1.802, -0.868);
+\draw[thick] (-1.802, -0.868) -- (-0.445, -1.95);
+\draw[thick] (-1.802, -0.868) -- (-1.802, 0.868);
+\draw[thick] (-0.445, -1.95) -- (1.247, -1.564);
+\draw[thick] (-0.445, -1.95) -- (-1.802, -0.868);
+\draw[thick] (1.247, -1.564) -- (-0.445, -1.95);
+\draw[thick] (1.247, -1.564) -- (2.0, 0.0);
+\end{tikzpicture}\hspace*{15mm}\begin{tikzpicture}
+\draw[fill=white] (2.0, 0.0) circle (3pt);
+\draw[fill=white] (1.247, 1.564) circle (3pt);
+\draw[fill=white] (-0.445, 1.95) circle (3pt);
+\draw[fill=white] (-1.802, 0.868) circle (3pt);
+\draw[fill=white] (-1.802, -0.868) circle (3pt);
+\draw[fill=white] (-0.445, -1.95) circle (3pt);
+\draw[fill=white] (1.247, -1.564) circle (3pt);
+
+\draw[thick] (2.0, 0.0) -- (-1.802, 0.868);
+\draw[thick] (2.0, 0.0) -- (1.247, 1.564);
+\draw[thick] (2.0, 0.0) -- (-1.802, -0.868);
+\draw[thick] (2.0, 0.0) -- (-0.445, 1.95);
+\draw[thick] (1.247, 1.564) -- (-1.802, 0.868);
+\draw[thick] (1.247, 1.564) -- (-0.445, -1.95);
+\draw[thick] (1.247, 1.564) -- (1.247, -1.564);
+\draw[thick] (1.247, 1.564) -- (2.0, 0.0);
+\draw[thick] (-0.445, 1.95) -- (-1.802, 0.868);
+\draw[thick] (-0.445, 1.95) -- (-0.445, -1.95);
+\draw[thick] (-0.445, 1.95) -- (-1.802, -0.868);
+\draw[thick] (-0.445, 1.95) -- (2.0, 0.0);
+\draw[thick] (-1.802, 0.868) -- (-0.445, 1.95);
+\draw[thick] (-1.802, 0.868) -- (1.247, 1.564);
+\draw[thick] (-1.802, 0.868) -- (1.247, -1.564);
+\draw[thick] (-1.802, 0.868) -- (2.0, 0.0);
+\draw[thick] (-1.802, -0.868) -- (-0.445, -1.95);
+\draw[thick] (-1.802, -0.868) -- (-0.445, 1.95);
+\draw[thick] (-1.802, -0.868) -- (1.247, -1.564);
+\draw[thick] (-1.802, -0.868) -- (2.0, 0.0);
+\draw[thick] (-0.445, -1.95) -- (-1.802, -0.868);
+\draw[thick] (-0.445, -1.95) -- (1.247, 1.564);
+\draw[thick] (-0.445, -1.95) -- (1.247, -1.564);
+\draw[thick] (-0.445, -1.95) -- (-0.445, 1.95);
+\draw[thick] (1.247, -1.564) -- (-1.802, 0.868);
+\draw[thick] (1.247, -1.564) -- (-0.445, -1.95);
+\draw[thick] (1.247, -1.564) -- (1.247, 1.564);
+\draw[thick] (1.247, -1.564) -- (-1.802, -0.868);
+\end{tikzpicture}
+
+\begin{center}
+$s=6:$
+
+\begin{tikzpicture}
+\draw[fill=white] (2.0, 0.0) circle (3pt);
+\draw[fill=white] (1.247, 1.564) circle (3pt);
+\draw[fill=white] (-0.445, 1.95) circle (3pt);
+\draw[fill=white] (-1.802, 0.868) circle (3pt);
+\draw[fill=white] (-1.802, -0.868) circle (3pt);
+\draw[fill=white] (-0.445, -1.95) circle (3pt);
+\draw[fill=white] (1.247, -1.564) circle (3pt);
+
+\draw[thick] (2.0, 0.0) -- (-1.802, 0.868);
+\draw[thick] (2.0, 0.0) -- (1.247, -1.564);
+\draw[thick] (2.0, 0.0) -- (-0.445, 1.95);
+\draw[thick] (2.0, 0.0) -- (-1.802, -0.868);
+\draw[thick] (2.0, 0.0) -- (1.247, 1.564);
+\draw[thick] (2.0, 0.0) -- (-0.445, -1.95);
+\draw[thick] (1.247, 1.564) -- (-1.802, 0.868);
+\draw[thick] (1.247, 1.564) -- (1.247, -1.564);
+\draw[thick] (1.247, 1.564) -- (-0.445, 1.95);
+\draw[thick] (1.247, 1.564) -- (-1.802, -0.868);
+\draw[thick] (1.247, 1.564) -- (-0.445, -1.95);
+\draw[thick] (1.247, 1.564) -- (2.0, 0.0);
+\draw[thick] (-0.445, 1.95) -- (-1.802, 0.868);
+\draw[thick] (-0.445, 1.95) -- (1.247, -1.564);
+\draw[thick] (-0.445, 1.95) -- (-1.802, -0.868);
+\draw[thick] (-0.445, 1.95) -- (1.247, 1.564);
+\draw[thick] (-0.445, 1.95) -- (-0.445, -1.95);
+\draw[thick] (-0.445, 1.95) -- (2.0, 0.0);
+\draw[thick] (-1.802, 0.868) -- (1.247, -1.564);
+\draw[thick] (-1.802, 0.868) -- (-0.445, 1.95);
+\draw[thick] (-1.802, 0.868) -- (-1.802, -0.868);
+\draw[thick] (-1.802, 0.868) -- (1.247, 1.564);
+\draw[thick] (-1.802, 0.868) -- (-0.445, -1.95);
+\draw[thick] (-1.802, 0.868) -- (2.0, 0.0);
+\draw[thick] (-1.802, -0.868) -- (-1.802, 0.868);
+\draw[thick] (-1.802, -0.868) -- (1.247, -1.564);
+\draw[thick] (-1.802, -0.868) -- (-0.445, 1.95);
+\draw[thick] (-1.802, -0.868) -- (1.247, 1.564);
+\draw[thick] (-1.802, -0.868) -- (-0.445, -1.95);
+\draw[thick] (-1.802, -0.868) -- (2.0, 0.0);
+\draw[thick] (-0.445, -1.95) -- (-1.802, 0.868);
+\draw[thick] (-0.445, -1.95) -- (1.247, -1.564);
+\draw[thick] (-0.445, -1.95) -- (-0.445, 1.95);
+\draw[thick] (-0.445, -1.95) -- (-1.802, -0.868);
+\draw[thick] (-0.445, -1.95) -- (1.247, 1.564);
+\draw[thick] (-0.445, -1.95) -- (2.0, 0.0);
+\draw[thick] (1.247, -1.564) -- (-1.802, 0.868);
+\draw[thick] (1.247, -1.564) -- (-0.445, 1.95);
+\draw[thick] (1.247, -1.564) -- (-1.802, -0.868);
+\draw[thick] (1.247, -1.564) -- (1.247, 1.564);
+\draw[thick] (1.247, -1.564) -- (-0.445, -1.95);
+\draw[thick] (1.247, -1.564) -- (2.0, 0.0);
+\end{tikzpicture}
+\end{center}
+
+\bigskip
+\noindent{\textbf{2.22}}
+
+\noindent{\textbf{(a)}}
+
+\begin{center}
+\includegraphics[scale=.05]{image_67126017.JPG}
+\end{center}
+
+\medskip
+\noindent{\textbf{(b)}} The smallest possible order for $H$ is 8.
+
+\begin{center}
+\includegraphics[scale=.1,angle=90]{image_50577921.JPG}
+\end{center}
+
+\newpage
+\noindent{\textbf{2.27}}
+
+\noindent{\textbf{Proposition:}} If $G$ is an $r$-regular bipartite graph with $r\geq 1$ and partite sets $U$ and $W$, then $|U| = |W|$.
+\begin{proof}
+Let $G$ be an $r$-regular bipartite graph with $r\geq 1$ and partite sets $U$ and $W$. Since $G$ is bipartite, each edge of $G$ has one endvertex in $U$ and one endvertex in $W$. As such, $$
+\sum_{u\in U}\deg(u) = \sum_{w\in W}\deg(w).
+$$
+Since $G$ is $r$-regular, $\deg(u) = r$ for all $u \in V(G)$. Then
+$$
+\sum_{u\in U}\deg(u) = r|U|\text{  and  }\sum_{w\in W}\deg(w) = r|W|.
+$$
+Thus, $r|U| = r|W|$, so $|U| = |W|.$
+\end{proof}
+\bigskip{}
+\noindent{\textbf{2.30}} This graph is $K_4$, which is $3$-regular and contains $G=K_1$ has the subgraph induced by vertex $1$.
+\begin{center}
+\begin{tikzpicture}
+\draw[fill=white] (2.0, 0.0) circle (3pt);
+\draw[fill=white] (0.0, 2.0) circle (3pt);
+\draw[fill=white] (-2.0, 0.0) circle (3pt);
+\draw[fill=white] (-0.0, -2.0) circle (3pt);
+
+\draw[thick] (2.0, 0.0) -- (0.0, 2.0);
+\draw[thick] (2.0, 0.0) -- (-2.0, 0.0);
+\draw[thick] (2.0, 0.0) -- (-0.0, -2.0);
+\draw[thick] (0.0, 2.0) -- (2.0, 0.0);
+\draw[thick] (0.0, 2.0) -- (-2.0, 0.0);
+\draw[thick] (0.0, 2.0) -- (-0.0, -2.0);
+\draw[thick] (-2.0, 0.0) -- (2.0, 0.0);
+\draw[thick] (-2.0, 0.0) -- (0.0, 2.0);
+\draw[thick] (-2.0, 0.0) -- (-0.0, -2.0);
+\draw[thick] (-0.0, -2.0) -- (2.0, 0.0);
+\draw[thick] (-0.0, -2.0) -- (0.0, 2.0);
+\draw[thick] (-0.0, -2.0) -- (-2.0, 0.0);
+\end{tikzpicture}
+\end{center}
+\newpage
+
+\noindent{\textbf{ALSO:}}
+
+\noindent{\textbf{Proposition:}} A graph $G$ is 2-regular if and only if every component of $G$ is a cycle.
+\begin{proof}
+    Let $G$ be a graph.
+
+    Suppose that every component of $G$ is a cycle.
+    Then, by the definition of a cycle, each vertex of $G$ has degree 2.
+    Thus, $G$ is 2-regular.
+
+    Now, suppose that $G$ is 2-regular.
+    Let $P = (v_0, v_1, \hdots, v_n)$ be a longest path in a component $C$ of $G$.
+    Since $G$ is 2-regular, $v_1, \hdots, v_{n-1}$ are adjacent only to their successors and predecessors in $P$.
+    Suppose that $v_n$ is adjacent to a vertex $v$ that is not in $P$.
+    Then, by appending $v$ to $P$, a longer path in $C$ is constructed.
+    Thus, it must be that $v_n$ is adjacent only to vertices in $P$.
+    By a symmetric argument, $v_0$ is also adjacent only to vertices in $P$.
+    Thus, $v_0$ is adjacent to $v_n$.
+    Therefore, $C$ is a cycle.
+    Thus, every component of $G$ is a cycle.
+
+    Thus, $G$ is 2-regular if and only if every component of $G$ is a cycle.
+\end{proof}
 
 \end{document}
