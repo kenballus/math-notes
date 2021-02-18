@@ -72,6 +72,31 @@
     Capacitors in series add like resistors in parallel.
 
 \medskip
-\noindent{\bf }
+\noindent{\bf Angular Frequency}
+
+    The angular frequency of an AC voltage is $2\pi \cdot f$, and is denoted $\omega$.
+
+\medskip
+\noindent{\bf Phase Difference Formula}
+
+    The phase difference $\phi$ of two AC voltages with time lag $t_p$ and period $\tau$ is $$\phi = \frac{t_p}{\tau} \cdot 2\pi.$$
+
+\medskip
+\noindent{\bf RMS Measurements}
+
+    AC voltages are commonly measured in terms of RMS amplitude, because RMS makes it easy to calculate the power delivered by the source: $$P_{\text{average}} = \frac{V^2_{\text{RMS}}}{R} = \frac{\text{Amplitude}^2}{R}$$
+
+    For a sine wave, RMS voltage is given by $$V_{\text{RMS}} = \frac{\text{Amplitude}}{\sqrt2}.$$
+
+\medskip
+\noindent{\bf Impedance of a Capacitor}
+
+    In a circuit driven by a sine wave of frequency $f$, the capacitor acts like a frequency-dependent resistor of value $$Z = \frac{1}{\omega C},$$
+    for $\omega = 2\pi f$. This value is known as the capacitor's imedance.
+
+\medskip
+\noindent{\bf Time Constant of a Capacitor}
+
+    When a steady voltage $V_f$ is applied to a cpacitor through a resistors $R$, the voltage across the capacitor changes from its initial value $V_0$ to its final value $V_jF$ according to the following equation: $$V(t) = V_0 + (V_f-V_0) \cdot (1 - e^{-t / \tau}),$$ where $\tau$ is the time constant given by $$\tau = RC.$$
 
 \end{document}

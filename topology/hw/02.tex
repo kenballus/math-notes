@@ -49,7 +49,7 @@
 \bigskip
 \noindent{\bf 2)}
 \begin{proof}
-    Let $\tau, \tau'$ be the topology of $\R_l$ and $\R_K$, respectively.
+    Let $\tau, \tau'$ be the topologies of $\R_l$ and $\R_K$, respectively.
 
     Let $B = [1, 2)$.
     Note that $B$ is a basis element for $\tau$.
@@ -72,10 +72,51 @@
     Thus, $\R_l$ and $\R_K$ are not comparable.
 \end{proof}
 
-\bigskip
+\newpage
 \noindent{\bf 3)}
+\begin{proof}
+    Let $X$ be a set with a simple order relation and let $\B$ consist of all open intervals $(a,b)$, all intervals $[a_0,b)$, and all intervals $(a, b_0]$, where $a_0$ is the least element of $X$ and $b_0$ is the greatest element of $X$ (if such exist).
+    Let $x \in X$.
+    Then, $x \in (x-1, x+1)$, which is an element of $\B$.
+    Thus, $\B$ covers $X$.
+    Let $B_1,B_2 \in \B$.
+    Suppose that $x \in B_1 \cap B_2$.
+    Consider the following three cases:
+
+    {\bf Case 1.} There exists a minimum element of $B_1 \cap B_2$, and $x$ is equal to that minimum element.
+    Let $B_3 = [x, \min(\sup(B_1), \sup(B_2)))$.
+    Then, by the definition of $\B$, $B_3 \in \B$.
+    Then, $x \in B_3 \subseteq B_1 \cap B_2$.
+
+    {\bf Case 2.} There exists a maximum element of $B_1 \cap B_2$, and $x$ is equal to that maximum element.
+    Let $B_3 = (\max(\inf(B_1), \inf(B_2)), x]$.
+    Then, by the definition of $\B$, $B_3 \in \B$.
+    Then, $x \in B_3 \subseteq B_1 \cap B_2$.
+
+    {\bf Case 3.} $x$ is not equal to the minimum or maximum element of $B_1 \cap B_2$.
+    Let $B_3 = (\max(\inf(B_1), \inf(B_2)), \min(\sup(B_1), \sup(B_2)))$.
+    Then, by the definition of $\B$, $B_3 \in \B$.
+    Then, $x \in B_3 \subseteq B_1 \cap B_2$.
+
+    Thus, $\B$ is a basis for a topology on $X$.
+\end{proof}
 
 \bigskip
 \noindent{\bf 4)}
+\begin{proof}
+    Let $\mathcal S$ be a collection of subsets of $X$ whose union is equal to $X$.
+    We claim that the collection of all unions of finite intersections of elements of $\mathcal S$ is a topology on $X$.
+
+    Let $\mathcal B$ be the collection of all finite intersections of elements of $\mathcal S$.
+    Let $x \in X$.
+    Then, $x \in S$ for some $S \in \mathcal S$, by the definition of $\mathcal S$.
+    Thus, $\mathcal B$ covers $X$.
+
+    Now, let $B_1, B_2 \in \mathcal B$, and $x \in B_1 \cap B_2$.
+    Since $B_1, B_2 \in \mathcal B$, $B_1 = \bigcap\limits_{j=1}^{n_1} S_j$ and $B_2 = \bigcap\limits_{j=1}^{n_2} S'_j$.
+    Let $B_3 = B_1 \cap B_2$.
+    Then, $B_3$ is a finite intersection of elements of $\mathcal S$, so $B_3 \in \B$.
+    Thus, since $B_3 \subseteq B_1 \cap B_2$, $\B$ is the basis for a topology on $X$.
+\end{proof}
 
 \end{document}
