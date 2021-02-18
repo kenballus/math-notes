@@ -1,0 +1,44 @@
+\documentclass[11pt]{article}       % The percent symbol in your code starts a comment.  The comment ends at the next linebreak.
+\usepackage[english]{babel}         % Packages add functionality and style conventions to your documents. Don't edit this section!
+\usepackage{fullpage}               % Eliminates wasted space
+\usepackage[utf8]{inputenc}         % Necessary for character encoding
+\usepackage{amsmath, amssymb,amsthm}% Required math packages
+\usepackage{graphicx}               % For handling graphics
+\usepackage[colorinlistoftodos]{todonotes}  % For the fancy "todo" stuff
+\usepackage{hyperref}               % For clickable links in the final PDF
+\usepackage{tikz}
+\theoremstyle{definition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{prop}[theorem]{Proposition}
+\newtheorem{claim}[theorem]{Claim}
+
+\title{Complex Analysis -- Homework \#7}
+
+\author{ Komissar, Feldman, Kallus }
+
+\date{ Due Friday, February 19 }
+
+\begin{document}
+\pagecolor{black}
+\color{white}
+\maketitle
+
+\noindent{\bf 1. }  Let $f(x)=\dfrac{1}{1-x+3x^2}$.   Find the real polynomial $q(x) = q_0 + q_1x + q_2x^2 +q_3x^3$  that agrees with $f$ at the \emph{Chebyshev nodes} that you found as the roots of the polynomial $T_4$ in problem {\bf 3} of {\bf Homework \#6}; this is another \emph{cubic interpolant of $f$}, this time for the given Chebyshev nodes.  As before, indicate the set-up for your approach, but you need not include every step of the derivation, and certainly employ technology to perform computations.
+
+
+\vskip.1in
+\hrule
+\vskip.1in
+
+\noindent{\bf 2. }  Referring to the polynomials $p$ from {\bf Homework \#7}  and $q$ from the present {\bf Homework \#8}:
+\vskip.1in
+\noindent {\bf a. }  On the same set of coordinate axes, provide computer-generated graphs of both $f$ and $q$ on the interval $[-1,1]$.
+\vskip.1in
+\noindent {\bf b. }  On the same set of coordinate axes, provide computer-generated graphs of both $|f-p|$ and $|f-q|$ on the interval $[-1,1]$.  Note which of the two differences reaches a lower maximum.
+
+
+\vskip.1in
+\hrule
+
+\end{document}
