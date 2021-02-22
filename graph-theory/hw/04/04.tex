@@ -12,13 +12,11 @@
 \setlength{\headsep}{0pt}
 \textheight = 600pt
 
-\title{Graph Theory \\ Homework 2}
+\title{Graph Theory \\ Homework 4}
 \author{Ben Kallus and Maddy LaPoint}
 \date{Due Monday, February 15}
 
 \begin{document}
-\pagecolor{black}
-\color{white}
 \maketitle
 
 \noindent{\bf 2.2}
@@ -27,9 +25,9 @@
 
 \medskip
 \begin{tikzpicture}
-\draw[fill=white] (1.0, 0.0) circle (3pt);
-\draw[fill=white] (-0.5, 0.866) circle (3pt);
-\draw[fill=white] (-0.5, -0.866) circle (3pt);
+\draw[fill=black] (1.0, 0.0) circle (3pt);
+\draw[fill=black] (-0.5, 0.866) circle (3pt);
+\draw[fill=black] (-0.5, -0.866) circle (3pt);
 
 \draw[thick] (1.0, 0.0) -- (-0.5, -0.866);
 \draw[thick] (1.0, 0.0) -- (-0.5, 0.866);
@@ -46,14 +44,14 @@
 
 \medskip
 \begin{tikzpicture}
-\draw[fill=white] (1.0, 0.0) circle (3pt);
-\draw[fill=white] (0.707, 0.707) circle (3pt);
-\draw[fill=white] (0.0, 1.0) circle (3pt);
-\draw[fill=white] (-0.707, 0.707) circle (3pt);
-\draw[fill=white] (-1.0, 0.0) circle (3pt);
-\draw[fill=white] (-0.707, -0.707) circle (3pt);
-\draw[fill=white] (-0.0, -1.0) circle (3pt);
-\draw[fill=white] (0.707, -0.707) circle (3pt);
+\draw[fill=black] (1.0, 0.0) circle (3pt);
+\draw[fill=black] (0.707, 0.707) circle (3pt);
+\draw[fill=black] (0.0, 1.0) circle (3pt);
+\draw[fill=black] (-0.707, 0.707) circle (3pt);
+\draw[fill=black] (-1.0, 0.0) circle (3pt);
+\draw[fill=black] (-0.707, -0.707) circle (3pt);
+\draw[fill=black] (-0.0, -1.0) circle (3pt);
+\draw[fill=black] (0.707, -0.707) circle (3pt);
 
 \draw[thick] (1.0, 0.0) -- (-0.707, 0.707);
 \draw[thick] (1.0, 0.0) -- (0.707, 0.707);
@@ -86,11 +84,11 @@
 
 \medskip
 \begin{tikzpicture}
-\draw[fill=white] (1.0, 0.0) circle (3pt);
-\draw[fill=white] (0.309, 0.951) circle (3pt);
-\draw[fill=white] (-0.809, 0.588) circle (3pt);
-\draw[fill=white] (-0.809, -0.588) circle (3pt);
-\draw[fill=white] (0.309, -0.951) circle (3pt);
+\draw[fill=black] (1.0, 0.0) circle (3pt);
+\draw[fill=black] (0.309, 0.951) circle (3pt);
+\draw[fill=black] (-0.809, 0.588) circle (3pt);
+\draw[fill=black] (-0.809, -0.588) circle (3pt);
+\draw[fill=black] (0.309, -0.951) circle (3pt);
 \end{tikzpicture}
 
 
@@ -99,11 +97,11 @@
 
 \medskip
 \begin{tikzpicture}
-\draw[fill=white] (1.0, 0.0) circle (3pt);
-\draw[fill=white] (0.309, 0.951) circle (3pt);
-\draw[fill=white] (-0.809, 0.588) circle (3pt);
-\draw[fill=white] (-0.809, -0.588) circle (3pt);
-\draw[fill=white] (0.309, -0.951) circle (3pt);
+\draw[fill=black] (1.0, 0.0) circle (3pt);
+\draw[fill=black] (0.309, 0.951) circle (3pt);
+\draw[fill=black] (-0.809, 0.588) circle (3pt);
+\draw[fill=black] (-0.809, -0.588) circle (3pt);
+\draw[fill=black] (0.309, -0.951) circle (3pt);
 
 \draw[thick] (1.0, 0.0) -- (0.309, 0.951);
 \draw[thick] (1.0, 0.0) -- (-0.809, 0.588);
@@ -150,16 +148,16 @@
     Then, $x$ and $y$ are connected by a path of length 1, so $d_G(u,v) = 1$.
     Now, suppose that $xy \notin E(G)$.
     Since $\Delta(G) + \delta(G) \geq n - 1$, $\deg(u) + \deg(x) \geq n - 1$.
+    % Line here about why the next line is true
     Thus, there exists a vertex $w$ adjacent to both $u$ and $x$.
     By a symmetric argument, there exists a vertex $t$ adjacent to both $u$ and $y$.
     Thus, $(x, w, u, t, y)$ is a walk of length 4 in $G$ that connects $x$ and $y$.
-    Thus, $G$ is connected.
+    % Talk about how this implies a path
 
     {\bf Case 2.} Assume $u \in \{x,y\}$.
     Suppose, without loss of generality, that $x = u$.
     Then, by the same argument used in the previous case, there exists a vertex $t$ adjacent to both $x$ and $y$.
     Thus, $(x, t, y)$ is a path of length 2 that connects $x$ and $y$.
-    Therefore, $G$ is connected.
 
     Thus, $G$ is connected, and $\text{diam}(G) \leq 4$.
 \end{proof}
@@ -178,21 +176,21 @@
 Observe that $v_8$ must have degree 4:
 
 \begin{tikzpicture}
-\draw[fill=white] (2.0, 0.0) circle (3pt);
+\draw[fill=black] (2.0, 0.0) circle (3pt);
 \node at (2.3, 0.35) {$v1$};
-\draw[fill=white] (1.414, 1.414) circle (3pt);
+\draw[fill=black] (1.414, 1.414) circle (3pt);
 \node at (1.414, 1.7639999999999998) {$v7$};
-\draw[fill=white] (0.0, 2.0) circle (3pt);
+\draw[fill=black] (0.0, 2.0) circle (3pt);
 \node at (0.0, 2.35) {$v2$};
-\draw[fill=white] (-1.414, 1.414) circle (3pt);
+\draw[fill=black] (-1.414, 1.414) circle (3pt);
 \node at (-1.414, 1.7639999999999998) {$v6$};
-\draw[fill=white] (-2.0, 0.0) circle (3pt);
+\draw[fill=black] (-2.0, 0.0) circle (3pt);
 \node at (-2.2, 0.35) {$v3$};
-\draw[fill=white] (-1.414, -1.414) circle (3pt);
+\draw[fill=black] (-1.414, -1.414) circle (3pt);
 \node at (-1.414, -1.8) {$v5$};
-\draw[fill=white] (-0.0, -2.0) circle (3pt);
+\draw[fill=black] (-0.0, -2.0) circle (3pt);
 \node at (0.0, -2.3) {$v4$};
-\draw[fill=white] (1.414, -1.414) circle (3pt);
+\draw[fill=black] (1.414, -1.414) circle (3pt);
 \node at (1.75, -1.064) {$v8$};
 
 \draw[thick] (2.0, 0.0) -- (1.414, 1.414);
@@ -236,21 +234,21 @@ $r$-regular graphs of order $6$:
 $r=0:$\hspace*{50mm}$r=1:$\hspace*{50mm}$r=2:$
 
 \begin{tikzpicture}
-\draw[fill=white] (2.0, 0.0) circle (3pt);
-\draw[fill=white] (1.0, 1.732) circle (3pt);
-\draw[fill=white] (-1.0, 1.732) circle (3pt);
-\draw[fill=white] (-2.0, 0.0) circle (3pt);
-\draw[fill=white] (-1.0, -1.732) circle (3pt);
-\draw[fill=white] (1.0, -1.732) circle (3pt);
+\draw[fill=black] (2.0, 0.0) circle (3pt);
+\draw[fill=black] (1.0, 1.732) circle (3pt);
+\draw[fill=black] (-1.0, 1.732) circle (3pt);
+\draw[fill=black] (-2.0, 0.0) circle (3pt);
+\draw[fill=black] (-1.0, -1.732) circle (3pt);
+\draw[fill=black] (1.0, -1.732) circle (3pt);
 
 \end{tikzpicture}\hspace*{15mm}
 \begin{tikzpicture}
-\draw[fill=white] (2.0, 0.0) circle (3pt);
-\draw[fill=white] (1.0, 1.732) circle (3pt);
-\draw[fill=white] (-1.0, 1.732) circle (3pt);
-\draw[fill=white] (-1.0, -1.732) circle (3pt);
-\draw[fill=white] (1.0, -1.732) circle (3pt);
-\draw[fill=white] (-2.0, 0.0) circle (3pt);
+\draw[fill=black] (2.0, 0.0) circle (3pt);
+\draw[fill=black] (1.0, 1.732) circle (3pt);
+\draw[fill=black] (-1.0, 1.732) circle (3pt);
+\draw[fill=black] (-1.0, -1.732) circle (3pt);
+\draw[fill=black] (1.0, -1.732) circle (3pt);
+\draw[fill=black] (-2.0, 0.0) circle (3pt);
 
 \draw[thick] (2.0, 0.0) -- (1.0, 1.732);
 \draw[thick] (1.0, 1.732) -- (2.0, 0.0);
@@ -260,12 +258,12 @@ $r=0:$\hspace*{50mm}$r=1:$\hspace*{50mm}$r=2:$
 \draw[thick] (1.0, -1.732) -- (-1.0, -1.732);
 \end{tikzpicture}\hspace*{15mm}
 \begin{tikzpicture}
-\draw[fill=white] (2.0, 0.0) circle (3pt);
-\draw[fill=white] (1.0, 1.732) circle (3pt);
-\draw[fill=white] (-1.0, 1.732) circle (3pt);
-\draw[fill=white] (-2.0, 0.0) circle (3pt);
-\draw[fill=white] (-1.0, -1.732) circle (3pt);
-\draw[fill=white] (1.0, -1.732) circle (3pt);
+\draw[fill=black] (2.0, 0.0) circle (3pt);
+\draw[fill=black] (1.0, 1.732) circle (3pt);
+\draw[fill=black] (-1.0, 1.732) circle (3pt);
+\draw[fill=black] (-2.0, 0.0) circle (3pt);
+\draw[fill=black] (-1.0, -1.732) circle (3pt);
+\draw[fill=black] (1.0, -1.732) circle (3pt);
 
 \draw[thick] (2.0, 0.0) -- (1.0, 1.732);
 \draw[thick] (2.0, 0.0) -- (1.0, -1.732);
@@ -284,12 +282,12 @@ $r=0:$\hspace*{50mm}$r=1:$\hspace*{50mm}$r=2:$
 $r=3:$\hspace*{50mm}$r=4:$\hspace*{50mm}$r=5:$
 
 \begin{tikzpicture}
-\draw[fill=white] (2.0, 0.0) circle (3pt);
-\draw[fill=white] (1.0, 1.732) circle (3pt);
-\draw[fill=white] (-1.0, 1.732) circle (3pt);
-\draw[fill=white] (-2.0, 0.0) circle (3pt);
-\draw[fill=white] (-1.0, -1.732) circle (3pt);
-\draw[fill=white] (1.0, -1.732) circle (3pt);
+\draw[fill=black] (2.0, 0.0) circle (3pt);
+\draw[fill=black] (1.0, 1.732) circle (3pt);
+\draw[fill=black] (-1.0, 1.732) circle (3pt);
+\draw[fill=black] (-2.0, 0.0) circle (3pt);
+\draw[fill=black] (-1.0, -1.732) circle (3pt);
+\draw[fill=black] (1.0, -1.732) circle (3pt);
 
 \draw[thick] (2.0, 0.0) -- (-1.0, -1.732);
 \draw[thick] (2.0, 0.0) -- (-1.0, 1.732);
@@ -310,12 +308,12 @@ $r=3:$\hspace*{50mm}$r=4:$\hspace*{50mm}$r=5:$
 \draw[thick] (1.0, -1.732) -- (-2.0, 0.0);
 \draw[thick] (1.0, -1.732) -- (-1.0, 1.732);
 \end{tikzpicture}\hspace*{15mm}\begin{tikzpicture}
-\draw[fill=white] (2.0, 0.0) circle (3pt);
-\draw[fill=white] (1.0, 1.732) circle (3pt);
-\draw[fill=white] (-1.0, 1.732) circle (3pt);
-\draw[fill=white] (-2.0, 0.0) circle (3pt);
-\draw[fill=white] (-1.0, -1.732) circle (3pt);
-\draw[fill=white] (1.0, -1.732) circle (3pt);
+\draw[fill=black] (2.0, 0.0) circle (3pt);
+\draw[fill=black] (1.0, 1.732) circle (3pt);
+\draw[fill=black] (-1.0, 1.732) circle (3pt);
+\draw[fill=black] (-2.0, 0.0) circle (3pt);
+\draw[fill=black] (-1.0, -1.732) circle (3pt);
+\draw[fill=black] (1.0, -1.732) circle (3pt);
 
 \draw[thick] (2.0, 0.0) -- (-1.0, 1.732);
 \draw[thick] (2.0, 0.0) -- (-2.0, 0.0);
@@ -342,12 +340,12 @@ $r=3:$\hspace*{50mm}$r=4:$\hspace*{50mm}$r=5:$
 \draw[thick] (1.0, -1.732) -- (1.0, 1.732);
 \draw[thick] (1.0, -1.732) -- (-1.0, -1.732);
 \end{tikzpicture}\hspace*{15mm}\begin{tikzpicture}
-\draw[fill=white] (2.0, 0.0) circle (3pt);
-\draw[fill=white] (1.0, 1.732) circle (3pt);
-\draw[fill=white] (-1.0, 1.732) circle (3pt);
-\draw[fill=white] (-2.0, 0.0) circle (3pt);
-\draw[fill=white] (-1.0, -1.732) circle (3pt);
-\draw[fill=white] (1.0, -1.732) circle (3pt);
+\draw[fill=black] (2.0, 0.0) circle (3pt);
+\draw[fill=black] (1.0, 1.732) circle (3pt);
+\draw[fill=black] (-1.0, 1.732) circle (3pt);
+\draw[fill=black] (-2.0, 0.0) circle (3pt);
+\draw[fill=black] (-1.0, -1.732) circle (3pt);
+\draw[fill=black] (1.0, -1.732) circle (3pt);
 
 \draw[thick] (2.0, 0.0) -- (1.0, -1.732);
 \draw[thick] (2.0, 0.0) -- (1.0, 1.732);
@@ -387,21 +385,21 @@ $s$-regular graphs of order $7$:
 $s=0:$\hspace*{50mm}$s=2:$\hspace*{50mm}$s=4:$
 
 \begin{tikzpicture}
-\draw[fill=white] (2.0, 0.0) circle (3pt);
-\draw[fill=white] (1.247, 1.564) circle (3pt);
-\draw[fill=white] (-0.445, 1.95) circle (3pt);
-\draw[fill=white] (-1.802, 0.868) circle (3pt);
-\draw[fill=white] (-1.802, -0.868) circle (3pt);
-\draw[fill=white] (-0.445, -1.95) circle (3pt);
-\draw[fill=white] (1.247, -1.564) circle (3pt);
+\draw[fill=black] (2.0, 0.0) circle (3pt);
+\draw[fill=black] (1.247, 1.564) circle (3pt);
+\draw[fill=black] (-0.445, 1.95) circle (3pt);
+\draw[fill=black] (-1.802, 0.868) circle (3pt);
+\draw[fill=black] (-1.802, -0.868) circle (3pt);
+\draw[fill=black] (-0.445, -1.95) circle (3pt);
+\draw[fill=black] (1.247, -1.564) circle (3pt);
 \end{tikzpicture}\hspace*{15mm}\begin{tikzpicture}
-\draw[fill=white] (2.0, 0.0) circle (3pt);
-\draw[fill=white] (1.247, 1.564) circle (3pt);
-\draw[fill=white] (-0.445, 1.95) circle (3pt);
-\draw[fill=white] (-1.802, 0.868) circle (3pt);
-\draw[fill=white] (-1.802, -0.868) circle (3pt);
-\draw[fill=white] (-0.445, -1.95) circle (3pt);
-\draw[fill=white] (1.247, -1.564) circle (3pt);
+\draw[fill=black] (2.0, 0.0) circle (3pt);
+\draw[fill=black] (1.247, 1.564) circle (3pt);
+\draw[fill=black] (-0.445, 1.95) circle (3pt);
+\draw[fill=black] (-1.802, 0.868) circle (3pt);
+\draw[fill=black] (-1.802, -0.868) circle (3pt);
+\draw[fill=black] (-0.445, -1.95) circle (3pt);
+\draw[fill=black] (1.247, -1.564) circle (3pt);
 
 \draw[thick] (2.0, 0.0) -- (1.247, -1.564);
 \draw[thick] (2.0, 0.0) -- (1.247, 1.564);
@@ -418,13 +416,13 @@ $s=0:$\hspace*{50mm}$s=2:$\hspace*{50mm}$s=4:$
 \draw[thick] (1.247, -1.564) -- (-0.445, -1.95);
 \draw[thick] (1.247, -1.564) -- (2.0, 0.0);
 \end{tikzpicture}\hspace*{15mm}\begin{tikzpicture}
-\draw[fill=white] (2.0, 0.0) circle (3pt);
-\draw[fill=white] (1.247, 1.564) circle (3pt);
-\draw[fill=white] (-0.445, 1.95) circle (3pt);
-\draw[fill=white] (-1.802, 0.868) circle (3pt);
-\draw[fill=white] (-1.802, -0.868) circle (3pt);
-\draw[fill=white] (-0.445, -1.95) circle (3pt);
-\draw[fill=white] (1.247, -1.564) circle (3pt);
+\draw[fill=black] (2.0, 0.0) circle (3pt);
+\draw[fill=black] (1.247, 1.564) circle (3pt);
+\draw[fill=black] (-0.445, 1.95) circle (3pt);
+\draw[fill=black] (-1.802, 0.868) circle (3pt);
+\draw[fill=black] (-1.802, -0.868) circle (3pt);
+\draw[fill=black] (-0.445, -1.95) circle (3pt);
+\draw[fill=black] (1.247, -1.564) circle (3pt);
 
 \draw[thick] (2.0, 0.0) -- (-1.802, 0.868);
 \draw[thick] (2.0, 0.0) -- (1.247, 1.564);
@@ -460,13 +458,13 @@ $s=0:$\hspace*{50mm}$s=2:$\hspace*{50mm}$s=4:$
 $s=6:$
 
 \begin{tikzpicture}
-\draw[fill=white] (2.0, 0.0) circle (3pt);
-\draw[fill=white] (1.247, 1.564) circle (3pt);
-\draw[fill=white] (-0.445, 1.95) circle (3pt);
-\draw[fill=white] (-1.802, 0.868) circle (3pt);
-\draw[fill=white] (-1.802, -0.868) circle (3pt);
-\draw[fill=white] (-0.445, -1.95) circle (3pt);
-\draw[fill=white] (1.247, -1.564) circle (3pt);
+\draw[fill=black] (2.0, 0.0) circle (3pt);
+\draw[fill=black] (1.247, 1.564) circle (3pt);
+\draw[fill=black] (-0.445, 1.95) circle (3pt);
+\draw[fill=black] (-1.802, 0.868) circle (3pt);
+\draw[fill=black] (-1.802, -0.868) circle (3pt);
+\draw[fill=black] (-0.445, -1.95) circle (3pt);
+\draw[fill=black] (1.247, -1.564) circle (3pt);
 
 \draw[thick] (2.0, 0.0) -- (-1.802, 0.868);
 \draw[thick] (2.0, 0.0) -- (1.247, -1.564);
@@ -547,10 +545,10 @@ Thus, $r|U| = r|W|$, so $|U| = |W|.$
 \noindent{\textbf{2.30}} This graph is $K_4$, which is $3$-regular and contains $G=K_1$ has the subgraph induced by vertex $1$.
 \begin{center}
 \begin{tikzpicture}
-\draw[fill=white] (2.0, 0.0) circle (3pt);
-\draw[fill=white] (0.0, 2.0) circle (3pt);
-\draw[fill=white] (-2.0, 0.0) circle (3pt);
-\draw[fill=white] (-0.0, -2.0) circle (3pt);
+\draw[fill=black] (2.0, 0.0) circle (3pt);
+\draw[fill=black] (0.0, 2.0) circle (3pt);
+\draw[fill=black] (-2.0, 0.0) circle (3pt);
+\draw[fill=black] (-0.0, -2.0) circle (3pt);
 
 \draw[thick] (2.0, 0.0) -- (0.0, 2.0);
 \draw[thick] (2.0, 0.0) -- (-2.0, 0.0);

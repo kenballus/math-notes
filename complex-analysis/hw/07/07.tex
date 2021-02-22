@@ -34,7 +34,7 @@ To begin, for any $z \in \mathbb C$ and any $n \in \mathbb N$, the distributive 
 &= 1 + z + z^2 + \cdots z^{n-1} - 1 - z - z^2 - z^3 - \cdots - z^{n-1} \\
 &= 1 - z^n.
 \end{align}
-Thus, if $c \ne 1$ is an $n$-th root of unity, then $$(1 + c + c^2 + \cdots c^{n-1})(1-z) = 1 - c^n = 1 - 1 = 0.$$
+Thus, if $c \ne 1$ is an $n$-th root of unity, then $$(1 + c + c^2 + \cdots c^{n-1})(1-c) = 1 - c^n = 1 - 1 = 0.$$
 Thus, either $1 + c + c^2 + \cdots c^{n-1} = 0$ or $1 - c = 0$.
 Since $c \neq 0$, it must be that $$1 + c + c^2 + \cdots c^{n-1} = 0.$$
 \end{proof}
@@ -56,8 +56,10 @@ Thus, we need to solve the following system of equations:
     p_0 + \frac13p_1 + \frac19p_2 + \frac1{27}p_3 &= 1 \\
     p_0 - \frac13p_1 + \frac19p_2 - \frac1{27}p_3 &= \frac35
 \end{align*}
-The solution to this system is $$p_0 = \frac{13}{15}, ~~~ p_1 = \frac23, ~~~ p_2 = -\frac35, ~~~ p_3 = -\frac35.$$
 
+The solution to this system is $$p_0 = \frac{13}{15}, ~~~ p_1 = \frac23, ~~~ p_2 = -\frac35, ~~~ p_3 = -\frac35.$$ (Thanks, WolframAlpha)
+
+\medskip
 Thus, $$p = \frac{13}{15} + \frac23x - \frac35x^2 - \frac35x^3.$$
 
 \noindent

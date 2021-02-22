@@ -41,7 +41,7 @@
     \indent
     Then, since $x \in B_1 \cap B_2$, $B_1$ and $B_2$ must be open intervals of the form $(a,b)$ in $\R$.
     Let $B_3 = (\max(\inf(B_1), \inf(B_2)), \min(\sup(B_1), \sup(B_2)))$.
-    Thus, $x \in B_3 \subseteq B_1 \cap B_2$.
+    Then, $x \in B_3 \subseteq B_1 \cap B_2$.
 
     Thus, $\B''$ is a basis for a topology on $\R$.
 \end{proof}
@@ -57,7 +57,7 @@
     Since $B' \subseteq B$, $\inf(B) \leq \inf(B')$.
     Since $\inf(B) = 1$, and $1 \in B'$, $B'$ contains an element less than or equal to its infimum.
     Since a set cannot contain an element less than its infimum, $B'$ must then contain its infimum.
-    Thus, a contradiction has been shown, since $B'$ is a basis element of $\tau'$, so it does not contain its infimum.
+    Thus, a contradiction has been shown, since $B'$ is a basis element of $\tau'$, so it does not contain its infimum by definition.
     Thus, $\tau'$ is not finer than $\tau$.
 
     Now, let $B' = (-1,1) \setminus K$.
@@ -76,7 +76,9 @@
 \begin{proof}
     Let $X$ be a set with a simple order relation and let $\B$ consist of all open intervals $(a,b)$, all intervals $[a_0,b)$, and all intervals $(a, b_0]$, where $a_0$ is the least element of $X$ and $b_0$ is the greatest element of $X$ (if such exist).
     Let $x \in X$.
-    Then, $x \in (x-1, x+1)$, which is an element of $\B$.
+    If $x = a_0$, then $x \in [a_0, a_0 + \frac{b_0 - a_0}2)$.
+    If $x = b_0$, then $x \in (a_0 + \frac{b_0 - a_0}2, b_0]$.
+    Otherwise, $x \in (a_0 + \frac{x - a_0}2, x + \frac{b_0 - x}2)$.
     Thus, $\B$ covers $X$.
     Let $B_1,B_2 \in \B$.
     Suppose that $x \in B_1 \cap B_2$.
@@ -92,7 +94,7 @@
     Then, by the definition of $\B$, $B_3 \in \B$.
     Then, $x \in B_3 \subseteq B_1 \cap B_2$.
 
-    {\bf Case 3.} $x$ is not equal to the minimum or maximum element of $B_1 \cap B_2$.
+    {\bf Case 3.} There is neither a minimum nor maximum element of $B_1 \cap B_2$, or $x$ is not equal to the minimum or maximum element of $B_1 \cap B_2$.
     Let $B_3 = (\max(\inf(B_1), \inf(B_2)), \min(\sup(B_1), \sup(B_2)))$.
     Then, by the definition of $\B$, $B_3 \in \B$.
     Then, $x \in B_3 \subseteq B_1 \cap B_2$.

@@ -19,81 +19,52 @@
 \color{white}
 
 \noindent{\bf 1.}
-\begin{align*}
-    V &= IR \\
-      &= 2000000 \cdot 0.0001 \\
-      &= 200,
-\end{align*} so the highest voltage a typical person could handle without noticing any effect would range from just under 20V to just under 200V, depending on how clammy their hands are.
 
-\medskip
+    To make an $8\Omega$, $1W$ resistor, simply connect one pair of $8\Omega$, $\frac14W$ resistors in parallel, then do the same for the other pair, and then connect the two parallel components in series, as shown in the diagram below:
+
+    \begin{center}
+    \includegraphics[angle=90,scale=.1]{resistors.jpg}
+    \end{center}
+
 \noindent{\bf 2.}
 
-    Assuming the resistors are within 5\% of their rating, I expect their combined resistance to be at most 240V and at least 217V.
+    \begin{center}
+    \includegraphics[scale=.1]{switch_circuit.jpg}
+    \end{center}
 
-\medskip
 \noindent{\bf 3.}
 
-    \begin{center}
-    \includegraphics{hw2-circuit1.png}
-    \end{center}
+{\bf (a)} $2\cdot\frac{1.6}{10}=.32\Omega$.
 
 \medskip
-\noindent{\bf 4.}
-
-    \begin{center}
-    \includegraphics[scale=1.4]{hw2-circuit2.png}
-    \end{center}
-
-\medskip
-\noindent{\bf 5.}
-
-    88.7MHz is 88700000$\text{s}\inv$, so one cycle is $\frac1{88700000}$s.
-
-\medskip
-\noindent{\bf 6.}
-
-    The peak-to-peak voltage should be $\cdot 240 \cdot \frac2{.707} = 679$V
-
-\medskip
-\noindent{\bf 7.}
+{\bf (b)}
 \begin{align*}
-    V &= \frac QC \\
-      &= \frac{200 \cdot 10^{-9}}{100 \cdot 10^{-12}} \\
-      &= 2000,
-\end{align*} so we would expect the voltage to be 2000V.
-
-\medskip
-\noindent{\bf 8.}
+    P &= IV \\
+    2000 &= I(115) \\
+    \implies I &= \frac{400}{23}\text{A}.
+\end{align*}
+Thus,
 \begin{align*}
-    \frac{10-Va}{410} &= \frac{Va}{2200} + \frac{Va-6}{910} \\
-    (910)(2200)(10-Va) &= (410)(910)(Va) + (410)(2200)(Va-6) \\
-    20020000 - 2002000Va &= 373100Va + 902000Va - 5412000 \\
-    5412000 &= 3277100Va \\
-    7.76 &= Va
+    P &= I^2R \\
+    2000 &= \left(\frac{400}{23}\right)^2 \cdot R \\
+    \implies R &= \frac{529}{80} \\
+    &\approx 6.1\Omega.
 \end{align*}
 
-Let $I_1, I_2, I_3$ be the currents through the $410\Omega$, $2200\Omega$, and $910\Omega$ resistors, respectively.
-
-\begin{align*}
-    I_1 &= \frac{10 - 7.76}{410} = .0055\text{A} \\
-    I_2 &= \frac{7.76}{2200} = .0035\text{A} \\
-    I_3 &= \frac{7.76-6}{910} = .0019\text{A}
-\end{align*}
-
-\newpage
-\noindent{\bf 9.}
-
-    \begin{center}
-    \includegraphics[scale=.4]{hw2-schematic.png}
-    
-    \medskip
-
-    \includegraphics[scale=.8]{hw2-graph.png}
-    \end{center}
+\medskip
+{\bf (c)} The total resistance of the toaster plus wires is $7.25\Omega$.
 
 \medskip
-\noindent{\bf 10.}
+{\bf (d)}
+\begin{align*}
+    V &= IR \\
+    115 &= I(7.2525) \\
+    \implies I &\approx 15.86\text{A}.
+\end{align*}
 
-    $23 = 16 + 4 + 2 + 1$, so 23 is 10111 in binary, so -23 is 11101001 in 8-bit 2's complement.
-
+\medskip
+{\bf (e)}
+\begin{align*}
+    asdasd
+\end{align*}
 \end{document}
