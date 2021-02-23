@@ -41,7 +41,7 @@ def read_graph(filename):
 
     return g
 
-def circle_tikz(g, radius=1, node_color="white", node_size=3, label=False, label_x_offset=0, label_y_offset=.35):
+def circle_tikz(g, radius=1, node_color="black", node_size=3, label=False, label_x_offset=0, label_y_offset=.35):
     """ Prints out a tikz picture of g, with its vertices along a circle of radius r """
     pt_locs = {}
 
@@ -91,7 +91,7 @@ def bipartitize(g):
 
     return p1, p2
 
-def bipartite_tikz(g, h_space=1, v_space=1, node_color="white", node_size=3, label=False, label_x_offset=0, label_y_offset=.35):
+def bipartite_tikz(g, h_space=1, v_space=1, node_color="black", node_size=3, label=False, label_x_offset=0, label_y_offset=.35):
     pt_locs = {}
 
     p1, p2 = bipartitize(g)
@@ -121,7 +121,7 @@ def bipartite_tikz(g, h_space=1, v_space=1, node_color="white", node_size=3, lab
 
     print("\\end{tikzpicture}")
 
-def random_tikz(g, radius=1, node_color="white", node_size=3, label=False, label_x_offset=0, label_y_offset=.35):
+def random_tikz(g, radius=1, node_color="black", node_size=3, label=False, label_x_offset=0, label_y_offset=.35):
     pt_locs = {}
 
     print("\\begin{tikzpicture}")
