@@ -21,9 +21,9 @@
 
 \begin{document}
 
-\maketitle
 \pagecolor{black}
 \color{white}
+\maketitle
 
 \noindent{\bf 1. } Sketch each of the following sets and its image under the transformation $w=z^2$. [Can be hand-drawn.]
 \vskip.05in
@@ -71,11 +71,6 @@ $
     \draw [fill=white] (0,0) circle(1);
     \draw (-1,0) -- (1,0);
 \end{scope}
-\draw[dashed] (0,1) -- (1,1);
-\fill[fill=black] (0,0)
-               -- (0,1)
-               -- (1,1)
-               -- cycle;
 \end{tikzpicture}
 $
 
@@ -83,7 +78,7 @@ $
 
 \noindent {\bf b.}  the hyperbola $y^2 - x^2=1$ (indicate also orientation)
 
-$
+
 \begin{tikzpicture}[xscale=1, yscale=1]
 \draw [thick, <->] (0,-3.25) -- (0,3.25);
 \draw [thick, <->] (-3.25,0) -- (3.25,0);
@@ -94,10 +89,19 @@ $
 \node [below ] at (-1,0) {$-1$};
 \node [left] at (0,1) {$i$};
 \node [left] at (0,-1) {$-i$};
+\draw plot[variable=\t,samples=1000,domain=-70:70] ({tan(\t)},{sec(\t)});
+\draw plot[variable=\t,samples=1000,domain=-70:70] ({tan(\t)},{-sec(\t)});
+\draw [thick, ->] (-2,2.236) -- (-1.74,2.007);
+\draw [thick, ->] (1.74,2.007) -- (2,2.236);
+\draw [thick, ->] (-.8,1.281) -- (-.72,1.232);
+\draw [thick, ->] (.72,1.232) -- (.8,1.281);
+
+\draw [thick, ->] (-2,-2.236) -- (-1.74,-2.007);
+\draw [thick, ->] (1.74,-2.007) -- (2,-2.236);
+\draw [thick, ->] (-.8,-1.281) -- (-.72,-1.232);
+\draw [thick, ->] (.72,-1.232) -- (.8,-1.281);
 \end{tikzpicture}
-$
 \hfill
-$
 \begin{tikzpicture}[xscale=1, yscale=1]
 \draw [thick, <->] (0,-3.25) -- (0,3.25);
 \draw [thick, <->] (-3.25,0) -- (3.25,0);
@@ -108,8 +112,19 @@ $
 \node [below ] at (-1,0) {$-1$};
 \node [left] at (0,1) {$i$};
 \node [left] at (0,-1) {$-i$};
+\draw [thick, <->] (-1,-2) -- (-1,-3);
+\draw [thick, <->] (-1,-1) -- (-1,-2);
+\draw [thick, <->] (-1,0) -- (-1,-1);
+\draw [thick, <->] (-1,0) -- (-1,1);
+\draw [thick, <->] (-1,1) -- (-1,2);
+\draw [thick, <->] (-1,2) -- (-1,3);
 \end{tikzpicture}
-$
+
+Since $y^2 - x^2 = 1$, $y = \sqrt{1+x^2}$.
+Then, $$u(x,y) = u\left(x, \sqrt{1+x^2}\right) = x^2 - 1 - x^2 = -1,$$
+and $$v\left(x,\sqrt{1+x^2}\right)=2x\sqrt{1+x^2}$$
+
+Thus, each point $(x,y)$ on the hyperbola in the plot on the left maps to two points on the line in the plot on the right: $(-1, 2x\sqrt{1+x^2})$, and $(-1, 2x\sqrt{1+x^2})$.
 
 \vskip.1in
 \hrule
@@ -124,6 +139,16 @@ $
 \noindent{\bf 2. }  Use properties of the transpose of a matrix and complex arithmetic to prove that  $A^HA$ is always a Hermitian matrix.
 
 \begin{proof}
+    Let $A = [z_{ij}]$ be an $m \times n$ matrix.
+    Then, the $ij^{\text{th}}$ entry in $A^HA$, denoted $a_{ij}$, is $$\sum\limits_{k=1}^n \overline{z_{ik}}z_{jk}.$$
+    Further, the $ji^{\text{th}}$ entry in $A^HA$, denoted $a_{ji}$, is
+    \begin{align*}
+        \sum\limits_{k=1}^n \overline{z_{jk}}z_{ik} &= \sum\limits_{k=1}^n \overline{z_{jk}\overline{z_{ik}}} \\
+        &= \overline{\sum\limits_{k=1}^n z_{jk}\overline{z_{ik}}} \\
+        &= \overline{\sum\limits_{k=1}^n \overline{z_{ik}}z_{jk}} \\
+        &= \overline{a_{ij}}.
+    \end{align*}
+    Thus, $A^HA = (A^HA)^H$, so $A^HA$ is a Hermitian matrix.
 
 \end{proof}
 
@@ -141,19 +166,19 @@ denote the $4 \times 4$ Fourier matrix.  Compute:
 \vskip.15in
 \noindent{\bf a. } $F^2=
 \begin{bmatrix}
-* & * & * & * \\
-* & * & * & * \\
-* & * & * & * \\
-* & * & * & *
+4 & 0 & 0 & 0 \\
+0 & 0 & 0 & 4 \\
+0 & 0 & 4 & 0 \\
+0 & 4 & 0 & 0
 \end{bmatrix}$
 \vskip.15in
 \noindent{\bf b. } $F^4=
 \begin{bmatrix}
-* & * & * & * \\
-* & * & * & * \\
-* & * & * & * \\
-* & * & * & *
-\end{bmatrix}$.
+16 & 0  & 0  & 0 \\
+0  & 16 & 0  & 0 \\
+0  & 0  & 16 & 0 \\
+0  & 0  & 0  & 16
+\end{bmatrix}$
 
 
 \vskip.15in
