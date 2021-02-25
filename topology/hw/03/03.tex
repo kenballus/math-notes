@@ -1,0 +1,36 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amsfonts, amssymb, amsthm}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{xcolor}
+
+\newcommand{\inv}{^{-1}}   
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\R}{\mathbb R}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\C}{\mathbb C}
+\newcommand{\N}{\mathbb N}
+\newcommand{\B}{\mathcal B}
+
+\date{Due Friday, February 26, 2021}
+\author{Ben Kallus}
+\title{Topology \\ Homework 3}
+
+\begin{document}
+\pagecolor{black}
+\color{white}
+\maketitle
+
+\noindent{\bf 1.} Proposition: The projections $\pi_1: X \times Y \to X$ and $\pi_2: X \times Y \to Y$ map open sets to open sets.
+\begin{proof}
+    Let $\tau_X$, $\tau_Y$ be topologies on $X$ and $Y$.
+    Let $\B_X$, $\B_Y$ be bases for $\tau_X$ and $\tau_Y$.
+    By the definition of the product topology, there exists a topology $\tau$ on $X \times Y$, with basis $\B = \{U \times V \mid U \in \tau_X \text{ and } V \in \tau_Y\}$.
+    Let $C \in \tau$.
+    Then, by Lemma 13.1, $C$ can be expressed as a union of sets of the form 
+    Then, by the definition of $\B$, $C = \bigcup\limits_{T \in \mathcal U} U_T \times V_T$ for some $U_T \in \B_X, V_T \in \B_Y$.
+    Thus, $\pi_1(C) = $
+\end{proof}
+
+\end{document}
