@@ -1,0 +1,156 @@
+\documentclass[11pt]{article}       % The percent symbol in your code starts a comment.  The comment ends at the next linebreak.
+\usepackage[english]{babel}         % Packages add functionality and style conventions to your documents. Don't edit this section!
+\usepackage{fullpage}               % Eliminates wasted space
+\usepackage[utf8]{inputenc}         % Necessary for character encoding
+\usepackage{amsmath, amssymb,amsthm}% Required math packages
+\usepackage{graphicx}               % For handling graphics
+\usepackage[colorinlistoftodos]{todonotes}  % For the fancy "todo" stuff
+\usepackage{hyperref}               % For clickable links in the final PDF
+\usepackage{tikz}
+\theoremstyle{definition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{prop}[theorem]{Proposition}
+\newtheorem{claim}[theorem]{Claim}
+
+\title{Complex Analysis -- Homework \#10}
+
+\author{Komissar, Feldman, Kallus}
+
+\date{ -- insert date here -- }
+
+\begin{document}
+
+\maketitle
+\color{white}
+\pagecolor{black}
+
+\noindent{\bf 1. }  Let $\mathbf y =\left[ \begin{smallmatrix} 1 \\ 0 \\ -2 \\ 0 \end{smallmatrix} \right]$.  Find the complex polynomial $p(z) = c_0 + c_1z + c_2z^2 +c_3z^3$  for which
+\[
+p(w^j)=p( {\rm e}^{\pi i j/2} )= p( i^j )=y_j \quad \text{ for } j = 0, 1, 2, 3.
+\]
+
+\begin{align*}
+    Fc &= y \\
+    \begin{bmatrix}
+        1 & 1 & 1 & 1 \\
+        1 & w & w^2 & w^3 \\
+        1 & w^2 & w^4 & w^6 \\
+        1 & w^3 & w^6 & w^9
+    \end{bmatrix}
+    \begin{bmatrix}
+        c_0 \\ c_1 \\ c_2 \\ c_3
+    \end{bmatrix}
+    &=
+    \begin{bmatrix}
+        1 \\ 0 \\ -2 \\ 0
+    \end{bmatrix} \\
+    \implies \begin{bmatrix}
+        1 & 1 & 1 & 1 \\
+        1 & (e^{i\frac{\pi}2})^1 & (e^{i\frac{\pi}2})^2 & (e^{i\frac{\pi}2})^3 \\
+        1 & (e^{i\frac{\pi}2})^2 & (e^{i\frac{\pi}2})^4 & (e^{i\frac{\pi}2})^6 \\
+        1 & (e^{i\frac{\pi}2})^3 & (e^{i\frac{\pi}2})^6 & (e^{i\frac{\pi}2})^9
+    \end{bmatrix}
+    \begin{bmatrix}
+        c_0 \\ c_1 \\ c_2 \\ c_3
+    \end{bmatrix}
+    &=
+    \begin{bmatrix}
+        1 \\ 0 \\ -2 \\ 0
+    \end{bmatrix} \\
+    \implies \begin{bmatrix}
+        1 & 1 & 1 & 1 \\
+        1 & i & -1 & -i \\
+        1 & -1 & 1 & -1 \\
+        1 & -i & -1 & i
+    \end{bmatrix}
+    \begin{bmatrix}
+        c_0 \\ c_1 \\ c_2 \\ c_3
+    \end{bmatrix}
+    &=
+    \begin{bmatrix}
+        1 \\ 0 \\ -2 \\ 0
+    \end{bmatrix} \\
+    \begin{bmatrix}
+        c_0 \\ c_1 \\ c_2 \\ c_3
+    \end{bmatrix}
+    &= \begin{bmatrix}
+        1 & 1 & 1 & 1 \\
+        1 & i & -1 & -i \\
+        1 & -1 & 1 & -1 \\
+        1 & -i & -1 & i
+    \end{bmatrix}^{-1}
+    \begin{bmatrix}
+        1 \\ 0 \\ -2 \\ 0
+    \end{bmatrix} \\
+    \begin{bmatrix}
+        c_0 \\ c_1 \\ c_2 \\ c_3
+    \end{bmatrix}
+    &= \frac14\begin{bmatrix}
+        1 & 1 & 1 & 1 \\
+        1 & i & -1 & -i \\
+        1 & -1 & 1 & -1 \\
+        1 & -i & -1 & i
+    \end{bmatrix}^{H}
+    \begin{bmatrix}
+        1 \\ 0 \\ -2 \\ 0
+    \end{bmatrix} \\
+    \begin{bmatrix}
+        c_0 \\ c_1 \\ c_2 \\ c_3
+    \end{bmatrix}
+    &= \frac14\begin{bmatrix}
+        1 & 1 & 1 & 1 \\
+        1 & -i & -1 & i \\
+        1 & -1 & 1 & -1 \\
+        1 & i & -1 & -i
+    \end{bmatrix}
+    \begin{bmatrix}
+        1 \\ 0 \\ -2 \\ 0
+    \end{bmatrix} \\
+    \begin{bmatrix}
+        c_0 \\ c_1 \\ c_2 \\ c_3
+    \end{bmatrix}
+    &= \frac14
+    \begin{bmatrix}
+        -1 \\ 3 \\ -1 \\ 3
+    \end{bmatrix}
+\end{align*}
+
+\vskip.1in
+\hrule
+\vskip.1in
+
+\noindent{\bf 2. }  Put the vector $\mathbf c = \begin{bmatrix} 1 \\ 0 \\ 1 \\ 0 \end{bmatrix}$ through the three steps of the Fast Fourier Transform  to compute $\mathbf y = F \mathbf c$.
+
+\[
+\mathbf y =
+\begin{bmatrix}
+* & * & * & * \\
+* & * & * & * \\
+* & * & * & * \\
+* & * & * & *
+\end{bmatrix}
+\cdot
+\begin{bmatrix}
+* & * & * & * \\
+* & * & * & * \\
+* & * & * & * \\
+* & * & * & *
+\end{bmatrix}
+\cdot
+\begin{bmatrix}
+* & * & * & * \\
+* & * & * & * \\
+* & * & * & * \\
+* & * & * & *
+\end{bmatrix}
+\cdot
+\begin{bmatrix} 1 \\ 0 \\ 1 \\ 0 \end{bmatrix}
+=
+\]
+
+
+\vskip.15in
+\hrule
+
+\end{document}

@@ -7,6 +7,7 @@
 \usepackage{geometry}
 \usepackage{xcolor}
 \usepackage{gensymb}
+\usepackage{hyperref}
 
 \newcommand{\inv}{^{-1}}   
 \newcommand{\Z}{\mathbb Z}
@@ -121,7 +122,7 @@ Finally,
     I_{2k(B)} &= \frac{V_B - V_G}{2000} \approx 1.75mA
 \end{align*}
 
-\noindent\newpage{\bf 4.}
+\newpage\noindent{\bf 4.}
 \begin{align*}
     V &= IR, \\
     \implies 1 &= I \cdot 1000, \\
@@ -131,25 +132,30 @@ Thus, the peak power dissipated in the resistor is $$I^2R = \left(\frac1{1000}\r
 
 The RMS voltage of the AC source is $\frac1{\sqrt{2}}$V, so the average power dissipated in the resistor is $\frac{\left(\frac1{\sqrt2}\right)^2}{1000} = \frac1{2000}$W.
 
-\noindent\newpage{\bf 5.}
+\newpage\noindent{\bf 5.}
 
-    Since we have the RMS voltage, we can solve for the resistance of the stove:
-    \begin{align*}
-             P              &= IV, \\
-    \implies 1200           &= I \cdot 230 \\
-    \implies \frac{120}{23} &= I
-    \end{align*}
-    \begin{align*}
-             V &= IR, \\
-    \implies 230 &= \frac{120}{23} \cdot R, \\
-    \implies R &= \frac{23 \cdot 23}{12} \\
-               &= 529\Omega.
-    \end{align*}
-    Thus, the resistance of the stove element is $529\Omega$.
+Since we have the RMS voltage, we can solve for the resistance of the stove:
+\begin{align*}
+         P    &= IV, \\
+\implies 1200 &= I \cdot 230, \\
+\implies I    &= \frac{120}{23}.
+\end{align*}
+\begin{align*}
+         V &= IR, \\
+\implies 230 &= \frac{120}{23} \cdot R, \\
+\implies R   &= \frac{23^2}{12} \\
+             &\approx 44.1\Omega.
+\end{align*}
+Thus, the resistance of the stove element is about $44.1\Omega$.
+Since the RMS voltage of the AC power supply is 230V, its peak-to-peak voltage is about 650V.
+Therefore, the voltage in the circuit is given by $V(t) = 325\sin(x)$, and the current through the stove is given by $I(t) = \frac{325}{44.1}\sin(x)$.
 
-    Since the RMS voltage of the AC power supply is 230V, its peak-to-peak voltage is about 650V.
+In the plot below, the red curve corresponds to $V(t)$, and the grey curve corresponds to $I(t)$. The horizontal axis is in seconds, and the vertical axis is in Volts for the red curve, and Amperes for the grey curve.
+\begin{center}
+    \includegraphics[scale=.5]{plot.png}
+\end{center}
 
-\noindent\bigskip{\bf 6.}
+\newpage\noindent{\bf 6.}
 
 The amplitude of the solid wave is 0.7V.
 
@@ -163,23 +169,23 @@ I estimate the phase difference between the two waves to be about 30\degree.
 
 The dotted wave leads.
 
-\noindent\bigskip{\bf 7.}
+\bigskip\noindent{\bf 7.}
 
 {\bf (a)} This corresponds to $20\log_{10}(30) \approx 29.5$dB.
 
 {\bf (b)} The factor of power is $10^{2\log_{10}(30)} = 900$.
 
-\noindent\bigskip{\bf 8.}
+\bigskip\noindent{\bf 8.}
 
     Since the input impedance of the output circuit is 1M$\Omega$, the amount of current drawn by the output will be negligible.
     Thus, we need only consider that our desired cut-off frequency is 3000Hz, and solve for $R$ and $C$ in $$3000 = \frac{1}{2\pi RC}.$$
     Arbitrarily setting $R=100\Omega$, we find that $C=5.3 \cdot 10^{-7}F$.
 
-\noindent\bigskip{\bf 9.}
+\bigskip\noindent{\bf 9.}
 
     The output voltage from the circuit is 3V, because the diode has very little forward resistance.
 
-\noindent\bigskip{\bf 10.}
+\bigskip\noindent{\bf 10.}
 
-    See \texttt{03.py}.
+    See \texttt{03.py}. Requires Python 3.8 or higher, which can be run in your browser {\color{red} \href{https://repl.it/languages/python3}{here}}.
 \end{document}

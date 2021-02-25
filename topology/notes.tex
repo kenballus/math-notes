@@ -242,6 +242,22 @@ A subbasis $\mathcal S$ for a topology on $X$ is a collection of subsets of $X$ 
 
 \medskip\noindent{\bf Theorem 15.2}
 
-    The set $$S = \{\pi_1\inv(u) \mid U \text{ is open in } X\} \cup \{\pi_2\inv \mid V \text{ is open in } Y\}$$ is a subbasis for the product topology on $X \times Y$.
+    The set $$\mathcal S = \{\pi_1\inv(U) \mid U \text{ is open in } X\} \cup \{\pi_2\inv(V) \mid V \text{ is open in } Y\}$$ is a subbasis for the product topology on $X \times Y$.
+
+\medskip\noindent{\bf Subspace Topology}
+
+    Let $(X,\tau)$ be a topological space. If $Y$ is a subset of $X$, then the set $\tau_Y = \{Y \cap U \mid U \in \tau\}$ is a topology on $Y$ called the subspace topology. With this topology, $Y$ is called a subspace of $X$.
+
+\medskip\noindent{\bf Lemma 16.1}
+
+    If $\B$ is a basis for the topology on $X$, then the set $\B_Y = \{B \cap Y \mid B \in \B\}$ is a basis for the subspace topology on $Y$.
+
+\medskip\noindent{\bf Open, revisited}
+
+    If $Y$ is a subspace of $X$, then a set $U$ is open (or open relative to $Y$) if $U$ is open in the subspace topology of $Y$. The set $U$ is open in $X$ if it belongs to the topology of $X$.
+
+\medskip\noindent{\bf Lemma 16.2}
+
+    Let $Y$ be a subspace of $X$. If $U$ is open in $Y$, and $Y$ is open in $X$, then $U$ is open in $X$.
 
 \end{document}
