@@ -156,7 +156,7 @@ def main():
     elif mode == "random":
         random_tikz(g)
     elif mode == "circle":
-        circle_tikz(g, label=True, radius=2)
+        circle_tikz(g, radius=2)
     else:
         print("Invalid graph mode:", mode, file=sys.stderr)
         sys.exit(1)

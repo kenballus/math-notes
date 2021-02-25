@@ -116,4 +116,12 @@
 
     For $z \neq 0$, $z = r(\cos\theta + i\sin\theta) = re^{i\theta}$, $r > 0$.
 
+\medskip
+\noindent{\bf Fourier Matrix}
+
+    A Fourier matrix is an $n \times n$ square matrix $F_n$ with entries given by $F_{jk} = e^{2\pi ijk/n} = \omega^{jk}$, where $\omega$ is the primitive $n^{\text{th}}$ root of unity.
+
+    These can be used for polynomial interpolation.
+    Make a coefficient vector $C = \begin{bmatrix} c_0 \\ c_1 \\ c_2 \\ \vdots \\ c_{n-1} \end{bmatrix}$, and solve $F_nC = Y$, where $Y$ is the vector of points to interpolate.
+
 \end{document}

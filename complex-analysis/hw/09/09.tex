@@ -124,7 +124,7 @@ Since $y^2 - x^2 = 1$, $y = \sqrt{1+x^2}$.
 Then, $$u(x,y) = u\left(x, \sqrt{1+x^2}\right) = x^2 - 1 - x^2 = -1,$$
 and $$v\left(x,\sqrt{1+x^2}\right)=2x\sqrt{1+x^2}$$
 
-Thus, each point $(x,y)$ on the hyperbola in the plot on the left maps to two points on the line in the plot on the right: $(-1, 2x\sqrt{1+x^2})$, and $(-1, 2x\sqrt{1+x^2})$.
+Thus, each point $(x,y)$ on the hyperbola in the plot on the left maps to two points on the line in the plot on the right: $(-1, 2x\sqrt{1+x^2})$, and $(-1, 2x\sqrt{1+x^2})$. Thus, the line in the plot on the right has arrows pointing in both directions.
 
 \vskip.1in
 \hrule
@@ -138,18 +138,19 @@ Thus, each point $(x,y)$ on the hyperbola in the plot on the left maps to two po
 
 \noindent{\bf 2. }  Use properties of the transpose of a matrix and complex arithmetic to prove that  $A^HA$ is always a Hermitian matrix.
 
+(We are indexing from 0 in this question)
+
 \begin{proof}
-    Let $A = [z_{ij}]$ be an $m \times n$ matrix.
-    Then, the $ij^{\text{th}}$ entry in $A^HA$, denoted $a_{ij}$, is $$\sum\limits_{k=1}^n \overline{z_{ik}}z_{jk}.$$
-    Further, the $ji^{\text{th}}$ entry in $A^HA$, denoted $a_{ji}$, is
+    let $A = [z_{jk}]$ be an $m \times n$ matrix.
+    Then, the $jk^{\text{th}}$ entry in $A^HA$, denoted $a_{jk}$, is $$\sum\limits_{l=0}^{n-1} \overline{z_{jl}}z_{kl}.$$
+    Further, the $kj^{\text{th}}$ entry in $A^HA$, denoted $a_{kj}$, is
     \begin{align*}
-        \sum\limits_{k=1}^n \overline{z_{jk}}z_{ik} &= \sum\limits_{k=1}^n \overline{z_{jk}\overline{z_{ik}}} \\
-        &= \overline{\sum\limits_{k=1}^n z_{jk}\overline{z_{ik}}} \\
-        &= \overline{\sum\limits_{k=1}^n \overline{z_{ik}}z_{jk}} \\
-        &= \overline{a_{ij}}.
+        \sum\limits_{l=0}^{n-1} \overline{z_{kl}}z_{jl} &= \sum\limits_{l=0}^{n-1} \overline{z_{kl}\overline{z_{jl}}} \\
+        &= \overline{\sum\limits_{l=0}^{n-1} z_{kl}\overline{z_{jl}}} \\
+        &= \overline{\sum\limits_{l=0}^{n-1} \overline{z_{jl}}z_{kl}} \\
+        &= \overline{a_{jk}}.
     \end{align*}
     Thus, $A^HA = (A^HA)^H$, so $A^HA$ is a Hermitian matrix.
-
 \end{proof}
 
 \vskip.1in
