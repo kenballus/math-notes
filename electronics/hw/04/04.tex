@@ -1,0 +1,111 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{xcolor}
+\usepackage{gensymb}
+\usepackage{hyperref}
+\usepackage{gensymb}
+
+\newcommand{\inv}{^{-1}}   
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\R}{\mathbb R}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\C}{\mathbb C}
+\newcommand{\N}{\mathbb N}
+
+\begin{document}
+\pagecolor{black}
+\color{white}
+
+\noindent{\bf 1.}
+Let current flow to the right through the horizontal resistors, and down through the vertical resistors.
+Then, $$I_1 = I_2 + I_3, ~~~ I_3 = I_4 + I_5,$$
+and $$I_{1} = \frac{12-V_{a}}{1000}, ~~~ I_{2} = \frac{V_{a}-4}{2000}, ~~~ I_{3} = \frac{V_{a}-V_{b}}{10000}, ~~~ I_{4} = \frac{V_{b}}{1000}, ~~~ I_{5} = \frac{V_{b}}{3000}.$$
+Then,
+\begin{align*}
+    I_{1}&=I_{2}+I_{3} \\
+    \implies \frac{12-V_{a}}{1000}&=\frac{V_{a}-4}{2000}+\frac{V_{a}-V_{b}}{10000}, \\
+    \implies V_a &= \frac{35}4 + \frac{1}{16}V_b.
+\end{align*}
+Thus,
+\begin{align*}
+    I_3 &= I_4 + I_5, \\
+    \implies \frac{V_{a}-V_{b}}{10000}&=\frac{V_{b}}{1000}+\frac{V_{b}}{3000}, \\
+    \implies V_{a}&=\frac{43}{3}V_{b}.
+\end{align*}
+Therefore,
+\begin{align*}
+    \frac{35}4 + \frac{1}{16}V_b &= \frac{43}{3}V_{b} \\
+    \implies V_b &= \frac{29455}{144} \\
+    &\approx 613.1\text{mV}.
+\end{align*}
+
+Now, we can solve for $V_a$:
+\begin{align*}
+    V_a &= \frac{43}3V_b \\
+        &= \frac{1266565}{432} \\
+        &\approx 8.788V
+\end{align*}
+
+Thus, $$I_{1} \approx 3.21\text{mA}, ~~~ I_{2} \approx 2.39\text{mA}, ~~~ I_{3} \approx 0.818\text{mA}, ~~~ I_{4} \approx 0.613\text{mA}, ~~~ I_{5} \approx .204\text{mA}.$$
+
+\newpage\noindent{\bf 2.}
+
+\begin{align*}
+    \frac{V_{out}}{V_{in}} &= \frac{1}{\sqrt{1+(\omega RC)^2}}, \\
+    \implies \frac{V_{out}}{\sin\left(1000t\right)} &= \frac{1}{\sqrt{1+\left(2\pi\cdot1000\cdot10000\cdot.2\cdot10^{-6}\right)^{2}}}, \\
+    \implies V_{out} &= \frac{\sin\left(1000t\right)}{\sqrt{1+\left(2\pi\cdot1000\cdot10000\cdot.2\cdot10^{-6}\right)^{2}}} \\
+            &= \frac{\sin\left(1000t\right)}{\sqrt{1+16\pi^{2}}}.
+\end{align*}
+Thus, the amplitude of the output wave is $\frac{1}{\sqrt{1+16\pi^{2}}} = 79.3$mV.
+
+\begin{align*}
+    \tan\phi &= \omega RC \\
+             &= 2\pi\cdot1000\cdot10000\cdot.2\cdot10^{-6}, \\
+    \implies \phi &= \arctan(4\pi) \\
+                  &\approx 1.49.
+\end{align*}
+Thus, the phase shift of the output wave is 85.37\degree. % Should be negative???
+
+\newpage\noindent{\bf 3.}
+
+The cut-off frequency is given by $$\omega_0 = \frac RL = \frac{50}{100\cdot10^{-6}} = \frac{50}{100\cdot10^{-6}} = 500\text{kHz}.$$
+
+\newpage\noindent{\bf 4.}
+
+\newpage\noindent{\bf 5.}
+
+\newpage\noindent{\bf 6.}
+
+\newpage\noindent{\bf 7.}
+
+\newpage\noindent{\bf 8.}
+
+\newpage\noindent{\bf 9.}
+
+See \texttt{04.py}.
+
+\newpage\noindent{\bf 10.}
+
+{\bf (a)}
+Since no current will flow through the 2k resistor, the open circuit is equivalent to the following circuit:
+\begin{center}
+\includegraphics{schematic04.png}
+\end{center}
+Thus, the open circuit voltage is 7.5V.
+
+\medskip{\bf (b)}
+\begin{center}
+\includegraphics[scale=0.45]{schematic042.png}
+\end{center}
+
+\medskip{\bf (c)}
+Thévenin equivalent of the circuit:
+\begin{center}
+\end{center}
+
+\end{document}

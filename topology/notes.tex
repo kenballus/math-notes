@@ -185,7 +185,7 @@ A subbasis $\mathcal S$ for a topology on $X$ is a collection of subsets of $X$ 
 
 \medskip\noindent{\bf Order Topology}
 
-    Let $X$ be a set with a simple order relation and assume $X$ has more than one element. Ley $\B$ be the collection of all sets of the following types:
+    Let $X$ be a set with a simple order relation and assume $X$ has more than one element. Let $\B$ be the collection of all sets of the following types:
     \begin{enumerate}
         \item All open intervals $(a,b)$ in $X$.
         \item All intervals of the form $[a_0,b)$ where $a_0$ is the least element of $X$, if it exists.
@@ -200,7 +200,7 @@ A subbasis $\mathcal S$ for a topology on $X$ is a collection of subsets of $X$ 
     \begin{enumerate}
         \item $(a, \infty) = \{x ~|~ a < x\}$
         \item $(-\infty, a) = \{x ~|~ x < a\}$
-        \item $[a, \infty = \{x ~|~ a < x \text{ or } a = x\}$
+        \item $[a, \infty) = \{x ~|~ a < x \text{ or } a = x\}$
         \item $(-\infty, a] = \{x ~|~ x < a \text{ or } a = x\}$
     \end{enumerate}
     The rays of forms 1 and 2 are called open rays, and the rays of forms 3 and 4 are called closed rays.
@@ -259,5 +259,19 @@ A subbasis $\mathcal S$ for a topology on $X$ is a collection of subsets of $X$ 
 \medskip\noindent{\bf Lemma 16.2}
 
     Let $Y$ be a subspace of $X$. If $U$ is open in $Y$, and $Y$ is open in $X$, then $U$ is open in $X$.
+
+\medskip\noindent{\bf Lemma 16.3}
+
+    If $A$ is a subspace of $X$ and $B$ is a subspace of $Y$, then the product topology on $A \times B$ is the same as the topology as the topology $A \times B$ inherits as a subspace.
+
+\medskip\noindent{\bf Convex}
+
+    Given an order set $X$, a subset $Y \subseteq X$ is convex in $X$ if for each pair of points $a,b \in Y$ with $a<b$, the entire interval lies in $Y$.
+
+\medskip\noindent{\bf Theorem 16.4}
+
+    Let $X$ be an ordered set with the order topology.
+    Let $Y$ be a subset of $X$ that is convex in $X$.
+    Then, the order topology on $Y$ is the same as the subspace topology on $Y$.
 
 \end{document}
