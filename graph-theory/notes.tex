@@ -315,7 +315,7 @@
 
 \medskip\noindent{\bf Theorem 2.13}
 
-    Let $A - [a_{ij}]$ be the adjacency matrix ofa  graph $G$. Then for all $k \in \N$, the $ij^{\text{th}}$ entry of $A^k$ (denoted $a_{ij}^{(k)}$, to be distinct from $a_{ij}$ raised to the power $k$) is equal to the number of $v_1 - v_j$ walks in $G$ of length $k$.
+    Let $A - [a_{ij}]$ be the adjacency matrix of a graph $G$. Then for all $k \in \N$, the $ij^{\text{th}}$ entry of $A^k$ (denoted $a_{ij}^{(k)}$, to be distinct from $a_{ij}$ raised to the power $k$) is equal to the number of $v_1 - v_j$ walks in $G$ of length $k$.
 
 \medskip\noindent{\bf Graph Isomorphism}
 
@@ -344,8 +344,12 @@
         \item $G$ is connected if and only if $H$ is connected.
     \end{enumerate}
 
-\medskip\noindent{\bf A Better Theorem than 2.3}
+\medskip\noindent{\bf Theorem 3.6}
 
-    If $G \cong H$, then for any (induced) subgraph $G'$ of $G$, there exists an (induced) subgraph $H'$ of $H$ with the same degree sequence as $G'$.
+    Graph isomorphism is an equivalence relation.
+
+\medskip\noindent{\bf Bridge}
+
+    Let $G$ be a graph. An edge $e \in E(G)$ is a bridge if and only if the number of components in $G - e$ is greater than the number of components in $G$.
 
 \end{document}
