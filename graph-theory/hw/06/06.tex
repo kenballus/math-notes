@@ -259,21 +259,21 @@ Since $G_3$ contains an odd cycle, it is not bipartite by Theorem 1.12.\footnote
     Then, there exist isomorphisms $\phi: G \to \overline G, \psi: H \to \overline H$.
     Let $F$ be the graph obtained from $G \cup H$ by joining each vertex of $G$ to every vertex of degree less than $\frac n2$ in $H$.
     Let $\sigma: F \to \overline F$ be defined by $$\sigma(v) = \begin{cases} \phi(v) & v \in V(G), \\ \psi(v) & v \in V(H). \end{cases}$$
-    Let $uv \in E(F)$. Consider the following cases:
+    Let $u,v \in V(F)$ such that $uv \in E(F)$. Consider the following cases:
     
     {\bf Case 1.} $u,v \in V(G)$.
     Then, $\sigma(u)\sigma(v) = \phi(u)\phi(v)$.
     Since $G$ is a subgraph of $F$, $\overline G$ is a subgraph of $\overline F$.
     Thus, since $\phi(u)\phi(v) \in \overline E(G)$, $\phi(u)\phi(v) \in E(\overline F)$.
+    Thus, $\sigma(u)\sigma(v) \in E(\overline F)$
 
     {\bf Case 2.} $u,v \in V(H)$.
-    By an argument symmetric to case 1, $\phi(u)\phi(v) \in E(\overline F)$.
+    By an argument symmetric to case 1, $\sigma(u)\sigma(v) \in E(\overline F)$.
 
     {\bf Case 3.} Neither case 1, nor case 2 applies.
     Without loss of generality, let $u \in V(G)$ and let $v \in V(H)$.
     Then, by the definition of $F$, the degree of $v$ in $H$ is less than $\frac n2$.
-    Thus, the degree of $\psi(v)$ in $\overline H$ is greater than $\frac n2$.
-    Thus,
+    Thus, $v$ is adjacent to every vertex in $w$ in $F$ that is also in $G$.
 \end{proof}
 \newpage\noindent{\bf 3.16}
 
