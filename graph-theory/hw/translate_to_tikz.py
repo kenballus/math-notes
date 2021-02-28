@@ -152,11 +152,11 @@ def main():
 
     mode = sys.argv[1]
     if mode == "bipartite":
-        bipartite_tikz(g)
+        bipartite_tikz(g, label=True)
     elif mode == "random":
         random_tikz(g)
     elif mode == "circle":
-        circle_tikz(g, radius=2)
+        circle_tikz(g, radius=1, label=True)
     else:
         print("Invalid graph mode:", mode, file=sys.stderr)
         sys.exit(1)
