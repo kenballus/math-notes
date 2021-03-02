@@ -4,14 +4,16 @@ import pandas as pd
 
 df = pd.read_csv("data.csv")
 f = df['f']
-vin = df['vin']
-vout = df['vout']
+vin = df['Vin']
+vout = df['Vout']
 
 # plt.xscale("log")
 # plt.yscale("log")
 
-plt.plot(f, [vout[i]/vin[i] for i in range(len(vin))], marker='o')
-plt.xlabel('Frequency (Hz)', fontsize=14)
-plt.ylabel('Phase difference (°) ', fontsize=14)
+vout_over_vin = [vout[i] / vin[i] for i in range(len(vin))]
+print(max(vout_over_vin))
+plt.plot(f, vout_over_vin, marker='o', linewidth=0)
+plt.xlabel('Frequency (kHz)', fontsize=14)
+plt.ylabel('Vout/Vin ', fontsize=14)
 plt.grid(True)
 plt.show()
