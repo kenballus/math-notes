@@ -20,7 +20,7 @@
 \maketitle
 
 \noindent{\bf 3.2}
-
+\begin{center}
 \begin{tikzpicture}
 \draw[fill=black] (2.0, 0.0) circle (3pt);
 \draw[fill=black] (1.414, 1.414) circle (3pt);
@@ -114,6 +114,7 @@
 \draw[thick] (1.414, -1.414) -- (-2.0, 0.0);
 \draw[thick] (1.414, -1.414) -- (-0.0, -2.0);
 \end{tikzpicture}
+\end{center}
 
 \newpage\noindent{\bf 3.4}
 
@@ -260,11 +261,11 @@ Since $G_3$ contains an odd cycle, it is not bipartite by Theorem 1.12.\footnote
     Let $F$ be the graph obtained from $G \cup H$ by joining each vertex of $G$ to every vertex of degree less than $\frac n2$ in $H$.
     Let $\sigma: F \to \overline F$ be defined by $$\sigma(v) = \begin{cases} \phi(v) & v \in V(G), \\ \psi(v) & v \in V(H). \end{cases}$$
     Let $u,v \in V(F)$ such that $uv \in E(F)$. Consider the following cases:
-    
+
     {\bf Case 1.} $u,v \in V(G)$.
     Then, $\sigma(u)\sigma(v) = \phi(u)\phi(v)$.
     Since $G$ is a subgraph of $F$, $\overline G$ is a subgraph of $\overline F$.
-    Thus, since $\phi(u)\phi(v) \in \overline E(G)$, $\phi(u)\phi(v) \in E(\overline F)$.
+    Thus, since $\phi(u)\phi(v) \in E( \overline G)$, $\phi(u)\phi(v) \in E(\overline F)$.
     Thus, $\sigma(u)\sigma(v) \in E(\overline F)$
 
     {\bf Case 2.} $u,v \in V(H)$.
@@ -272,17 +273,45 @@ Since $G_3$ contains an odd cycle, it is not bipartite by Theorem 1.12.\footnote
 
     {\bf Case 3.} Neither case 1, nor case 2 applies.
     Without loss of generality, let $u \in V(G)$ and let $v \in V(H)$.
-    Then, by the definition of $F$, the degree of $v$ in $H$ is less than $\frac n2$.
-    Thus, $v$ is adjacent to every vertex in $w$ in $F$ that is also in $G$.
+    Then, by the definition of $F$, $\deg_H(v) < \frac n2$.
+    Thus, since $\psi$ is an isomorphism, $\deg_{\overline H}(\psi(v)) < \frac n2$.
+    Therefore, by the definition of $\overline H$, $\deg_H(\psi(v)) > \frac n2$.
+    Thus, by the definition of $F$, $\psi(v)$ is not adjacent to any of $G$'s vertices in $F$.
+    Therefore, $\psi(v)$ is adjacent to all of $G$'s vertices in $\overline F$.
+    Since $\phi$'s codomain is $\overline G$, $\phi(u) \in V(\overline G) = V(G)$.
+    Thus, $\phi(u)\psi(v) = \sigma(u)\sigma(v) \in E(\overline F)$.
+
+    Thus, $\sigma$ preserves adjacency.
+    Note that since $\phi$ and $\psi$ are bijections with disjoint domains and codomains, $\sigma$, which has domain and codomain equal to the union of the domains of $\phi$ and $\psi$, is also bijective.
+    Thus, $\sigma$ is an isomorphism.
 \end{proof}
-\newpage\noindent{\bf 3.16}
+\newpage\noindent{\bf 3.16} Proposition: There are four non-isomorphic graphs with degree sequence $(6,6,6,6,6,6,6,6,6)$
+\begin{proof}
+    By Theorems 3.6 and 3.1, the number of non-isomorphic graphs that have degree sequence $(6,6,6,6,6,6,6,6,6)$ is equal to the number of non-isomorphic graphs that have degree sequence $(2,2,2,2,2,2,2,2,2)$.
+
+    Figure 3.16 shows that there are four graphs with degree sequence $(2,2,2,2,2,2,2,2,2)$: $C_9$, $C_4 \cup C_5$, $C_3 \cup C_6$, and $3C_3$.
+    Thus, the four non-isomorphic graphs with degree sequence $(6,6,6,6,6,6,6,6,6)$ are $\overline{C_9}$, $\overline{C_4 \cup C_5}$, $\overline{C_3 \cup C_6}$, and $\overline{3C_3}$.
+\end{proof}
 
 \newpage\noindent{\bf 3.17}
 
-{\bf (a)} Yes.
+{\bf (a)}
 
-{\bf (b)} No. (Odd cycle)
+With the following labelling, $H_1$ is isomorphic to the subgraph of $G$ induced by $\{ab, bc, cd, de\}$.
+\begin{center}
+\includegraphics[scale=.05]{317G.jpg}
+\includegraphics[scale=.05]{317H1.jpg}
+\end{center}
 
-{\bf (c)} Yes.
+\medskip{\bf (b)}
 
+By Theorem 1.12, $G$ contains no odd cycles.
+Thus, $H_2$ is not isomorphic to any subgraph of $G$, because $H$ is an odd cycle.
+
+\medskip{\bf (c)}
+
+With the same labelling used in (a), $H_3$ (labelled below) is isomorphic to the subgraph of $G$ induced by $\{ab, bc, cd, cf, fe\}$.
+\begin{center}
+\includegraphics[scale=.05]{317H3.jpg}
+\end{center}
 \end{document}
