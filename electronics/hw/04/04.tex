@@ -69,19 +69,32 @@ Thus, the amplitude of the output wave is $\frac{1}{\sqrt{1+16\pi^{2}}} = 79.3$m
     \implies \phi &= \arctan(4\pi) \\
                   &\approx 1.49.
 \end{align*}
-Thus, the phase shift of the output wave is 85.37\degree. % Should be negative???
+Thus, the phase shift of the output wave is 85.37\degree.
 
 \newpage\noindent{\bf 3.}
 
-The cut-off frequency is given by $$\omega_0 = \frac RL = \frac{50}{100\cdot10^{-6}} = \frac{50}{100\cdot10^{-6}} = 500\text{kHz}.$$
+The cut-off frequency is given by $$\omega_0 = \frac RL = \frac{50}{100\cdot10^{-6}} = \frac{50}{100\cdot10^{-6}} = 500000 \frac{\text{rad}}{\text{s}}$$
+Thus, $$f = \frac{500000}{2\pi} \approx 79577\text{Hz}.$$
 
 \newpage\noindent{\bf 4.}
 
+% At .4V, we'll just see Vin, since the voltmeter has a high resistance and the diodes are not activated.
+% At .7V, it's the same as before, but flat when it hits .6 and -.6
+% At 1V it's the same logic as .7
+
 \newpage\noindent{\bf 5.}
+
+% V=IR -> I = .06A. That intersects the graph at ~.57V, so that's the expected voltage at point a.
 
 \newpage\noindent{\bf 6.}
 
+    $$V_{\text{RMS}} = \sqrt2 \cdot 15 \approx 21.2V.$$
+
 \newpage\noindent{\bf 7.}
+
+    {\bf (a)} You need smaller filter capacitors for a bridge rectifier than you do for a half-wave rectifier because a full bridge rectifier's output frequency is twice its input frequency, so the capacitor needs to store less charge to provide current between peaks.
+
+    {\bf (b)} They are the same thing, so they need similarly-sized capacitors.
 
 \newpage\noindent{\bf 8.}
 
@@ -94,18 +107,17 @@ See \texttt{04.py}.
 {\bf (a)}
 Since no current will flow through the 2k resistor, the open circuit is equivalent to the following circuit:
 \begin{center}
-\includegraphics{schematic04.png}
+\includegraphics[scale=.5]{schematic04.png}
 \end{center}
 Thus, the open circuit voltage is 7.5V.
 
 \medskip{\bf (b)}
 \begin{center}
-\includegraphics[scale=0.45]{schematic042.png}
+\includegraphics[scale=0.25]{schematic042.png}
 \end{center}
+Thus, the short circuit current is $$\frac{2.73 \cdot 10^{-6}}{.001} = .00273\text{A}.$$
 
 \medskip{\bf (c)}
-Thévenin equivalent of the circuit:
-\begin{center}
-\end{center}
+Thus, the Thévenin equivalent of the circuit consists of a 7.5V voltage source connected to a $\frac{7.5}{.00273} \approx 2747\Omega$ resistor.
 
 \end{document}
