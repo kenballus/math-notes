@@ -1,0 +1,92 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amsfonts, amssymb, amsthm}
+\usepackage{graphicx}
+\usepackage[margin=.75in]{geometry}
+\usepackage{xcolor}
+
+\newcommand{\inv}{^{-1}}   
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\R}{\mathbb R}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\C}{\mathbb C}
+\newcommand{\N}{\mathbb N}
+\newcommand{\B}{\mathcal B}
+
+\date{Due Friday, March 5, 2021}
+\author{Ben Kallus}
+\title{Topology \\ Homework 4}
+
+\begin{document}
+\pagecolor{black}
+\color{white}
+\maketitle
+
+\noindent{\bf 1.} Proposition: If $Y$ is a subspace of $X$, and $A$ is a subset of $Y$, then the topology $A$ inherits as a subspace of $Y$ is the same as the subspace topology $A$ inherits as a subspace of $X$.
+\begin{proof}
+    Let $(X, \tau_X)$ be a topological space with basis $\B_X$.
+    Let $(Y, \tau_Y)$ be a subspace of $X$.
+    Then, by Lemma 16.1, $\B_Y = \{B \cap Y \mid B \in \B_X\}$ is a basis for $\tau_Y$.
+    Let $A \subseteq Y$, and let $\tau_1$ denote the topology $A$ inherits as a subspace of $Y$.
+    Then, by Lemma 16.1, $\B_1 = \{B \cap A \mid B \in \B_Y\}$ is a basis for $\tau_1$.
+    Therefore,
+    \begin{align*}
+        B_1 &= \{B \cap A \mid B \in \B_Y\} \\
+            &= \{(B \cap Y) \cap A \mid B \in \B_X\} \\
+            &= \{B \cap (Y \cap A) \mid B \in \B_X\} \\
+            &= \{B \cap A \mid B \in \B_X\}.
+    \end{align*}
+    Let $\tau_2$ be the topology $A$ inherits as a subspace of $X$.
+    Then, by Lemma 16.1, $\B_2 = \{B \cap A \mid B \in \B_X\}$ is a basis for $\tau_2$.
+    Thus, $\B_1 = \B_2$, so $\tau_1 = \tau_2$.
+\end{proof}
+
+\newpage
+\noindent{\bf 2.}
+
+{\bf (1)}
+
+    $A = \left(-1, -\frac12\right) \cup \left(\frac12, 1\right)$, so $A$ is open in $\R$.
+
+    $A = \left(\left(-1, -\frac12\right) \cup \left(\frac12, 1\right)\right) \cap Y$, so $A$ is open in $Y$.
+
+\medskip
+{\bf (2)}
+
+    $A = \left[-1, -\frac12\right) \cup \left(\frac12, 1\right]$, so $A$ is not open in $\R$.
+
+    $A = \left(\left[-1, -\frac12\right) \cup \left(\frac12, 1\right]\right) \cap Y$, so $A$ is open in $Y$.
+
+\medskip
+{\bf (3)}
+
+    $A = \left(-1, -\frac12\right] \cup \left[\frac12, 1\right)$, so $A$ is not open in $\R$.
+
+    Since the subspace topology on $Y$ is equal to the order topology on $[-1,1]$, and $\frac12 \neq -1$, $A$ is not open in $Y$.
+
+\medskip
+{\bf (4)}
+
+    $A = \left[-1, -\frac12\right] \cup \left[\frac12, 1\right]$, so $A$ is not open in $\R$.
+
+    Since the subspace topology on $Y$ is equal to the order topology on $[-1,1]$, and $\frac12 \neq -1$, $A$ is not open in $Y$.
+
+\medskip
+{\bf (5)}
+
+    $A = \bigcup\limits_{n \in (\Z \setminus \{0\})} \left(\frac{1}{n+1}, \frac{1}{n}\right)$, so $A$ is open in $\R$.
+
+    $A = \left(\bigcup\limits_{n \in (\Z \setminus \{0\})} \left(\frac{1}{n+1}, \frac{1}{n}\right)\right) \cap [-1,1]$, so $A$ is open in $Y$.
+
+\newpage
+\noindent{\bf 3.} Proposition: If $Y$ is a subspace of $X$, $Y$ is closed in $X$, and $A$ is closed in $Y$, then $A$ is closed in $X$.
+\begin{proof}
+    Let $(X, \tau_X)$ be a topological space.
+    Let $Y$ be a closed set in $X$, and let $(Y, \tau_Y)$ be a subspace of $X$.
+    Let $A \subseteq Y$ be closed in $\tau_Y$.
+    Then, by Theorem 17.2, $A = B \cap Y$ for some closed set $B$ in $X$.
+    Then, by Theorem 17.1, $A$ is closed in $X$, since it is the intersection of two closed sets in $X$.
+\end{proof}
+
+
+\end{document}

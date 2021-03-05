@@ -9,6 +9,7 @@
 \usepackage{gensymb}
 \usepackage{hyperref}
 \usepackage{gensymb}
+\usepackage{listings}
 
 \newcommand{\inv}{^{-1}}   
 \newcommand{\Z}{\mathbb Z}
@@ -51,7 +52,7 @@ Now, we can solve for $V_a$:
         &\approx 8.788V
 \end{align*}
 
-Thus, $$I_{1} \approx 3.21\text{mA}, ~~~ I_{2} \approx 2.39\text{mA}, ~~~ I_{3} \approx 0.818\text{mA}, ~~~ I_{4} \approx 0.613\text{mA}, ~~~ I_{5} \approx .204\text{mA}.$$
+Thus, $$I_{1} \approx 3.21\text{mA}, ~~~ I_{2} \approx 2.39\text{mA}, ~~~ I_{3} \approx 0.818\text{mA}, ~~~ I_{4} \approx 0.613\text{mA}, ~~~ I_{5} \approx 0.204\text{mA}.$$
 
 \newpage\noindent{\bf 2.}
 
@@ -78,13 +79,29 @@ Thus, $$f = \frac{500000}{2\pi} \approx 79577\text{Hz}.$$
 
 \newpage\noindent{\bf 4.}
 
-% At .4V, we'll just see Vin, since the voltmeter has a high resistance and the diodes are not activated.
-% At .7V, it's the same as before, but flat when it hits .6 and -.6
-% At 1V it's the same logic as .7
+At 0.4V amplitude, no current will flow in the diodes, so the circuit will be open and there will be no voltage drop across the resistor. Thus, the 0.4V sine wave is unchanged.
+\begin{center}
+\includegraphics[scale=.3]{plot1.png}
+\end{center}
+
+At 0.7V amplitude, the diodes are activated for the portions of the wave above 0.6V and below -0.6V, so the peaks of the wave are flattened.
+\begin{center}
+\includegraphics[scale=.5]{plot2.png}
+\end{center}
+
+\newpage
+At 1V amplitude, the same logic applies.
+\begin{center}
+\includegraphics[scale=.5]{plot3.png}
+\end{center}
 
 \newpage\noindent{\bf 5.}
 
-% V=IR -> I = .06A. That intersects the graph at ~.57V, so that's the expected voltage at point a.
+If the diode weren't in the circuit, the current in the circuit would be 60mA.
+If the current were 60mA, then the voltage drop across the diode would be about 0.57V, according to the graph.
+If that were the case, then the current in the circuit would be 54.3mA.
+If the current were 54.3mA, then the voltage drop across the diode would be about 0.565V, according to the chart.
+Iterating this process will give better and better approximations for the voltage at point $a$, but I don't think it will deviate too far from about 0.565V.
 
 \newpage\noindent{\bf 6.}
 
@@ -94,13 +111,19 @@ Thus, $$f = \frac{500000}{2\pi} \approx 79577\text{Hz}.$$
 
     {\bf (a)} You need smaller filter capacitors for a bridge rectifier than you do for a half-wave rectifier because a full bridge rectifier's output frequency is twice its input frequency, so the capacitor needs to store less charge to provide current between peaks.
 
-    {\bf (b)} They are the same thing, so they need similarly-sized capacitors.
+    {\bf (b)} A bridge rectifier and a full wave rectifier rated for the same voltage will have the same output, so they'll have the same capacitor requirements.
 
 \newpage\noindent{\bf 8.}
 
+    When $a$ is at its peak of 42.43V, $b$ is at 0V.
+    Since D1 will cause a voltage drop of 0.6V, the peak output current will be $\frac{41.83}{3400} = 12.30$mA.
+    Therefore, $$V_{\text{ripple}} = \frac{.01230}{120 \cdot .001} \approx 102.5\text{mV},$$
+    $$V_{\text{out}} = \sqrt{2} \cdot 30 - 1.2 = 41.23\text{V}.$$
+
+
 \newpage\noindent{\bf 9.}
 
-See \texttt{04.py}.
+\lstinputlisting[language=Python]{04.py}
 
 \newpage\noindent{\bf 10.}
 
@@ -115,7 +138,7 @@ Thus, the open circuit voltage is 7.5V.
 \begin{center}
 \includegraphics[scale=0.25]{schematic042.png}
 \end{center}
-Thus, the short circuit current is $$\frac{2.73 \cdot 10^{-6}}{.001} = .00273\text{A}.$$
+Thus, the short circuit current is $$\frac{2.73 \cdot 10^{-6}}{.001} = 0.00273\text{A}.$$
 
 \medskip{\bf (c)}
 Thus, the Thévenin equivalent of the circuit consists of a 7.5V voltage source connected to a $\frac{7.5}{.00273} \approx 2747\Omega$ resistor.

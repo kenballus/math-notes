@@ -231,15 +231,6 @@ A subbasis $\mathcal S$ for a topology on $X$ is a collection of subsets of $X$ 
     \end{align*}
     We define the preimage of $V$ under $\pi_2$ similarly.
 
-\medskip\noindent{\bf Neighborhood}
-
-    Let $(X, \tau)$ be a topological space.
-    The set $N \subseteq X$ is a neighborhood of a point $x \in X$ if $x \in N$ and there exists an open set $U \in \tau$ such that $U \subseteq N$.
-
-\medskip\noindent{\bf Hausdorff Space}
-
-    Let $X$ be a topological space. $X$ is a Hausdorff space if for any two distinct points there exist neighborhoods of each which are disjoint from each other.
-
 \medskip\noindent{\bf Theorem 15.2}
 
     The set $$\mathcal S = \{\pi_1\inv(U) \mid U \text{ is open in } X\} \cup \{\pi_2\inv(V) \mid V \text{ is open in } Y\}$$ is a subbasis for the product topology on $X \times Y$.
@@ -295,5 +286,32 @@ A subbasis $\mathcal S$ for a topology on $X$ is a collection of subsets of $X$ 
 
     Given a subset $A$ of a topological space $X$, then interior of $A$, denoted $\text{int}(A)$ or $\mathring A$, is the union of all open sets contained in $A$.
     The closure of $A$, denoted $\overline A$ or $\text{cl}(A)$, is the intersection of all closed sets containing $A$.
+
+\medskip\noindent{\bf Lemma 17.06}
+
+    Let $A$ be a subset of a topological space $X$. Then, $A$ is open if and only if $A = \text{Int(A)}$, and $A$ is closed if and only if $A=\overline A$.
+
+\medskip\noindent{\bf Theorem 17.4}
+
+    Let $Y$ be a subspace of $X$. Let $A \subseteq Y$ and denote the closure of $A$ in $X$ as $\overline A$. Then, the closure of $A$ in $Y$ equals $\overline A \cap Y$.
+
+\medskip\noindent{\bf Intersect}
+
+    A set $A$ intersects a set $B$ if $A \cap B \neq \emptyset$.
+
+\medskip\noindent{\bf Neighborhood}
+
+    An open set $U \subseteq X$ is a neighborhood of $x \in X$ if $x \in U$.
+
+\medskip\noindent{\bf Theorem 17.5}
+
+    Let $A$ be a subset of a topological space $X$.
+    Then, $x \in \overline A$ if and only if every neighborhood of $x$ intersects $A$.
+
+    Supposing the topology of $X$ is given by a basis, then $x \in \overline A$ if and only if every basis element $B$ containing $x$ intersects $A$.
+
+\medskip\noindent{\bf Limit Point}
+
+    If $A$ is a subset of a topological space $X$ and if $x \in X$, then $x$ is a limit point (or cluster point or point of accumulation) of $A$ if every neighborhood of $x$ intersects $A$ in some point other than $x$ itself.
 
 \end{document}
