@@ -1,0 +1,73 @@
+\documentclass[11pt]{article}       % The percent symbol in your code starts a comment.  The comment ends at the next linebreak.
+\usepackage[english]{babel}         % Packages add functionality and style conventions to your documents. Don't edit this section!
+\usepackage{fullpage}               % Eliminates wasted space
+\usepackage[utf8]{inputenc}         % Necessary for character encoding
+\usepackage{amsmath, amssymb,amsthm}% Required math packages
+\usepackage{graphicx}               % For handling graphics
+\usepackage[colorinlistoftodos]{todonotes}  % For the fancy "todo" stuff
+\usepackage{hyperref}               % For clickable links in the final PDF
+\usepackage{tikz}
+\theoremstyle{definition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{prop}[theorem]{Proposition}
+\newtheorem{claim}[theorem]{Claim}
+
+\title{Complex Analysis -- Homework \#12}
+
+\author{ Kallus, Koomissar, Felderman }
+
+\date{ Due Monday, March 8 }
+
+\begin{document}
+
+\maketitle
+
+
+\noindent{\bf 1. }  Prove that if $A$ is an $n \times n$ Hermitian matrix, then $\mathbf z^H A \mathbf z$ is real for all
+$\mathbf z
+=
+\begin{bmatrix}
+z_1 \\
+\vdots \\
+z_n
+\end{bmatrix}
+\in \mathbb C^n$
+\begin{proof}
+Let $A$ be an $n \times n$ Hermitian matrix, and let $\mathbf z \in \mathbb C^n$.  It suffices to show that $\overline{\mathbf z^H A \mathbf z} = \mathbf z^H A \mathbf z$.  To this end,
+\begin{align*}
+    \overline{\mathbf z^HA\mathbf z} &= \overline{\mathbf z^H} \overline A \overline{\mathbf z} \\
+                                     &= \mathbf z^T \overline{A^H} (\mathbf z^H)^T \\
+                                     &= \mathbf z^T A^T (\mathbf z^H)^T \\
+                                     &= (\mathbf z^HA\mathbf z)^T.
+\end{align*}
+Since $\mathbf z^HA\mathbf z$ is a $1 \times 1$ matrix, $(\mathbf z^HA\mathbf z)^T = \mathbf z^HA\mathbf z$.
+Thus, $\overline{\mathbf z^H A \mathbf z} = \mathbf z^H A \mathbf z$.
+Thuse $\mathbf z^H A \mathbf z$ is real.
+\end{proof}
+
+\vskip.1in
+\hrule
+\vskip.1in
+
+\noindent{\bf 2. }   Let $\mathcal L$ denote the line with equation $x+3y=10$.
+\vskip.1in
+\noindent {\bf a. }   The point $a \in \mathbb C$ for which $\mathcal L = \{ z \in \mathbb C : |z|=|z-a|\}$ is $a=2+6i$.
+
+\vskip.05in
+\noindent \dotfill
+
+\noindent {\bf b. }   Find the image of the line $\mathcal L$ under the inversion mapping $w=f(z)=1/z$.  Show steps.
+\begin{align*}
+w \in f(\mathcal L) &\iff \frac{1}{w} \in \mathcal L \\
+                    &\iff \left|\frac1w\right| = \left|\frac1w - (2+6i)\right| \\
+                    &\iff \frac1{|w|} = \left|\frac1w - (2+6i)\right| \\
+                    &\iff 1 = |1 - w(2+6i)|
+\end{align*}
+Thus, the image of $\mathcal L$ under the inversion mapping is the circle of radius 1 centered at 
+
+
+\vskip.15in
+\hrule
+
+\end{document}

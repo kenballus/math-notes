@@ -25,9 +25,6 @@
     Let $v$ be a vertex of maximum degree in $T$, with neighbors $u_1, \hdots, u_{\Delta(T)}$.
     For each $i \in \{1,2,\hdots,\Delta(T)\}$, let $P_i = (v, u_i, \hdots, w_i)$ be a path of maximum length whose first edge is $vu_i$.
 
-    Suppose, toward a contradiction, that there exist distinct $i,j \in \{1,2,\hdots,\Delta(T)\}$ such that $w_i = w_j$.
-    % Explain here why if that were the case, then you can construct a cycle in $T$.
-
     Suppose, toward a contradiction, that there exists $i \in \{1,2,\hdots,\Delta(T)\}$ such that $w_i$ is not a leaf.
     Then, $w_i$ has a neighbor $x$ that is not its predecessor in $P_i$.
     Consider the walk $X$ obtained by appending $x$ to $P_i$.
@@ -35,7 +32,10 @@
     On the other hand, if $X$ is a path, then it is longer than $P_i$, so $P_i$ must not be a path of maximum length whose first edge is $vu_i$.
     Thus, $w_i$ is a leaf for all $i \in \{1,2,\hdots,\Delta(T)\}$.
 
-    Thus, $T$ has at least $\Delta(T)$ leaves.
+    Since $T$ is acyclic, each $P_i$ is a unique path with one shared vertex, $v$.
+    Thus, each $w_i$ is unique.
+
+    Thus, $T$ contains at least $\Delta(T)$ leaves.
 \end{proof}
 
 \newpage\noindent{\bf 4.2} Proposition: Every connected graph all of whose vertices have even degrees contains no bridges.
@@ -53,7 +53,17 @@
     Let $e_1, e_2$ be distinct edges in $G$.
 
     Suppose that $G - e_1 - e_2$ has three components.
-    % Obvious but annoying to say.
+    Consider the following cases:
+
+    {\bf Case 1.} Suppose that neither $e_1$ nor $e_2$ is a bridge.
+    Then, $G-e_1$ is connected.
+    Thus, $G-e_2$ has at most two components.
+
+    {\bf Case 2.} Suppose without loss of generality that $e_1$ is a bridge, and $e_2$ is not.
+    Then, $G-e_2$ is connected.
+    Thus, $G-e_1$ has at most two components.
+
+    Thus, it must be 
 
     Suppose $e_1$ and $e_2$ are bridges.
     Then, $G-e_1$ has two components, by the definition of a bridge.
@@ -91,7 +101,7 @@
 \end{tikzpicture}
 \end{center}
 
-{\bf (c)} Proposition: A tree $T$ containing exactly three vertices that are not end-vertices is a caterpillar.
+{\bf (c)} Proposition: A tree $T$ containing exactly three vertices that are not end-vertices is a caterpiller.
 \begin{proof}
     Let $T$ be a tree containing exactly three vertices $u,v,w$ that are not end-vertices.
     Since $u,v,w$ are the only vertices in $T$ that are not end-vertices, every end-vertex in $T$ must be connected to exactly one of $u,v,w$.
@@ -104,7 +114,7 @@
     Therefore, $T$ contains at least two of the edges $uv, vw, wu$.
     Thus, $T$ contains exactly two of the edges $uv, vw, wu$.
     Thus, the subgraph of $T$ induced by $\{u,v,w\}$ is $P_3$.
-    Thus, since $u,v,w$ are the only vertices in $T$ that are not end-vertices, $T$ is a caterpillar.
+    Thus, since $u,v,w$ are the only vertices in $T$ that are not end-vertices, $T$ is a caterpiller.
 \end{proof}
 
 \newpage\noindent{\bf 4.14}
@@ -173,7 +183,7 @@ Thus, the graph from (a) is the only tree in which two thirds of the vertices ha
     Observe that $K_2$ is the only 1-regular tree, since it is the only connected 1-regular graph. % Probably needs better explanation.
     Suppose that there exists a regular tree $T$ that is neither $K_1$ nor $K_2$.
     Then, $T$ is $n$-regular for some natural number $n \geq 2$.
-    Since $T$ is $n$-regular, it contains only vertices of degree greater than or equal to $n$.
+    Since $T$ is $n$-regular, it contains only vertices of degree greater than or equal to 2.
     Thus, $T$ contains no leaves.
     However, by the result of the first proof in this assignment, $T$ contains at least $\Delta(T) = n$ leaves.
     Thus, $K_1$ and $K_2$ are the only regular trees.
