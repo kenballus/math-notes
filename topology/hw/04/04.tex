@@ -74,16 +74,16 @@
 \medskip
 {\bf (5)}
 
-    $A = \bigcup\limits_{n \in (\Z \setminus \{0\})} \left(\frac{1}{n+1}, \frac{1}{n}\right)$, so $A$ is open in $\R$.
+    $A = \bigcup\limits_{n \in \Z_+} \left(\frac{1}{n+1}, \frac{1}{n}\right)$, so $A$ is open in $\R$.
 
-    $A = \left(\bigcup\limits_{n \in (\Z \setminus \{0\})} \left(\frac{1}{n+1}, \frac{1}{n}\right)\right) \cap [-1,1]$, so $A$ is open in $Y$.
+    $A = \left(\bigcup\limits_{n \in \Z_+} \left(\frac{1}{n+1}, \frac{1}{n}\right)\right) \cap [-1,1]$, so $A$ is open in $Y$.
 
 \newpage
 \noindent{\bf 3.} Proposition: If $Y$ is a subspace of $X$, $Y$ is closed in $X$, and $A$ is closed in $Y$, then $A$ is closed in $X$.
 \begin{proof}
     Let $(X, \tau_X)$ be a topological space.
     Let $Y$ be a closed set in $X$, and let $(Y, \tau_Y)$ be a subspace of $X$.
-    Let $A \subseteq Y$ be closed in $\tau_Y$.
+    Let $A \subseteq Y$ be closed in $Y$.
     Then, by Theorem 17.2, $A = B \cap Y$ for some closed set $B$ in $X$.
     Then, by Theorem 17.1, $A$ is closed in $X$, since it is the intersection of two closed sets in $X$.
 \end{proof}
