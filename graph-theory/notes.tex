@@ -363,9 +363,9 @@
     A graph $T$ is a tree if and only if $T$ is connected and contains no cycles.
     Thus, every edge in a tree is a bridge.
 
-\medskip\noindent{\bf Forect}
+\medskip\noindent{\bf Forest}
 
-    A graph $F$ is a forest if and only if every component of $G$ is a tree (if and only if $F$ is acyclic).
+    A graph $F$ is a forest if and only if every component of $F$ is a tree (if and only if $F$ is acyclic).
 
 \medskip\noindent{\bf Theorem 4.2}
 
@@ -378,5 +378,47 @@
 \medskip\noindent{\bf Theorem 4.3}
 
     Any tree of order $n \geq 2$ has at least 2 leaves.
+
+\medskip\noindent{\bf Star}
+
+    A star is a tree containing exactly one non-leaf.
+
+\medskip\noindent{\bf Double Star}
+
+    A double star is a tree containing exactly two non-leaves.
+
+\medskip\noindent{\bf Caterpillar}
+
+    A caterpillar is a tree of order 3 or more such that removing its leaves produces a path graph, called the spine of the caterpillar.
+
+\medskip\noindent{\bf Theorem 4.4}
+
+    Every tree of order $n$ has size $n-1$.
+
+\medskip\noindent{\bf Corollary 4.6}
+
+    Every forest of order $n$ with $k$ components has size $n-k$.
+
+\medskip\noindent{\bf Theorem 4.7}
+
+    The size of every connected graph of order $n$ is at least $n-1$.
+
+\medskip\noindent{\bf Theorem 4.8}
+
+    Let $G$ be a graph of order $n$ and size $m$. If $G$ satisfies any two of the properties:
+    \begin{enumerate}
+        \item $G$ is connected,
+        \item $G$ is acyclic,
+        \item $m = n - 1$,
+    \end{enumerate}
+    then $G$ is a tree.
+
+\medskip\noindent{\bf Theorem 4.9}
+
+    Let $T$ be a tree of order $k$.
+    If $G$ is a graph with $\delta(G) \geq k - 1$, then $T$ is isomorphic to some subgraph of $G$.
+
+\medskip\noindent{\bf }
+
 
 \end{document}
