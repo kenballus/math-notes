@@ -15,13 +15,15 @@
 
 \title{Complex Analysis -- Homework \#12}
 
-\author{ Kallus, Koomissar, Felderman }
+\author{Kallus, Komissar, Felderman}
 
 \date{ Due Monday, March 8 }
 
 \begin{document}
-
+\pagecolor{black}
+\color{white}
 \maketitle
+
 
 
 \noindent{\bf 1. }  Prove that if $A$ is an $n \times n$ Hermitian matrix, then $\mathbf z^H A \mathbf z$ is real for all
@@ -43,7 +45,6 @@ Let $A$ be an $n \times n$ Hermitian matrix, and let $\mathbf z \in \mathbb C^n$
 \end{align*}
 Since $\mathbf z^HA\mathbf z$ is a $1 \times 1$ matrix, $(\mathbf z^HA\mathbf z)^T = \mathbf z^HA\mathbf z$.
 Thus, $\overline{\mathbf z^H A \mathbf z} = \mathbf z^H A \mathbf z$.
-Thuse $\mathbf z^H A \mathbf z$ is real.
 \end{proof}
 
 \vskip.1in
@@ -64,8 +65,17 @@ w \in f(\mathcal L) &\iff \frac{1}{w} \in \mathcal L \\
                     &\iff \frac1{|w|} = \left|\frac1w - (2+6i)\right| \\
                     &\iff 1 = |1 - w(2+6i)|
 \end{align*}
-Thus, the image of $\mathcal L$ under the inversion mapping is the circle of radius 1 centered at 
-
+Then, with $w = a+bi$,
+\begin{align*}
+    1 = |1 - (a+bi)(2+6i)| &\iff 1 = |1 - (2a -6b + 6ai + 2bi)| \\
+                           &\iff 1 = |(1 - 2a + 6b) + (-6a - 2b)i| \\
+                           &\iff 1 = \sqrt{(1 - 2a + 6b)^2 + (-6a - 2b)^2} \\
+                           &\iff 1 = (1 - 2a + 6b)^2 + (-6a - 2b)^2 \\
+                           &\iff 1 = 1-2x+6y\ -2x+4x^{2}-12xy+6y-12xy+36y^{2}+4y^{2}+36x^{2}+24xy \\
+                           &\iff 0 = 10x^{2}-x+3y+10y^{2} \\
+                           &\iff \left(\frac{1}{\sqrt{40}}\right)^2 = \left(x-\frac{1}{20}\right)^{2}+\left(y+\frac{3}{20}\right)^{2}.
+\end{align*}
+Thus, the image of $\mathcal L$ under the inversion mapping is the circle of radius $\frac{1}{\sqrt{40}}$ centered at $\left(\frac1{20}, -\frac3{20}\right)$.
 
 \vskip.15in
 \hrule

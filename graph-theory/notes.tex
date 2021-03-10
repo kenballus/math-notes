@@ -431,11 +431,30 @@
     A weighted graph is a graph $G=(V,E)$ together with a weight function $$w: E \to \mathbb R.$$
 
 \medskip\noindent{\bf Kruskal's Algorithm}
+    Algorithm for constructing a minimum spanning tree for a conneced, weighted graph.
+
+    Repeatedly adding the lowest weight edge that does not create a cycle, until no such edge is available.
 
 \medskip\noindent{\bf Theorem 4.11}
 
     Kruskal's Algorithm produces a minimum spanning tree.
 
 \medskip\noindent{\bf Prim's Algorithm}
+    Algorithm for constructing a minimum spanning tree for a conneced, weighted graph.
+
+    Pick a starting node, and add it to the MST.
+
+    Repeatedly add the cheapest edge incident to a node in the MST that does not create a cycle.
+
+\medskip\noindent{\bf Theorem 4.12}
+
+    Prim's algorithm produced a minimum spanning tree.
+
+\medskip\noindent{\bf Exercise 4.2.9}
+
+    If every edge in a conneced weighted graph has a distinct weight, then the graph has a unique MST. 
+    This comes from the fact that at each stage of Kruskal's algorithm, there is a unique choice of which edge to add next. 
+    However, this relies on the assumption that Kruskal's has the capacbility to produce every minimum spanning tree of a graph. 
+    That's true though, since you can take any MST and just keep removing the maximum weight edges, effectively running Kruskal's in reverse.
 
 \end{document}
