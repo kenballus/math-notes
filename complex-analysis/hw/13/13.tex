@@ -1,0 +1,105 @@
+\documentclass[11pt]{article}       % The percent symbol in your code starts a comment.  The comment ends at the next linebreak.
+\usepackage[english]{babel}         % Packages add functionality and style conventions to your documents. Don't edit this section!
+\usepackage{fullpage}               % Eliminates wasted space
+\usepackage[utf8]{inputenc}         % Necessary for character encoding
+\usepackage{amsmath, amssymb,amsthm}% Required math packages
+\usepackage{graphicx}               % For handling graphics
+\usepackage[colorinlistoftodos]{todonotes}  % For the fancy "todo" stuff
+\usepackage{hyperref}               % For clickable links in the final PDF
+\usepackage{tikz}
+\theoremstyle{definition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{prop}[theorem]{Proposition}
+\newtheorem{claim}[theorem]{Claim}
+
+\title{Complex Analysis -- Homework \#13}
+
+\author{Kallus, Kornissar, Feldman}
+
+\date{ Due Wednesday, March 10 }
+
+\begin{document}
+\color{white}
+\pagecolor{black}
+\maketitle
+
+\noindent{\bf 1. a. } What is the image of the unit circle $\mathcal C:|z|=1$ under the fractional linear transformation $f(z) = \dfrac{1}{1-z}$?
+\vskip.1in
+\noindent{\sc Answer: } To begin, since $f(1)=\infty$, the image of $\mathcal C$ under $f$ is a line.  Thus, to determine $f(\mathcal C)$, it suffices merely to consider the images of two other points on $\mathcal C$. $$f(i) = \frac{1}{1-i} = \frac12 + \frac12i.$$ $$f(-1) = \frac12.$$
+Thus, the image of $\mathcal C$ under $f$ is the line $\text{Re}(z) = \frac12$.
+\vskip.1in
+\noindent{\bf b. }  Apply part  {\bf a}  to redo problem {\bf 8} on Test \#1.
+
+    Since FLTs are continuous, and $f$ maps the unit circle to the line Re$(z)=\frac12$, it must be that the interior of the unit circle maps to one side of that line, and the exterior maps to the other.
+    Observe that $f(0) = 1$, which is on the right side of the line Re$(z)=\frac12$.
+    Thus, points in the interior of the unit circle must all map to the right side of the line.
+    Thus, every point in the image of the unit circle under $f$ has imaginary component greater than $\frac12$.
+    Since a complex number is in the interior of the unit circle if and only if it has magnitude less than 1, we have that if $|z| < 1$, then Re$\left(\frac1{1-z}\right) > \frac12$.
+
+\vskip.1in
+\hrule
+\vskip.1in
+
+\noindent{\bf 2. } Find the fractional linear transformation that maps the points
+\vskip.1in
+\noindent {\bf a. } $1,i,-1$ to the points $0,1,\infty$, respectively;
+\begin{proof}
+    Let $z_1, z_2, z_3 = -1, i, 1$, and let $w_1, w_2, w_3 = \infty, 1, 0$.
+    Then, the unique FLT mapping $z_1, z_2, z_3$ to $w_1, w_2, w_3$, respectively, can be found by solving for $w$ in terms of $z$ in the following equation, on page 311 in the book:
+    $$\frac{(z-z_1)(z_2-z_3)}{(z-z_3)(z_2-z_1)} = \frac{w_2 - w_3}{w - w_3}.$$
+    Thus,
+    \begin{align*}
+        \frac{1 - 0}{w - 0} &= \frac{(z-(-1))(i-1)}{(z-1)(i-(-1))} \\
+        \implies \frac{1}{w} &= \frac{(z+1)(i-1)}{(z-1)(i+1)} \\
+                             &= \frac{(z+1)(i-1)(-i+1)}{2(z-1)} \\
+        \implies w &= \frac{2(z-1)}{2i(z+1)} \\
+                   &= \frac{2z-2}{2iz + 2i} \\
+                   &= \frac{z-1}{iz + i}.
+    \end{align*}
+    Thus, the desired FLT is $f(z) = \frac{z-1}{iz+i}$.
+\end{proof}
+
+\vskip.1in
+\noindent \dotfill
+\vskip.05in
+
+\noindent {\bf b. } $0,1,\infty$ to the points $1,i,-1$, respectively.
+\begin{proof}
+    Let $z_1, z_2, z_3 = \infty, 1, 0$, and let $w_1, w_2, w_3 = -1, i, 1$.
+    Then, the unique FLT mapping $z_1, z_2, z_3$ to $w_1, w_2, w_3$, respectively, can be found by solving for $w$ in terms of $z$ in the following equation, on page 311 in the book:
+    $$\frac{(w-w_1)(w_2-w_3)}{(w-w_3)(w_2-w_1)} = \frac{z_2 - z_3}{z - z_3}.$$
+    Thus,
+    \begin{align*}
+         &= \frac{(w-w_1)(w_2-w_3)}{(w-w_3)(w_2-w_1)} \\
+        \implies \frac{1 - 0}{z - 0} &= \frac{(w - (-1))(i-1)}{(w-1)(i-(-1))} \\
+        \implies z &= \frac{(w-1)(i+1)}{(w + 1)(i-1)} \\
+                   &= \frac{-2i(w-1)}{2(w + 1)} \\
+                   &= \frac{-iw+i}{w+1}.
+    \end{align*}
+    Thus, by solving this equation for $w$, we have that the desired FLT is $f(z) = \frac{-z+i}{z+i}$.
+\end{proof}
+
+\vskip.1in
+\hrule
+\vskip.1in
+
+\noindent{\bf 3. } Find a fractional linear transformation that maps the interior of the unit disk to the half plane $v>1$.
+
+\begin{align*}
+    \frac{w_2-w_3}{w-w_3} &= \frac{(z-z_1)(z_2-z_3)}{(z-z_3)(z_2-z_1)} \\
+    \implies \frac{(1+i)-i}{w-i} &= \frac{(z-i)(1-(-i))}{(z-(-i))(1-i)} \\
+    \implies \frac1{w-i} &= \frac{iz+1}{z+i} \\
+    \implies w-i &= \frac{z+i}{iz+1} \\
+    \implies w &= \frac{z+i}{iz+1} + i \\
+      &= \frac{z+i + i(iz+1)}{iz+1} \\
+      &= \frac{z+i + -z+i}{iz+1} \\
+      &= \frac{2i}{iz+1}
+\end{align*}
+
+Thus, the desired FLT is $f(z) = \frac{2i}{iz+1}$.
+
+\vskip.1in
+\hrule
+
+\end{document}

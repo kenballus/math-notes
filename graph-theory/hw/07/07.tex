@@ -57,13 +57,13 @@
 
     {\bf Case 1.} Suppose that neither $e_1$ nor $e_2$ is a bridge.
     Then, $G-e_1$ is connected.
-    Thus, $G-e_2$ has at most two components.
+    Thus, $G-e_2$ has at most two components, which contradicts the assumption that $G-e_1-e_2$ has three components.
 
     {\bf Case 2.} Suppose without loss of generality that $e_1$ is a bridge, and $e_2$ is not.
     Then, $G-e_2$ is connected.
-    Thus, $G-e_1$ has at most two components.
+    Thus, $G-e_1$ has at most two components, which contradicts the assumption that $G-e_1-e_2$ has three components.
 
-    Thus, it must be 
+    Thus, it must be that both $e_1$ and $e_2$ are bridges.
 
     Suppose $e_1$ and $e_2$ are bridges.
     Then, $G-e_1$ has two components, by the definition of a bridge.
@@ -75,12 +75,7 @@
 
 \newpage\noindent{\bf 4.6} Proposition: If $G$ is a connected graph of order $n \geq 3$ without bridges, and for every edge $e$ in $G$, each edge of $G-e$ is a bridge, then $G$ is a cycle graph.
 \begin{proof}
-    Let $G$ be a connected graph of order $n \geq 3$ without bridges such that for every edge $e$ in $G$, each edge of $G-e$ is a bridge.
-    Then, by Theorem 4.1, every edge of $G$ participates in at least one cycle.
-    Let $e \in E(G)$.
-    Then, by Theorem 4.1, $G-e$ contains no cycles.
-    Thus, $G-e$ is a tree.
-    % Annoying to say, but obvious.
+By Theorem 4.1, every edge $e \in E(G)$ lies on a cycle. Similarly, by Theorem 4.1 every edge $e' \in E(G - e)$ does not lie on a cycle. Thus, $G$ is a cyclic graph where the removal of any edge makes it acyclic. In other words, every $e$ is in every cycle in $G$. By definition, $G$ is a single cycle and thus of the form $C_n$.
 \end{proof}
 
 \newpage\noindent{\bf 4.10}
@@ -189,8 +184,19 @@ Thus, the graph from (a) is the only tree in which two thirds of the vertices ha
     Thus, $K_1$ and $K_2$ are the only regular trees.
 \end{proof}
 
-\newpage\noindent{\bf 4.24(a)}
+\newpage\noindent{\bf 4.24(a)} Proposition: There exists a graph $G$ of order $n \geq 4$ such that every subgraph of $G$ induced by any three vertices of $G$ is a tree.
+\begin{proof}
+Observe that every subgraph of $C_4$ induced by any three vertices of $C_4$ is $P_3$, which is a tree. Thus, $C_4$ has the desired property. 
 
-    
+Assume that another such a graph $G$ exists and let $u, v, w \in V(G)$. Then the subgraph induced by $\{u, v, w\}$ must be a tree $T$. Since there is only one tree of order 3, $T = P_3$. Note that the three vertices cannot induce the subgraph $C_3$. Since G has order $n \geq 4$, there exists $x \in V(G)$ such that $x \notin \{u,v,w\}$. Let $G'$ be the subgraph of $G$ induced by $\{u, v, w, x\}$. Since $G'$ is a subgraph of $G$, any three vertices in $G'$ must induce the subgraph $P_3$ in $G'$. Note that $G'$ cannot be disconnected and that the only possible degrees of vertices in $G'$ are $0$, $1$, $2$, or $3$. 
+
+If any vertex has a degree of $0$, the graph is disconnected, which is a contradiction.
+
+Assume without loss of generality that $\deg x = 3$ in $G'$. By assumption, the other three vertices in $G'$ induce $P_3$. Let $\deg_{P_3}(v) = \deg_{P_3}(w) = 1$ and $\deg_{P_3}(u) = 2$ without loss of generality. Then we see that $\deg_{G'}(x) = \deg_{G'}(u) = 3$ and $\deg_{G'}(v) = \deg_{G'}(w) = 2$. Then the subgraph induced by $\{x, u, v\}$ is $C_3$. This is a contradiction.
+
+Assume without loss of generality that $\deg_{G'}x = 1$, and $xu \in E(G')$. Then, no vertex in $G'$ can have degree 3, so $u$, $v$, and $w$ must have degree $1$ or $2$. If $\deg u = \deg v = \deg w = 1$, then $G' = K_2 \cup K_2$ and is disconnected, which is a contradiction. If $\deg u = \deg v = \deg w = 2$, then Corollary 2.3 is contradicted. Similarly, if two of $\{u,v,w\}$ have degree $1$ in $G'$, then Corollary 2.3 is contradicted. If one vertex has degree $1$ in $G'$, then $G' = P_4$. Selecting the two vertices of degree $1$ and either of the other vertices yields a disconnected induced subgraph, which is a contradiction.
+
+Thus, all vertices in $G'$ must have degree $2$, and so $G' = C_4$. Thus, every induced subgraph of $4$ vertices in $G$ must be $C_4$. Suppose $G$ is of order $n \geq 5$. Then, there must exist an induced subgraph of $G$ of order $5$ such that every subgraph of order $4$ is the cycle $C_4$. Take $G'$ and let the new vertex be $y$. Then if $y$ and any other three points induce $C_4$, $y$ must be connected to at least two of every possible combination of $\{u, v, w, x\}$ of order $3$. This requires $y$ be adjacent to at least three other vertices, which will create multiple cycles $C_3$, which is a contradiction. Thus $G$ is of order $n < 5$, so $G = C_4$.
+\end{proof}
 
 \end{document}
