@@ -314,6 +314,12 @@ A subbasis $\mathcal S$ for a topology on $X$ is a collection of subsets of $X$ 
 
     If $A$ is a subset of a topological space $X$ and if $x \in X$, then $x$ is a limit point (or cluster point or point of accumulation) of $A$ if every neighborhood of $x$ intersects $A$ in some point other than $x$ itself.
 
+\medskip\noindent{\bf Convergent Sequences}
+
+    Let $x_1, x_2, \hdots$ be a sequence of points of a topological space $X$.
+    The sequence converges to $x \in X$ if for every neighborhood $U$ of $x$ there exists $N \in \mathbb N$ such that for all $n \geq N$, we have $x_n \in U$. 
+    In this case, $x$ is called a limit point of the sequence.
+
 \medskip\noindent{\bf Hausforff Space}
 
     A topological space $X$ is a Hausdorff space if for each pair of distinct points $x_1, x_2 \in X$, there exist neighborhoods $U_1$ of $x_1$ and $U_2$ of $x_2$ such that $U_1 \cap U_2 = \emptyset$.
@@ -358,5 +364,16 @@ A subbasis $\mathcal S$ for a topology on $X$ is a collection of subsets of $X$ 
         \item For every closed subset $B$ of $Y$, the preimage of $B$ under $f$ is closed in $X$.
         \item For each $x \in X$ and each neighborhood $V$ of $f(x)$, there is a neighborhood $U$ of $x$ such that $f(u) \subseteq V$.
     \end{enumerate}
+
+\medskip\noindent{\bf Theorem 17.6}
+
+    Let $A$ be a subset of a topological space $X$.
+    Let $A'$ be the set of all limit points of $A$.
+    Then $\overline A = A \cup A'$.
+
+\medskip\noindent{\bf Corollary 17.7}
+
+    A subset of a topological space is closed if and only if it contains all of its limit points.
+
 
 \end{document}
