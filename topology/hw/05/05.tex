@@ -1,0 +1,116 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amsfonts, amssymb, amsthm}
+\usepackage{graphicx}
+\usepackage[margin=.75in]{geometry}
+\usepackage{xcolor}
+
+\newcommand{\inv}{^{-1}}   
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\R}{\mathbb R}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\C}{\mathbb C}
+\newcommand{\N}{\mathbb N}
+\newcommand{\B}{\mathcal B}
+
+\date{Due Friday, March 12, 2021}
+\author{Ben Kallus}
+\title{Topology \\ Homework 5}
+
+\begin{document}
+\pagecolor{black}
+\color{white}
+\maketitle
+
+\noindent{\bf 1.}
+
+    The closure of a subset $A$ of a topological space $X$ is the intersection of all closed sets in $X$ containing $A$.
+
+\medskip\noindent{\bf 2.}
+
+    The interior of a subset $A$ of a topological space $X$ is the union of all open sets contained in $A$.
+
+\medskip\noindent{\bf 3.}
+
+    A limit point of a subset $A$ of a topological space $X$ is a point $x \in X$ such that every neighborhood of $x$ intersects $A$ at some point other than $x$ itself.
+
+\medskip\noindent{\bf 4.}
+
+    The sequence of points $x_1, x_2, x_3, \hdots$ in a topological space $X$ converges to a limit $x$ if for every neighborhood $U$ of $x$ there exists $N \in \N$ such that for all $n \geq N$, $x_n \in U$.
+
+\newpage\noindent{\bf 5.}
+\begin{proof}
+    Let $X$ be a topological space, let $A$ be a subset of $X$, and let $y$ be an element of $X$.
+
+    Suppose $y \in \text{Int}(A)$.
+    Then, by the definition of $\text{Int}(A)$, there exists an open set $U$ such that $y \in U \subseteq A$.
+
+    Now, suppose there exists an open set $U$ such that $y \in U \subseteq A$.
+    Then, since $U$ is contained in $A$, $U \subseteq \text{Int}(A)$.
+    Thus, $y \in \text{Int}(A)$.
+
+    Thus, $y \in \text{Int}(A)$ if and only if $y \in U \subseteq A$ for some open set $U$.
+\end{proof}
+
+\newpage\noindent{\bf 6.}
+\begin{proof}
+    Let $X$ be a topological space, and let $A$ be a subset of $X$.
+    Let $\mathcal C$ be the set of all closed sets containing $A$.
+    Let $\mathcal D$ be the set of all open sets that do not intersect $A$.
+    Thus, $X \setminus C \in \mathcal D$ for all $C \in \mathcal C$.
+    Therefore,
+    \begin{align*}
+        X \setminus \overline A &= X \setminus \bigcap_{C \in \mathcal C} C \\
+                                &= \bigcup_{C \in \mathcal C} (X \setminus C) \\
+                                &\subseteq \bigcup_{D \in \mathcal D} D \\
+                                &= \text{Int}(X \setminus A).
+    \end{align*}
+
+    It follows from the definitions of $\mathcal C$ and $\mathcal D$ that for all $D \in \mathcal D$, $D = X \setminus C$ for some $C \in \mathcal C$.
+    Thus,
+    \begin{align*}
+        \text{Int}(X \setminus A) &= \bigcup_{I \in \mathcal D} D \\
+                                  &\subseteq \bigcup_{C \in \mathcal C} (X \setminus C) \\
+                                  &= X \setminus \bigcap_{C \in \mathcal C} C \\
+                                  &= X \setminus \overline A.
+    \end{align*}
+
+    Thus, $X \setminus \overline A = \text{Int}(X \setminus A)$.
+    \end{proof}
+
+\newpage\noindent{\bf 7.}
+\begin{proof}
+    Let $X$ be a topological space, and let $A,B$ be subsets of $X$.
+    Let $x \in \text{Int}(A) \cup \text{Int}(B)$.
+    Then, there exists an open set $T$ such that $x \in T$, and either $T \subseteq A$ or $T \subseteq B$.
+    Then, $T \subseteq A \cup B$.
+    Thus, $x \in \text{Int}(A \cup B)$.
+    Thus, $\text{Int}(A) \cup \text{Int}(B) \subseteq \text{Int}(A \cup B)$.
+
+    Consider the case in which $X=\R$ with the standard topology, $A=(0,1]$, and $B=(1,2)$.
+    Then, $\text{Int}(A) \cup \text{Int}(B) = (0,1) \cup (1,2)$, so $1 \notin \text{Int}(A) \cup \text{Int}(B)$.
+    However, $\text{Int}(A \cup B) = (0,2)$, so $1 \in \text{Int}(A \cup B)$.
+    Thus, $\text{Int}(A) \cup \text{Int}(B) \neq \text{Int}(A \cup B)$.
+\end{proof}
+
+\newpage\noindent{\bf 8.}
+\begin{proof}
+    Let $X$ be $\R$ with the finite complement topology.
+    Let $x \in X$.
+    Let $S$ be the sequence defined by $S_n = \frac1n$.
+    Let $U$ be a neighborhood of $x$.
+
+    Consider the following two cases:
+
+    {\bf Case 1.} $U = \R$. \\
+    Then, every element of $S$ is an element of $U$.
+
+    {\bf Case 2.} $U = \R \setminus T$ for some finite, nonempty set $T \subset \R$. \\
+    Let $t$ be the minimum element of $T$.
+    Then, by the Archimedean property, there exists $N \in \mathbb N$ such that $\frac1N < t$.
+    Thus, for all $n \geq N$, $S_n < t$, so $S_n \in U$.
+
+    Thus, $x$ is a limit point of $S$, so every point in $X$ is a limit point of $S$.
+\end{proof}
+
+\end{document}

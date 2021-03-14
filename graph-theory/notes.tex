@@ -431,7 +431,7 @@
     A weighted graph is a graph $G=(V,E)$ together with a weight function $$w: E \to \mathbb R.$$
 
 \medskip\noindent{\bf Kruskal's Algorithm}
-    Algorithm for constructing a minimum spanning tree for a conneced, weighted graph.
+    Algorithm for constructing a minimum spanning tree for a connected, weighted graph.
 
     Repeatedly adding the lowest weight edge that does not create a cycle, until no such edge is available.
 
@@ -440,7 +440,7 @@
     Kruskal's Algorithm produces a minimum spanning tree.
 
 \medskip\noindent{\bf Prim's Algorithm}
-    Algorithm for constructing a minimum spanning tree for a conneced, weighted graph.
+    Algorithm for constructing a minimum spanning tree for a connected, weighted graph.
 
     Pick a starting node, and add it to the MST.
 
@@ -452,9 +452,30 @@
 
 \medskip\noindent{\bf Exercise 4.2.9}
 
-    If every edge in a conneced weighted graph has a distinct weight, then the graph has a unique MST. 
+    If every edge in a connected weighted graph has a distinct weight, then the graph has a unique MST. 
     This comes from the fact that at each stage of Kruskal's algorithm, there is a unique choice of which edge to add next. 
-    However, this relies on the assumption that Kruskal's has the capacbility to produce every minimum spanning tree of a graph. 
+    However, this relies on the assumption that Kruskal's has the capability to produce every minimum spanning tree of a graph. 
     That's true though, since you can take any MST and just keep removing the maximum weight edges, effectively running Kruskal's in reverse.
+
+\medskip\noindent{\bf Cut-vertex}
+
+    A vertex $v$ in a connected graph $G$ is a cut-vertex if and only if $G - v$ is not connected.
+
+\medskip\noindent{\bf Theorem 5.1}
+
+    If $e=uv$ is a bridge in a connected graph $G$, then $v$ is a cut-vertex in $G$ if and only if $\deg_G(v) \geq 2$.
+
+\medskip\noindent{\bf Corollary 5.2}
+
+    Let $G$ be a connected graph of order $n \geq 3$.
+    If $G$ contains a bridge, then $G$ contains a cut-vertex.
+
+\medskip\noindent{\bf Theorem 5.3/Corollary 5.4}
+
+    Let $V$ be a vertex in a connected graph $G$. Then $v$ is a cut vertex if and only if there exist distinct $u,w \in V(G) \setminus \{v\}$ such that every $u-w$ path in $G$ contains $v$.
+
+\medskip\noindent{\bf Theorem 5.5}
+
+    Let $G$ be a nontrivial connected graph and let $u \in V(G)$. If $v$ is a vertex in $G$ that is furthest from $y$, then $v$ is not a cut-vertex.
 
 \end{document}
