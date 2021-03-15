@@ -22,7 +22,7 @@
 
 \noindent{\bf 4.25}
 
-    The following are all of the spanning trees for $G$:
+    The following are all of the spanning trees for $G$: % relabel these u,1 x,2 etc
     \begin{center}
         \begin{tikzpicture}
             \draw[fill=black] (0.0, 2.0) circle (3pt);
@@ -739,7 +739,7 @@ Proposition: If $S$ and $T$ are spanning trees of a connected graph $G$, then fo
     Thus, there exists an edge $f$ along $P$ that connects the components of $S - e$.
     Thus, $f$ is a bridge in $S - e + f$.
     Thus, every edge in $S-e+f$ is a bridge, so $S-e+f$ is a tree.
-    Since $S-e+f$ is a tree with the same size and vertex set as $S$, $S-e+f$ is therefore a spanning tree of $G$.
+    Since $S-e+f$ is a tree with the same size and vertex set as $S$, $S-e+f$ is therefore a spanning tree of $G$. % come back to this
 
     Note that $P$ has length at least 2, since $e \notin E(T)$.
     Thus, $C = (u, p_1, \hdots, v, u)$ is a cycle in $T+e$.
@@ -751,20 +751,18 @@ Proposition: If $S$ and $T$ are spanning trees of a connected graph $G$, then fo
     Since $T+e-f$ is a tree with the same size and vertex set as $T$, $T+e-f$ is therefore a spanning tree of $G$.
 \end{proof}
 
-\newpage\noindent{\bf 4.30} Proposition: A connected weighted graph $G$ has a unique spanning tree $T$ if and only if the weight of each edge $e$ of $G$ that is not in $T$ exceeds the weight of every other edge on the cycle in $T+e$.
+\newpage\noindent{\bf 4.30} Proposition: A connected weighted graph $G$ has a unique minimum spanning tree $T$ if and only if the weight of each edge $e$ of $G$ that is not in $T$ exceeds the weight of every other edge on the cycle in $T+e$.
 \begin{proof}
     Let $G$ be a connected. weighted graph.
 
-    Suppose that $G$ has a unique spanning tree, $T$.
+    Suppose that $G$ has a unique minimum spanning tree, $T$.
     Let $e \in E(G) \setminus E(T)$.
-    By the lemma in the previous proof, $T+e$ has at most one cycle.
-    Since $T$ is a spanning tree of $G$, $T+e$ has $n$ edges, and is therefore not a tree.
-    Thus, $T+e$ contains exactly one cycle.
+    By the lemma in the previous proof, $T+e$ contains exactly one cycle.
     Suppose $w(e) = w(f)$ for some edge $f \neq e$ along the cycle in $T+e$.
-    Then, since $f$ lies along a cycle in $T+e$, it is not a bridge in $T+e$.
+    Then, since $f$ lies along the cycle in $T+e$, it is not a bridge in $T+e$. % cite theorem
     Thus, $T+e-f$ is connected, and has no cycles.
     Thus, $T+e-f$ is a tree with $n-1$ edges and the same vertex set as $G$.
-    Thus, $T+e-f$ is a minimum spanning tree for $G$.
+    Thus, since $w(e) = w(f)$, $T+e-f$ is a minimum spanning tree for $G$.
     Since $e \neq f$, $T+e-f \neq T$.
     Thus, $G$ does not have a unique minimum spanning tree, so it must be that $w(e) \neq w(f)$ for all $f \neq e$ along the cycle in $T+e$.
 
@@ -776,8 +774,8 @@ Proposition: If $S$ and $T$ are spanning trees of a connected graph $G$, then fo
     {\bf (a)} For each integer $k \geq 2$, $K_{k,1}$ is a connected graph containing a vertex $v$ such that $G-v$ has $k$ components.
     This vertex is the only element of the order 1 partite set.
 
-    {\bf (b)} $K_2 \cup K_1$ is an example of such a graph.
-    To see this, assign $u$ and $v$ to be the vertices in the $K_2$ component of the graph.
+    {\bf (b)} $P_2$ is an example of such a graph.
+    To see this, assign $u$ to be the vertex of degree 2, and $v$ to be either of the other vertices.
 
 \newpage\noindent{\bf 5.4}
 
