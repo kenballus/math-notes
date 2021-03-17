@@ -1,0 +1,1 @@
+print(max(i:=list(iter(input,""))),min(i))

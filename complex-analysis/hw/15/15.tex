@@ -1,0 +1,66 @@
+\documentclass[11pt]{article}       % The percent symbol in your code starts a comment.  The comment ends at the next linebreak.
+\usepackage[english]{babel}         % Packages add functionality and style conventions to your documents. Don't edit this section!
+\usepackage{fullpage}               % Eliminates wasted space
+\usepackage[utf8]{inputenc}         % Necessary for character encoding
+\usepackage{amsmath, amssymb,amsthm}% Required math packages
+\usepackage{graphicx}               % For handling graphics
+\usepackage[colorinlistoftodos]{todonotes}  % For the fancy "todo" stuff
+\usepackage{hyperref}               % For clickable links in the final PDF
+\usepackage{tikz}
+\theoremstyle{definition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{prop}[theorem]{Proposition}
+\newtheorem{claim}[theorem]{Claim}
+
+\title{Complex Analysis -- Homework \#15}
+
+\author{Fieldman, Kallus, Komistar}
+
+\date{15 March, 2021}
+
+\begin{document}
+\color{white}
+\pagecolor{black}
+\maketitle
+
+\noindent{\bf 1. }   Let $P : \overline{\mathbb C} \longrightarrow \mathcal S$ denote the stereographic projection of the extended complex plane $\overline{\mathbb C}$ onto the Riemann sphere $\mathcal S$, and let $R_x : \mathbb R^3 \longrightarrow \mathbb R^3$ denote the linear operator of rotation by $\pi$ radians about the $x$-axis in 3-dimensional Euclidean space.
+
+\vskip.1in
+
+\noindent {\bf a. }  Write the matrix representation of $R_x$ with respect to the standard Euclidean basis in $\mathbb R^3$.
+
+\[R_x = \begin{bmatrix}
+1 & 0 & 0 \\
+0 & -1 & 0\\
+0 & 0 & -1
+\end{bmatrix}\]
+
+\vskip.1in
+
+\noindent {\bf b. }  Use the results of part {\bf a} and {\bf Homework \#14}, problem {\bf 2}, to compute the image of the number $2+i$ under the mapping $P^{-1}R_xP$.
+
+\begin{align*}
+    P(2+i) &= \begin{bmatrix}2/3\\ 1/3\\ 2/3\end{bmatrix}\\
+    R(P(2+i)) &= \begin{bmatrix}2/3\\ -1/3\\ -2/3\end{bmatrix}\\
+\end{align*}
+
+To compute $P^{-1}(R(P(2+i)))$, we're going to need to figure out what $P^{-1}$ does.
+$P$ takes a complex number $z = a+bi$ and maps it to the intersection of the Riemann sphere and the line through $(0,0,1)$ and $(a,b,0)$ that does not occur at $(0,0,1)$.
+Thus, $P^{-1}$ takes a point $p$ on the Riemann sphere and maps it to the complex plane by intersecting the line through $p$ and $(0,0,1)$ with the complex plane.
+The line through $(0,0,1)$ and $(2/3, -1/3, -2/3)$ is defined by the following parametric equations:
+$$x = \frac{2t}3,~~~y = -\frac t3,~~~z = 1 - \frac{5t}3.$$
+To solve for this line's intersection with the plane, set $z=0$.
+When $z=0$, $t=3/5$, so $x = 2/5$, and $y=-1/5$.
+Thus, $$P^{-1}(R(P(2+i))) = \frac{2-i}5$$
+
+\vskip.1in
+
+\newpage \noindent {\bf c. }  Compute the product of $2+i$ and the number $ P^{-1}R_xP(2+i)$ that you found in problem {\bf b}.
+
+\[(2+i)\left(\frac{2-i}5\right) = \frac{4 + 1}5 = 1.\]
+
+\vskip.1in
+\hrule
+
+\end{document}

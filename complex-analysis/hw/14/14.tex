@@ -1,0 +1,104 @@
+\documentclass[11pt]{article}       % The percent symbol in your code starts a comment.  The comment ends at the next linebreak.
+\usepackage[english]{babel}         % Packages add functionality and style conventions to your documents. Don't edit this section!
+\usepackage{fullpage}               % Eliminates wasted space
+\usepackage[utf8]{inputenc}         % Necessary for character encoding
+\usepackage{amsmath, amssymb,amsthm}% Required math packages
+\usepackage{graphicx}               % For handling graphics
+\usepackage[colorinlistoftodos]{todonotes}  % For the fancy "todo" stuff
+\usepackage{hyperref}               % For clickable links in the final PDF
+\usepackage{fourier}
+\usepackage{tikz}
+\theoremstyle{definition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{prop}[theorem]{Proposition}
+\newtheorem{claim}[theorem]{Claim}
+
+\title{Complex Analysis -- Homework \#14}
+
+\author{Feldman, Kallus, Komissar}
+
+\date{March 12 2021}
+
+\begin{document}
+
+\maketitle
+
+\noindent{\bf 1. }  The unit circle in the plane centered at the origin is pictured below.  Also, $\overline{ON} \parallel \overline{RP}$, and $a$ and $b$ are points on the $x$-axis.  Prove that the product of the numbers $a$ and $b$ is $1$.
+
+\centerline{
+\begin{tikzpicture}[xscale=2, yscale=2]
+\draw [<->] (0,-1.25) -- (0,1.5);
+\draw [<->] (-2.25,0) -- (2.5,0);
+\node [ right] at (2.5,0)  { {\small $x$}};
+\node [ above right] at (0,1.25)  { {\small $y$}};
+\node [ below] at (.8, -3/5)  { {\small $R$}};
+\node [ above] at (.735, -.425)  { {\tiny $2$}};
+\node [ right] at (-0.02,0.715)  { {\tiny $3$}};
+\node [ below left ] at (0,0)  { {\small $O$}};
+\node [ above left] at (0.05,0.95) { {\small $N$}};
+\node [ above] at (.9, 3/5)  { {\small $P$}};
+\node [ below left ] at (-0.9,0.05)  { {\small $W$}};
+\node [ below right ] at (0.9,0.05)  { {\small $E$}};
+\draw (0,0) circle (1cm);
+\draw[blue,dashed,-] (0.8,-3/5) -- (0,1);
+\draw[red,dashed,-] (0,1) -- (2,0);
+\draw[red,thick,-] (-1,0) -- (2,0);
+\draw[blue, dashed,-] (4/5, 3/5) -- (4/5, -3/5);
+\node [ below] at (2,0) { {\small  $a$}};
+\node [ above ] at (1.7,-0.04) { {\tiny  $1$}};
+\node [ below] at (0.45,0) { {\small $b$ }};
+\draw[red,thick] (0,1) arc (90:180:1cm);
+\draw[red,thick] (1,0) arc (0:35:1cm);]
+\draw[blue,thick] (0,1) arc (90:35:1cm);
+\end{tikzpicture}
+}
+
+\begin{proof}
+To begin, the measure of the exterior angle $\angle 1$ to the circle satisfies the following:
+\begin{align}
+\angle 1 &= \frac{1}{2} \left( \widearc{NW} - \widearc{PE} \right) \\
+&= \frac{1}{2} \left( \frac{\pi}{2} - \widearc{PE} \right) \\
+&= \frac{1}{2} \left( \widearc{NP} \right) \\
+&= \angle 2
+\end{align}
+Next, because $\overline{ON} \parallel \overline{RP}$, the alternate interior angles are equal, so $\angle 2 = \angle 3$. Then by the defintion of tangent, $\tan \angle 3 = b$. Then, by the previous equalities, $\tan \angle 1 = b$. Further, by the definition of tangent, $\tan \angle 1 = \frac1a$. Then we have $\frac1a = b$. Thus, $ab = a\frac1a = 1$.
+\end{proof}
+
+\vskip.1in
+\hrule
+\vskip.1in
+
+\noindent{\bf 2. } Find the stereographic projection of $2+i$ onto the Riemann sphere.  Show work.
+
+\vskip.1in
+
+\noindent{\sc Solution. } We begin by parametrizing the line segment $\mathcal L$ in $\mathbb R^3$ that joins the north pole $(0,0,1)$ of the Riemann sphere $\mathcal S: x^2+y^2+z^2=1$ with the given point $(2,1,0)$ in the complex plane: 
+\begin{align}
+x &= 0 +  \underbar{2} t\\    
+y &= 0 +  \underbar{1} t\\     
+z &= 1 +  \underbar{-1} t
+\end{align}
+for $t \in [0,1]$.  Next, to find the point of intersection $\mathcal L \cap \mathcal S$, we plug these values into the equation for the sphere:
+
+\begin{align*}
+(2t)^2 + t^2 + (1-t)^2 &= 1\\
+4t^2 + t^2 + 1 - 2t + t^2 &= 1\\
+6t^2 - 2t + 1 &= 1\\
+6t^2 - 2t &= 0\\
+t &= 0, \frac13
+\end{align*}
+
+When $t = 0$, we have the intersect at the north pole, so we are concerned only with $t = \frac13$. When $t = \frac13$, we have:
+
+\begin{align*}
+x &= \frac23\\    
+y &= \frac13\\     
+z &= \frac23
+\end{align*}
+
+Thus, the point of intersection is $\left(\frac23, \frac13, \frac23\right)$.
+\vskip.1in
+\hrule
+
+\end{document}
