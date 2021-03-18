@@ -1,0 +1,66 @@
+\documentclass[11pt]{article}       % The percent symbol in your code starts a comment.  The comment ends at the next linebreak.
+\usepackage[english]{babel}         % Packages add functionality and style conventions to your documents. Don't edit this section!
+\usepackage{fullpage}               % Eliminates wasted space
+\usepackage[utf8]{inputenc}         % Necessary for character encoding
+\usepackage{amsmath, amssymb,amsthm}% Required math packages
+\usepackage{graphicx}               % For handling graphics
+\usepackage[colorinlistoftodos]{todonotes}  % For the fancy "todo" stuff
+\usepackage{hyperref}               % For clickable links in the final PDF
+\usepackage{tikz}
+\theoremstyle{definition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{prop}[theorem]{Proposition}
+\newtheorem{claim}[theorem]{Claim}
+
+\title{Complex Analysis -- Homework \#17}
+
+\author{Connor Kallus, Josef Feldman, and Ben Komissar}
+
+\date{Due Friday, March 19, 2021}
+
+\begin{document}
+\color{white}
+\pagecolor{black}
+\maketitle
+
+\noindent {\bf 1. }  Use the $\varepsilon$-$\delta$ definition of limit to prove $\displaystyle \lim_{z \to i} \, \dfrac{z-i}{iz-1}= 0$.
+\begin{proof}
+    Let $\epsilon > 0$ be given.
+    Note that for all $z$ satisfying $|z-i|<1$,
+    \begin{align*}
+        |z+i| &= |z+i+i-i| \\
+              &= |z-i + 2i| \\
+              &\geq \left||z-i| - |2i|\right| \\
+              &= ||z-i|-2| \\
+              &> |1-2| \\
+              &= 1.
+    \end{align*}
+    Let $\delta = \min(\epsilon, 1)$.
+    Thus, for all $z$ satisfying $|z-i| < \delta$,
+    \begin{align*}
+        \left|\frac{z-i}{iz-1} - 0\right| &= \left|\frac{z-i}{iz-1}\right| \\
+                                          &= |z-i|\left| \frac{1}{iz-1} \right| \\
+                                          &= |z-i|\left| \frac{1}{i(z+i)} \right| \\
+                                          &= |z-i|\left| \frac{1}{z+i} \right| \\
+                                          &< |z-i| \\
+                                          &< \epsilon.
+    \end{align*}
+    Thus, $$\lim_{z \to i} \frac{z-i}{iz-1} = 0.$$
+\end{proof}
+
+\newpage
+\noindent {\bf 2. Exercise 18.1(b) }
+\begin{proof}
+    Let $\epsilon > 0$ be given.
+    Let $z_0 \in \mathbb C$.
+    Then, for all $z$ satisfying $|z-z_0| < \epsilon$,
+    \begin{align*}
+        |\overline z - \overline {z_0}| &= |\overline{z-z_0}| \\
+                                        &= |z-z_0| \\
+                                        &< \epsilon.
+    \end{align*}
+    Thus, $$\lim_{z \to z_0} \overline z = \overline {z_0}.$$
+\end{proof}
+
+\end{document}
