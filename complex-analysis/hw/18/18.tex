@@ -1,0 +1,54 @@
+\documentclass[11pt]{article}		% The percent symbol in your code starts a comment.  The comment ends at the next linebreak.
+\usepackage[english]{babel} 		% Packages add functionality and style conventions to your documents. Don't edit this section!
+\usepackage{fullpage}				% Eliminates wasted space
+\usepackage[utf8]{inputenc}			% Necessary for character encoding
+\usepackage{amsmath, amssymb,amsthm}% Required math packages
+\usepackage{graphicx}				% For handling graphics
+\usepackage[colorinlistoftodos]{todonotes}	% For the fancy "todo" stuff
+\usepackage{hyperref}				% For clickable links in the final PDF
+\usepackage{tikz}
+\theoremstyle{definition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{prop}[theorem]{Proposition}
+\newtheorem{claim}[theorem]{Claim}
+
+\title{Complex Analysis -- Homework \#18}
+
+\author{Kosef Jomissar, Fennor Coldman, Kan Bellus}
+
+\date{Due Monday, March 22}
+
+\begin{document}
+\color{white}
+\pagecolor{black}
+\maketitle
+
+\noindent{\bf 1. Exercise 18.10(a) }
+\vskip.15in
+\hrule
+\vskip.15in
+\noindent{\bf 2. Exercise 18.10(c) }
+
+\vskip.15in
+\hrule
+\vskip.15in
+
+\noindent{\bf 3. } Can the function
+$
+f(z) =  \dfrac{\text{Re}(z)}{z}
+$
+be defined at $z=0$ so that it is continuous there?  (Justify accordingly.)
+\begin{proof}
+    Observe that for all $z \in \mathbb C$ satisfying $\text{Im}(z) = 0$, $$f(z) = \frac{\text{Re}(z)}{z} = \frac zz = 1.$$
+    Next, observe that for all $z \in \mathbb C$ satisfying $\text{Re}(z) = 0$, $$f(z) = \frac{\text{Re}(z)}{z} = \frac0z = 0.$$
+
+    Let $\epsilon > 0$ be given.
+    Note that $\frac{\epsilon}2$ is complex number with imaginary component 0.
+    Thus, $f(\frac{\epsilon}2) = 0$.
+\end{proof}
+
+\vskip.15in
+\hrule
+
+\end{document}

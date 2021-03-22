@@ -492,6 +492,49 @@
 
 \medskip\noindent{\bf Corollary 6.2}
 
-    A connected graph $G$ cotnains an open Eulerian trail if and only if $G$ has a exactly 2 vertices of odd degree.
+    A connected graph $G$ contains an open Eulerian trail if and only if $G$ has a exactly 2 vertices of odd degree.
+
+\medskip\noindent{\bf Hamilton Cycle}
+
+    A Hamilton cycle in a graph $G$ is a cycle containing all the vertices of $G$.
+    A graph $G$ is a Hamiltonian graph if and only if it contains a Hamilton cycle.
+
+\medskip\noindent{\bf Theorem 6.4}
+
+    The Petersen graph $PG$ is not Hamiltonian.
+
+\medskip\noindent{\bf Theorem 6.5}
+
+    Let $G$ be a Hamiltonian graph. Then for $\emptyset \neq S \subset V(G)$, $k(G-S) \leq |S|$.
+
+    (Where $k(H)$ is the number of components in $H$.)
+
+\medskip\noindent{\bf Theorem 6.6 (Ore's Theorem)}
+
+    If $G$ has order $n \geq 3$, and $\deg(u) + \deg(v) \geq n$ for all non-adjacent $u,v \in V(G)$, then $G$ is Hamiltonian.
+
+    Note: $K_2$ is why $n \geq 3$.
+
+    Note: This bound is sharp. See bowtie graph.
+
+\medskip\noindent{\bf Corollary 6.7 (Dirac's Corollary)}
+
+    If $G$ has order $n \geq 3$ and $\delta(G) \geq \frac n2$, then $G$ is Hamiltonian.
+
+\medskip\noindent{\bf Theorem 6.8}
+
+    Let $G$ be a graph of order $n \geq 3$. Let $u,v$ be one pair of non-adjacent vertices that satisfy $\deg u + \deg v \geq n$. Then $G$ is Hamiltonian if and only if $G+uv$ is Hamiltonian. 
+
+\medskip\noindent{\bf Closure}
+
+    The closure of a graph $G$, denoted $C(G)$, is obtained by iteratively adding edges between non-adjacent vertices satisfying $\deg u + \deg  v \geq n$.
+
+\medskip\noindent{\bf Theorem 6.9}
+
+    A graph $G$ is Hamitlonian if and only if its closure is Hamiltonian.
+
+\medskip\noindent{\bf Corollary 6.10}
+
+    If $C(G)$ is complete, then $G$ is Hamiltonian.
 
 \end{document}
