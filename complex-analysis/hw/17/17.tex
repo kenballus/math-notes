@@ -36,13 +36,14 @@
               &> |1-2| \\
               &= 1.
     \end{align*}
+    Thus, $$\frac1{|z+i|} < 1.$$
     Let $\delta = \min(\epsilon, 1)$.
     Thus, for all $z$ satisfying $|z-i| < \delta$,
     \begin{align*}
         \left|\frac{z-i}{iz-1} - 0\right| &= \left|\frac{z-i}{iz-1}\right| \\
-                                          &= |z-i|\left| \frac{1}{iz-1} \right| \\
-                                          &= |z-i|\left| \frac{1}{i(z+i)} \right| \\
-                                          &= |z-i|\left| \frac{1}{z+i} \right| \\
+                                          &= |z-i| \frac{1}{|iz-1|} \\
+                                          &= |z-i| \frac{1}{|i||z+i|} \\
+                                          &= |z-i| \frac{1}{|z+i|} \\
                                           &< |z-i| \\
                                           &< \epsilon.
     \end{align*}

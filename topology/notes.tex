@@ -243,17 +243,13 @@ A subbasis $\mathcal S$ for a topology on $X$ is a collection of subsets of $X$ 
 
     If $\B$ is a basis for the topology on $X$, then the set $\B_Y = \{B \cap Y \mid B \in \B\}$ is a basis for the subspace topology on $Y$.
 
-\medskip\noindent{\bf Open, revisited}
-
-    If $Y$ is a subspace of $X$, then a set $U$ is open (or open relative to $Y$) if $U$ is open in the subspace topology of $Y$. The set $U$ is open in $X$ if it belongs to the topology of $X$.
-
 \medskip\noindent{\bf Lemma 16.2}
 
     Let $Y$ be a subspace of $X$. If $U$ is open in $Y$, and $Y$ is open in $X$, then $U$ is open in $X$.
 
 \medskip\noindent{\bf Lemma 16.3}
 
-    If $A$ is a subspace of $X$ and $B$ is a subspace of $Y$, then the product topology on $A \times B$ is the same as the topology as the topology $A \times B$ inherits as a subspace.
+    If $A$ is a subspace of $X$ and $B$ is a subspace of $Y$, then the product topology on $A \times B$ is the same as the topology as the topology $A \times B$ inherits as a subspace of $X \times Y$.
 
 \medskip\noindent{\bf Convex}
 
@@ -385,7 +381,43 @@ A subbasis $\mathcal S$ for a topology on $X$ is a collection of subsets of $X$ 
 
     Examples: open/closed, limit points of sets, limits of sequences, a basis and subbasis, connectedness, compactness.
 
+\medskip\noindent{\bf Theorem 18.2}
 
+    \begin{enumerate}
+        \item (constant function) If $f: X \to Y$ maps all of $X$ to a point $y_0 \in Y$, then $f$ is continuous.
+        \item (inclusion) If $A$ is a subspace of $X$, then inclusion function $j: A \to X$ is continuous.
+        \item (composites) If $f: X \to Y$ and $g: Y \to Z$ are continuous, then the map $g \circ f: X \to Z$ is continuous.
+        \item (Restriction of domain) If $f: X \to Y$ is continuous and $A$ is a subspace of $X$, then $f|_A: A \to Y$ is continuous.
+        \item (Restriction or expansion of codomain) Let $f: X \to Y$ be continuous. If $Z$ is a subspace of $Y$ containing the image set $f(X)$, then the function $g: X \to Z$ obtained from restricting the range of $f$ is continuous.
+        If $Z$ is a space having $Y$ as a subspace, then the function $g: X \to Z$ obtained by expanding the range of $f$ is continuous, too.
+        \item (local formulation of continuity) The map $f: X \to Y$ is continuous if $X$ can be written as the union of open sets $U_i$ such that $f|_{U_i}$ is containuous for each $i$.
+    \end{enumerate}
 
+\medskip\noindent{\bf Theorem 18.3 (The pasting Lemma)}
+
+    Let $X = A \cup B$, where $A$ and $B$ are closed sets in a topological space $X$.
+    Let $f: A \to Y$ and $g: B \to Y$ be continuous.
+    If $f(x) = g(x)$ for all $x \in A \cap B$, then $f$ and $g$ combine to give a continuous function $h: X \to Y$ defined by
+    $$h(x) = \begin{cases} f(x) & x \in A \\ g(x) & x \in B \end{cases}.$$
+
+\medskip\noindent{\bf Theorem 18.4}
+
+    Let $f: A \to X \times Y$ given by $f(t) = (f_1(t), f_2(t))$ where $f_1: A \to X$ and $f_2: A \to Y$. Then $f$ is continuous if and only if $f_1$ and $f_2$ are continuous.
+
+\medskip\noindent{\bf Ball}
+
+    Let $x \in M$, a metric space, and let $\epsilon > 0$. Then, the $\epsilon$-ball centered at $x$ is the set of all points $y$ in $M$ with $d(x,y) \leq \epsilon$.
+
+\medskip\noindent{\bf Metric Topology}
+
+    If $d$ is a metric on $X$, then the collection of $\epsilon$-balls for all $x \in X$ and all $\epsilon > 0$ is a basis for a topology on $X$, called the metric topology induced by $d$.
+
+\medskip\noindent{\bf Lemma 20.08}
+
+    Let $B_d(x, \epsilon)$ be an $\epsilon$-ball in a topological space with the metric topology and metric $d$. Let $y \in B_d(x, \epsilon)$. Then, there is $\delta > 0$ such that $B_d(y, \delta) \subseteq B_d(x,\epsilon)$.
+
+\medskip\noindent{\bf Lemma 20.09}
+
+    A set $U$ is open in the metric topology induced by $d$ if and only if for each $y \in U$, there exists $\delta > 0$ such that $B_d(y, \delta) \subseteq U$.
 
 \end{document}

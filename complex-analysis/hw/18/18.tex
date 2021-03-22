@@ -1,0 +1,113 @@
+\documentclass[11pt]{article}		% The percent symbol in your code starts a comment.  The comment ends at the next linebreak.
+\usepackage[english]{babel} 		% Packages add functionality and style conventions to your documents. Don't edit this section!
+\usepackage{fullpage}				% Eliminates wasted space
+\usepackage[utf8]{inputenc}			% Necessary for character encoding
+\usepackage{amsmath, amssymb,amsthm}% Required math packages
+\usepackage{graphicx}				% For handling graphics
+\usepackage[colorinlistoftodos]{todonotes}	% For the fancy "todo" stuff
+\usepackage{hyperref}				% For clickable links in the final PDF
+\usepackage{tikz}
+\theoremstyle{definition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{prop}[theorem]{Proposition}
+\newtheorem{claim}[theorem]{Claim}
+
+\title{Complex Analysis -- Homework \#18}
+
+\author{Kosef Jomissar, Fennor Coldman, Kan Bellus}
+
+\date{Due Monday, March 22}
+
+\begin{document}
+\color{white}
+\pagecolor{black}
+\maketitle
+
+\noindent{\bf 1. Exercise 18.10(a) }
+\begin{proof}
+    Observe that
+    \begin{align*}
+        \lim_{z\to \infty}\frac{4z^2}{(z-1)^2} &= \lim_{z\to 0}\frac{4\left(\frac1z\right)^2}{\left(\frac1z-1\right)^2} \\
+        &= \lim_{z\to 0}\frac{\frac4{z^2}}{\frac1{z^2}-\frac2z + 1} \\
+        &= \lim_{z\to 0}\frac{4}{\frac{z^2}{z^2}-\frac{2z^2}z + z^2} \\
+        &= \lim_{z\to 0}\frac{4}{z^2 - 2z + 1} \\
+        &= \lim_{z\to 0}\frac{4}{(z-1)^2}.
+    \end{align*}
+    Let $\epsilon > 0$.
+    Let $\delta = \min\left(\frac{\epsilon}{40}, \frac12\right)$.
+    Then, for all $z$ satisfying $|z| < \delta$,
+    \begin{align*}
+        \left| \frac{4}{(z-1)^2} - 4 \right| &= \left| \frac{4}{(z-1)^2} -\frac{4(z-1)^2}{(z-1)^2} \right| \\
+        &= \left| \frac{4 - 4(z-1)^2}{(z-1)^2} \right| \\
+        &= \left| \frac{4\left(1 - (z-1)^2\right)}{(z-1)^2} \right| \\
+        &= 4\left| \frac{1 - z^2 + 2z - 1}{(z-1)^2} \right| \\
+        &= 4\left| \frac{-z^2 + 2z}{(z-1)^2} \right| \\
+        &= 4|z|\left| \frac{-z + 2}{(z-1)^2} \right| \\
+        &= 4|z| \frac{|-z + 2|}{|z-1|^2} \\
+        &= 4|z| \frac{|z - 2|}{|z-1|^2} \\
+        &\leq 4|z| \frac{|z| + 2}{|z-1|^2} \\
+        &\leq 4|z| \frac{|z| + 2}{||z|-|1||^2} \\
+        &< 4|z| \frac{|z| + 2}{\left|\frac12-1\right|^2} \\
+        &= 16|z|(|z| + 2) \\
+        &< 16|z|\left(\frac12 + 2\right) \\
+        &= 40|z| \\
+        &< \frac{40\epsilon}{40} \\
+        &= \epsilon.
+    \end{align*}
+    Thus, $$\lim_{z\to \infty}\frac{4z^2}{(z-1)^2} = 4.$$
+\end{proof}
+
+\newpage
+\noindent{\bf 2. Exercise 18.10(c) }
+\begin{proof}
+    Observe that
+    \begin{align*}
+        \lim_{z\to\infty} \frac{z^2+1}{z-1} &= \infty, \\
+        \iff \lim_{z\to0} \frac{\left(\frac1z\right)^2+1}{\frac1z-1} &= \infty, \\
+        \iff \lim_{z\to0} \frac{\frac1z-1}{\left(\frac1z\right)^2+1} &= 0.
+    \end{align*}
+    Let $\epsilon > 0$.
+    Let $\delta = \min\left(\frac\epsilon2, \frac12\right)$.
+    Then, for all $z$ satisfying $|z| < \delta$.
+    \begin{align*}
+        \left|\frac{\frac1z-1}{\left(\frac1z\right)^2+1}-0\right| &= \left|\frac{\frac{1-z}z}{\frac{z^2+1}{z^2}}\right| \\
+        &= \left|\left(\frac{1-z}z\right)\left(\frac{z^2}{z^2+1}\right)\right| \\
+        &= \frac{|z||z-1|}{|z^2+1|} \\
+        &\leq \frac{|z||z-1|}{|z^2+1|} \\
+        &= \frac{|z||z-1|}{|z^2 - (-1)|} \\
+        &\leq \frac{|z||z-1|}{||z^2| - |-1||} \\
+        &\leq \frac{|z||z-1|}{||z|^2 - 1|} \\
+        &\leq \frac{|z||z-1|}{\left|\left(\frac12\right)^2 - 1\right|} \\
+        &= \frac43|z||z-1| \\
+        &\leq \frac43|z|(|z| + 1) \\
+        &< \frac43|z|(\frac12 + 1) \\
+        &= 2|z| \\
+        &< 2\left(\frac\epsilon2\right) \\
+        &= \epsilon.
+    \end{align*}
+
+    Thus, $$\lim_{z\to\infty} \frac{z^2+1}{z-1} = \infty.$$
+\end{proof}
+
+\newpage
+\noindent{\bf 3. } Can the function
+$
+f(z) =  \dfrac{\text{Re}(z)}{z}
+$
+be defined at $z=0$ so that it is continuous there?  (Justify accordingly.)
+\begin{proof}
+    Observe that for all $z \in \mathbb C$ satisfying $\text{Im}(z) = 0$, $$f(z) = \frac{\text{Re}(z)}{z} = \frac zz = 1.$$
+    Next, observe that for all $z \in \mathbb C$ satisfying $\text{Re}(z) = 0$, $$f(z) = \frac{\text{Re}(z)}{z} = \frac0z = 0.$$
+
+    Let $\delta > 0$.
+    Note that $z_1 = \frac{\delta}2$ is a complex number satisfying $|z_1| < \delta$ with imaginary component 0.
+    Thus, $f(z_1) = f\left(\frac{\delta}2\right) = 1$.
+    Now, note that $z_2 = \frac{\delta i}2$ is a complex number satisfying $|z_2| < \delta$ with real component 0.
+    Thus, $f(z_2) = f\left(\frac{\delta i}2\right) = 0$.
+
+    Thus, no matter the value of $\delta$, there is always a pair of complex numbers of lesser magnitude $z_1, z_2$ such that the magnitude of their difference is 1.
+
+    Thus, no matter the value of $f(0)$, $f$ is not continuous at 0.
+\end{proof}
+\end{document}

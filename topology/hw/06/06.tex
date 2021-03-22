@@ -1,0 +1,111 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amsfonts, amssymb, amsthm}
+\usepackage{graphicx}
+\usepackage[margin=.75in]{geometry}
+\usepackage{xcolor}
+
+\newcommand{\inv}{^{-1}}   
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\R}{\mathbb R}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\C}{\mathbb C}
+\newcommand{\N}{\mathbb N}
+\newcommand{\B}{\mathcal B}
+
+\date{Due Friday, March 12, 2021}
+\author{Ben Kallus}
+\title{Topology \\ Homework 6}
+
+\begin{document}
+\pagecolor{black}
+\color{white}
+\maketitle
+
+\noindent{\bf 1.} Consider $\R$ with the standard topology and $\R_C$ with the finite complement topology.
+
+{\bf (a)} Proposition: $\R$ is Hausdorff.
+\begin{proof}
+    Note that $\R$ is a simply ordered set with the order topology.
+    Thus, by Theorem 17.11, $\R$ is Hausdorff.
+\end{proof}
+
+{\bf (b)} Proposition: $\R_C$ is not Hausdorff.
+\begin{proof}
+    Let $U$ be a neighborhood of 0, and let $V$ be a neighborhood of 1.
+    Then, $U= \R \setminus X$ and $V = \R \setminus Y$ for some finite $X,Y \subseteq \R$.
+    Thus,
+    \begin{align*}
+        U \cap V &= (\R \setminus X) \cap (\R \setminus Y) \\
+                 &= \R \setminus (X \cup Y).
+    \end{align*}
+    Since $X$ and $Y$ are finite, $X \cup Y$ is also finite.
+    Thus, $\R \setminus (X \cup Y)$ is infinite, and therefore nonempty.
+    Thus, $\R_C$ is not Hausdorff.
+\end{proof}
+
+{\bf (c)} Proposition: $\R$ and $\R_C$ are not homeomorphic.
+\begin{proof}
+    Since the Hausdorff property is a topological property, and homeomorphism preserves topological properties, $\R$ and $\R_C$ are not homeomorphic. % Is this enough?
+\end{proof}
+
+\newpage\noindent{\bf 2.} Proposition: $X$ is Hausdorff if and only if $D(X)$ is closed in $X \times X$.
+\begin{proof}
+    Let $X$ be a topological space.
+
+    Assume that $X$ is Hausdorff.
+    Let $(x,y) \in (X \times X) \setminus D(X)$.
+    Then, there exist open sets $U,V \subseteq X$ such that $x \in U$, $y \in V$, and $U \cap V = \emptyset$.
+    Therefore, $U \times V$ has no points in common with $D(X)$.
+    Thus, $(U \times V) \subseteq (X \times X) \setminus D(X)$.
+    Thus, since $(U \times V)$ is open, $(X \times X) \setminus D(X)$ can be expressed as a union of open sets.
+    Thus, $(X \times X) \setminus D(X)$ is open, so $D(X)$ is closed.
+
+    Now, assume that $D(X)$ is closed in $X \times X$.
+    Then, $(X \times X) \setminus D(X)$ is open.
+    Thus, for each $(x,y) \in (X \times X) \setminus D(X)$, there exists an open set $(U \times V)$ such that $x \in U$, $y \in V$, and $(x,y) \in S \subseteq (X \times X) \setminus D(X)$.
+    Since $(U \times V) \subseteq (X \times X) \setminus D(X)$, it must be that $U$ and $V$ have no points in common, so the Hausdorff condition has been shown.
+\end{proof}
+
+\newpage\noindent{\bf 3.} Proposition: If $f: X \to Y$ is a continuous function, and $x$ is a limit point of a subset $A$ of $X$, then $f(x)$ is not necessarily a limit point of $f(A)$.
+\begin{proof}
+    Let $X = Y = \R$ with the standard topology.
+    Let $A = (0,1)$.
+    Note that $x=1$ is a limit point of $A$.
+    Define $f: X \to Y$ by $f(x) = 0$.
+    Then, $f$ is a constant function, so it is continuous.
+    Therefore, $f(A) = \{0\}$.
+    Note that $0$ is not a limit point of $f(A)$, since $f(A)$ contains only one point, so a neighborhood of 0 cannot intersect $f(A)$ at any point other than 0.
+\end{proof}
+
+\newpage\noindent{\bf 4.} Proposition: If $f: X \to Y$ is a homeomorphism, then $U$ is open in $X$ if and only if $f(U)$ is open in $Y$.
+\begin{proof}
+    Let $X, Y$ be topological spaces with homeomorphism $f: X \to Y$.
+    Let $U \subseteq X$.
+    
+    Suppose that $f(U)$ is open in $Y$.
+    Then, the preimage of $f(U)$ under $f$ is open in $X$.
+    Thus, $U$ is open in $X$.
+
+    Now, suppose that $U$ is open in $X$.
+    Then, the preimage of $U$ under $f\inv$ is open in $Y$.
+    Thus, $U = f\inv(V)$ for some open set $V$ in $Y$.
+    Thus, $f(U) = V$, so $f(U)$ is open in $Y$.
+\end{proof}
+
+\newpage\noindent{\bf Bonus} Proposition: $S^1 \setminus \{p\}$ is homeomorphic to $\R$.
+\begin{proof}
+    Let $S^1 \subseteq \R^2$ be the unit circle with the subspace topology.
+    Let $p \in S^1$.
+    Define $g: S^1 \setminus \{p\} \to S^1 \setminus \{(0,1)\}$ to be the rotation map that maps $p$ to $(0,1)$.
+    Define $h: S^1 \setminus \{(0,1)\} \to \R$ by $h(x,y) = $ the $x$ value of the point at which the line through $(0,1)$ and $(x,y)$ intersects the line $y=-1$.
+    Define $f = h \circ g$.
+    Because $g$ is clearly a bijection, $f$ is a bijection if and only if $h$ is a bijection.
+    Note that $h$ is onto, because the slopes of the lines that $h$ uses in its mechanism may be of arbitrarily large or small magnitudes; simply select points arbitrary close to $(0,-1)$ or $(0,1)$, respectively.
+    Now, note that $h$ is one-to-one, because no three distinct points on a circle are collinear.
+    Thus, $f$ is bijective.
+    Clearly, $f$ and $f\inv$ are continuous, by the definitions of continuity familiar from calculus and real analysis.
+    Thus, $f$ is a homeomorphism, so $S^1 \setminus \{pt\}$ is homeomorphic to $\R$.
+\end{proof}
+
+\end{document}
