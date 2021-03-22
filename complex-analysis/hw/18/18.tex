@@ -24,7 +24,7 @@
 \pagecolor{black}
 \maketitle
 
-\noindent{\bf 1. Exercise 18.10(a) }
+\noindent{\bf 1. Exercise 18.10(a)}
 \begin{proof}
     Observe that
     \begin{align*}
@@ -45,7 +45,7 @@
         &= 4\left| \frac{-z^2 + 2z}{(z-1)^2} \right| \\
         &= 4|z|\left| \frac{-z + 2}{(z-1)^2} \right| \\
         &= 4|z| \frac{|-z + 2|}{|z-1|^2} \\
-        &= 4|z| \frac{|z - 2|}{|z-1|^2} \\
+        &= 4|z| \frac{|-z + 2|}{|z-1|^2} \\
         &\leq 4|z| \frac{|z| + 2}{|z-1|^2} \\
         &\leq 4|z| \frac{|z| + 2}{||z|-|1||^2} \\
         &< 4|z| \frac{|z| + 2}{\left|\frac12-1\right|^2} \\
@@ -59,7 +59,7 @@
 \end{proof}
 
 \newpage
-\noindent{\bf 2. Exercise 18.10(c) }
+\noindent{\bf 2. Exercise 18.10(c)}
 \begin{proof}
     Observe that
     \begin{align*}
@@ -73,15 +73,15 @@
     \begin{align*}
         \left|\frac{\frac1z-1}{\left(\frac1z\right)^2+1}-0\right| &= \left|\frac{\frac{1-z}z}{\frac{z^2+1}{z^2}}\right| \\
         &= \left|\left(\frac{1-z}z\right)\left(\frac{z^2}{z^2+1}\right)\right| \\
-        &= \frac{|z||z-1|}{|z^2+1|} \\
-        &\leq \frac{|z||z-1|}{|z^2+1|} \\
-        &= \frac{|z||z-1|}{|z^2 - (-1)|} \\
-        &\leq \frac{|z||z-1|}{||z^2| - |-1||} \\
-        &\leq \frac{|z||z-1|}{||z|^2 - 1|} \\
-        &\leq \frac{|z||z-1|}{\left|\left(\frac12\right)^2 - 1\right|} \\
-        &= \frac43|z||z-1| \\
+        &= \frac{|z||1-z|}{|z^2+1|} \\
+        &\leq \frac{|z||1-z|}{|z^2+1|} \\
+        &= \frac{|z||1-z|}{|z^2 - (-1)|} \\
+        &\leq \frac{|z||1-z|}{||z^2| - |-1||} \\
+        &\leq \frac{|z||1-z|}{||z|^2 - 1|} \\
+        &\leq \frac{|z||1-z|}{\left|\left(\frac12\right)^2 - 1\right|} \\
+        &= \frac43|z||1-z| \\
         &\leq \frac43|z|(|z| + 1) \\
-        &< \frac43|z|(\frac12 + 1) \\
+        &< \frac43|z|\left(\frac12 + 1\right) \\
         &= 2|z| \\
         &< 2\left(\frac\epsilon2\right) \\
         &= \epsilon.
