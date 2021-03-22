@@ -315,7 +315,7 @@
 
 \medskip\noindent{\bf Theorem 2.13}
 
-    Let $A - [a_{ij}]$ be the adjacency matrix of a graph $G$. Then for all $k \in \N$, the $ij^{\text{th}}$ entry of $A^k$ (denoted $a_{ij}^{(k)}$, to be distinct from $a_{ij}$ raised to the power $k$) is equal to the number of $v_1 - v_j$ walks in $G$ of length $k$.
+    Let $A = [a_{ij}]$ be the adjacency matrix of a graph $G$. Then for all $k \in \N$, the $ij^{\text{th}}$ entry of $A^k$ (denoted $a_{ij}^{(k)}$, to be distinct from $a_{ij}$ raised to the power $k$) is equal to the number of $v_1 - v_j$ walks in $G$ of length $k$.
 
 \medskip\noindent{\bf Graph Isomorphism}
 
@@ -492,6 +492,21 @@
 
 \medskip\noindent{\bf Corollary 6.2}
 
-    A connected graph $G$ cotnains an open Eulerian trail if and only if $G$ has a exactly 2 vertices of odd degree.
+    A connected graph $G$ contains an open Eulerian trail if and only if $G$ has a exactly 2 vertices of odd degree.
+
+\medskip\noindent{\bf Hamilton Cycle}
+
+    A Hamilton cycle in a graph $G$ is a cycle containing all the vertices of $G$.
+    A graph $G$ is a Hamiltonian graph if and only if it contains a Hamilton cycle.
+
+\medskip\noindent{\bf Theorem 6.4}
+
+    The Petersen graph $PG$ is not Hamiltonian.
+
+\medskip\noindent{\bf Theorem 6.5}
+
+    Let $G$ be a Hamiltonian graph. Then for $\emptyset \neq S \subset V(G)$, $k(G-S) \leq |S|$.
+
+    (Where $k(H)$ is the number of components in $H$.)
 
 \end{document}
