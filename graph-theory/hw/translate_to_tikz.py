@@ -26,7 +26,7 @@ class Graph:
 def read_graph(filename):
     g = Graph()
     for line in open(filename).readlines():
-        if line.strip()[0] == "#":
+        if line.strip() == "" or line.strip()[0] == "#":
             continue
 
         orig_line = line
