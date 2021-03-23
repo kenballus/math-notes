@@ -49,7 +49,7 @@
 
 \newpage\noindent{\bf 6.6}
 
-
+% You haven't yet shown that there are no cut-vertices. Just use the theorem about all paths between u and w and show that all non-adjacent vertices have a path through b and a path through c.
 \newpage\noindent{\bf 6.10} Proposition: If $G$ is a 6-regular graph of order 10, then for all $u,v \in V(G)$, $G$, $G - u$, and $G - u - v$ are all Hamiltonian.
 \begin{proof}
 	Let $G$ be a 6-regular graph of order 10.
@@ -104,23 +104,66 @@
 	Thus, no Hamiltonian cycle exists in $G$, so $G$ is not Hamiltonian.
 \end{proof}
 
-{\bf (b)} There is no Hamiltonian graph that is not Eulerian and has an Eulerian complement.
-\begin{proof}
-	Let $G$ be a Hamiltonian graph of order $n$ that is not Eulerian.
-	Then, by Theorem 6.1, $G$ contains an odd vertex $v$.
-	Consider the following two cases:
+{\bf (b)} There exists a Hamiltonian graph that is not Eulerian and has an Eulerian complement.
+\begin{tikzpicture}
+\draw[fill=black] (1.0, 0.0) circle (3pt);
+\node at (1.0, 0.35) {$a$};
+\draw[fill=black] (0.707, 0.707) circle (3pt);
+\node at (0.707, 1.057) {$b$};
+\draw[fill=black] (0.0, 1.0) circle (3pt);
+\node at (0.0, 1.35) {$c$};
+\draw[fill=black] (-0.707, 0.707) circle (3pt);
+\node at (-0.707, 1.057) {$d$};
+\draw[fill=black] (-1.0, 0.0) circle (3pt);
+\node at (-1.0, 0.35) {$e$};
+\draw[fill=black] (-0.707, -0.707) circle (3pt);
+\node at (-0.707, -0.357) {$f$};
+\draw[fill=black] (-0.0, -1.0) circle (3pt);
+\node at (0.0, -0.65) {$g$};
+\draw[fill=black] (0.707, -0.707) circle (3pt);
+\node at (0.707, -0.357) {$h$};
 
-	{\bf Case 1.} $G$ contains an even vertex $u$.
-	Then, if $n$ is even, $v$ is odd in $\overline G$, so $\overline G$ is not Eulerian.
-	Conversely, if $n$ is odd, $u$ is odd in $\overline G$, so $\overline G$ is not Eulerian.
-
-	{\bf Case 2.} Every vertex in $G$ is odd.
-	By Corollary 2.3, $n$ must be even.
-	Thus, for each vertex $p$ in $G$, $\deg_{\overline G}(p) = n - \deg_G(p)$, which is odd.
-	Thus, $\overline G$ is not Eulerian.
-
-	Thus, the complement of a non-Eulerian, Hamiltonian graph is not Eulerian.
-\end{proof}
+\draw[thick] (1.0, 0.0) -- (-0.0, -1.0);
+\draw[thick] (1.0, 0.0) -- (0.707, 0.707);
+\draw[thick] (1.0, 0.0) -- (-1.0, 0.0);
+\draw[thick] (1.0, 0.0) -- (0.0, 1.0);
+\draw[thick] (1.0, 0.0) -- (0.707, -0.707);
+\draw[thick] (0.707, 0.707) -- (1.0, 0.0);
+\draw[thick] (0.707, 0.707) -- (-0.707, 0.707);
+\draw[thick] (0.707, 0.707) -- (0.0, 1.0);
+\draw[thick] (0.707, 0.707) -- (-0.707, -0.707);
+\draw[thick] (0.707, 0.707) -- (0.707, -0.707);
+\draw[thick] (0.0, 1.0) -- (-0.0, -1.0);
+\draw[thick] (0.0, 1.0) -- (1.0, 0.0);
+\draw[thick] (0.0, 1.0) -- (0.707, 0.707);
+\draw[thick] (0.0, 1.0) -- (-1.0, 0.0);
+\draw[thick] (0.0, 1.0) -- (-0.707, 0.707);
+\draw[thick] (-0.707, 0.707) -- (0.707, 0.707);
+\draw[thick] (-0.707, 0.707) -- (-1.0, 0.0);
+\draw[thick] (-0.707, 0.707) -- (0.0, 1.0);
+\draw[thick] (-0.707, 0.707) -- (-0.707, -0.707);
+\draw[thick] (-0.707, 0.707) -- (0.707, -0.707);
+\draw[thick] (-1.0, 0.0) -- (-0.0, -1.0);
+\draw[thick] (-1.0, 0.0) -- (1.0, 0.0);
+\draw[thick] (-1.0, 0.0) -- (-0.707, 0.707);
+\draw[thick] (-1.0, 0.0) -- (0.0, 1.0);
+\draw[thick] (-1.0, 0.0) -- (-0.707, -0.707);
+\draw[thick] (-0.707, -0.707) -- (-0.0, -1.0);
+\draw[thick] (-0.707, -0.707) -- (0.707, 0.707);
+\draw[thick] (-0.707, -0.707) -- (-1.0, 0.0);
+\draw[thick] (-0.707, -0.707) -- (-0.707, 0.707);
+\draw[thick] (-0.707, -0.707) -- (0.707, -0.707);
+\draw[thick] (-0.0, -1.0) -- (1.0, 0.0);
+\draw[thick] (-0.0, -1.0) -- (-1.0, 0.0);
+\draw[thick] (-0.0, -1.0) -- (0.0, 1.0);
+\draw[thick] (-0.0, -1.0) -- (-0.707, -0.707);
+\draw[thick] (-0.0, -1.0) -- (0.707, -0.707);
+\draw[thick] (0.707, -0.707) -- (-0.0, -1.0);
+\draw[thick] (0.707, -0.707) -- (1.0, 0.0);
+\draw[thick] (0.707, -0.707) -- (0.707, 0.707);
+\draw[thick] (0.707, -0.707) -- (-0.707, 0.707);
+\draw[thick] (0.707, -0.707) -- (-0.707, -0.707);
+\end{tikzpicture}
 
 \newpage\noindent{\bf 6.16} Let $G$ be a connected $r$-regular graph of even order $n$ such that $\overline G$ is connected.
 
