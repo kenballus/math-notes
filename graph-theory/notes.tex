@@ -543,7 +543,8 @@
 
 \medskip\noindent{\bf Theorem 7.2}
 
-    Let $D$ be a digraph and let $u,v$ be distinct vertices of $D$. If $D$ contains a directed $u-v$ walk of length $l$, then $D$ contains a directed $u-v$ path of length $k \leq l$.
+    Let $D$ be a digraph and let $u,v$ be distinct vertices of $D$.
+    If $D$ contains a directed $u-v$ walk of length $l$, then $D$ contains a directed $u-v$ path of length $k \leq l$.
 
 \medskip\noindent{\bf Theorem 7.3}
 
@@ -551,6 +552,29 @@
 
 \medskip\noindent{\bf Theorem 7.4}
 
-    Let $D$ be a nontrivial, weaakly connected digraph. Then, $D$ is Eulerian if and only if the in-degree of each vertex is equal to its out-degree.
+    Let $D$ be a nontrivial, weaakly connected digraph.
+    Then, $D$ is Eulerian if and only if the in-degree of each vertex is equal to its out-degree.
 
+\medskip\noindent{\bf Orientable Graph}
+
+	A graph $G$ is orientable if and only if there exists an orientation of the edges of $G$ such that the resulting digraph is strongly connected.
+
+\medskip\noindent{\bf Theorem 7.5}
+
+	Let $G$ be a notrivial connected graph.
+	Then, $G$ is orientable if and only if $G$ has no bridges.
+
+\medskip\noindent{\bf Tournament}
+
+	A tournament of order $n$ is an oriented complete graph on $n$ vertices.
+
+\medskip\noindent{\bf Trnaitive Tournament}
+
+	A tournament $T$ is transitive if and only if for all $u,v,w \in V(T)$ and $uv,vw$ are arcs in $T$, then $uw$ is an arc in $T$.
+
+\medskip\noindent{\bf Theorem 7.6}
+
+	A tournament $T$ is transitive if and only if $T$ has no directed cycles.
+
+	
 \end{document}
