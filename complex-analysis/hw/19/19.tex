@@ -1,0 +1,54 @@
+\documentclass[11pt]{article}		% The percent symbol in your code starts a comment.  The comment ends at the next linebreak.
+\usepackage[english]{babel} 		% Packages add functionality and style conventions to your documents. Don't edit this section!
+\usepackage{fullpage}				% Eliminates wasted space
+\usepackage[utf8]{inputenc}			% Necessary for character encoding
+\usepackage{amsmath, amssymb,amsthm}% Required math packages
+\usepackage{graphicx}				% For handling graphics
+\usepackage[colorinlistoftodos]{todonotes}	% For the fancy "todo" stuff
+\usepackage{hyperref}				% For clickable links in the final PDF
+\usepackage{tikz}
+\theoremstyle{definition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{prop}[theorem]{Proposition}
+\newtheorem{claim}[theorem]{Claim}
+
+\title{Complex Analysis -- Homework \#19}
+
+\author{Ben Komissar \& Connor Kallus \& Josef Feldman}
+
+\date{March 2021}
+
+\begin{document}
+
+\maketitle
+
+\noindent{\bf 1. }  Prove that the function $f:\mathbb C \longrightarrow \mathbb C$ given by $f(z)=\text{Re}(z)$ is continuous at every point $z_0 \in \mathbb C$, but that it is nowhere differentiable.
+
+\begin{proof}
+Let $\varepsilon > 0$ be given and let $\delta = \varepsilon$. Then whenever $z\in z_0$ satisfies $|z - z_0| < \delta$, it follows that
+\begin{align*}
+    |f(z)-f(z_0)| &= |Re(z) - Re(z_0)|\\
+    &= \left|\frac{z+\bar z}{2} - \frac{z_0 + \bar{z_0}}{2}\right|\\
+    &= \frac12 |(z-z_0) + (\bar z - \bar{z_0})|\\
+    &= \frac12 |(z-z_0) + (\bar{z - z_0})|\\
+    &\leq \frac12 (|z-z_0| + |\bar{z-z_0}|\\
+    &= \frac12 (|z-z_0| + |z-z_0|)\\
+    &= |z-z_0|\\
+    &< \varepsilon.
+\end{align*}
+Thus, $f$ is continuous at any $z_0\in \mathbb C$.
+
+Now suppose $f'(z_0)$ exists at $z_0\in \mathbb C$. We have that
+\begin{align*}
+    \frac{f(z_0 + \Delta z) -f(z_0)}{\Delta z} &= \frac{Re(z_0 + \Delta z) - Re(z_0)}{\Delta z}\\
+    &= \frac{Re(z_0) + Re(\Delta z) - Re(z_0)}{\Delta z}\\
+    &= \frac{Re(\Delta z)}{\Delta z}.
+\end{align*}
+Then whenever $\Delta z = \Delta x + 0i$, it follows that $\frac{Re(\Delta z)}{\Delta z} = \frac{\Delta x}{\Delta x + 0} = 1$. However, when $\Delta z = 0 + \Delta yi$, it follows that $\frac{Re(\Delta z)}{\Delta z} = \frac{0}{\Delta yi} = 0$. Thus, for any $z_0\in \mathbb C$, $f'(z_0)$ cannot be defined.
+\end{proof}
+
+
+\vskip.15in
+\hrule
+\end{document}
