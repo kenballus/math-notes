@@ -241,9 +241,15 @@
 	Thus, $C'$ is a $u-w$ walk that does not contain $c$, so not all $u-w$ walks contain $c$, which contradicts our supposition.
 	Thus, $G$ must have no cut-vertices.
 	Thus, $G$ is 2-connected.
-
-	Observe that $G$ need not be Hamiltonian: FIND AN EXAMPLE
-
+\end{proof}
+\begin{proof}
+	Let $v$ be a vertex in the Petersen graph.
+	Without loss of generality, suppose $v$ is in the ``outer shell" of the Petersen graph.\footnote{There is an isomorphism that maps the inner star of the Petersen graph to its outer shell, so this is safe to assume.}
+	Then, a Hamiltonian path with inital vertex $v$ can be constructed by first following the edges along the outside of the Petersen graph, then following an edge to the inner star, and then following all edges in the inner star.
+	Since all vertices in the Petersen graph are isomorphic, and it is clear that removing a single vertex from the graph does not disconnect it, the Petersen graph has no cut-vertices.
+	Thus, since the Petersen graph is connected, it is 2-connected.
+	However, by Theorem 6.5, the Petersen graph is not Hamiltonian.
+	Thus, not all graphs with the property described above are Hamiltonian.
 \end{proof}
 
 \newpage\noindent{\bf 6.22}
@@ -314,7 +320,7 @@
 	Define $R$, $S$, $T$ to be $K_{r,s,t}$'s partite sets of orders $r,s,t$ respectively.
 	
 	If $|T| = 1$, then $K_{r,s,t}$ contains all possible edges between vertices in $T$.
-	Let $t_1,t_2 \in T$.
+	Otherwise, let $t_1,t_2 \in T$.
 	Then, $\deg(t_1) = \deg(t_2) = r + s$.
 	Thus, $$\deg(t_1) + \deg(t_2) = r + s + r + s \geq r + s + t = n,$$ so $C(K_{r,s,t})$ contains the edge $t_1-t_2$.
 	Thus, $C(K_{r,s,t})$ contains all possible edges between vertices in $T$.
