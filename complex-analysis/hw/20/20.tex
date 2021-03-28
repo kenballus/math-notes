@@ -15,12 +15,13 @@
 
 \title{Complex Analysis -- Homework \#20}
 
-\author{ Ben, Connor, and Josef Kamisman }
+\author{Commissar, Callous, Field-Man}
 
-\date{Due Friday, March 26}
+\date{March 2021}
 
 \begin{document}
-
+\pagecolor{black}
+\color{white}
 \maketitle
 
 \noindent{\bf 1. a.} Apply the $\varepsilon$-$\delta$ definition of differentiability to prove that the function $f : \mathbb R^2 \longrightarrow \mathbb R$ given by $f(x,y)=x^2y$ satisfies
@@ -29,6 +30,39 @@ $f^\prime(1,2)=A=
 4 & 1
 \end{bmatrix}
 $.
+
+\begin{proof}
+Note that when $||\vec x - a||_2 < 1$, it follows that $||\vec x - a||_2^2 < ||\vec x - a||_2$.
+
+Let $\varepsilon > 0$ be given and let $\delta = \min(1, \frac\varepsilon5)$. Note that $|x - 1| \leq ||\vec x - (1, 2)||_2$ and $|y - 2| \leq ||\vec x - (1, 2)||_2$. Then whenever $\vec x\in \mathbb R^2$ satisfies $||\vec x - (1, 2)||_2 < \delta$, it follows that
+
+\begin{align*}
+    |f(\vec x) - p(\vec x)| &= |f(\vec x) - f(1, 2) - f'(1, 2)(\vec x - (1, 2))|\\
+                            &= \left|x^2y - 1^2\cdot 2 -
+                                                         \begin{bmatrix}
+                                                             4 & 1
+                                                         \end{bmatrix}
+                                                         \begin{bmatrix}
+                                                             x - 1 \\ y - 2
+                                                         \end{bmatrix} \right| \\
+    &= |x^2y - 2 - (4x-4 + y - 2)|\\
+    &= |x^2y + 4 - 4x - y|\\
+    &= |y(x-1)(x+1) - 4(x-1)|\\
+    &= |x-1||y(x+1)-4|\\
+    &= |x-1||(y-2+2)(x-1+2) - 4|\\
+    &= |x-1||(y-2)(x-1) + 2(y-2) + 2(x-1)|\\
+    &\leq |x-1|(|y-2||x-1| + 2|y-2| + 2|x-1|)\\
+    &\leq ||\vec x - (1, 2)||_2(||\vec x - (1, 2)||_2^2 + 4||\vec x - (1, 2)||_2)\\
+    &\leq 5||\vec x - (1, 2)||_2||\vec x - (1, 2)||_2\\
+	&\leq 5\frac\varepsilon5 ||\vec x - (1,2)||_2\\
+	&= \varepsilon||\vec x - (1,2)||_2 \\
+	&\leq \varepsilon \cdot 1 \\
+	&= \varepsilon.
+\end{align*}
+
+	Thus, 
+
+\end{proof}
 
 \vskip.15in
 \noindent
