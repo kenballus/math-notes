@@ -420,4 +420,21 @@ A subbasis $\mathcal S$ for a topology on $X$ is a collection of subsets of $X$ 
 
     A set $U$ is open in the metric topology induced by $d$ if and only if for each $y \in U$, there exists $\delta > 0$ such that $B_d(y, \delta) \subseteq U$.
 
+\medskip\noindent{\bf Theorem 20.1}
+
+	Let $f: X \to Y$. Let $X$ and $Y$ be metric spaces with metrics $d_X$ and $d_Y$.
+	Then, continuity of $f$ is equivalent to the requirement that given $x \in X$ and given $\epsilon > 0$, there exists $\delta > 0$ such that $$d_X(x,y) < \delta \implies d_Y(f(x),f(y))< \epsilon.$$
+
+\medskip\noindent{\bf Lemma 20.2}
+
+	Let $d, d'$ be two metrics on $X$. Let $\tau$ and $\tau'$ be the topologies induced by $d$ and $d'$, respectively. Then, $\tau'$ is finer than $\tau$ if and only if for each $x \in X$ and each $\epsilon > 0$, there exists $\delta > 0$ such that $$B_{d'}(x,\delta) \subseteq B_d(x,\epsilon).$$
+
+\medskip\noindent{\bf Square Metric}
+
+	The square metric on $\R^2$ is defined by $\rho(\mathbf x,\mathbf y) = \max\{|x_1-y_1|, |x_2-y_2|\}$.
+
+\medskip\noindent{\bf Theorem 20.3}
+
+	The topologies on $\R^2$ induced by the Euclidean metric and the square metric are the same as the product topology on $\R^2$.
+
 \end{document}

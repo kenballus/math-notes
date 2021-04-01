@@ -592,6 +592,25 @@
 
 	A nontrivial tournament $T$ is Hamiltonian if and only if $T$ is strong.
 
-\medskip\noindent{\bf }
+\medskip\noindent{\bf Matching}
 
+	A matching is an independent set of edges in a graph. Edges are independent iff they have no vertices in common.
+
+\medskip\noindent{\bf Theorem 8.3 (Hall's Matching Theorem)}
+
+	Let $G$ be a bipartite graph with partite sets $U,W$ where $|U| \leq |W|$.
+	Then, $G$ has a matching of size $|U| \iff G$ satisfies Hall's Condition: $$\forall X \subseteq U, |X| \leq |N(X)|.$$
+
+\medskip\noindent{\bf Perfect Matching}
+
+	A matching is perfect if and only if every vertex is incident to an edge in the matching. If $M$ is a perfect matchin in $G$ of order $n$, then $|M| = \frac n2$.
+
+\noindent{\bf Theorem 8.6}
+
+	Every $r$-regular bipartite graph with $r \geq 1$ has a perfect matching.
+
+\noindent{\bf Edge Independent Number}
+
+	The edge independence number of $G$, denoted $\alpha'(G)$, is the size of a maximum matching in $G$.
+	For any Hamiltonian graph $H$ of order $n$, $\alpha'(H) = \left\lfloor \frac n2 \right\rfloor$.
 \end{document}
