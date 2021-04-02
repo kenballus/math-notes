@@ -112,7 +112,7 @@ def bipartite_tikz(g, h_space=1, v_space=1, node_color="black", node_size=3, lab
         pt_locs[v] = x, y
         print(f"\\draw[fill={node_color}] ({x}, {y}) circle ({node_size}pt);")
         if label:
-            print(f"\\node at ({x + label_x_offset}, {y + label_y_offset}) " + "{$" + f"{v}" + "$};")
+            print(f"\\node at ({x + label_x_offset}, {y - label_y_offset}) " + "{$" + f"{v}" + "$};")
 
     print()
     for v1 in g.adj_list:
