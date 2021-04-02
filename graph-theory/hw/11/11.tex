@@ -22,19 +22,27 @@
 \begin{document}
 \maketitle
 
-\noindent\textbf{7.8} Proposition: If every vertex of some tournament of order $n$ has the same outdegree $x$, then what is $x$?
+\noindent\textbf{7.8} Proposition: If every vertex of some tournament of order $n$ has the same outdegree $x$, then $x = \frac{n-1}2$.
 \begin{proof}
+	Let $T$ be a tournament of order $n$ such that each vertex in $V(T)$ has outdegree $x$.
+	Then, since a tournament has $\frac{n(n-1)}2$ arcs, and each arc contributes 1 to the total outdegree of the graph, $$nx = \frac{n(n-1)}2.$$
+	Thus, $$x = \frac{n-1}2.$$
 \end{proof}
 
 \newpage\noindent\textbf{7.10} Proposition: If $u$ and $v$ are vertices of a tournament such that $\vec{d}(u,v) = k$, then $\id(u) \geq k - 1$.
-
+\begin{proof}
+	Let $T$ be a tournament, and let $u,v \in V(T)$ such that $\vec d(u,v) = k$.
+	Then, the shortest directed $u-v$ path $P = (u = p_0, \hdots, p_k = v)$ has length $k$.
+	Since $P$ is the shortest $u-v$ path, it must be that $p_1u, p_2u, \hdots, p_ku \in A(T)$.
+	Thus, $\id(u) \geq k-1$.
+\end{proof}
 	
 
 \newpage\noindent\textbf{7.12}
 
 \textbf{(a)}
 
-
+	
 
 \textbf{(b)}
 

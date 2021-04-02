@@ -1,0 +1,78 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{xcolor}
+\usepackage{gensymb}
+\usepackage{hyperref}
+\usepackage{gensymb}
+\usepackage{listings}
+
+\newcommand{\inv}{^{-1}}   
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\R}{\mathbb R}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\C}{\mathbb C}
+\newcommand{\N}{\mathbb N}
+
+\begin{document}
+\pagecolor{black}
+\color{white}
+
+\noindent\textbf{1.}
+
+	\textbf{(a)} The voltage drop across the 5M$\Omega$ resistor is 5V, because $9 - \frac{4}{4+5} \cdot 9 = 5$.
+
+	\textbf{(b)} The DMM and 5M$\Omega$ resistor in parallel have resistance equivalent to a single $3.33$M$\Omega$ resistor. Thus, the voltage drop across the 4M$\Omega$ resistor is $\frac4{4+3.33}\cdot9 = 4.909091$, so the voltage drop across the 5M$\Omega$ resistor is $9 - 4.909091 = 4.090909$V. Thus, the meter will display 4.09V.
+
+\noindent\textbf{2.}
+
+	(PICTURES ON PHONE)
+
+\noindent\textbf{3.}
+
+	(Smush the two on the right together because they're in series, and then that's in parallel with the one next to it. repeat until 1 resistor. Not sure what the = sign is.)
+
+\noindent\textbf{4.}
+
+	When both switches are open, Vout is 5V. When one or both switches are closed, Vout is 4.4V, because there needs to be a voltage drop of .6V across any diode participating in the circuit.
+
+\noindent\textbf{5.}
+
+	Based on the circuit diagram of NOR given on page 12-16, and the circuit diagram of NOT given on page 12-1, this circuit computes
+	\begin{align*}
+		!A \text{NOR} !B &= !(!A \text{OR} !B) \\
+				 &= !(!(A \text{AND} B)) \\
+				 &= A \text{AND} B.
+	\end{align*}
+
+\noindent\textbf{6.}
+
+	(PICTURE ON PHONE)
+
+\noindent\textbf{7.}
+
+	Figure 16.1 cannot be represented with logical equations because the output of the 1-1 state is impossible to determine without knowing the prior state of the circuit.
+
+\noindent\textbf{8.}
+
+	(DO ME LATER)
+
+\noindent\textbf{9.}
+
+	(DO ME LATER)
+
+\noindent\textbf{10.}
+
+	\begin{verbatim}def pulse(pin, period, on_time):
+	    while True:
+	        pin.value = 1
+	        time.sleep(on_time / 1000)
+	        pin.value = 0
+	        time.sleep((period - on_time) / 1000)
+	\end{verbatim}
+
+\end{document}
