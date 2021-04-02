@@ -7,7 +7,7 @@
 \usepackage{geometry}
 \usepackage{xcolor}
 
-\newcommand{\inv}{^{-1}}   
+\newcommand{\inv}{^{-1}}
 \newcommand{\Z}{\mathbb Z}
 \newcommand{\R}{\mathbb R}
 \newcommand{\Q}{\mathbb Q}
@@ -18,51 +18,51 @@
 \pagecolor{black}
 \color{white}
 
-\noindent{\bf Simple Graph}
+\noindent\textbf{Simple Graph}
 
     A simple graph $G$ consists of a finite nonempty set $V(G)$ of vertices, and a set $E(E)$ of edges, 2-element subsets of $V$.
 
-\medskip\noindent{\bf Trivial Graph}
+\medskip\noindent\textbf{Trivial Graph}
 
     A graph with only one vertex.
 
-\medskip\noindent{\bf Size of a Graph}
+\medskip\noindent\textbf{Size of a Graph}
 
     The number of edges in a graph.
 
-\medskip\noindent{\bf Order of a Graph}
+\medskip\noindent\textbf{Order of a Graph}
 
     The number of a vertices in a graph.
 
-\medskip\noindent{\bf Word Graph}
+\medskip\noindent\textbf{Word Graph}
 
     The word graph for a set of words has one vertex for each word in the set, and an edge between two vertices $a$ and $b$ indicate that $a$'s word can be transformed into $b$'s word by either exchanging two letters, or replacing a letter.
 
     A graph is a word graph if it is the word graph for some set of words.
 
-\medskip\noindent{\bf Incident Edges and Vertices}
+\medskip\noindent\textbf{Incident Edges and Vertices}
 
     A vertex $v$ and an edge $e$ are said to be incident if $v \in e$.
 
-\medskip\noindent{\bf Adjacent Edges}
+\medskip\noindent\textbf{Adjacent Edges}
 
     Two edges are adjacent if they are both incident to some vertex $v$.
 
-\medskip\noindent{\bf Adjacent Vertices}
+\medskip\noindent\textbf{Adjacent Vertices}
 
     Two vertices are adjacent if they are both incident to some edge $e$.
 
-\medskip\noindent{\bf Subgraph}
+\medskip\noindent\textbf{Subgraph}
 
     A graph $H$ is a subgraph of a graph $G$ ($H \subseteq G$) if $V(H) \subseteq V(G)$ and $E(H) \subseteq E(G)$.
 
     If $H \subseteq G$, $V(H) \subset V(G)$, and $E(H) \subset E(G)$, then $H$ is a proper subgraph of $G$ ($H \subset G$).
 
-\medskip\noindent{\bf Spanning Subgraph}
+\medskip\noindent\textbf{Spanning Subgraph}
 
     If $H \subseteq G$ and $V(H) = V(G)$, then $H$ is a spanning subgraph of $G$.
 
-\medskip\noindent{\bf Induced Subgraph}
+\medskip\noindent\textbf{Induced Subgraph}
 
     If $H \subseteq G$, and $(u,v \in V(H) \wedge uv \in E(G)) \implies uv \in E(H)$, then $H$ is an induced subgraph of $G$.
 
@@ -70,49 +70,49 @@
 
     If $X$ is a nonempty set of vertices from $G$, then the subgraph of $G$ induced by $X$ ($G[X]$ or $\langle X \rangle G$) is the induced subgraph $K$ with $E(J) = X$ and $v \in V(J) \iff v \in e$ for some $e \in E(J)$. This subgraph is called an edge-induced subgraph.
 
-\medskip\noindent{\bf Walk}
+\medskip\noindent\textbf{Walk}
 
     A $u-v$ walk $W$ in $G$ is a sequence of vertices in $G$, beginning with $u$ and ending with $v$ such that consecutive vertices in the sequence are adjacent. A walk of length 0 is a trivial walk.
 
     The length of a walk $W$ is one less than its length as a sequence, since a walk's length is defined in terms of edges.
 
-\medskip\noindent{\bf Closed Walk}
+\medskip\noindent\textbf{Closed Walk}
 
     A closed walk is nontrivial, and has equal first and last nodes.
 
-\medskip\noindent{\bf Open Walk}
+\medskip\noindent\textbf{Open Walk}
 
     An open walk is nontrivial, and is not closed.
 
-\medskip\noindent{\bf Trail}
+\medskip\noindent\textbf{Trail}
 
     A $u-v$ trail is a $u-v$ walk in which no edge is traversed more than once.
 
-\medskip\noindent{\bf Path}
+\medskip\noindent\textbf{Path}
 
     A $u-v$ walk in which no vertices are repeated is a $u-v$ path.
 
-\medskip\noindent{\bf Theorem 1.6}
+\medskip\noindent\textbf{Theorem 1.6}
 
     If a graph $G$ contains a $u-v$ walk of length $l$, then $G$ contains a $u-v$ path of length at most $l$.
 
-\medskip\noindent{\bf Circuit}
+\medskip\noindent\textbf{Circuit}
 
     A circuit in a graph $G$ is a closed trail of length 3 or more.
 
-\medskip\noindent{\bf Cycle}
+\medskip\noindent\textbf{Cycle}
 
     A circuit in which no vertices are repeated is a cycle. A cycle is referred to as an odd cycle or an even cycle depending on the parity of its length.
 
-\medskip\noindent{\bf Connected Graph}
+\medskip\noindent\textbf{Connected Graph}
 
     A graph $G$ is connected if for all $u,v \in G$, there exists a $u-v$ walk in $G$.
 
-\medskip\noindent{\bf Connected Component}
+\medskip\noindent\textbf{Connected Component}
 
     A connected subgraph of a graph $G$ that is not a proper subgraph of any other connected subgraph of $G$ is a connected component (or just component) of $G$.
 
-\medskip\noindent{\bf Equivalence Relation}
+\medskip\noindent\textbf{Equivalence Relation}
 
     A binary relation $R$ is an equivalence relation on a set $S$ if and only if for all $s,u,v \in S$,
     \begin{enumerate}
@@ -121,114 +121,114 @@
         \item $u R v \implies v R u$ ($R$ is symmetric)
     \end{enumerate}
 
-\medskip\noindent{\bf Theorem 1.7}
+\medskip\noindent\textbf{Theorem 1.7}
 
     Let $R$ be the relation defined on the vertex set of a graph $G$ by $u R v$, where $u,v \in V(G)$, if $u$ is connected to $v$. $R$ is an equivalence relation.
 
-\medskip\noindent{\bf Theorem 1.8}
+\medskip\noindent\textbf{Theorem 1.8}
 
     Note: Subsumed by 1.10.
     Let $G$ be a graph of order 3 or more. If $G$ contains two distinct vertices $u$ and $v$ such that $G - u$ and $G - v$ are connected, then $G$ itself is connected.
 
-\medskip\noindent{\bf Distance}
+\medskip\noindent\textbf{Distance}
 
     The distance between two vertices $u$ and $v$ in a graph $G$ is the length of the shortest path between $u$ and $v$.
 
-\medskip\noindent{\bf Geodesic}
+\medskip\noindent\textbf{Geodesic}
 
     A path between $u$ and $v$ of length $d(u,v)$ is a $u-v$ geodesic. Equivalently, a $u-v$ geodesic is a shortest path between $u$ and $v$.
 
-\medskip\noindent{\bf Diameter}
+\medskip\noindent\textbf{Diameter}
 
     The diameter of a graph $G$ is the greatest distance between any two vertices in $G$.
 
-\medskip\noindent{\bf Theorem 1.9}
+\medskip\noindent\textbf{Theorem 1.9}
 
     Note: Subsumed by 1.10.
     If $G$ is a connected graph of order 3 or more, then $G$ contains two distinct vertices $u$ and $v$ such that $G - u$ and $G - v$ are connected.
 
-\medskip\noindent{\bf Theorem 1.10}
+\medskip\noindent\textbf{Theorem 1.10}
 
     Let $G$ be a graph of order 3 or more. Then $G$ is connected if and only if $G$ contains two distinct vertices $u$ and $v$ such that $G - u$ and $G - v$ are connected.
 
-\medskip\noindent{\bf Complete Graph}
+\medskip\noindent\textbf{Complete Graph}
 
     A complete graph on $n$ vertices ($K_n$) has an edge between every pair of distinct vertices.
     Thus, it has size ${n \choose 2}$.
 
-\medskip\noindent{\bf Path Graph}
+\medskip\noindent\textbf{Path Graph}
 
     A path graph on $n$ vertices ($P_n$) is a connected graph with all vertices of degree less than or equal to 2, and at least one vertex of degree less than or equal to 1. Equivalently, it can be labeled $v_1, v_2, \hdots, v_n$ so that its edges are $v_1v_2, v_2v_3, \hdots, v_{n-1}v_n$.
 
-\medskip\noindent{\bf Cycle Graph}
+\medskip\noindent\textbf{Cycle Graph}
 
     A path graph on $n$ vertices ($P_n$) is a connected graph with only degree 2 vertices. Equivalently, it can be labeled $v_1, v_2, \hdots, v_n$ so that its edges are $v_1v_2, v_2v_3, \hdots, v_{n-1}v_n, v_nv_1$.
 
-\medskip\noindent{\bf Complement}
+\medskip\noindent\textbf{Complement}
 
     The complement $\overline G$ of a graph $G$ is a graph with the same vertex set as $G$, but it has edges only where $G$ has none.
 
-\medskip\noindent{\bf Empty/Null Graph}
+\medskip\noindent\textbf{Empty/Null Graph}
 
     The empty graph, or null graph, of order $n$ has $n$ vertices and 0 edges, and is denoted $N_n$.
 
-\medskip\noindent{\bf Theorem 1.11}
+\medskip\noindent\textbf{Theorem 1.11}
 
     If $G$ is a disconnected graph, then $\overline G$ is connected.
 
-\medskip\noindent{\bf Bipartite Graph}
+\medskip\noindent\textbf{Bipartite Graph}
 
     A bipartite graph can be partitioned into two sets called partite sets, such that no edge in the graph connects two edges in the same partite set.
 
-\medskip\noindent{\bf Theorem 1.12}
+\medskip\noindent\textbf{Theorem 1.12}
 
     A nontrivial graph $G$ is a bipartite graph if and only if $G$ contains no odd cycles.
 
-\medskip\noindent{\bf Complete Bipartite Graph}
+\medskip\noindent\textbf{Complete Bipartite Graph}
 
     A complete bipartite graph is a bipartite graph with all possible edges present. This is denoted $K_{n,m}$ for a bipartite graph with $n$ vertices in one partite set and $m$ in the other.
 
-\medskip\noindent{\bf $k$-partite Graph}
+\medskip\noindent\textbf{$k$-partite Graph}
 
     A $k$-partite graph can be partitioned into $k$ partite sets.
 
     A complete $k$-partite graph is defined as you would expect.
 
-\medskip\noindent{\bf Union of Graphs}
+\medskip\noindent\textbf{Union of Graphs}
 
     For graphs $G, H$, $G \cup H$ is defined by $V(G \cup H) = V(G) \cup V(H)$, and $E(G \cup H) = E(G) \cup E(H)$.
 
-\medskip\noindent{\bf Join}
+\medskip\noindent\textbf{Join}
 
     For graphs $G, H$, the join $G + H$ consists of $G \cup H$ with all possible edges added between vertices in $G$ and vertices in $H$.
 
-\medskip\noindent{\bf Cartesian Product}
+\medskip\noindent\textbf{Cartesian Product}
 
     For two graphs $G$ and $H$, their Cartesian product $G \times H$ (or $G \square H$) is defined by $V(G \times H) = V(G) \times V(H)$, and vertex $(u,v)$ is adjacent to $(x,y)$ if either $u=x$ and $vy \in E(H)$, or $v=y$ and $ux \in E(G)$.
 
-\medskip\noindent{\bf $n$-cube (Hypercube)}
+\medskip\noindent\textbf{$n$-cube (Hypercube)}
 
     Define $Q_1$ to be $K_2$, and define $Q_n$ for $n \geq 2$ to be $Q_{n-1} \times K_2$.
     These graphs are known as the $n$-cubes or hypercubes.
     The $n$ cube may also be constructed by adding a vertex for each $n$-bit string, then connecting each vertex $v$ to each other vertex with Hamming distance 1 from $v$.
 
-\medskip\noindent{\bf Multiset}
+\medskip\noindent\textbf{Multiset}
 
     A multiset is a set in which multiple copies of the same element are permitted.
 
-\medskip\noindent{\bf Multigraph}
+\medskip\noindent\textbf{Multigraph}
 
     A multigraph is a graph with a multiset for its edge set. In other words, multiple copies of the same edge are permitted. Edges that connect the same two vertices are known as parallel edges. (In many definitions of a multigraph, loops are allowed. In this one, they are not.)
 
     In a multigraph, the degree of a vertex is the number of edges incident to that vertex, counted with multiplicity. Thus, the Handshaking Lemma holds, since each edge contributes one to the degree of each of its endvertices.
 
-\medskip\noindent{\bf Pseudograph}
+\medskip\noindent\textbf{Pseudograph}
 
     A pseudograph is a multigraph in which edges are 2-element multisets of the vertex set. In other words, it's a multigraph in which loops are permitted.
 
     In a pseudograph, the degree of a vertex is the number of edges incident to that vertex, plus double the number of loops at that vertex. Thus, the Handshaking Lemma still applies.
 
-\medskip\noindent{\bf Digraph}
+\medskip\noindent\textbf{Digraph}
 
     A graph in which edges are not 2-element subsets of the vertex set, but ordered pairs with entries from the vertex set, are known as directed graphs, or digraphs. Note that an edge $(a,b)$ and an edge $(b,a)$ are permitted in the same directed graph, without requiring that that graph be a multigraph, too. Directed edges are called arcs, so the edge set of a digraph is usually labeled $A$.
 
@@ -237,96 +237,96 @@
 
     In a digraph, we split the notion of degree into indegree and outdegree. The indegree of a veretx is the number of arcs entering that vertex, and the outdegree is the number of arcs leaving that vertex. Thus, the Handshaking Lemma applies to the sum of either degree, and the sum is $m$ instead of $2m$.
 
-\medskip\noindent{\bf Oriented Graph}
+\medskip\noindent\textbf{Oriented Graph}
 
     An oriented graph is a digraph with no directed loops and if $uv \in A$, then $vu \notin A$.
 
-\medskip\noindent{\bf Underlying Undirected Graph of a Directed Graph}
+\medskip\noindent\textbf{Underlying Undirected Graph of a Directed Graph}
 
     The underlying undirected graph $G$ of a directed graph $D$ is constructed by making $D$'s edges undirected.
 
-\medskip\noindent{\bf Degree of a Vertex}
+\medskip\noindent\textbf{Degree of a Vertex}
 
     The degree of a vertex in a graph $G$ is the number of vertices adjacent to $v$ in $G$.
 
-\medskip\noindent{\bf Isolated Vertex}
+\medskip\noindent\textbf{Isolated Vertex}
 
     A vertex of degree 0.
 
-\medskip\noindent{\bf Endvertex/Leaf/Pendant Vertex}
+\medskip\noindent\textbf{Endvertex/Leaf/Pendant Vertex}
 
     A vertex of degree 1.
 
-\medskip\noindent{\bf Minimum and Maximum Degree Vertices}
+\medskip\noindent\textbf{Minimum and Maximum Degree Vertices}
 
     The minimum degree of a vertex in a graph $G$ is denoted $\delta(G)$.
 
     The maximum degree of a vertex in a graph $G$ is denoted $\Delta(G)$.
 
-\medskip\noindent{\bf Theorem 2.1 (The Handshaking Lemma)}
+\medskip\noindent\textbf{Theorem 2.1 (The Handshaking Lemma)}
 
     If $G$ is a graph of size $m$, then $$\sum_{v \in V(G)} \deg(v) = 2m.$$
 
-\medskip\noindent{\bf Corollary 2.3}
+\medskip\noindent\textbf{Corollary 2.3}
 
     Every graph has an even number of vertices of odd degree.
 
-\medskip\noindent{\bf Theorem 2.4}
+\medskip\noindent\textbf{Theorem 2.4}
 
     Let $G$ be a graph of order $n$. If $\deg(u) + \deg(v) \geq n-1$ for all nonadjacent $u,v \in V(G)$, then $G$ is connected, and the diameter of $G$ is not more than 2.
 
-\medskip\noindent{\bf }
+\medskip\noindent\textbf{}
 
-\medskip\noindent{\bf Regular Graph}
+\medskip\noindent\textbf{Regular Graph}
 
     If all vertices in a graph are degree $r$, then it is a $r$-regular graph
 
-\medskip\noindent{\bf Cubic Graph}
+\medskip\noindent\textbf{Cubic Graph}
 
     A 3-regular graph is called a cubic graph.
 
-\medskip\noindent{\bf Theorem 2.6}
+\medskip\noindent\textbf{Theorem 2.6}
 
     Let $r, n \in \mathbb Z$, with $0 \leq r \leq n-1$. Then, there exists an $r$-regular graph of order $n$ if and only if either $r$ or $n$ is even.
 
-\medskip\noindent{\bf Theorem 2.7}
+\medskip\noindent\textbf{Theorem 2.7}
 
     Let $G$ be a graph and let $r \in \mathbb Z$ such that $r \geq \Delta(G)$. Then, $G$ is an induced subgraph of an $r$-regular graph $H$.
 
-\medskip\noindent{\bf Degree Sequence}
+\medskip\noindent\textbf{Degree Sequence}
 
     The degree sequence of a graph $G$ with vertices $\{v_1, v_2, \hdots, v_n\}$ is the non-increasing rearrangement of $(\deg(v_1), \deg(v_2), \hdots, \deg(v_n))$.
 
     Note: Degree sequence does not uniquely identify a graph.
 
-\medskip\noindent{\bf Theorem 2.10}
+\medskip\noindent\textbf{Theorem 2.10}
 
     A non-increasing sequence of $n \geq 2$ non-negative integers $(d_1, d_2, \hdots, d_n)$, is graphical (a degree sequence for some graph) if and only if $(d_2-1, d_3-1, \hdots, d_{d_1+1}-1, d_{d_1+2}, \hdots, d_n)$ graphical.
 
-\medskip\noindent{\bf Adjacency Matrix}
+\medskip\noindent\textbf{Adjacency Matrix}
 
     An adjacency matrix for a graph $G$ is an $n \times n$ square matrix $A = [a_{ij}]$ with entries from $\{0, 1\}$.
     $a_{ij} = 1$ if and only if $v_i$ is adjacent to $v_j$ in $G$.
 
-\medskip\noindent{\bf Incidence Matrix}
+\medskip\noindent\textbf{Incidence Matrix}
 
     The incidence matrix of $G$ is an $n \times m$ matrix $B = [b_{ij}]$ with entries from $\{0,1\}$.
     $b_{ij} = 1$ if and only if $v_i$ is incident to $e_j$.
 
-\medskip\noindent{\bf Theorem 2.13}
+\medskip\noindent\textbf{Theorem 2.13}
 
     Let $A = [a_{ij}]$ be the adjacency matrix of a graph $G$. Then for all $k \in \N$, the $ij^{\text{th}}$ entry of $A^k$ (denoted $a_{ij}^{(k)}$, to be distinct from $a_{ij}$ raised to the power $k$) is equal to the number of $v_1 - v_j$ walks in $G$ of length $k$.
 
-\medskip\noindent{\bf Graph Isomorphism}
+\medskip\noindent\textbf{Graph Isomorphism}
 
     Graphs $G$ and $H$ are isomorphic if there exists a bijection $\phi: V(G) \to V(H)$ such that $$\forall u,v \in V(G), uv \in E(G) \iff phi(u)\phi(v) \in E(H).$$
     $phi$ is called a graph isomorphism.
 
-\medskip\noindent{\bf Theorem 3.1}
+\medskip\noindent\textbf{Theorem 3.1}
 
     For all graphs $G$, $H$, $\phi: G \to H$ is an isomorphism if and only if $\phi: \overline G \to \overline H$ is an isomorphism.
 
-\medskip\noindent{\bf Self-Complementary Graph}
+\medskip\noindent\textbf{Self-Complementary Graph}
 
     A graph is self-complementary if and only if $G \cong \overline G$.
 
@@ -334,11 +334,11 @@
 
     Examples : $P_4, C_5$.
 
-\medskip\noindent{\bf Theorem 3.2}
+\medskip\noindent\textbf{Theorem 3.2}
 
     If $G \cong H$, then $G$ and $H$ have the same degree sequence.
 
-\medskip\noindent{\bf Theorem 3.5}
+\medskip\noindent\textbf{Theorem 3.5}
 
     If $G \cong H$, then
     \begin{enumerate}
@@ -346,64 +346,64 @@
         \item $G$ is connected if and only if $H$ is connected.
     \end{enumerate}
 
-\medskip\noindent{\bf Theorem 3.6}
+\medskip\noindent\textbf{Theorem 3.6}
 
     Graph isomorphism is an equivalence relation.
 
-\medskip\noindent{\bf Bridge}
+\medskip\noindent\textbf{Bridge}
 
     Let $G$ be a graph. An edge $e \in E(G)$ is a bridge if and only if the number of components in $G - e$ is greater than the number of components in $G$.
 
-\medskip\noindent{\bf Theorem 4.1}
+\medskip\noindent\textbf{Theorem 4.1}
 
     An edge $e$ in a graph $G$ is a bridge if and only if $e$ lies on no cycle of $G$.
 
-\medskip\noindent{\bf Tree}
+\medskip\noindent\textbf{Tree}
 
     A graph $T$ is a tree if and only if $T$ is connected and contains no cycles.
     Thus, every edge in a tree is a bridge.
 
-\medskip\noindent{\bf Forest}
+\medskip\noindent\textbf{Forest}
 
     A graph $F$ is a forest if and only if every component of $F$ is a tree (if and only if $F$ is acyclic).
 
-\medskip\noindent{\bf Theorem 4.2}
+\medskip\noindent\textbf{Theorem 4.2}
 
     A graph is a tree if and only if there exists a unique path between any 2 distinct vertices.
 
-\medskip\noindent{\bf Leaf}
+\medskip\noindent\textbf{Leaf}
 
     A vertex of degree 1 on a tree is a leaf.
 
-\medskip\noindent{\bf Theorem 4.3}
+\medskip\noindent\textbf{Theorem 4.3}
 
     Any tree of order $n \geq 2$ has at least 2 leaves.
 
-\medskip\noindent{\bf Star}
+\medskip\noindent\textbf{Star}
 
     A star is a tree containing exactly one non-leaf.
 
-\medskip\noindent{\bf Double Star}
+\medskip\noindent\textbf{Double Star}
 
     A double star is a tree containing exactly two non-leaves.
 
-\medskip\noindent{\bf Caterpillar}
+\medskip\noindent\textbf{Caterpillar}
 
     A caterpillar is a tree of order 3 or more such that removing its leaves produces a path graph, called the spine of the caterpillar.
 
-\medskip\noindent{\bf Theorem 4.4}
+\medskip\noindent\textbf{Theorem 4.4}
 
     Every tree of order $n$ has size $n-1$.
 
-\medskip\noindent{\bf Corollary 4.6}
+\medskip\noindent\textbf{Corollary 4.6}
 
     Every forest of order $n$ with $k$ components has size $n-k$.
 
-\medskip\noindent{\bf Theorem 4.7}
+\medskip\noindent\textbf{Theorem 4.7}
 
     The size of every connected graph of order $n$ is at least $n-1$.
 
-\medskip\noindent{\bf Theorem 4.8}
+\medskip\noindent\textbf{Theorem 4.8}
 
     Let $G$ be a graph of order $n$ and size $m$. If $G$ satisfies any two of the properties:
     \begin{enumerate}
@@ -413,103 +413,103 @@
     \end{enumerate}
     then $G$ is a tree.
 
-\medskip\noindent{\bf Theorem 4.9}
+\medskip\noindent\textbf{Theorem 4.9}
 
     Let $T$ be a tree of order $k$.
     If $G$ is a graph with $\delta(G) \geq k - 1$, then $T$ is isomorphic to some subgraph of $G$.
 
-\medskip\noindent{\bf Spanning Tree}
+\medskip\noindent\textbf{Spanning Tree}
 
     Let $G$ be a graph. Then, a subgraph $T$ of $G$ is a spanning tree if and only if $T$ is a spanning subgraph of $G$ that is a tree.
 
-\medskip\noindent{\bf Theorem 4.10}
+\medskip\noindent\textbf{Theorem 4.10}
 
     A graph $G$ is connected if and only if $G$ has a spanning tree.
 
-\medskip\noindent{\bf Weighted Graph}
+\medskip\noindent\textbf{Weighted Graph}
 
     A weighted graph is a graph $G=(V,E)$ together with a weight function $$w: E \to \mathbb R.$$
 
-\medskip\noindent{\bf Kruskal's Algorithm}
+\medskip\noindent\textbf{Kruskal's Algorithm}
     Algorithm for constructing a minimum spanning tree for a connected, weighted graph.
 
     Repeatedly adding the lowest weight edge that does not create a cycle, until no such edge is available.
 
-\medskip\noindent{\bf Theorem 4.11}
+\medskip\noindent\textbf{Theorem 4.11}
 
     Kruskal's Algorithm produces a minimum spanning tree.
 
-\medskip\noindent{\bf Prim's Algorithm}
+\medskip\noindent\textbf{Prim's Algorithm}
     Algorithm for constructing a minimum spanning tree for a connected, weighted graph.
 
     Pick a starting node, and add it to the MST.
 
     Repeatedly add the cheapest edge incident to a node in the MST that does not create a cycle.
 
-\medskip\noindent{\bf Theorem 4.12}
+\medskip\noindent\textbf{Theorem 4.12}
 
     Prim's algorithm produced a minimum spanning tree.
 
-\medskip\noindent{\bf Exercise 4.2.9}
+\medskip\noindent\textbf{Exercise 4.2.9}
 
-    If every edge in a connected weighted graph has a distinct weight, then the graph has a unique MST. 
-    This comes from the fact that at each stage of Kruskal's algorithm, there is a unique choice of which edge to add next. 
-    However, this relies on the assumption that Kruskal's has the capability to produce every minimum spanning tree of a graph. 
+    If every edge in a connected weighted graph has a distinct weight, then the graph has a unique MST.
+    This comes from the fact that at each stage of Kruskal's algorithm, there is a unique choice of which edge to add next.
+    However, this relies on the assumption that Kruskal's has the capability to produce every minimum spanning tree of a graph.
     That's true though, since you can take any MST and just keep removing the maximum weight edges, effectively running Kruskal's in reverse.
 
-\medskip\noindent{\bf Cut-vertex}
+\medskip\noindent\textbf{Cut-vertex}
 
     A vertex $v$ in a connected graph $G$ is a cut-vertex if and only if $G - v$ is not connected.
 
-\medskip\noindent{\bf Theorem 5.1}
+\medskip\noindent\textbf{Theorem 5.1}
 
     If $e=uv$ is a bridge in a connected graph $G$, then $v$ is a cut-vertex in $G$ if and only if $\deg_G(v) \geq 2$.
 
-\medskip\noindent{\bf Corollary 5.2}
+\medskip\noindent\textbf{Corollary 5.2}
 
     Let $G$ be a connected graph of order $n \geq 3$.
     If $G$ contains a bridge, then $G$ contains a cut-vertex.
 
-\medskip\noindent{\bf Theorem 5.3/Corollary 5.4}
+\medskip\noindent\textbf{Theorem 5.3/Corollary 5.4}
 
     Let $V$ be a vertex in a connected graph $G$. Then $v$ is a cut vertex if and only if there exist distinct $u,w \in V(G) \setminus \{v\}$ such that every $u-w$ path in $G$ contains $v$.
 
-\medskip\noindent{\bf Theorem 5.5}
+\medskip\noindent\textbf{Theorem 5.5}
 
     Let $G$ be a nontrivial connected graph and let $u \in V(G)$. If $v$ is a vertex in $G$ that is furthest from $y$, then $v$ is not a cut-vertex.
 
-\medskip\noindent{\bf Eulerian Circuit}
+\medskip\noindent\textbf{Eulerian Circuit}
 
     An Eulerian circuit in a graph $G$ is a circuit containing every edge of the graph.
 
-\medskip\noindent{\bf Eulerien Graph}
+\medskip\noindent\textbf{Eulerien Graph}
 
     A graph $G$ is Eulerian if and only if $G$ is connected and has an Eulerian circuit.
 
-\medskip\noindent{\bf Theorem 6.1}
+\medskip\noindent\textbf{Theorem 6.1}
 
     A nontrivial connected graph $G$ is Eulerian if and only if every vertex has even degree.
 
-\medskip\noindent{\bf Corollary 6.2}
+\medskip\noindent\textbf{Corollary 6.2}
 
     A connected graph $G$ contains an open Eulerian trail if and only if $G$ has a exactly 2 vertices of odd degree.
 
-\medskip\noindent{\bf Hamilton Cycle}
+\medskip\noindent\textbf{Hamilton Cycle}
 
     A Hamilton cycle in a graph $G$ is a cycle containing all the vertices of $G$.
     A graph $G$ is a Hamiltonian graph if and only if it contains a Hamilton cycle.
 
-\medskip\noindent{\bf Theorem 6.4}
+\medskip\noindent\textbf{Theorem 6.4}
 
     The Petersen graph $PG$ is not Hamiltonian.
 
-\medskip\noindent{\bf Theorem 6.5}
+\medskip\noindent\textbf{Theorem 6.5}
 
     Let $G$ be a Hamiltonian graph. Then for $\emptyset \neq S \subset V(G)$, $k(G-S) \leq |S|$.
 
     (Where $k(H)$ is the number of components in $H$.)
 
-\medskip\noindent{\bf Theorem 6.6 (Ore's Theorem)}
+\medskip\noindent\textbf{Theorem 6.6 (Ore's Theorem)}
 
     If $G$ has order $n \geq 3$, and $\deg(u) + \deg(v) \geq n$ for all non-adjacent $u,v \in V(G)$, then $G$ is Hamiltonian.
 
@@ -517,100 +517,131 @@
 
     Note: This bound is sharp. See bowtie graph.
 
-\medskip\noindent{\bf Corollary 6.7 (Dirac's Corollary)}
+\medskip\noindent\textbf{Corollary 6.7 (Dirac's Corollary)}
 
     If $G$ has order $n \geq 3$ and $\delta(G) \geq \frac n2$, then $G$ is Hamiltonian.
 
-\medskip\noindent{\bf Theorem 6.8}
+\medskip\noindent\textbf{Theorem 6.8}
 
-    Let $G$ be a graph of order $n \geq 3$. Let $u,v$ be one pair of non-adjacent vertices that satisfy $\deg u + \deg v \geq n$. Then $G$ is Hamiltonian if and only if $G+uv$ is Hamiltonian. 
+    Let $G$ be a graph of order $n \geq 3$. Let $u,v$ be one pair of non-adjacent vertices that satisfy $\deg u + \deg v \geq n$. Then $G$ is Hamiltonian if and only if $G+uv$ is Hamiltonian.
 
-\medskip\noindent{\bf Closure}
+\medskip\noindent\textbf{Closure}
 
     The closure of a graph $G$, denoted $C(G)$, is obtained by iteratively adding edges between non-adjacent vertices satisfying $\deg u + \deg  v \geq n$.
 
-\medskip\noindent{\bf Theorem 6.9}
+\medskip\noindent\textbf{Theorem 6.9}
 
     A graph $G$ is Hamiltonian if and only if its closure is Hamiltonian.
 
-\medskip\noindent{\bf Corollary 6.10}
+\medskip\noindent\textbf{Corollary 6.10}
 
     If $C(G)$ is complete, then $G$ is Hamiltonian.
 
-\medskip\noindent{\bf Connectedness of Digraphs}
+\medskip\noindent\textbf{Connectedness of Digraphs}
 
     A Digraph is weakly connected if and only if its underlying graph is connected, and strongly connected if and only if there is a path from each vertex to each other vertex.
 
-\medskip\noindent{\bf Theorem 7.2}
+\medskip\noindent\textbf{Theorem 7.2}
 
     Let $D$ be a digraph and let $u,v$ be distinct vertices of $D$.
     If $D$ contains a directed $u-v$ walk of length $l$, then $D$ contains a directed $u-v$ path of length $k \leq l$.
 
-\medskip\noindent{\bf Theorem 7.3}
+\medskip\noindent\textbf{Theorem 7.3}
 
     A digraph is strongly connected if and only if it contains a closed, spanning, directed walk.
 
-\medskip\noindent{\bf Theorem 7.4}
+\medskip\noindent\textbf{Theorem 7.4}
 
     Let $D$ be a nontrivial, weaakly connected digraph.
     Then, $D$ is Eulerian if and only if the in-degree of each vertex is equal to its out-degree.
 
-\medskip\noindent{\bf Orientable Graph}
+\medskip\noindent\textbf{Orientable Graph}
 
 	A graph $G$ is orientable if and only if there exists an orientation of the edges of $G$ such that the resulting digraph is strongly connected.
 
-\medskip\noindent{\bf Theorem 7.5}
+\medskip\noindent\textbf{Theorem 7.5}
 
 	Let $G$ be a notrivial connected graph.
 	Then, $G$ is orientable if and only if $G$ has no bridges.
 
-\medskip\noindent{\bf Tournament}
+\medskip\noindent\textbf{Tournament}
 
 	A tournament of order $n$ is an oriented complete graph on $n$ vertices.
 
-\medskip\noindent{\bf Transitive Tournament}
+\medskip\noindent\textbf{Transitive Tournament}
 
 	A tournament $T$ is transitive if and only if for all $u,v,w \in V(T)$ and $uv,vw$ are arcs in $T$, then $uw$ is an arc in $T$.
 
-\medskip\noindent{\bf Theorem 7.6}
+\medskip\noindent\textbf{Theorem 7.6}
 
 	A tournament $T$ is transitive if and only if $T$ has no directed cycles.
 
-\medskip\noindent{\bf Theorem 7.7}
+\medskip\noindent\textbf{Theorem 7.7}
 
 	If $v$ is a vertex of maximum outdegree in a tournament $T$, then the directed distance $d(v, u) \geq 2$ for all $n \in V(T) \setminus \{d\}$.
 
-\medskip\noindent{\bf Theorem 7.8}
+\medskip\noindent\textbf{Theorem 7.8}
 
 	Every tournament contains a Hamiltonian path.
 
-\medskip\noindent{\bf Theorem 7.9}
+\medskip\noindent\textbf{Theorem 7.9}
 
 	Every vertex in a nontrivial strong tournament is in a directed 3-cycle.
 
-\medskip\noindent{\bf Theorem 7.10}
+\medskip\noindent\textbf{Theorem 7.10}
 
 	A nontrivial tournament $T$ is Hamiltonian if and only if $T$ is strong.
 
-\medskip\noindent{\bf Matching}
+\medskip\noindent\textbf{Matching}
 
 	A matching is an independent set of edges in a graph. Edges are independent iff they have no vertices in common.
 
-\medskip\noindent{\bf Theorem 8.3 (Hall's Matching Theorem)}
+\medskip\noindent\textbf{Theorem 8.3 (Hall's Matching Theorem)}
 
 	Let $G$ be a bipartite graph with partite sets $U,W$ where $|U| \leq |W|$.
 	Then, $G$ has a matching of size $|U| \iff G$ satisfies Hall's Condition: $$\forall X \subseteq U, |X| \leq |N(X)|.$$
 
-\medskip\noindent{\bf Perfect Matching}
+\medskip\noindent\textbf{Perfect Matching}
 
 	A matching is perfect if and only if every vertex is incident to an edge in the matching. If $M$ is a perfect matchin in $G$ of order $n$, then $|M| = \frac n2$.
 
-\noindent{\bf Theorem 8.6}
+\medskip\noindent\textbf{Theorem 8.6}
 
 	Every $r$-regular bipartite graph with $r \geq 1$ has a perfect matching.
 
-\noindent{\bf Edge Independent Number}
+\medskip\noindent\textbf{Edge Independence Number}
 
 	The edge independence number of $G$, denoted $\alpha'(G)$, is the size of a maximum matching in $G$.
 	For any Hamiltonian graph $H$ of order $n$, $\alpha'(H) = \left\lfloor \frac n2 \right\rfloor$.
+
+\medskip\noindent\textbf{Cover}
+
+	An incident edge and vertex in a graph cover each other.
+
+\medskip\noindent\textbf{Edge Cover}
+
+	An edge cover in a graph $G$ is a set of edges that collectively cover every vertex in $G$.
+
+	Note that a graph with isolated vertices cannot have an edge cover.
+
+\medskip\noindent\textbf{Edge Covering Number}
+
+	The edge covering number of a graph $G$ with no isolated vertices, denoted $\beta'(G)$, is the size of a minimum edge cover for $G$.
+
+\medskip\noindent\textbf{Theorem 8.7 (One of two Gallai's Identities)}
+
+	For any graph $G$ with no isolated vertices, $$\alpha'(G) + \beta'(G) = n.$$
+
+\medskip\noindent\textbf{Vertex Cover}
+
+	A vertex cover in a graph $G$ is a set of vertices that collectively cover every edge in $G$.
+
+\medskip\noindent\textbf{Vertex Independence Number}
+
+	The vertex independence number of a graph $G$, denoted $\alpha(G)$, is the maximum size of an independent (pairwise non-adjacent) set of vertices.
+
+\medskip\noindent\textbf{Vertex Covering Number}
+
+	The vertex covering number of a graph $G$, denoted $\beta(G)$, is the minimum size of a vertex cover for $G$.
+
 \end{document}
