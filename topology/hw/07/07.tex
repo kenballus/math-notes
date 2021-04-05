@@ -20,7 +20,7 @@
 \newcommand{\m}{\text{max}}
 \title{Topology HW 7}
 \author{Ben Kallus}
-\date{Due Friday. April 2, 2021}
+\date{Due Friday, April 2, 2021}
 
 \begin{document}
 
@@ -61,9 +61,9 @@ Let $\y \in B_d(\x, \varepsilon)$ we have $d(\x,\y) < \varepsilon$ and so $\rho(
 \end{center}
 By Lemma 20.2, the metric topology induced by $d$ is finer than the metric topology induced by $\rho$.
 
-Let $\y \in B_\rho(\x, \varepsilon/\sqrt{2})$ we have $\rho(\x,\y) < \varepsilon/\sqrt{2}$ and by (\ref{ine}) we know $d(\x,\y) \leq \sqrt{2}\rho(\x, \y) = \sqrt{2} (\varepsilon/\sqrt{2}) = \varepsilon$. This means that $\y \in B_d(\x, \varepsilon)$. Therefore, $B_\rho(\x, \varepsilon/\sqrt{2}) \subset B_d(\x, \varepsilon)$. 
+	Let $\y \in B_\rho(\x, \varepsilon/\sqrt{2})$ we have $\rho(\x,\y) < \varepsilon/\sqrt{2}$ and by \textbf{(1)} we know $d(\x,\y) \leq \sqrt{2}\rho(\x, \y) = \sqrt{2} (\varepsilon/\sqrt{2}) = \varepsilon$. This means that $\y \in B_d(\x, \varepsilon)$. Therefore, $B_\rho(\x, \varepsilon/\sqrt{2}) \subset B_d(\x, \varepsilon)$. 
 \begin{center}
-{\color{red}Include a picture that illustrates what we just did.}
+	\includegraphics[angle=90,scale=.4]{pic2.png}
 \end{center}
 \vspace{2in}
 By Lemma 20.2 we have that the metric topology induced by $\rho $ is finer than the metric topology induced by $d$. 
@@ -76,7 +76,7 @@ Let $B = (a_1,b_1) \times (a_2,b_2)$ be a basis element for the product topology
 \[ B_\rho (\x, \varepsilon) \subset (x_1-\varepsilon_1 , x_1+ \varepsilon_1) \times (x_2-\varepsilon_2 , x_2+ \varepsilon_2) \subset B. \]
 
 \begin{center}
-{\color{red}Include a picture that illustrates what we just did.}
+	\includegraphics[scale=.65,angle=90]{pic3.png}
 \end{center}
 \vspace{2in}
 By Lemma 13.3, the metric topology induced by $\rho$ is finer than the product topology.
@@ -92,7 +92,7 @@ Therefore, all three topologies are the same on $\R$.
 
 \newpage\noindent\textbf{2)} Proposition: The Euclidean metric on $\mathbb R^2$ is a metric.
 \begin{proof}
-	Let $\mathbf x, \mathbf y \in \mathbb \R^2$.
+	Let $\mathbf x, \mathbf y, \mathbf z \in \mathbb \R^2$.
 	Observe that
 	\begin{align*}
 		d(\mathbf x, \mathbf y) &= \sqrt{(x_1-y_1)^2 + (x_2-y_2)^2} \\
@@ -108,15 +108,46 @@ Therefore, all three topologies are the same on $\R$.
 		\implies (x_1-y_1)^2 &= -(x_2-y_2)^2.
 	\end{align*}
 
-	Since $(x_1-y_1)^2$ is positive and $-(x_2-y_2)^2$ is negative, it must be that both are 0.
+	Since $(x_1-y_1)^2 \geq 0$, and $-(x_2-y_2)^2 \leq 0$, it must be that both are 0.
 	Thus, $x_1 = y_1$ and $x_2 = y_2$, so $\mathbf x = \mathbf y$.
 
-	Let $\mathbf z \in \mathbb R^2$.
-	Then,
+	Let $\mathbf a, \mathbf b \in \mathbb R^2$.
+	Then, by the Cauchy-Schwarz inequality,\footnote{I'm relying on some outside knowledge here, so I'm assuming this proof is not the one you're looking for.}
 	\begin{align*}
+		||(\mathbf a + \mathbf b)||^2 &= (\mathbf a + \mathbf b)^2 \\
+		                            &= \mathbf a^2 + 2\mathbf a \mathbf b + \mathbf b^2 \\
+					    &\leq ||\mathbf a||^2 + 2||\mathbf a|| ||\mathbf b|| + ||\mathbf b||^2 \\
+					    &= (||\mathbf a|| + ||\mathbf b||)^2.
+	\end{align*}
+	Thus, since all distances are positive, $$||\mathbf a + \mathbf b|| \leq ||\mathbf a|| + ||\mathbf b||.$$
+	Therefore,
+	\begin{align*}
+		d(\mathbf x, \mathbf y) + d(\mathbf y, \mathbf z) &= ||\mathbf x - \mathbf y|| + ||\mathbf y - \mathbf z|| \\
+		                                                  &\geq ||\mathbf x - \mathbf y + \mathbf y - \mathbf z|| \\
+								  &= ||\mathbf x - \mathbf z|| \\
+								  &= d(\mathbf x, \mathbf z).
+	\end{align*}
+	Thus, the Euclidean metric on $\mathbb R^2$ is a metric.
 
 \end{proof}
 
+\newpage\noindent\textbf{3)}
+
+\textbf{(1)}
+
+	\begin{center}\includegraphics[scale=.7,angle=90]{pic4.png}\end{center}
+
+\textbf{(2)}
+
+	\begin{center}\includegraphics[scale=.7]{pic5.png}\end{center}
+
+\newpage\textbf{(3)}
+
+	\begin{center}\includegraphics{pic6.png}\end{center}
+
+\textbf{(4)}
+
+	\begin{center}\includegraphics{pic7.png}\end{center}
 
 \end{document}
 

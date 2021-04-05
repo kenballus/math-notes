@@ -1,0 +1,62 @@
+\documentclass[11pt]{article}		% The percent symbol in your code starts a comment.  The comment ends at the next linebreak.
+\usepackage[english]{babel} 		% Packages add functionality and style conventions to your documents. Don't edit this section!
+\usepackage{fullpage}				% Eliminates wasted space
+\usepackage[utf8]{inputenc}			% Necessary for character encoding
+\usepackage{amsmath, amssymb,amsthm}% Required math packages
+\usepackage{graphicx}				% For handling graphics
+\usepackage[colorinlistoftodos]{todonotes}	% For the fancy "todo" stuff
+\usepackage{hyperref}				% For clickable links in the final PDF
+\usepackage{tikz}
+\theoremstyle{definition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{prop}[theorem]{Proposition}
+\newtheorem{claim}[theorem]{Claim}
+
+\title{Complex Analysis -- Homework \#23}
+
+\author{Josef Germanium Komissar, Benjamin Francium Kallus, Connor Americium Feldman}
+
+\date{Due April 5, 2021}
+
+\begin{document}
+
+\maketitle
+
+If functions $u,v:\mathbb R^2 \longrightarrow \mathbb R$ are harmonic in a domain $D$ and their first-order partial derivatives satisfy the Cauchy-Riemann equations throughout $D$, then $v$ is said to be a
+\emph{harmonic conjugate} of $u$.  We thus have following theorem; you need \emph{not} supply its proof.
+
+\vskip.05in
+\noindent {\bf Theorem.}
+{\it A function $f(z)=u(x,y) + iv(x,y)$ is analytic in a domain $D$ if and only if $v$ is a harmonic conjugate of $u$.}
+\vskip.1in
+
+\noindent{\bf 1. }  Verify that $u(x,y)=xy^3-x^3y$ is a harmonic function.
+
+\[u_x = y^3 - 3x^2y \quad u_{xx} = -6xy\]
+\[u_y = 3xy^2 - x^3 \quad u_{yy} = 6xy = -u_{xx}\]
+
+\vskip.1in
+\noindent{\bf 2. }  Construct a harmonic conjugate $v$ of $u$ by following this three-step process:
+\begin{enumerate}
+\item Integrate $v_y$ (which is equal to $u_x$) with respect to $y$ to obtain: $v(x,y)=\int u_x(x,y) \,  {\rm d}y \, + \, C(x)$.
+
+\[v(x, y) = \frac14 y^4 - \frac32 x^2y^2 + C(x)\]
+
+\item Find $C^\prime(x)$ by differentiating both sides of the preceding with respect to $x$ and replacing $v_x(x,y)$ with $-u_y(x,y)$ on the left side:
+$
+-u_y(x,y) = \frac{ {\rm d}}{ {\rm d}x} \int u_x(x,y) \,  {\rm d}y + C^\prime(x).
+$
+
+\[-u_y(x, y) = 0-3xy^2 + C'(x) = -3xy^2 + x^3\]
+\[C'(x) = x^3\]
+
+\item Isolate $C^\prime(x)$ and integrate with respect to $x$ to discover $C(x)$.
+
+\[C(x) = \frac14x^4\]
+
+\end{enumerate}
+
+\vskip.1in
+\hrule
+\end{document}

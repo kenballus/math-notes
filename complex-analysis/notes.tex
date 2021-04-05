@@ -19,35 +19,30 @@
 \pagecolor{black}
 \color{white}
 
-\noindent{\bf Cardano's Formula}
+\noindent\textbf{Cardano's Formula}
 
     \begin{align*}
         x^3 &= cx + d \\
         x &= \sqrt[3]{\frac d2 + \sqrt{\left(\frac d2\right)^2 - \left(\frac c3\right)^3}} + \sqrt[3]{\frac d2 - \sqrt{\left(\frac d2\right)^2 - \left(\frac c3\right)^3}}
     \end{align*}
 
-\medskip
-\noindent{\bf Modulus}
+\medskip\noindent\textbf{Modulus}
 
 	The modulus of $a+bi$ is $\sqrt{a^2+b^2}$.
 
-\medskip
-\noindent{\bf Theorem}
+\medskip\noindent\textbf{Theorem}
 
 	$\C$ cannot be ordered as a field. This is because if $i > 0$, then $i^2 > 0$, which is a contradiction. On the other hand, if $i < 0$, then $-i^2 < 0$, which is also a contradiction.
 
-\medskip
-\noindent{\bf Complex Conjugate}
+\medskip\noindent\textbf{Complex Conjugate}
 
     If $z = a+bi$, the complex conjugate of $z$, denoted $\overline z$, is $a-bi$.
 
-\medskip
-\noindent{\bf Modulus}
+\medskip\noindent\textbf{Modulus}
 
     For $z = a + ib$, $$|z| = \sqrt{a^2+b^2}.$$
 
-\medskip
-\noindent{\bf Properties of Complex Numbers}
+\medskip\noindent\textbf{Properties of Complex Numbers}
     \begin{enumerate}
         \item $|z| \geq 0$
         \item $|z|=0 \iff z=0$
@@ -65,8 +60,7 @@
         \item $|z_1z_2|=|z_1||z_2|$
     \end{enumerate}
 
-\medskip
-\noindent{\bf Modulus Metric}
+\medskip\noindent\textbf{Modulus Metric}
 
     One standard metric for $\C$ is the function $$d(z_1, z_2) = |z_1 - z_2|.$$
     Properties of this metric:
@@ -78,8 +72,7 @@
         \item $d(z_1, z_2) \leq d(z_1, z_3) + d(z_3, z_2)$
     \end{enumerate}
 
-\medskip
-\noindent{Polar Form}
+\medskip\noindent\textbf{Polar Form}
 
     The polar form of a complex number $z = a+bi$ is $$r\cos\theta + ir\sin\theta = r(\cos\theta + i\sin\theta),$$ with $$r = |z| = \sqrt{z^2+y^2}, \theta = \arctan{\frac yx},$$ in the appropriate quadrant, except when $z=0$ (since there is no argument of $0$).
 
@@ -97,8 +90,7 @@
 
     $r_1(\cos(\theta_1) + \sin(\theta_1)) \cdot r_2(\cos(\theta_2) + \sin(\theta_2)) = r_1r_2(\cos(\theta_1 + \theta_2) + \sin(\theta_1 + \theta_2))$.
 
-\medskip
-\noindent{\bf Argument}
+\medskip\noindent\textbf{Argument}
 
     The argument of a complex number $0 \neq z = r\cos\theta + ir\sin\theta$, denoted $\arg z$, is $\theta$. Note that there are infinitely many equivalent options for $\theta$.
 
@@ -106,26 +98,15 @@
 
     If $\theta_1 \in \arg(z_1)$ and $\theta_2 \in \arg(z_2)$, then $\theta_1 + \theta_2 \in \arg(z_1z_2)$
 
-\medskip
-\noindent{\bf De Moivre's Formula}
+\medskip\noindent\textbf{De Moivre's Formula}
 
     $$(\cos\theta + i\sin\theta)^n = \cos(n\theta) + i\sin(n\theta)$$
 
-\medskip
-\noindent{\bf Euler Notation}
+\medskip\noindent\textbf{Euler Notation}
 
     For $z \neq 0$, $z = r(\cos\theta + i\sin\theta) = re^{i\theta}$, $r > 0$.
 
-\medskip
-\noindent{\bf Fourier Matrix}
-
-    A Fourier matrix is an $n \times n$ square matrix $F_n$ with entries given by $F_{jk} = e^{2\pi ijk/n} = \omega^{jk}$, where $\omega$ is the primitive $n^{\text{th}}$ root of unity.
-
-    These can be used for polynomial interpolation.
-    Make a coefficient vector $C = \begin{bmatrix} c_0 \\ c_1 \\ c_2 \\ \vdots \\ c_{n-1} \end{bmatrix}$, and solve $F_nC = Y$, where $Y$ is the vector of points to interpolate.
-
-\medskip
-\noindent{\bf Fractional Linear Transformation}
+\medskip\noindent\textbf{Fractional Linear Transformation}
 
     A fractional linear transformation, or Mobius transformation, is a function of the form $$f(z) = \frac{az+b}{cz+d},$$ in which $a,b,c,d$ are complex numbers satisfying $ad-bc \neq 0$.
     Thus, FLTs are one-to-one and onto, and their inverses are also FLTs.
@@ -133,20 +114,55 @@
     Thus, FLTs on circles and lines form a group under composition.
     FLTs also preserve angles between lines. This makes FLTs conformal maps.
 
-\medskip
-\noindent{\bf FLT Uniqueness Theorem}
+\medskip\noindent\textbf{FLT Uniqueness Theorem}
 
     Given distinct $z_1, z_2, z_3 \in \overline{\mathbb C}$, and distinct $w_1, w_2, w_3 \in \overline{\mathbb C}$, ($\mathbb C$ with infinity), there exists a unique FLT $f$ such that $f(z_1) = w_1$, $f(z_2) = w_2$, and $f(z_3) = w_3$.
 
-\medskip\noindent{\bf Limit of a Complex Function}
+\medskip\noindent\textbf{Limit of a Complex Function}
 
 	Let $f: \C \to \C$. Then, $f(z)$ has a limit $w_0$ as $z$ approaches $z_0$ if and only if for all $\epsilon \in \R^+$, there exists $\delta \in \R^+$ such that $$|f(z) - w_0| < \epsilon \implies |z - z_0| < \delta.$$
 
-\medskip\noindent{\bf Limit Uniqueness Theorem}
+\medskip\noindent\textbf{Limit Uniqueness Theorem}
 
 	When a limit of a function $f(z)$ exists at a point $z_0$, it is unique.
 
-\medskip\noindent{\bf }
+\medskip\noindent\textbf{Derivative of a Complex Function}
 
+	Let $f$ be a function whose domain contains a neighborhood $|z-z_0| < \epsilon$ around a point $z_0$.
+	The derivative of $f$ at $z_0$ is the limit $$f'(z_0) = \lim_{z\to z_0}\frac{f(z)-f(z_0)}{z-z_0}.$$
+
+\medskip\noindent\textbf{Cauchy-Riemann Equations}
+
+	Let $f(z) = u(x,y) + iv(x,y).$
+	If $f'(z_0)$ exists, then \begin{center}$u_x = v_y$ and $u_y = -v_x.$\end{center}
+
+\medskip\noindent\textbf{Harmonic Function}
+
+	A function $f: \C \to \C$ is harmonic in a domain of the $xy$ plane if and only if throughout that domain it has continuous partial derivatives of the first and second order satisfying Laplace's equation: $$f_{xx}(x,y) + f_{yy}(x,y)=0.$$
+
+\medskip\noindent\textbf{The Complex Exponential Function}
+
+	$$\text{exp}(z) = e^z = e^{x+iy} = e^x\cos(y) + ie^x\sin(y) = e^x(\cos(y)+\sin(y)).$$
+
+\medskip\noindent\textbf{Properties of the Exponential Function}
+\begin{enumerate}
+	\item $\exp(z_1 + z_2) = \exp(z_1)\exp(z_2)$
+	\item $|\exp(z)| = e^{\text{Re}(z)}$
+	\item $\arg(\exp(z)) = \text{Im}(z) + 2\pi in$ for some $n \in \mathbb Z$.
+	\item $\exp$ is periodic with period $2\pi i$. Thus, $\exp(z+2\pi i) = \exp(z).$
+	\item $\exp$ maps $\C$ many-to-one onto $\C \setminus \{0\}$. Thus, $\log(z)$ is a multi-valued function.
+\end{enumerate}
+
+\medskip\noindent\textbf{Analytic Function}
+
+	A function $f: \C \to \C$ is analytic in a neighborhood $D$ of a point $z_0$ if and only if it has a derivative everywhere in $D$.
+
+\medskip\noindent\textbf{Entire Function}
+
+	An entire function is analytic at every point in the entire plane.
+
+\medskip\noindent\textbf{Harmonic Conjugate}
+
+	$v$ is a harmonic conjugate of $u$ if and only if a function $f(z)=u(x,y) + iv(x,y)$ is analytic in a domain $D$.
 	
 \end{document}
