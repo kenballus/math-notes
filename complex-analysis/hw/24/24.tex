@@ -1,0 +1,46 @@
+\documentclass[11pt]{article}		% The percent symbol in your code starts a comment.  The comment ends at the next linebreak.
+\usepackage[english]{babel} 		% Packages add functionality and style conventions to your documents. Don't edit this section!
+\usepackage{fullpage}				% Eliminates wasted space
+\usepackage[utf8]{inputenc}			% Necessary for character encoding
+\usepackage{amsmath, amssymb,amsthm}% Required math packages
+\usepackage{graphicx}				% For handling graphics
+\usepackage[colorinlistoftodos]{todonotes}	% For the fancy "todo" stuff
+\usepackage{hyperref}				% For clickable links in the final PDF
+\usepackage{tikz}
+\theoremstyle{definition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{prop}[theorem]{Proposition}
+\newtheorem{claim}[theorem]{Claim}
+
+\title{Complex Analysis -- Homework \#24}
+
+\author{``Dirty" Josef Komissar, Benjamin Kallus, Connor ``Drippy" Feldman}
+
+\date{Due April 9, 2021}
+
+\begin{document}
+
+\maketitle
+
+\medskip\noindent\textbf{1.}
+
+\medskip\textbf{a.}
+\begin{align*}
+    \exp\left(-\frac{\pi i}3\right) &= \exp\left(i \cdot -\frac{\pi}3\right)
+                                    &=  e^0\left(\cos\left(-\frac{\pi}3\right) + i\sin\left(-\frac{\pi}3\right)\right)
+                                    &= \cos\left(\frac{5\pi}3\right) + i\sin\left(\frac{5\pi}3\right)
+\end{align*}
+\medskip\textbf{b.}
+\begin{align*}
+    \exp\left(\frac12 - \frac{\pi i}4\right) &= e^{\frac12}\left( \cos\left(-\frac{\pi}4\right) + i\sin\left( -\frac{\pi}4 \right) \right) \\
+                                             &= \sqrt{e}\left( \cos\left( \frac{7\pi}4 \right) + i\sin\left( \frac{7\pi}4 \right) \right)
+\end{align*}
+\medskip\textbf{c.}
+\begin{align*}
+    \log(4i) &= \{z \mid \exp(z) = 4i\} \\
+             &= \{x+iy \mid e^x\left( \cos(y) + i\sin(y) \right) = 4i\} \\
+             &= \{x+iy \mid \cos(y) = 0 \text{ and } e^x\left( i\sin(y) \right) = 4i\}
+\end{align*}
+
+\end{document}
