@@ -4,7 +4,7 @@
 \usepackage{amsfonts}
 \usepackage{amssymb}
 \usepackage{graphicx}
-\usepackage{geometry}
+\usepackage[margin=.75in]{geometry}
 \usepackage{xcolor}
 
 \newcommand{\inv}{^{-1}}
@@ -653,4 +653,29 @@
 \medskip\noindent\textbf{Theorem 8.10 - Tutte's Theorem}
 
 	A graph $G$ contains a 1-factor if and only if removing $k$ vertices creates at most $k$ odd components.
+
+\medskip\noindent\textbf{1-Factorable}
+
+    A graph $G$ is 1-factorable if and only if there exist edge-disjoint 1-factors $F_1, \hdots F_r$ of $G$ such that $E(G) = E(F_1) \cup \hdots \cup E(F_r)$.
+
+\medskip\noindent\textbf{Theorem 8.13}
+
+    The Petersen graph is not 1-factorable.
+
+\medskip\noindent\textbf{Theorem 8.14}
+
+    For all $k \in \mathbb N$, $K_{2k}$ is 1-factorable.
+
+\medskip\noindent\textbf{Theorem 8.15}
+    
+    For all $r \in \mathbb N$, every $r$-regular bipartite graph is 1-factorable.
+
+\medskip\noindent\textbf{2-Factor}
+
+    A 2-factor of a graph $G$ is a 2-regular spanning subgraph of $G$.
+
+\medskip\noindent\textbf{Theorem 8.16}
+
+    A graph $G$ is 2-factorable if and only if $G$ is $2m$-regular for some $m \geq 1$.
+
 \end{document}
