@@ -1,0 +1,88 @@
+\documentclass[12pt]{article}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage[margin=.75in]{geometry}
+\usepackage{xcolor}
+\usepackage{tikz}
+
+\newcommand{\id}{\text{id}}
+\newcommand{\od}{\text{od}}
+
+\setlength{\topmargin}{0pt}
+\setlength{\headsep}{0pt}
+\textheight = 600pt
+
+\title{Graph Theory \\ Homework 12}
+\author{Ben Kallus and Ryan Friedman}
+\date{Due Thursday, April 8}
+
+\begin{document}
+\maketitle
+
+\medskip\noindent\textbf{(1)} Proposition: If $S$ is an independent set of vertices, then $T = V(G) \setminus S$ is a vertex cover. Thus, $\alpha(G) + \beta(G) \leq n$.
+\begin{proof}
+    Let $G$ be a graph, and let $S$ be an independent set of vertices from $G$.
+    Suppose that $V(G) - S$ is not a vertex cover for $G$.
+    Then, there exists an edge $uv \in E(G)$ such that $u,v\notin V(G) \setminus S$. 
+    Thus, it must be that $u,v \in S$.
+    Thus, $S$ is not an independent set of vertices, so it must be that $V(G) \setminus S$ is a vertex cover for $G$.
+
+    Suppose that $S$ is a maximum independent set in $G$.
+    Then, $V(G) \setminus S$ is a vertex cover for $G$.
+    By the definition of $\beta(G)$, $\beta(G) \leq |V(G) \setminus S| = n - |S| = n - \alpha(G)$.
+    Thus, $$\alpha(G) + \beta(G) \leq n.$$
+\end{proof}
+
+\medskip\noindent\textbf{(2)} Proposition: If $X$ is a vertex cover, then $Y=V(G) \setminus X$ is independent. Thus, $\alpha(G) + \beta(G) \geq n$.
+\begin{proof}
+    Let $G$ be a graph, and let $X$ be a vertex cover for $G$.
+    Suppose that $V(G) \setminus X$ is not independent.
+    Then, there exist $u,v \in V(G) \setminus X$ such that $uv \in E(G)$.
+    Thus, $uv$ is not adjacent to any vertices in $X$, so $X$ is not a vertex cover.
+    Thus, it must be that $V(G) - X$ is independent.
+
+    Suppose that $X$ is a minimum vertex cover for $G$.
+    Then, $V(G) \setminus X$ is an independent set in $G$.
+    By the definition of $\alpha(G)$, $\alpha(G) \geq |V(G) \setminus X| = n - |X| = n - \beta(G)$.
+    Thus, $$\alpha(G) + \beta(G) \geq n.$$
+\end{proof}
+    
+\newpage\noindent\textbf{8.8} Proposition: The Petersen graph does not contain two disjoint perfect matchings.
+\begin{proof}
+    Suppose that the Petersen graph does have two disjoint perfect matchings, $M_1$ and $M_2$.
+    Let $F = M_1 \cup M_2$.
+    Then, since $M_1$ and $M_2$ are disjoint, $F$ is 2-regular.
+    Thus, each component of $F$ is a cycle.
+    Since the smallest cycle in the Petersen graph has length 5, it must be that $F$ consists of either two 5-cycles or one 10-cycle.
+    Since the Petersen graph is not Hamiltonian, $F$ cannot be $C_10$.
+    Thus, $F$ is $C_5 \cup C_5$.
+    Define $C$ to be one of these cycles.
+    Note that adjacent edges in $C$ cannot belong to the same matching.
+    However, since $C$ is an odd cycle, there is no way to color its edges such that no two edges of the same color are adjacent.
+    Thus, $F$ cannot be $C_5 \cup C_5$, so it must be that the Petersen graph does not contain two disjoint perfect matchings.
+\end{proof}
+
+\newpage\noindent\textbf{8.10} Proposition: Every connected graph of order 6 with four independent vertices either has vertex independence number 5 or edge independence number greater than 2.
+\begin{proof}
+    Let $G$ be a connected graph of order 6 with four independent vertices.
+    Suppose that $\alpha(G) \neq 5$.
+    Then, $\alpha(G)$ must be 4, because if it were 6, then $G$ would be disconnected.
+    Let $M = \{v_1, v_2, v_3, v_4\}$ be a maximum independent set of vertices in $G$.
+    Let $v_5, v_6$ be the other two vertices in $G$.
+    Note that or each vertex $v \in M$, either $vv_5$ or $vv_6$ is an edge in $G$, because if one were missing, then either $G$ would be disconnected or $M$ would not be an independent set.
+    Now, note that $v_5v_i$ and $v_6v_j$ are edges in $G$ for some $v_i,v_j \in M$, because otherwise, $M$ would not be maximal.
+    This condition can be strengthened: because there are four vertices in $M$, and each must be connected to either $v_5$ or $v_6$ (or both), it must be that there exists a pair of edges $v_5v_i, v_6v_j$ such that $i \neq j$.
+    Thus, $\alpha'(G) \geq 2$.
+
+    Now, suppose that $\alpha'(G) \leq 2$.
+    Then, since $G$ is connected, $\alpha'(G) = 1$.
+    Thus, $G$ must not contain any subgraphs isomorphic to $P_4$, because $P_4$ has two independent edges.
+    Therefore, $G$ is isomorphic to $K_1,5$.
+    Thus, $G$ has an independent set of size 5.
+    Observe that $G$ cannot have an independent set of size 6 and maintain connectedness, so $\alpha(G) = 5$.
+\end{proof}
+
+\end{document}
