@@ -682,4 +682,44 @@
 
 	Every 3-regular bridgeless graph contains a 1-factor.
 
+\medskip\noindent\textbf{Planar Graph}
+
+    A planar graph is a graph that can be drawn in the plane without crossing edges.
+
+\medskip\noindent\textbf{Plane Graph}
+
+    A plane graph is a planar graph with a planar embedding.
+
+\medskip\noindent\textbf{Region}
+
+    A plane graph divides the plane into connected pieces called regions.
+
+\medskip\noindent\textbf{Exterior Region}
+
+    Every plane graph has one region that is unbounded, the exterior region.
+
+\medskip\noindent\textbf{Boundary}
+
+    The boundary of a region $R$ is a multiset of edges bounding the region.
+    The degree of a region $R$ is the number of edges on its boundary.
+    
+    Note: If an edge $e$ is a bridge, then it has the same region on both sides. Otherwise, it has two different regions on either side.
+
+\medskip\noindent\textbf{Region-Shaking Lemma}
+
+    $$2m = \sum_{R \text{ is a region}} \deg R$$
+
+\medskip\noindent\textbf{Euler's Formula}
+
+    Let $G$ be a plane graph with $r$ regions.
+    Then, $$n - m + r = 2.$$
+
+\medskip\noindent\textbf{Theorem 9.2}
+
+    If $G$ is a planar graph of order $n \geq 3$ and size $m$, then $m \leq 3n - 6$.
+
+\medskip\noindent\textbf{Corollary 9.3}
+
+    Every planar graph contains a vertex of degree less than or equal to 5.
+
 \end{document}
