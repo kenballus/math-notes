@@ -151,6 +151,7 @@
 	\item $\arg(\exp(z)) = \text{Im}(z) + 2\pi in$ for some $n \in \mathbb Z$.
 	\item $\exp$ is periodic with period $2\pi i$. Thus, $\exp(z+2\pi i) = \exp(z).$
 	\item $\exp$ maps $\C$ many-to-one onto $\C \setminus \{0\}$. Thus, $\log(z)$ is a multi-valued function.
+    \item In general, $z^\alpha + z^\beta \neq z^{\alpha + \beta}$
 \end{enumerate}
 
 \medskip\noindent\textbf{Analytic Function}
@@ -170,4 +171,18 @@
 	The $\log$ function is the inverse of $\exp$. The $\text{Log}$ function is the principle value of the $\log$ function.
 	Thus, $\text{log}(z) = \ln(|z|) + i\Arg(z)$.
 
+\medskip\noindent\textbf{Trig Functions}
+
+    $$\sin(z) = \frac{e^{iz} - e^{-iz}}{2i}$$
+    $$\cos(z) = \frac{e^{iz}+e^{-iz}}{2}$$
+
+\medskip\noindent\textbf{Properties of the Trig Functions}
+\begin{enumerate}
+    \item $\cos(-z) = \cos(z)$, $\sin(-z) = -\sin(z)$.
+    \item $\cos(z) = \cos(z + 2\pi)$, $\sin(z) = \sin(z + 2\pi)$.
+    \item The usual formulas for addition within trig functions hold.
+    \item The usualy derivative formulas hold.
+    \item $\cos z = \frac12(e^{y} + e^{-y})\cos x - \frac i2(e^y-e^{-y})\sin x = \cosh y \cos x - i\sinh y \sin x$
+    \item $\cos z = \sin x \cosh y + i\cos x \sinh y$
+\end{enumerate}
 \end{document}
