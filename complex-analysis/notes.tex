@@ -183,6 +183,29 @@
     \item The usual formulas for addition within trig functions hold.
     \item The usualy derivative formulas hold.
     \item $\cos z = \frac12(e^{y} + e^{-y})\cos x - \frac i2(e^y-e^{-y})\sin x = \cosh y \cos x - i\sinh y \sin x$
-    \item $\cos z = \sin x \cosh y + i\cos x \sinh y$
+    \item $\cos z = \sin x \cosh y + i\cos x \sinh y$, $\sin z = \sin x \cosh y + i \cos x \sinh y$
+    \item $\cosh^2 x - \sinh^2 x = 1$
+    \item Neither $\sin$ nor $\cos$ is bounded.
 \end{enumerate}
+
+\medskip\noindent\textbf{Integrals}
+    
+    For a contour $z(t) = C$,
+    $$\int_{C} f(z)\,dz = \int_a^b f(z(t))z'(t)\,dt$$
+
+\medskip\noindent\textbf{Properties of Integrals}
+\begin{enumerate}
+    \item $\int_{-C}f(z)\,dz = -\int_Cf(z)\,dz$
+    \item $|\int_a^bf(t)\,dt| \leq \int_a^b|f(t)|\,dt$
+    \item $|\int_Cf(z)\,dz| \leq \int_C |f(zt))| |z'(t)|\,dt \leq M\int_a^b|z'(t)|\,dt$, where $M$ is the maximum value that $|f(z(t))|$ attains within the bounds for $t$.
+\end{enumerate}
+
+\medskip\noindent\textbf{Theorem}
+
+    If $D$ is open and connected, and $f: D \to \mathbb C$ is continuous, then the following are equivalent:
+    \begin{enumerate}
+        \item $f$ has an antiderivative $F$ in $D$.
+        \item $\int_C f(z)\,dz = F(z_2) - F(z_1)$ for all $C$ joining $z_1$ to $z_2$.
+        \item $\int_Cf(z)\,dz = 0$ for all closed contours $C$ in $D$.
+    \end{enumerate}
 \end{document}
