@@ -594,7 +594,8 @@
 
 \medskip\noindent\textbf{Matching}
 
-	A matching is an independent set of edges in a graph. Edges are independent iff they have no vertices in common.
+	A matching is an independent set of edges in a graph.
+    Edges are independent iff they have no vertices in common.
 
 \medskip\noindent\textbf{Theorem 8.3 - Hall's Matching Theorem}
 
@@ -740,7 +741,7 @@
 
     A graph $G$ is maximal planar if and only if $G$ is planar and adding any edge to $G$ makes it nonplanar.
 
-    A graph is maximal planar if and only if every region in every plane drawing of $G$ has degree 3 (every region is triangular).
+    $G$ is maximal planar if and only if every region in every plane drawing of $G$ has degree 3 (every region is triangular).
 
 \medskip\noindent\textbf{Vertex Coloring}
 
@@ -786,4 +787,31 @@
 
     For all $k \geq 3$, there exists a triangle-free graph $G$ with $\chi(G) = k$.
 
+\medskip\noindent\textbf{Edge Coloring}
+
+    An edge coloring of a graph $G$ is an assignment of colors to the edges of $G$ such taht no two edges of the same color are adjacent.
+    The edge chromatic number (or chromatic index) of $G$ is the minimum number of colors required for an edge coloring of $G$.
+    This is denoted $\chi'(G)$.
+
+\medskip\noindent\textbf{Theorem 10.12 - Vizing's Theorem}
+
+    For any graph $G$, $\chi'(G) \in \{\Delta(G), \Delta(G) + 1\}$.
+    Graphs with chromatic number equal to their maximum vertex degree are known as graphs of class 1.
+    Graphs with chromatic number equal to one more than their maximum vertex degree are known as graphs of class 2.
+    We will not prove this.
+    Determining whether a graph is class 1 or class 2 is NP-complete.
+
+\medskip\noindent\textbf{Theorem 10.13}
+
+    Let $G$ be a graph of odd order $n$ and size $m$.
+    If $m > \frac12 (n-1)\Delta(G)$, then $\chi'(G) = 1 + \Delta(G).$
+    Thus, $G$ is $r$-regular if and only if $G$ is 1-factorable.
+
+\medskip\noindent\textbf{Theorem 10.15}
+
+    For all $n \geq 2$, $$\chi'(K_n) = \begin{cases} n-1 = \Delta(G) & n \text{ is even}, \\ n = 1 + \Delta(G) & n \text{ is odd.} \end{cases}$$
+
+\medskip\noindent\textbf{Theorem 10.17 - K\"onig's Theorem}
+
+    Every bipartite graph is class 1.
 \end{document}
