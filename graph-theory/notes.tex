@@ -796,8 +796,8 @@
 \medskip\noindent\textbf{Theorem 10.12 - Vizing's Theorem}
 
     For any graph $G$, $\chi'(G) \in \{\Delta(G), \Delta(G) + 1\}$.
-    Graphs with chromatic number equal to their maximum vertex degree are known as graphs of class 1.
-    Graphs with chromatic number equal to one more than their maximum vertex degree are known as graphs of class 2.
+    Graphs with chromatic index equal to their maximum vertex degree are known as graphs of class 1.
+    Graphs with chromatic index equal to one more than their maximum vertex degree are known as graphs of class 2.
     We will not prove this.
     Determining whether a graph is class 1 or class 2 is NP-complete.
 
@@ -805,7 +805,9 @@
 
     Let $G$ be a graph of odd order $n$ and size $m$.
     If $m > \frac12 (n-1)\Delta(G)$, then $\chi'(G) = 1 + \Delta(G).$
-    Thus, $G$ is $r$-regular if and only if $G$ is 1-factorable.
+
+\medskip\noindent\textbf{Lemma}
+    An $r$-regular graph $G$ is 1-factorable if and only if its chromatic index is $r$.
 
 \medskip\noindent\textbf{Theorem 10.15}
 
@@ -813,5 +815,11 @@
 
 \medskip\noindent\textbf{Theorem 10.17 - K\"onig's Theorem}
 
-    Every bipartite graph is class 1.
+    Every bipartite graph $G$ has chromatic index $\Delta(G)$.
+
+\medskip\noindent\textbf{Dual Graph}
+
+    The dual graph of a plane graph $G$ is a graph with one vertex for each region of $G$ in which two vertices are adjacent if and only if their corresponding regions in $G$ share a boundary.
+    The dual graph of a planar graph is a planar graph.
+
 \end{document}

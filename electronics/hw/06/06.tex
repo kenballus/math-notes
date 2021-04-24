@@ -19,8 +19,6 @@
 \newcommand{\N}{\mathbb N}
 
 \begin{document}
-\pagecolor{black}
-\color{white}
 
 \medskip\noindent\textbf{1.} \begin{center}\includegraphics{or_gate.png}\end{center}    
 
@@ -83,8 +81,17 @@
 
     0b10011010000010 = 0x2682 = 9858
 
-\medskip\noindent\textbf{10.}
+\newpage\noindent\textbf{10.}
 
-    
+\textbf{a)}
+\begin{center}
+    \includegraphics[scale=.3]{10a.png}
+\end{center}
+
+\textbf{b)} The maximum value for Vout/Vin is $16.58/0.2154 = 76.97$, so that's the measured value of $Q$. However, this value is only achieved because Vin dips to 0.2154 V right at the resonant frequency. If Vin were constant, then $Q$ would be 16.58.
+
+\textbf{c)} The formula in the book predicts that $\omega_r = \frac1{LC} = \frac1{0.01 \cdot 0.01 \cdot 10^{-6}} = 100000$ rad/sec. Thus, $Q = \frac{\omega_r \cdot L}{R} = \frac{100000 \cdot 0.01}{10} = 100$.
+
+\textbf{d)} Upon removing the $50\Omega$ resistor, the dip in Vin was no longer present at the resonant frequency. The measured $Q$ in this case was 76.96.
 
 \end{document}

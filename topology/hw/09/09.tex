@@ -1,0 +1,77 @@
+\documentclass[12pt]{report}
+\usepackage{amsthm, amssymb}
+\usepackage{geometry}
+\geometry{legalpaper, margin=1in}
+\usepackage{amsmath}
+\usepackage{enumitem}
+
+\newtheorem*{remark}{Remark}
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}{Corollary}[theorem]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem*{defi}{Definition}
+\newtheorem{ex}{Example}
+\usepackage{xcolor}
+\usepackage{graphicx}
+
+\newcommand{\R}{\mathbb{R}^2}
+\newcommand{\x}{\mathbf{x}}
+\newcommand{\y}{\mathbf{y}}
+\newcommand{\inv}{^{-1}}
+
+\title{Topology HW 9}
+\author{Ben Kallus}
+\date{Due Friday, April 23, 2021}
+
+\begin{document}
+\maketitle
+
+\medskip\noindent\textbf{1)} Proposition: Show that $S^2$ is connected.
+\begin{proof}
+    Let $S^2 = \{\mathbf x = (x_1, x_2, x_3) \mid x_1^2 + x_2^2 + x_3^2 = 1\}$ be a subspace of $\mathbb R^3$.
+    
+    Let $\mathbf x, \mathbf y$ be distinct points in $S^2$.
+    Then, there exists a great circle $C$ through $\mathbf x$ and $\mathbf y$.
+    Thus, a path between $\mathbf x$ and $\mathbf y$ can be constructed by following an arc of $C$ between $\mathbf x$ and $\mathbf y$.\footnote{If the points are not antipodal, then this path can be defined by $f(p) = \frac{(1-p)\mathbf x + p \mathbf y}{\sqrt{((1-p)x_1 + py_1)^2 + ((1-p)x_2 + py_2)^2 + ((1-p)x_3 + py_3)^2}}$. If they are antipodal, then you can use any semicircle between them.}
+    Thus, $S^2$ is path-connected, so it is connected.
+\end{proof}
+
+\newpage\noindent\textbf{2)} Proposition: If $f: S^2 \to \mathbb R$ is continuous, then there exists $\mathbf c \in S^2$ such that $f(\mathbf c) = f(-\mathbf c)$.
+\begin{proof}
+    Let $f: S^2 \to \mathbb R$ be continuous.
+    Define $f': S^2 \to \mathbb R$ by $f'(\mathbf x) = f(\mathbf x) - f(-\mathbf x)$, in which $- \mathbf x$ is the antipode of $\mathbf x$.
+    Note that $f'$ is continuous because it is the difference of two continuous maps.
+    Let $\mathbf x \in S^2$.
+    Suppose that $f'(\mathbf x) = 0$.
+    Then $f(\mathbf x) = f(-\mathbf x)$.
+    Now, suppose that $f'( \mathbf x) > 0$.
+    Then, $f'(-\mathbf x) < 0$.
+    Thus, by Theorem 24.2, there exists $\mathbf c \in S^2$ such that $f'(\mathbf c) = 0$.
+    Therefore, $f(\mathbf c) = f(-\mathbf c)$.
+    A symmetric argument holds for the case in which $f'(\mathbf x) < 0$.
+
+    Thus, there exists $\mathbf c \in S^2$ such that $f(\mathbf c) = f(-\mathbf c)$.
+\end{proof}
+
+\newpage\noindent\textbf{3)} Proposition: A finite union of compact subspaces of a topological space $X$ is compact.
+\begin{proof}
+    Let $X$ be a topological space, and let $\{Y_1, \hdots, Y_n\}$ be a finite set of compact subspaces of $X$.
+    Let $\mathcal A$ be an open cover of $Y = \bigcup_{i=1}^n Y_i$.
+    Suppose that $\mathcal A$ is finite.
+    Then, $\mathcal A$ is a finite subcover for $Y$.
+    Now, suppose that $\mathcal A$ is infinite.
+    By Lemma 26.1, $Y$ contains a finite subcollection $\mathcal A_i$ covering $Y_i$ for all $1 \leq i \leq n$.
+    Thus, $\bigcup_{i=1}^n \mathcal A_i$ is a finite subcover of $Y$.
+    Thus, $Y$ is compact.
+\end{proof}
+
+\newpage\noindent\textbf{4)} Proposition: If $(x, \tau)$ is compact, $(X, \tau')$ is Hausdorff, and $\tau' \subseteq \tau$, then $(X, \tau)$ is homeomorphic to $(X, \tau')$.
+\begin{proof}
+    Let $(X, \tau)$ be compact, and let $(X, \tau')$ be Hausdorff.
+    Suppose that $\tau' \subseteq \tau$.
+    Note that the identity map $f: (X, \tau) \to (X, \tau')$ defined by $f(x) = x$ is continuous, because $\tau' \subseteq \tau$.
+    Thus, by Theorem 26.6, $f$ is a homeomorphism.
+\end{proof}
+
+
+\end{document}

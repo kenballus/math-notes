@@ -19,8 +19,6 @@
 \newcommand{\N}{\mathbb N}
 
 \begin{document}
-\pagecolor{black}
-\color{white}
 
 \medskip\noindent\textbf{1.}
 
@@ -68,7 +66,28 @@
 
 \newpage\noindent\textbf{8.}
 
-	(DO ME LATER)
+    \begin{center}
+        0.01$\mu$F
+        
+        \includegraphics[scale=.4]{81.png}
+
+        \medskip
+
+        1$\mu$F
+
+        \includegraphics[scale=.4]{810.png}
+
+        \medskip
+
+        100$\mu$F
+
+        \includegraphics[scale=.4]{8100.png}
+    \end{center}
+
+    The diode prevents the lower half of the sine wave from reaching the resistor and the capacitor. Thus, the input wave will look like the top half a sine wave.
+    With a 0.01$\mu$F capacitor, the capacitor is able to fully discharge for each period of the input wave. Thus, we see many thin peaks in the output, similar to having no capacitor at all.
+    With a 1$\mu$F capacitor, the capacitor is able to partially discharge for each period of the input wave, so the voltage at point $a$ never reaches 0.
+    WIth a $100\mu$F capacitor, the capacitor discharges very little of its totally capacity during each period of the input wave. Thus, we see the voltage at point $a$ approach the peak voltage of the input wave.
 
 \newpage\noindent\textbf{9.}
 

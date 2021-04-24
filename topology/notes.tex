@@ -467,6 +467,7 @@ A subbasis $\mathcal S$ for a topology on $X$ is a collection of subsets of $X$ 
 	A separation of $X$ is a pair $U,V$ of disjoint nonempty open subsets of $X$ whose unions is $X$.
 
 \medskip\noindent\textbf{Connected}
+
 	A topological space $X$ is connected if there is no separation of $X$.
 
 \medskip\noindent\textbf{Theorem 23.011}
@@ -561,7 +562,7 @@ A subbasis $\mathcal S$ for a topology on $X$ is a collection of subsets of $X$ 
 
 \medskip\noindent\textbf{Nested Interval Theorem}
 
-    Let $\{[a_n,b_n] \mid n \in \mathbb N\}$ be a collection of nonempty closed and bounded intervals in $\mathbb R$ such that $[a_{n+1},b_{n+1}] \seubseteq [a_n, b_n]$ for each $n \in \mathbb N$.
+    Let $\{[a_n,b_n] \mid n \in \mathbb N\}$ be a collection of nonempty closed and bounded intervals in $\mathbb R$ such that $[a_{n+1},b_{n+1}] \subseteq [a_n, b_n]$ for each $n \in \mathbb N$.
     Then, the union of these closed intervals is nonempty.
 
 \medskip\noindent\textbf{Corollary 27.2}
@@ -575,6 +576,29 @@ A subbasis $\mathcal S$ for a topology on $X$ is a collection of subsets of $X$ 
 \medskip\noindent\textbf{Corollary 27.016}
 
     If $f: [a,b] \to \mathbb R$ is continuous, then there exist points $c,d \in [a,b]$ such that $f(c \leq f(x) \leq f(d)$ for all $x \in X$.
- 
 
+\medskip\noindent\textbf{Homotopy}
+
+    Let $X, Y$ be topological spaces.
+    Two continuous maps $f,g:X \to Y$ are called homotopic, denoted $f \simeq g$, if there is a continuous map $F: [0,1] \times X \to Y$ such that $F(0,x) = f(x)$ and $F(1, x) = g(x)$ for all $x \in X$.
+
+\medskip\noindent\textbf{Path Homotopy}
+
+    Two paths $f, f': I=[0,1] \to X$ with $f(0) = x_0 = f'(0)$ and $f(1) = x_1 = f'(1)$ are called path homotopic, denoted $f \simeq_{p} f'$, if there is a continuous map $F: I \times T \to X$ such that 
+    \begin{center}
+        $F(s, 0) = f(s)$ and $F(s,1) = f'(s)$,
+
+        $F(0, t) = x_0$ and $F(1, t) = x_1$.
+    \end{center}
+
+    We call $F$ a path homotopy.
+
+\medskip\noindent{Lemma 51.1}
+
+    (Path) Homotopy is an equivalence relation.
+
+\medskip\noindent\textbf{Product of Paths}
+
+    Let $f$ be a path from $x_0$ to $x_1$, and let $g$ be a path from $x_1$ to $x_2$.
+    We define $f * g$,the product of $f$ and $g$, to be the path $h$ given by the equation $$h(s) = \begin{cases} f(2s) & s \in [0, \frac12], \\ g(2s-1) & s \in [\frac12, 1]. \end{cases}$$
 \end{document}
