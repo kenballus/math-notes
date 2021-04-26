@@ -822,4 +822,39 @@
     The dual graph of a plane graph $G$ is a graph with one vertex for each region of $G$ in which two vertices are adjacent if and only if their corresponding regions in $G$ share a boundary.
     The dual graph of a planar graph is a planar graph.
 
+\medskip\noindent\textbf{Neighborhood}
+
+    The open neighborhood of a vertex $v$, denoted $N(v)$, is the set of all of $v$'s neighbors.
+    The closed neighborhood of a vertex $v$, denoted $N[v]$, is $N(v) \cup \{v\}$.
+
+\medskip\noindent\textbf{Domination}
+
+    A vertexx dominates its closed neighborhood.
+    A set of vertices $S \subseteq V(G)$ is a dominating set for $G$ if and only if every vertex in $G$ is either in $S$ or is adjacent to a vertex in $G$.
+    The domination number for a complete graph is 1.
+    The domination number for a star is 1.
+    The domination number for a bipartite graph that is not a star is 2.
+    The domination number for a cycle is $\lceil \frac n3 \rceil$.
+
+\medskip\noindent\textbf{Domination Number}
+
+    The domination number of a graph $G$, denoted $\gamma(G)$, is the order of the smallest order (minimum) dominating set for $G$.
+
+\medskip\noindent\textbf{Theorem 13.3}
+
+    If $G$ is a graph of order $n$, then $\lceil \frac{n}{1+\Delta(G)} \rceil \leq \gamma(G) \leq n - \Delta(G)$.
+
+\medskip\noindent\textbf{Minimal Dominating Set}
+
+    A minimal dominating set for a graph $G$ is a dominating set $S$ such that $S - u$ is not a dominating set for all $u \in S$.
+    Thus, a minimum dominating set is minimal, but a minimal dominating set need not be a minimum dominating set.
+
+\medskip\noindent\textbf{Theorem 13.4}
+
+    If $S$ isa  minimal dominating set for a graph that has no isolated vertices, then its complement is a dominating set.
+
+\medskip\noindent\textbf{Corollary 13.5}
+
+    If $G$ has order $n$ and $\delta(G) \geq 1$, then $\gamma(G) \leq \frac n2$.
+
 \end{document}
