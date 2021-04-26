@@ -100,13 +100,34 @@
     Thus, by Vizing's Theorem, $\chi'(G) = d + 1$.
 \end{proof}
 
-\medskip\noindent\textbf{IV}
+\medskip\noindent\textbf{IV} Proposition: If $G$ is planar of order $n < 12$, then $\chi(G) \leq 4$.
 \begin{proof}
-    9.15 says $\delta(G) \leq 4$ and $\delta(G') \leq 4$ for all $g' \subseteq G$. (because $g'$ would also be planar and of order $\leq 11$.
-    Then, by 10.9, $\chi(G) \leq 5$.
+    Note that for any planar graph $G$ of order $n \leq 4$, $\chi(G) \leq 4$ since each vertex can be colored a different color.
+    Let $G$ be a planar graph of order $n \leq 11$ and assume there is a four-coloring of every planar graph of order $n-1$.
+    By Theorem 9.15, $\delta(G) \leq 4$.
+    Let $v\in V(G)$ be a vertex such that $\deg v \leq 4$.
+    We can color $G-v$ with the four colors blue, green, red, and orange by the inductive hypothesis.
+    If $v$'s neighbors have less than four distinct colors in the coloring for $G-v$, we will have a color available for $v$ to create a four-coloring for $G$.
+    Otherwise, $\deg v = 4$ and each neighbor of $v$ has a different color.
+    Given a planar embedding of $G$, label the neighborhood of $v$ as follows:
+    \begin{center} \includegraphics[scale=.4]{fig2.png} \end{center}
+    
+    Consider the subgraph $H_{gb}$ of $G$ induced by $G$'s green and blue vertices.
+    If $u_1$ and $u_3$ are in different components of $H_{gb}$, then we can switch the colors in $u_1$'s component so no neighbor of $v$ is blue.
+    Then, coloring $v$ blue gives a four-coloring of $G$.
+    If $u_1$ and $u_3$ are in the same component of $H_{gb}$, then there is a green-blue $u_1-u_3$ path in $G$.
+    Now, consider the subgraph $H_{ro}$ of $G$ induced by $G$'s red and orange vertices.
+    If $u_2$ and $u_4$ are in different components of $H_{ry}$, then we can switch the colors in $u_2$'s component so no neighbor of $v$ is red.
+    Then, coloring $v$ red gives a four-coloring of $G$.
+    Otherwise, there must be a red-orange $u_2-u_4$ path in $G$, which must cross the green-blue $u_1-u_3$ path, contradicting the planarity of $G$.
+    Thus, $G$ has a four-coloring, so $\chi(G) \leq 4$.
 \end{proof}
 
-\medskip\noindent\textbf{V}
+\medskip\noindent\textbf{V (a)}
+To free up red, we would have to flip the colors of the red-green and red-yellow components containing the two red regions next to the uncolored region. However, flipping the colors in these components would turn the uppermost green area to red and the lower yellow area to red, putting two red areas adjacent to one another and making it an invalid coloring. Thus, red cannot be freed up.
 
+\pagebreak
+\medskip\noindent\textbf{V (b)}
+\begin{center} \includegraphics[scale=.5]{heawood.jpg} \end{center}
 
 \end{document}
