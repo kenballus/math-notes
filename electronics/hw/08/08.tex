@@ -65,8 +65,16 @@
 \end{center}
 
 \newpage\noindent\textbf{9.}
+\begin{center}
+    \includegraphics[scale=.4]{4.png}
+\end{center}
 
-    
+    Clearly, the plot output shows that this circuit is acting as a full subtractor.
+    The full substractor utilizes two half subtractors.
+    The first takes the difference of the two input bits to be subtracted, and the second subtracts the borrow input from that difference.
+    Then, the borrow output is computed by XORing the borrow outputs of the two half subtractors.
+    Note that those outputs could be ORed instead, because there is no assignment for $A$, $B$, and $C$ such that both $A - B$ and $(A - B) - C$ require borrowing.
+    I went for an XOR gate because they're used elsewhere in the circuit, so we'd probably have an XOR chip in the board already if we were building this circuit in hardware.
 
 \newpage\noindent\textbf{10.}
 \begin{verbatim}# Ben Kallus
