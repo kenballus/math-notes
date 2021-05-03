@@ -264,7 +264,7 @@
 
     The maximum degree of a vertex in a graph $G$ is denoted $\Delta(G)$.
 
-\medskip\noindent\textbf{Theorem 2.1 (The Handshaking Lemma)}
+\medskip\noindent\textbf{Theorem 2.1 - The Handshaking Lemma}
 
     If $G$ is a graph of size $m$, then $$\sum_{v \in V(G)} \deg(v) = 2m.$$
 
@@ -510,7 +510,7 @@
 
     (Where $k(H)$ is the number of components in $H$.)
 
-\medskip\noindent\textbf{Theorem 6.6 (Ore's Theorem)}
+\medskip\noindent\textbf{Theorem 6.6 - Ore's Theorem}
 
     If $G$ has order $n \geq 3$, and $\deg(u) + \deg(v) \geq n$ for all non-adjacent $u,v \in V(G)$, then $G$ is Hamiltonian.
 
@@ -518,7 +518,7 @@
 
     Note: This bound is sharp. See bowtie graph.
 
-\medskip\noindent\textbf{Corollary 6.7 (Dirac's Corollary)}
+\medskip\noindent\textbf{Corollary 6.7 - Dirac's Corollary}
 
     If $G$ has order $n \geq 3$ and $\delta(G) \geq \frac n2$, then $G$ is Hamiltonian.
 
@@ -630,7 +630,7 @@
 
 	The edge covering number of a graph $G$ with no isolated vertices, denoted $\beta'(G)$, is the size of a minimum edge cover for $G$.
 
-\medskip\noindent\textbf{Theorem 8.7 (One of two Gallai's Identities)}
+\medskip\noindent\textbf{Theorem 8.7 - One of two Gallai's Identities}
 
 	For any graph $G$ with no isolated vertices, $$\alpha'(G) + \beta'(G) = n.$$
 
@@ -902,5 +902,28 @@
 \medskip\noindent\textbf{Theorem 13.10}
 
     If $G$ has no isolated vertices, then $\gamma_{F_1}(G) = \gamma_t(G)$, where $F_1$ is $P_3$ with one endpoint colored blue and the other two vertices colored red.
+
+\medskip\noindent\textbf{Theorem 11.2 - Ramsey's Theorem}
+
+    Let $n_1, n_2, \hdots, n_k \in \mathbb N$ where $k \geq 2$ and each $n_i \geq 2$.
+    Then, there exists $n \in \mathbb N$ suc that if every edge of $K_n$ is colored with one of $k$ different colors then for some $i \in \{1, \hdots, k\}$, there exists a $K_{n_i}$ subgraph with all edges of color $i$.
+    
+    We will not prove this.
+
+\medskip\noindent\textbf{Ramsey Number}
+
+    Let $r, b \in \mathbb N$ such that $r, b \geq 2$.
+    Then, the Ramsey Number $R(r,b)$ is the minimum natural number $n$ that satisfies Ramsey's Theorem.
+    (The minimum natural number $n$ such that every $K_n$ with red/blue edges has a red $K_r$ or blue $K_b$ subgraph.
+
+    Some results:
+    \begin{align*}
+        R(3, 3) = 6 \\
+        R(r, b) \geq \max\{a, b\}. \\
+        R(2, b) = \max\{2, b\}. \\
+        R(3, 4) = 9
+    \end{align*}
+
+\medskip\noindent\textbf{}
 
 \end{document}
