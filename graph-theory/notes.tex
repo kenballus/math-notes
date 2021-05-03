@@ -1,4 +1,5 @@
 \documentclass{article}
+
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath}
 \usepackage{amsfonts}
@@ -829,11 +830,11 @@
 
 \medskip\noindent\textbf{Domination}
 
-    A vertexx dominates its closed neighborhood.
+    A vertex dominates its closed neighborhood.
     A set of vertices $S \subseteq V(G)$ is a dominating set for $G$ if and only if every vertex in $G$ is either in $S$ or is adjacent to a vertex in $G$.
     The domination number for a complete graph is 1.
     The domination number for a star is 1.
-    The domination number for a bipartite graph that is not a star is 2.
+    The domination number for a complete bipartite graph that is not a star is 2.
     The domination number for a cycle is $\lceil \frac n3 \rceil$.
 
 \medskip\noindent\textbf{Domination Number}
@@ -851,10 +852,55 @@
 
 \medskip\noindent\textbf{Theorem 13.4}
 
-    If $S$ isa  minimal dominating set for a graph that has no isolated vertices, then its complement is a dominating set.
+    If $S$ is a minimal dominating set for a graph that has no isolated vertices, then its complement is a dominating set.
 
 \medskip\noindent\textbf{Corollary 13.5}
 
     If $G$ has order $n$ and $\delta(G) \geq 1$, then $\gamma(G) \leq \frac n2$.
+
+\medskip\noindent\textbf{Total Domination}
+
+    A total dominating set in a graph $G$ is a set $T \subseteq V(G)$ such that $$V(G) = \bigcup_{v \in T} N(v).$$
+    (Note that this is an open neighborhood.)
+    Thus, every vertex is adjacent to a vertex in $T$.
+    The total domination number of a graph $G$, denoted $\gamma_t(G)$, is the size of the smallest total dominating set for $G$.
+    Note that every vertex in a total dominating set $T$ must have a neighbor that is also in $T$.
+    The total domination number for a complete graph of order 2 or more is 2.
+    The total domination number for complete bipartite graph is 2.
+    The total domination number for a cycle is $\begin{cases} \lceil\frac n2\rceil & n \not\equiv 2 \mod 4, \\ \frac{n+2}2 & n \equiv 2 \mod 4. \end{cases}$
+
+\medskip\noindent\textbf{Theorem 13.7}
+
+    Let $G$ be a graph with no isolated vertices.
+    Then, $$\gamma(G) \leq \gamma_t(G) \leq 2\gamma(G).$$
+
+\medskip\noindent\textbf{Stratified Graph}
+
+    A stratified graph is a graph $G$ whose vertices have been partitioned into disjoint sets called strata, or classes.
+    The strata can be represented as color classes.
+    In a rooted stratified graph, a node is designated as the root of the graph.
+
+\medskip\noindent\textbf{F-Coloring}
+
+    Let $F$ be a rooted, 2-stratified graph.
+    For any graph $G$, an $F$-coloring of $G$ is a coloring of the vertices of $G$ with two colors (red, blue) such that for every blue vertex $w$ in $G$, there exists an isomorphic copy of $F$ with the root at $w$.
+    Basically, start with a rooted graph $F$ colored with 2 colors red and blue. (not necessarily a 2-coloring).
+    Suppose that the root of $F$ is blue.
+    Then, an $F$-coloring for a graph $G$ is a coloring of $G$ with the red and blue with the property that every blue vertex in $G$ is the root of a subgraph of $G$ isomorphic to $F$ (including colors)
+
+\medskip\noindent\textbf{$F$-Dominating Set}
+
+    The set of red vertices in an $F$-coloring of $G$ is called an $F$-dominating set.
+    A minimum $F$-coloring of $G$ is an $F$-coloring with the minimum number of red vertices.
+    The number of red vertices in this case is denoted $\gamma_F(G)$.
+
+\medskip\noindent\textbf{Theorem 13.9}
+
+    Let $F$ be a 2-stratified $K_2$.
+    Then, for any graph $G$, $\gamma_F(G) = \gamma(G)$.
+
+\medskip\noindent\textbf{Theorem 13.10}
+
+    If $G$ has no isolated vertices, then $\gamma_{F_1}(G) = \gamma_t(G)$, where $F_1$ is $P_3$ with one endpoint colored blue and the other two vertices colored red.
 
 \end{document}

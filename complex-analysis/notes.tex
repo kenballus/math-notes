@@ -216,4 +216,25 @@
 \medskip\noindent\textbf{Cauchy's Integral Formula}
 
     If $f$ is analytic on and interior to simple closed contour $C$ that's positively oriented, then if $z_0$ is interior to $C$, $$f(z_0) = \frac1{2\pi i}\int_C\frac{f(z)}{z-z_0}\,dz.$$
+
+\medskip\noindent\textbf{Cauchy's Integral Formula for Derivatives}
+
+    If $f$ is analytic on and interior to simple closed contour $C$ that's positively oriented, then if $z_0$ is interior to $C$, $$f^{(n)}(z_0) = \frac{n!}{2\pi i}\int_C\frac{f(z)}{(z-z_0)^{n+1}}\,dz.$$
+
+\medskip\noindent\textbf{Cauchy's Inequality}
+
+    If $f$ is analytic on and interior to a positively oriented (counterclockwise) cycle $C$, then $|z-z_0| = r \implies |f^{(n)}(z_0)| \leq \frac{Mn!}{r^n}$, where $M = \max\{|f(z)| \mid z \in C\}$.
+
+\medskip\noindent\textbf{Liouville's Theorem}
+
+    A bounded entire function is constant.
+
+\medskip\noindent\textbf{Taylor's Theorem}
+
+    If $f$ is analytic on the disk $|z-z_0 < r|$, then $f(z) = \sum_{n=1}^\infty\frac{f^{(n)}}{n!}(z-z_0)^n$.
+
+\medskip\noindent\textbf{Bieberbach Conjecture/ de Branges's Theorem}
+
+    If $f(z) = z + a_2z^2 + a_3z^3 + \hdots$ is analytic, 1-1 on the unit disk, then $|a_n| \leq n$.
+
 \end{document}
