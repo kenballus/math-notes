@@ -136,6 +136,10 @@
 	Let $f(z) = u(x,y) + iv(x,y).$
 	If $f'(z_0)$ exists, then \begin{center}$u_x = v_y$ and $u_y = -v_x.$\end{center}
 
+\medskip\noindent\textbf{Corollary of the C-R Equations}
+
+    If $f'(z_0)$ exists, then $$f'(z_0) = u_x(x_0, y_0) + iv_x(x_0, y_0) = v_y(x_0, y_0) - iu_y(x_0, y_0).$$
+
 \medskip\noindent\textbf{Harmonic Function}
 
 	A function $f: \C \to \C$ is harmonic in a domain of the $xy$ plane if and only if throughout that domain it has continuous partial derivatives of the first and second order satisfying Laplace's equation: $$f_{xx}(x,y) + f_{yy}(x,y)=0.$$
@@ -169,7 +173,7 @@
 \medskip\noindent\textbf{Complex Log}
 
 	The $\log$ function is the inverse of $\exp$. The $\text{Log}$ function is the principle value of the $\log$ function.
-	Thus, $\text{log}(z) = \ln(|z|) + i\arg(z)$.
+    Thus, $\text{log}(z) = \ln(|z|) + i\arg(z)$, and $\text{Log}(z) = \ln(|z|) + i\text{Arg}(z)$.
 
 \medskip\noindent\textbf{Trig Functions}
 
@@ -183,10 +187,15 @@
     \item The usual formulas for addition within trig functions hold.
     \item The usualy derivative formulas hold.
     \item $\cos z = \frac12(e^{y} + e^{-y})\cos x - \frac i2(e^y-e^{-y})\sin x = \cosh y \cos x - i\sinh y \sin x$
-    \item $\cos z = \sin x \cosh y + i\cos x \sinh y$, $\sin z = \sin x \cosh y + i \cos x \sinh y$
+    \item $\cos z = \cos x \cosh y - i\sin x \sinh y$, $\sin z = \sin x \cosh y + i \cos x \sinh y$
     \item $\cosh^2 x - \sinh^2 x = 1$
     \item Neither $\sin$ nor $\cos$ is bounded.
 \end{enumerate}
+
+\medskip\noindent\textbf{Hyperbolic Functions}
+
+    $$\sinh(x) = \frac{e^x - e^{-x}}2.$$
+    $$\cosh(x) = \frac{e^x + e^{-x}}2.$$
 
 \medskip\noindent\textbf{Integrals}
     
@@ -220,6 +229,10 @@
 \medskip\noindent\textbf{Cauchy's Integral Formula for Derivatives}
 
     If $f$ is analytic on and interior to simple closed contour $C$ that's positively oriented, then if $z_0$ is interior to $C$, $$f^{(n)}(z_0) = \frac{n!}{2\pi i}\int_C\frac{f(z)}{(z-z_0)^{n+1}}\,dz.$$
+
+\medskip\noindent\textbf{ML Inequality}
+
+    If $f$ is analytic along a contour $C$, then $\left|\int_C f(z) \, dz\right| \leq ML$, where $L$ is the length of $C$ and $M$ is the maximum value $f$ achieves along $C$.
 
 \medskip\noindent\textbf{Cauchy's Inequality}
 
