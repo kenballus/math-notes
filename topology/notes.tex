@@ -633,4 +633,32 @@ A subbasis $\mathcal S$ for a topology on $X$ is a collection of subsets of $X$ 
 
     A space is simply connected if and only if its fundamental group is trivial. (Speculation: It has no holes)
 
+\medskip\noindent\textbf{Line Segment}
+
+    Let $x, y \in \mathbb R^n$ with the standard topology.
+    The line segment $\lambda(x,y)$ between $x$ and $y$ is defined by $$\lambda(x, y) = (1-t)x+ty \text{ for } t \in [0, 1].$$
+
+\medskip\noindent\textbf{Convex}
+
+    A subset $S$ of a space is convex if there is a line segment totall contained in $S$ between any two points in $S$.
+
+\medskip\noindent\textbf{Theorem 52.019}
+
+    Any convex subset $A$ of $\mathbb R^n$ with the subspace topology is simply connected, and thus has the trivial fundamental group.
+
+\medskip\noindent\textbf{Homomorphism}
+
+    Let $h(X, x_0) \to (Y, h(x_0)) = (Y, y_0)$ be a continuous map.
+    Define $$h_*: \pi_1(X, x_0) \to \pi_1(Y, y_0)$$ by the equation $$h_*([f]) = [h \circ f].$$
+    The map $h_*$ is called the homomorphism induced by $h$.
+
+\medskip\noindent\textbf{Theorem 52.4}
+
+    If $h: (X, x_0) \to (Y, y_0)$ and $k: (Y, y_0) \to (Z, z_0)$ are continuous, then $(k \circ h)_* = k_* \circ h_*$.
+    If  $i: (X, x_0) \to (X, x_0)$ is the identity map, then $i_*$ is the identity homomorphism.
+
+\medskip\noindent\textbf{Corollary 52.5}
+
+    If $h: (X, x_0) \to (Y, y_0)$ is a homeomorphism of $X$ with $Y$, then $h_*$ is an isomorphism of $\pi_1(X, x_0)$ with $\pi_1(Y, y_0)$.
+
 \end{document}
