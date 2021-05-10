@@ -82,10 +82,12 @@
     
         We now show that $r(P_4, P_4) \leq 5$.
         Color the edges of $K_5$ red and blue.
-        Suppose that there is a vertex $v$ with neighbors $u, w, x$ all connected to $v$ by red edges.
-        Suppose without loss of generality that $u$ and $w$ are connected by a red edge.
+        Suppose that there is a vertex $v$ with neighbors $u, w, x$ and $y$.
+        Suppose without loss of generality that $uv, wv$ and $xv$ are all red.
+        Suppose without loss of generality that $uw$ is red.
         Then, the graph contains the red $P_4$ induced by $\{u, w, v, x\}$.
-        By a symmetric argument, if there is a vertex with three or more incident blue edges, then the graph contains a blue $P_4$.
+        If all of $uw, ux, wx$ are blue, then 
+        By a symmetric argument, if there is a vertex with three or more incident blue edges, then the graph contains a monochromatic $P_4$.
         Suppose that every vertex in the graph is incident to exactly 2 red edges and 2 blue edges.
         Note that the construction of any such graph would begin with a graph isomorphic to the one shown below:
         \begin{center} \includegraphics[scale=.7]{9.png} \end{center}
