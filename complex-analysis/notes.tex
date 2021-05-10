@@ -1,4 +1,4 @@
-\documentclass{article}
+\documentclass{article} 
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath}
 \usepackage{amsfonts}
@@ -180,6 +180,11 @@
     $$\sin(z) = \frac{e^{iz} - e^{-iz}}{2i}$$
     $$\cos(z) = \frac{e^{iz}+e^{-iz}}{2}$$
 
+\medskip\noindent\textbf{Hyperbolic Trig Functions}
+
+    $$\sinh(x) = \frac{e^x - e^{-x}}2.$$
+    $$\cosh(x) = \frac{e^x + e^{-x}}2.$$
+
 \medskip\noindent\textbf{Properties of the Trig Functions}
 \begin{enumerate}
     \item $\cos(-z) = \cos(z)$, $\sin(-z) = -\sin(z)$.
@@ -191,11 +196,6 @@
     \item $\cosh^2 x - \sinh^2 x = 1$
     \item Neither $\sin$ nor $\cos$ is bounded.
 \end{enumerate}
-
-\medskip\noindent\textbf{Hyperbolic Functions}
-
-    $$\sinh(x) = \frac{e^x - e^{-x}}2.$$
-    $$\cosh(x) = \frac{e^x + e^{-x}}2.$$
 
 \medskip\noindent\textbf{Integrals}
     
@@ -245,9 +245,17 @@
 \medskip\noindent\textbf{Taylor's Theorem}
 
     If $f$ is analytic on the disk $|z-z_0 < r|$, then $f(z) = \sum_{n=1}^\infty\frac{f^{(n)}}{n!}(z-z_0)^n$.
+    
+\medskip\noindent\textbf{Taylor Series Expansion of $e^z$}
+
+    $$e^z = \sum_{n=0}^\infty \frac{z^n}{n!}.$$
 
 \medskip\noindent\textbf{Bieberbach Conjecture/ de Branges's Theorem}
 
     If $f(z) = z + a_2z^2 + a_3z^3 + \hdots$ is analytic, 1-1 on the unit disk, then $|a_n| \leq n$.
+
+\medskip\noindent\textbf{Geometric Series}
+
+    $$\frac1{1-m} = \sum_{n=0}^\infty m^n,$$ so long as $|m| < 1$.
 
 \end{document}

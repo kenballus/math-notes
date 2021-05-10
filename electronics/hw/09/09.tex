@@ -19,24 +19,30 @@
 \newcommand{\N}{\mathbb N}
 
 \begin{document}
-\pagecolor{black}
-\color{white}
 
 \medskip\noindent\textbf{1.} 
 
-    Bridge rectifier
+    Here's my 12V power supply:
+    \begin{center} \includegraphics[scale=.3]{power_supply.png} \end{center}
+
+    I solved for the capacitance using $V_{\text{ripple}} = \frac{I_{\text{out}}}{fC},$ and arrived at $C = \frac{1}{48} \approx 20$mF.
 
 \medskip\noindent\textbf{2.} 
 
-    Output wil be sine wave. Figure out gain using formula from book.
+    Gain = $\frac{R_1 + R_2}{R_1} = \frac{64}{8} = 8.$
 
-\medskip\noindent\textbf{3.}
+    The figure below shows $\text{V}_{\text{in}}$ in red and $\text{V}_{\text{out}}$ in blue.
+    \begin{center}
+        \includegraphics[scale=.3]{2.png}
+    \end{center}
+
+\newpage\noindent\textbf{3.}
+
+\medskip\noindent\textbf{4.}
 
     Obvious answer is -10Vin.
 
     Real answer comes from thinking about currents.
-
-\newpage\noindent\textbf{4.}
 
 \medskip\noindent\textbf{5.} Because it doesn't pull any current from the input 
 
