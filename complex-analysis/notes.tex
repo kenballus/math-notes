@@ -244,7 +244,7 @@
 
 \medskip\noindent\textbf{Taylor's Theorem}
 
-    If $f$ is analytic on the disk $|z-z_0 < r|$, then $f(z) = \sum_{n=1}^\infty\frac{f^{(n)}}{n!}(z-z_0)^n$.
+    If $f$ is analytic on the disk $|z-z_0 < r|$, then $f(z) = \sum_{n=1}^\infty\frac{f^{(n)}(z_0)}{n!}(z-z_0)^n$.
     
 \medskip\noindent\textbf{Taylor Series Expansion of $e^z$}
 
@@ -277,16 +277,19 @@
 
 \medskip\noindent\textbf{Laurent's Theorem}
 
-    If $f$ is analytic in the opne annulus $A: 0 \leq R_1 < |z-z_0| < r_2 \leq \infty$, containing the positively-oriented simple closed contour $C$ around $z_0$.
+    If $f$ is analytic in the open annulus $A: 0 \leq R_1 < |z-z_0| < r_2 \leq \infty$, containing the positively-oriented simple closed contour $C$ around $z_0$.
      Then, for all $z \in A$, $$f(z) = \sum_{n=0}^\infty a_n(z-z_0)^n + \sum_{n=1}^\infty \frac{b_n}{(z-z_0)^n},$$
-    where $a_n = \frac1{2\pi i} \int_{C} \frac{f(z)}{(z-z_0)^{n+1}}\,dz$ and $b_n=\frac{1}{2\pi i} \int_C\frac{f(z)}{(z-z_0)^{-n+1}}\,dz$.
+    where $$a_n = \frac1{2\pi i} \int_{C} \frac{f(z)}{(z-z_0)^{n+1}}\,dz$$ and $$b_n=\frac{1}{2\pi i} \int_C\frac{f(z)}{(z-z_0)^{-n+1}}\,dz.$$
 
     Thus, $\int_C f(z) \,dz = 2\pi i b_1$, where $b_1$ is the residue of $f$ at $z_0$.
 
-\medskip\noindent\textbf{Some Power Series}
+    We call the part of the Laurent series with negative powers of $z$ the principle part.
+    If the principle part of the Laurent series has infinitely many nonzero terms, then the singularity in the annulus is called an essential singularity.
+    Otherwise, the singularity is called a pole of order $m$, where $m$ is the largest power of $z$ in the denominator.
 
-    $e^z = \sum_{n=0}^\infty \frac{z^n}{n!}$
+\medskip\noindent\textbf{Picard's Theorem}
 
+    In each punctured neighborhood of an essential signularity, $f$ assumes every complex number with at most 1 exception, infinitely many times.
      
 
 \end{document}
